@@ -22,7 +22,7 @@
     <meta name="description" content="Not a product, no need to explain">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Sma11_Tim3&#39;s Studio</title>
+    <title>逆向入门基础汇编语言 · Sma11_Tim3&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Sma11_Tim3&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">逆向入门基础汇编语言</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Sma11_Tim3's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            逆向入门基础汇编语言
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1k</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/10/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,270 +399,101 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/网鼎杯第一场/">
-            
-                <span>网鼎杯第一场</span>
-        </a>
-        <div class="abstract-content">
-            <p>一顿操作猛如虎，结果题目没解出。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CTF">CTF</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>入了二进制的坑，真的是又爱又恨，入门难，进阶难，精通难。—–TM什么都难。<br><a id="more"></a></p>
+<h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><p>以下以8086CPU的寄存器为例（8086CPU的寄存器均为16位）。</p>
+<p>8086下的通用寄存器有AX、BX、CX、DX。用于存放一般的数据，因此被称为通用寄存器。</p>
+<p><strong>AX，BX，CX，DX 称作为数据寄存器：</strong></p>
+<p>AX (Accumulator)：累加寄存器，也称之为累加器；</p>
+<p>BX (Base)：基地址寄存器；</p>
+<p>CX (Count)：计数器寄存器；</p>
+<p>DX (Data)：数据寄存器；</p>
+<p><strong>SP 和 BP 又称作为指针寄存器：</strong></p>
+<p>SP (Stack Pointer)：堆栈指针寄存器；</p>
+<p>BP (Base Pointer)：基指针寄存器；</p>
+<p><strong>SI 和 DI 又称作为变址寄存器：</strong></p>
+<p>SI (Source Index)：源变址寄存器；</p>
+<p>DI (Destination Index)：目的变址寄存器；</p>
+<hr>
+<p>由于在 8086 之前的 CPU 为 8 位 CPU，所以为了兼容以前的 8 位程序，</p>
+<p>在 8086 CPU 中，每一个数据寄存器都可以当做两个单独的寄存器来使用，</p>
+<p>由此，每一个 16 位寄存器就可以当做 2 个独立的 8 位寄存器来使用了 。</p>
+<ul>
+<li><p>AX 寄存器可以分为两个独立的 8 位的 AH 和 AL 寄存器；</p>
+</li>
+<li><p>BX 寄存器可以分为两个独立的 8 位的 BH 和 BL 寄存器；</p>
+</li>
+<li><p>CX 寄存器可以分为两个独立的 8 位的 CH 和 CL 寄存器；</p>
+</li>
+<li><p>DX 寄存器可以分为两个独立的 8 位的 DH 和 DL 寄存器；</p>
+</li>
+</ul>
+<p>除了上面 4 个数据寄存器以外，其他寄存器均不可以分为两个独立的 8 位寄存器 ；</p>
+<p>下面给出一幅 16 位数据寄存器的结构图：</p>
+<p>表示 16 位 寄存器 AX 可以表示成两个 8 位寄存器，</p>
+<p>其中 AH 表示高位的 8 位寄存器，AL 表示低位的 8 位寄存器 。</p>
+<p><img src="https://i.imgur.com/nagIyLm.png" alt=""></p>
+<h2 id="控制寄存器"><a href="#控制寄存器" class="headerlink" title="控制寄存器"></a>控制寄存器</h2><p>IP (Instruction Pointer)：指令指针寄存器；</p>
+<p>FLAG：标志寄存器；</p>
+<h2 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h2><p>CS (Code Segment)：代码段寄存器；</p>
+<p>DS (Data Segment)：数据段寄存器；</p>
+<p>SS (Stack Segment)：堆栈段寄存器；</p>
+<p>ES (Extra Segment)：附加段寄存器；</p>
+<h2 id="指针寄存器（BP，SP）："><a href="#指针寄存器（BP，SP）：" class="headerlink" title="指针寄存器（BP，SP）："></a>指针寄存器（BP，SP）：</h2><p>SS:存放栈的段地址</p>
+<p>SP:堆栈寄存器SP(stack pointer)存放栈的偏移地址</p>
+<p>BP: 基数指针寄存器BP(base pointer)是一个寄存器，它的用途有点特殊，是和堆栈指针SP联合使用的，作为SP校准使用的，只有在寻找堆栈里的数据和使用个别的寻址方式时候才能用到</p>
+<p>在函数进入时：<br>push bp     // 保存bp指针<br>mov bp,sp  // 将sp指针传给bp，此时bp指向sp的基地址。</p>
+<p>函数结束时：<br>mov sp,bp  // 将原sp指针传回给sp<br>pop bp       // 恢复原bp的值。<br>ret              // 退出子函数</p>
+<h2 id="标志寄存器（FLAG）"><a href="#标志寄存器（FLAG）" class="headerlink" title="标志寄存器（FLAG）:"></a>标志寄存器（FLAG）:</h2><p>前面呢，已经介绍了  8086  CPU  14 个寄存器中的 13 个了，下面我们将介绍最后一个寄存器也就是  FLAG  寄存器，</p>
+<p>FLAG  寄存器之所以放到最后一个介绍，是因为其和其他的一些寄存器不同，像   AX，BX，CX，DX  这些寄存器来说，</p>
+<p>它们都是用来存放数据的，当然  FLAG  中存放的也是数据啦，</p>
+<p>呵呵，不过，AX，BX 这些寄存器中的数据是作为一个整体使用的，</p>
+<p>最多也就分成一个  AL  和  AH  使用而已，但是在  FLAG  中，数据是按位起作用的，</p>
+<p>也就是说，FLAG  中的每一个位都表示不同的状态，</p>
+<p>由于一个位也就能表示  0  和  1 ，自然，FLAG  中的每一个位就是用来描述状态的，</p>
+<p>而且  FLAG  寄存器中存储的信息通常又被称作程序状态字（PSW） 。</p>
+<p><strong>下面我给出一幅  FLAG  寄存器中各个位的示意图：</strong></p>
+<p><img src="https://i.imgur.com/kWjAO5h.png" alt=""></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>上面介绍了一些简单的寄存器知识，要入门二进制要跳的坑还有点多，在此推荐一本汇编书：《汇编语言》–清华大学出版社  by王爽 有兴趣的小伙伴自己买书来看咯。</p>
+<p>by Covteam-Sma11_Tim3<br>生活不易，多才多艺。</p>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/逆向入门基础汇编语言/">
-            
-                <span>逆向入门基础汇编语言</span>
-        </a>
-        <div class="abstract-content">
-            <p>入了二进制的坑，真的是又爱又恨，入门难，进阶难，精通难。—–TM什么都难。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/RSA/">
-            
-                <span>RSA</span>
-        </a>
-        <div class="abstract-content">
-            <p>打了蛮多场CTF，每次密码学都有逃不过的RSA，是时候来总结一波了，就决定是你啦RSA。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/Pwn入门笔记/">
-            
-                <span>Pwn入门笔记</span>
-        </a>
-        <div class="abstract-content">
-            <p>嗯，不知不觉还是来到了这里，开始了Pwn的入门，就当做笔记用吧。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Pwn">Pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/hello-Covteam/">
-            
-                <span>hello-Covteam</span>
-        </a>
-        <div class="abstract-content">
-            <p>Welcome to Covteam。</p>
-<p>This is an introduction by covteam-sma11_tim3<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Covteam">Covteam</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/80x86汇编知识基础/">
-            
-                <span>80x86汇编知识基础</span>
-        </a>
-        <div class="abstract-content">
-            <p>本文的内容来自于黑客免杀攻防附录A<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/Pwntools使用简介/">
-            
-                <span>Pwntools使用简介</span>
-        </a>
-        <div class="abstract-content">
-            <p>本文转载自<br><a href="https://blog.csdn.net/qq_29343201/article/details/51337025" target="_blank" rel="noopener">https://blog.csdn.net/qq_29343201/article/details/51337025</a><br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Pwn">Pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/binwalk-for-windows/">
-            
-                <span>binwalk for windows</span>
-        </a>
-        <div class="abstract-content">
-            <p>本文转载至：<a href="http://www.cnblogs.com/pcat/p/5256288.html" target="_blank" rel="noopener">http://www.cnblogs.com/pcat/p/5256288.html</a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="日常小工具">日常小工具</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2018/10/28/网鼎杯第一场/" title="网鼎杯第一场">
+                    <div class="nextTitle">网鼎杯第一场</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2018/10/28/RSA/" title="RSA">
+                    <div class="prevTitle">RSA</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -686,6 +578,24 @@ More...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#通用寄存器"><span class="toc-number">1.</span> <span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制寄存器"><span class="toc-number">2.</span> <span class="toc-text">控制寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#段寄存器"><span class="toc-number">3.</span> <span class="toc-text">段寄存器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#指针寄存器（BP，SP）："><span class="toc-number">4.</span> <span class="toc-text">指针寄存器（BP，SP）：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标志寄存器（FLAG）"><span class="toc-number">5.</span> <span class="toc-text">标志寄存器（FLAG）:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number"></span> <span class="toc-text">总结</span></a>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -951,6 +861,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

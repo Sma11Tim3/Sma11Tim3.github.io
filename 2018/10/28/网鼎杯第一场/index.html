@@ -22,7 +22,7 @@
     <meta name="description" content="Not a product, no need to explain">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Sma11_Tim3&#39;s Studio</title>
+    <title>网鼎杯第一场 · Sma11_Tim3&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Sma11_Tim3&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">网鼎杯第一场</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Sma11_Tim3's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            网鼎杯第一场
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="CTF">CTF</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">743</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/10/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,270 +399,105 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/网鼎杯第一场/">
-            
-                <span>网鼎杯第一场</span>
-        </a>
-        <div class="abstract-content">
-            <p>一顿操作猛如虎，结果题目没解出。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CTF">CTF</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>一顿操作猛如虎，结果题目没解出。<br><a id="more"></a></p>
+<h2 id="签到题"><a href="#签到题" class="headerlink" title="签到题"></a>签到题</h2><p>没什么说的，关注公众号一顿选择题拿到flag。</p>
+<p><img src="https://i.imgur.com/RCbbWwj.png" alt=""></p>
+<h2 id="Clip"><a href="#Clip" class="headerlink" title="Clip"></a>Clip</h2><p>题目：Horse Clip-Clop<br>A strange filesystem is recovered from a damaged old hard disk.</p>
+<p>文件是一个disk后缀的，一开始以为是Linux的虚拟硬盘需要修复然后挂载上去。一顿瞎操作之后发现emmmmm，好像想多了。</p>
+<p>换个思路用winhex打开，老套路先搜搜有没有图片之类的放里面了。</p>
+<p>在winhex第196280 发现了png的头文件如图：</p>
+<p><img src="https://i.imgur.com/MOuC3vk.png" alt=""></p>
+<p>搜一下文件头png的是89504E，把图片分离出来，有两张png。</p>
+<p>第一张：</p>
+<p><img src="https://i.imgur.com/5x18xGZ.png" alt=""></p>
+<p>第二张：</p>
+<p><img src="https://i.imgur.com/IT9uH8G.png" alt=""></p>
+<p>第一眼看上去，额这什么鬼？    好吧放大看之后发现是拼接的图片。</p>
+<p>用PS再拼回去（逼死强迫症的操作）</p>
+<p><img src="https://i.imgur.com/eVcA5T4.png" alt=""></p>
+<h2 id="minified"><a href="#minified" class="headerlink" title="minified"></a>minified</h2><p>题目：一张花屏图片，png图片<br><img src="https://i.imgur.com/7yUk6up.png" alt=""></p>
+<p>嗯先看看属性吧。</p>
+<p><img src="https://i.imgur.com/xajhYIN.png" alt=""></p>
+<p>嗯什么都没有，丢kali里看看有没有问题</p>
+<p><img src="https://i.imgur.com/GnoropY.png" alt=""></p>
+<p>一切正常，再来试试pngcheck呢。</p>
+<p><img src="https://i.imgur.com/C6jkit1.png" alt=""></p>
+<p>好像还是没有什么问题。好吧最后的挣扎拿到Stegsolve跑一下试试呗！</p>
+<p><img src="https://i.imgur.com/wzv5MEX.png" alt=""></p>
+<p>左右箭头一顿乱点什么都没有，除了花屏就是黑白花屏。。。。</p>
+<p>点着点着发现red0通道的有点奇怪</p>
+<p><img src="https://i.imgur.com/Lr0yKmj.png" alt=""></p>
+<p>其他的通道都是有数据的只有red的0通道是空白的。</p>
+<p>把red的0通道拿出来看看。</p>
+<p><img src="https://i.imgur.com/DOBbXGM.png" alt=""></p>
+<p>发现payload是lsb隐写，接下来把alpha，green 和 blue 的0通道都单独存为一张图片，两两相互进行xor、add、sub的操作，最后在alpha和green的xor中发现flag</p>
+<p><img src="https://i.imgur.com/N15lINt.png" alt=""></p>
+<h2 id="beijing"><a href="#beijing" class="headerlink" title="beijing"></a>beijing</h2><p>给了一个ELF文件</p>
+<p><img src="https://i.imgur.com/fzhWdP8.png" alt=""></p>
+<p>直接拖进IDA里看看呗。（建议使用7.0版本，我的电脑上6.8版本没办法解析函数，解析出来一堆乱码完全不能做）</p>
+<p><img src="https://i.imgur.com/NmG5nJ2.png" alt=""></p>
+<p>可以看到输出的字符为21个，直接进sub_8048460。</p>
+<p><img src="https://i.imgur.com/QCpUpGV.png" alt=""></p>
+<p>一个简单的switch结构。先把每个分支的值算出来就好。<br>分别为a g i n b e f j m l { z } _   对应的分支为0~13<br>接下来找出函数的参数值。</p>
+<p><img src="https://i.imgur.com/d2OVLjn.png" alt=""></p>
+<p>分别对应之前switch分支里的值得到flag。</p>
+<p>flag{amazing_beijing}</p>
+<h2 id="advanced"><a href="#advanced" class="headerlink" title="advanced"></a>advanced</h2><p>得到一个ELF文件，先file一下呗。</p>
+<p><img src="https://i.imgur.com/faBblRd.png" alt=""></p>
+<p>Ubuntu里跑一下先看看是什么。</p>
+<p><img src="https://i.imgur.com/IpANCeG.png" alt=""></p>
+<p>一串16进制数0x4b404c4b5648725b445845734c735949405c414d5949725c45495a51，嗯先转个字符串看看有什么。</p>
+<p><img src="https://i.imgur.com/WP6Xe74.png" alt=""></p>
+<p>K@LKVHr[DXEsLsYI@\AMYIr\EIZQ这一串东西看不懂，卡了很久开一下脑洞。</p>
+<p>因为知道异或是可逆的操作先把前几个字符和flag分别异或一下看看有什么。</p>
+<p><img src="https://i.imgur.com/LAbbBby.png" alt=""></p>
+<p>发现奇数位异或出45，偶数位异或出44。OK我们把16进制串按奇偶位分别异或45和44。</p>
+<pre><code>s=&apos;K@LKVHr[DXEsLsYI@\\AMYIr\\EIZQ&apos;
+flag=&quot;&quot;
+for i in range(len(s)):
+    if i%2==0:
+        flag+=chr(ord(s[i])^45)
+    else:
+        flag+=chr(ord(s[i])^44)
+print flag`
+</code></pre><p>flag{d_with_a_template_phew}</p>
+<p>感觉这应该是道杂项，哎其他的题目都不怎么会了，再次膜所有的pwn大佬，继续朝着目标进发。</p>
+<p>by Covteam-Sma11_Tim3</p>
+<p>生活不易，多才多艺。</p>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/逆向入门基础汇编语言/">
-            
-                <span>逆向入门基础汇编语言</span>
-        </a>
-        <div class="abstract-content">
-            <p>入了二进制的坑，真的是又爱又恨，入门难，进阶难，精通难。—–TM什么都难。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/RSA/">
-            
-                <span>RSA</span>
-        </a>
-        <div class="abstract-content">
-            <p>打了蛮多场CTF，每次密码学都有逃不过的RSA，是时候来总结一波了，就决定是你啦RSA。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/Pwn入门笔记/">
-            
-                <span>Pwn入门笔记</span>
-        </a>
-        <div class="abstract-content">
-            <p>嗯，不知不觉还是来到了这里，开始了Pwn的入门，就当做笔记用吧。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Pwn">Pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/hello-Covteam/">
-            
-                <span>hello-Covteam</span>
-        </a>
-        <div class="abstract-content">
-            <p>Welcome to Covteam。</p>
-<p>This is an introduction by covteam-sma11_tim3<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Covteam">Covteam</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/80x86汇编知识基础/">
-            
-                <span>80x86汇编知识基础</span>
-        </a>
-        <div class="abstract-content">
-            <p>本文的内容来自于黑客免杀攻防附录A<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/Pwntools使用简介/">
-            
-                <span>Pwntools使用简介</span>
-        </a>
-        <div class="abstract-content">
-            <p>本文转载自<br><a href="https://blog.csdn.net/qq_29343201/article/details/51337025" target="_blank" rel="noopener">https://blog.csdn.net/qq_29343201/article/details/51337025</a><br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Pwn">Pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/binwalk-for-windows/">
-            
-                <span>binwalk for windows</span>
-        </a>
-        <div class="abstract-content">
-            <p>本文转载至：<a href="http://www.cnblogs.com/pcat/p/5256288.html" target="_blank" rel="noopener">http://www.cnblogs.com/pcat/p/5256288.html</a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="日常小工具">日常小工具</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2018/10/28/逆向入门基础汇编语言/" title="逆向入门基础汇编语言">
+                    <div class="prevTitle">逆向入门基础汇编语言</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -686,6 +582,24 @@ More...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#签到题"><span class="toc-number">1.</span> <span class="toc-text">签到题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Clip"><span class="toc-number">2.</span> <span class="toc-text">Clip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#minified"><span class="toc-number">3.</span> <span class="toc-text">minified</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#beijing"><span class="toc-number">4.</span> <span class="toc-text">beijing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#advanced"><span class="toc-number">5.</span> <span class="toc-text">advanced</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -951,6 +865,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

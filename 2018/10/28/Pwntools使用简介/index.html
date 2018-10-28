@@ -22,7 +22,7 @@
     <meta name="description" content="Not a product, no need to explain">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Sma11_Tim3&#39;s Studio</title>
+    <title>Pwntools使用简介 · Sma11_Tim3&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Sma11_Tim3&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Pwntools使用简介</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Sma11_Tim3's Studio.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Pwntools使用简介
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Pwn">Pwn</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/10/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,270 +399,114 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/网鼎杯第一场/">
-            
-                <span>网鼎杯第一场</span>
-        </a>
-        <div class="abstract-content">
-            <p>一顿操作猛如虎，结果题目没解出。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="CTF">CTF</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>本文转载自<br><a href="https://blog.csdn.net/qq_29343201/article/details/51337025" target="_blank" rel="noopener">https://blog.csdn.net/qq_29343201/article/details/51337025</a><br><a id="more"></a></p>
+<h1 id="0x01-pwntools"><a href="#0x01-pwntools" class="headerlink" title="0x01 pwntools?"></a>0x01 pwntools?</h1><p>pwntools是一个ctf框架和漏洞利用开发库，用Python开发，由rapid设计，旨在让使用者简单快速的编写exploit。</p>
+<p>pwntools下载：<a href="https://pwntools.com/" target="_blank" rel="noopener">https://pwntools.com/</a></p>
+<p>文档在线:<a href="http://pwntools.readthedocs.io/en/latest/" target="_blank" rel="noopener">http://pwntools.readthedocs.io/en/latest/</a></p>
+<p>目前pwntools支持python2，如果需要python3，也有一个python3-pwntools。<br>安装方法其实最简单的是使用PYPI，如下：</p>
+<pre><code>sudo pip install pwntools
+</code></pre><h1 id="0x02-使用简介"><a href="#0x02-使用简介" class="headerlink" title="0x02 使用简介"></a>0x02 使用简介</h1><h2 id="大致框架"><a href="#大致框架" class="headerlink" title="大致框架"></a>大致框架</h2><p>官网的一个简单样例</p>
+<pre><code>from pwn import *
+context(arch = &apos;i386&apos;, os = &apos;linux&apos;)
+
+r = remote(&apos;exploitme.example.com&apos;, 31337)
+# EXPLOIT CODE GOES HERE
+r.send(asm(shellcraft.sh()))
+r.interactive()
+</code></pre><p>基本上仿造这个格式就可以写exp了。</p>
+<pre><code>from pwn import *
+</code></pre><p>用来导入pwntools模块</p>
+<pre><code>context(arch = &apos;i386&apos;, os = &apos;linux&apos;)
+</code></pre><p>设置目标机的信息</p>
+<pre><code>r = remote(&apos;exploitme.example.com&apos;, 31337)
+</code></pre><p>用来建立一个远程连接，url或者ip作为地址，然后指明端口</p>
+<p>这里也可以仅仅使用本地文件,调试时方便:</p>
+<pre><code>r = process(&quot;./test&quot;)
+</code></pre><p>test即为文件名,这使得改变远程和本地十分方便.</p>
+<pre><code>asm(shellcraft.sh())
+</code></pre><p>asm()函数接收一个字符串作为参数，得到汇编码的机器代码。<br>比如</p>
+<pre><code>&gt;&gt;&gt; asm(&apos;mov eax, 0&apos;)
+&apos;\xb8\x00\x00\x00\x00&apos;
+</code></pre><p>shellcraft模块是shellcode的模块，包含一些生成shellcode的函数。</p>
+<p>其中的子模块声明架构，比如shellcraft.arm 是ARM架构的，shellcraft.amd64是AMD64架构，shellcraft.i386是Intel 80386架构的，以及有一个shellcraft.common是所有架构通用的。</p>
+<p>而这里的shellcraft.sh()则是执行/bin/sh的shellcode了</p>
+<p>r.send()将shellcode发送到远程连接</p>
+<p>最后，</p>
+<pre><code>r.interactive()
+</code></pre><p>将控制权交给用户，这样就可以使用打开的shell了</p>
+<h2 id="Context设置"><a href="#Context设置" class="headerlink" title="Context设置"></a>Context设置</h2><p>context是pwntools用来设置环境的功能。在很多时候，由于二进制文件的情况不同，我们可能需要进行一些环境设置才能够正常运行exp，比如有一些需要进行汇编，但是32的汇编和64的汇编不同，如果不设置context会导致一些问题。</p>
+<p>一般来说我们设置context只需要简单的一句话:</p>
+<pre><code>context(os=&apos;linux&apos;, arch=&apos;amd64&apos;, log_level=&apos;debug&apos;)
+</code></pre><p>这句话的意思是： </p>
+<ol>
+<li>os设置系统为linux系统，在完成ctf题目的时候，大多数pwn题目的系统都是linux </li>
+<li></li>
+<li>arch设置架构为amd64，可以简单的认为设置为64位的模式，对应的32位模式是’i386’ </li>
+<li></li>
+<li>log_level设置日志输出的等级为debug，这句话在调试的时候一般会设置，这样pwntools会将完整的io过程都打印下来，使得调试更加方便，可以避免在完成CTF题目时出现一些和IO相关的错误。</li>
+</ol>
+<h2 id="数据打包"><a href="#数据打包" class="headerlink" title="数据打包"></a>数据打包</h2><p>数据打包,即将整数值转换为32位或者64位地址一样的表示方式,比如0x400010表示为\x10\x00\x40一样,这使得我们构造payload变得很方便</p>
+<p>用法:</p>
+<ul>
+<li>p32/p64:打包一个整数,分别打包为32或64位</li>
+<li>u32/u64:解包一个字符串,得到整数</li>
+</ul>
+<p>p对应pack,打包,u对应unpack,解包,简单好记</p>
+<pre><code>payload = p32(0xdeadbeef) # pack 32 bits number
+</code></pre><p>数据输出<br>如果需要输出一些信息,最好使用pwntools自带的,因为和pwntools本来的格式吻合,看起来也比较舒服,用法:</p>
+<p>some_str = “hello, world”<br>log.info(some_str)<br>1<br>2<br>其中的info代表是log等级，也可以使用其他log等级。</p>
+<p>Cyclic Pattern<br>Cyclic pattern是一个很强大的功能，大概意思就是，使用pwntools生成一个pattern，pattern就是指一个字符串，可以通过其中的一部分数据去定位到他在一个字符串中的位置。</p>
+<p>在我们完成栈溢出题目的时候，使用pattern可以大大的减少计算溢出点的时间。<br>用法：</p>
+<pre><code>cyclic(0x100) # 生成一个0x100大小的pattern，即一个特殊的字符串
+cyclic_find(0x61616161) # 找到该数据在pattern中的位置
+cyclic_find(&apos;aaaa&apos;) # 查找位置也可以使用字符串去定位
+</code></pre><p>比如，我们在栈溢出的时候，首先构造cyclic(0x100)，或者更长长度的pattern，进行输入，输入后pc的值变味了0x61616161，那么我们通过cyclic_find(0x61616161)就可以得到从哪一个字节开始会控制PC寄存器了，避免了很多没必要的计算。</p>
+<h2 id="汇编与shellcode"><a href="#汇编与shellcode" class="headerlink" title="汇编与shellcode"></a>汇编与shellcode</h2><p>有的时候我们需要在写exp的时候用到简单的shellcode，pwntools提供了对简单的shellcode的支持。<br>首先，常用的，也是最简单的shellcode，即调用/bin/sh可以通过shellcraft得到：</p>
+<p>注意，由于各个平台，特别是32位和64位的shellcode不一样，所以最好先设置context。</p>
+<pre><code>print(shellcraft.sh()) # 打印出shellcode
+</code></pre><p>不过，现在我们看到的shellcode还是汇编代码，不是能用的机器码，所以还需要进行一次汇编</p>
+<pre><code>print(asm(shellcraft.sh())) # 打印出汇编后的shellcode
+</code></pre><p>asm可以对汇编代码进行汇编，不过pwntools目前的asm实现还有一些缺陷，比如不能支持相对跳转等等，只可以进行简单的汇编操作。如果需要更复杂一些的汇编功能，可以使用keystone-engine项目，这里就不再赘述了。</p>
+<p>asm也是架构相关，所以一定要先设置context，避免一些意想不到的错误。</p>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/逆向入门基础汇编语言/">
-            
-                <span>逆向入门基础汇编语言</span>
-        </a>
-        <div class="abstract-content">
-            <p>入了二进制的坑，真的是又爱又恨，入门难，进阶难，精通难。—–TM什么都难。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/RSA/">
-            
-                <span>RSA</span>
-        </a>
-        <div class="abstract-content">
-            <p>打了蛮多场CTF，每次密码学都有逃不过的RSA，是时候来总结一波了，就决定是你啦RSA。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Crypto">Crypto</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/Pwn入门笔记/">
-            
-                <span>Pwn入门笔记</span>
-        </a>
-        <div class="abstract-content">
-            <p>嗯，不知不觉还是来到了这里，开始了Pwn的入门，就当做笔记用吧。<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Pwn">Pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/hello-Covteam/">
-            
-                <span>hello-Covteam</span>
-        </a>
-        <div class="abstract-content">
-            <p>Welcome to Covteam。</p>
-<p>This is an introduction by covteam-sma11_tim3<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Covteam">Covteam</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/80x86汇编知识基础/">
-            
-                <span>80x86汇编知识基础</span>
-        </a>
-        <div class="abstract-content">
-            <p>本文的内容来自于黑客免杀攻防附录A<br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/Pwntools使用简介/">
-            
-                <span>Pwntools使用简介</span>
-        </a>
-        <div class="abstract-content">
-            <p>本文转载自<br><a href="https://blog.csdn.net/qq_29343201/article/details/51337025" target="_blank" rel="noopener">https://blog.csdn.net/qq_29343201/article/details/51337025</a><br>
-        </p></div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Pwn">Pwn</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/binwalk-for-windows/">
-            
-                <span>binwalk for windows</span>
-        </a>
-        <div class="abstract-content">
-            <p>本文转载至：<a href="http://www.cnblogs.com/pcat/p/5256288.html" target="_blank" rel="noopener">http://www.cnblogs.com/pcat/p/5256288.html</a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="日常小工具">日常小工具</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2018/10/28/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2018/10/28/80x86汇编知识基础/" title="80x86汇编知识基础">
+                    <div class="nextTitle">80x86汇编知识基础</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2018/10/28/binwalk-for-windows/" title="binwalk for windows">
+                    <div class="prevTitle">binwalk for windows</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -686,6 +591,24 @@ More...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0x01-pwntools"><span class="toc-number">1.</span> <span class="toc-text">0x01 pwntools?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x02-使用简介"><span class="toc-number">2.</span> <span class="toc-text">0x02 使用简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#大致框架"><span class="toc-number">2.1.</span> <span class="toc-text">大致框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Context设置"><span class="toc-number">2.2.</span> <span class="toc-text">Context设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据打包"><span class="toc-number">2.3.</span> <span class="toc-text">数据打包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#汇编与shellcode"><span class="toc-number">2.4.</span> <span class="toc-text">汇编与shellcode</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -951,6 +874,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
