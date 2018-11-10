@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">743</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">739</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -454,15 +454,8 @@ height:50vh;
 <p>因为知道异或是可逆的操作先把前几个字符和flag分别异或一下看看有什么。</p>
 <p><img src="https://i.imgur.com/LAbbBby.png" alt=""></p>
 <p>发现奇数位异或出45，偶数位异或出44。OK我们把16进制串按奇偶位分别异或45和44。</p>
-<pre><code>s=&apos;K@LKVHr[DXEsLsYI@\\AMYIr\\EIZQ&apos;
-flag=&quot;&quot;
-for i in range(len(s)):
-    if i%2==0:
-        flag+=chr(ord(s[i])^45)
-    else:
-        flag+=chr(ord(s[i])^44)
-print flag`
-</code></pre><p>flag{d_with_a_template_phew}</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">'K@LKVHr[DXEsLsYI@\\AMYIr\\EIZQ'</span></span><br><span class="line">flag=<span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">	<span class="keyword">if</span> i%<span class="number">2</span>==<span class="number">0</span>:</span><br><span class="line">		flag+=chr(ord(s[i])^<span class="number">45</span>)</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		flag+=chr(ord(s[i])^<span class="number">44</span>)</span><br><span class="line"><span class="keyword">print</span> flag`</span><br></pre></td></tr></table></figure>
+<p>flag{d_with_a_template_phew}</p>
 <p>感觉这应该是道杂项，哎其他的题目都不怎么会了，再次膜所有的pwn大佬，继续朝着目标进发。</p>
 <p>by Covteam-Sma11_Tim3</p>
 <p>生活不易，多才多艺。</p>

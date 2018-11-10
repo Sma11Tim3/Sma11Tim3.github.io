@@ -402,11 +402,9 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <p>嗯，不知不觉还是来到了这里，开始了Pwn的入门，就当做笔记用吧。<br><a id="more"></a></p>
-<p>1.查壳<br> 脱壳机       ||        命令行 </p>
-<pre><code>upx -d filename  --linux下
-</code></pre><p>2.查看所使用的防护技术<br>接下来，我们可以用checksec脚本来查询该文件使用了哪些防护技术。</p>
-<pre><code>checksec --file file
-</code></pre><p>操作系统提供了许多安全机制来尝试降低或阻止缓冲区溢出攻击带来的安全风险，包括DEP、ASLR等。在编写漏洞利用代码的时候，需要特别注意目标进程是否开启了DEP（Linux下对应NX）、ASLR（Linux下对应PIE）等机制，例如存在DEP（NX）的话就不能直接执行栈上的数据，存在ASLR的话各个系统调用的地址就是随机化的。checksec脚本可以在这里下载。</p>
+<p>1.查壳<br> 脱壳机       ||        命令行<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">upx -d filename  --linux下</span><br></pre></td></tr></table></figure></p>
+<p>2.查看所使用的防护技术<br>接下来，我们可以用checksec脚本来查询该文件使用了哪些防护技术。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">checksec --file file</span><br></pre></td></tr></table></figure></p>
+<p>操作系统提供了许多安全机制来尝试降低或阻止缓冲区溢出攻击带来的安全风险，包括DEP、ASLR等。在编写漏洞利用代码的时候，需要特别注意目标进程是否开启了DEP（Linux下对应NX）、ASLR（Linux下对应PIE）等机制，例如存在DEP（NX）的话就不能直接执行栈上的数据，存在ASLR的话各个系统调用的地址就是随机化的。checksec脚本可以在这里下载。</p>
 <p>Checksec：<a href="http://www.trapkit.de/tools/checksec.sh" target="_blank" rel="noopener">http://www.trapkit.de/tools/checksec.sh</a></p>
 <p>Tubes读写接口：<br>对于一次攻击而言前提就是与目标服务器或者程序进行交互，这里就可以用remote(address,port)产生一个远程的socket然后就可以读写了。</p>
 <blockquote>
@@ -441,44 +439,12 @@ height:50vh;
 - recvrepeat(timeout=default)： 持续接收知道EOF或者timeout 
 - send(data) ：发送数据 
 - sendline(data) : 发送一行数据，相当于在数据末尾加\n
-</code></pre><p>下面是一些可用的函数：</p>
-<pre><code>asm(address, assembly) : 在指定地址进行汇编
-bss(offset) : 返回bss段的位置，offset是偏移值
-checksec() : 对elf进行一些安全保护检查，例如NX, PIE等。
-disasm(address, n_bytes) : 在指定位置进行n_bytes个字节的反汇编
-offset_to_vaddr(offset) : 将文件中的偏移offset转换成虚拟地址VMA
-vaddr_to_offset(address) : 与上面的函数作用相反
-read(address, count) : 在address(VMA)位置读取count个字节
-write(address, data) : 在address(VMA)位置写入data
-section(name) : dump出指定section的数据
-</code></pre><p>ROP链生成器：<br>先简单回顾一下==ROP的原理==，由于NX开启不能在栈上执行shellcode，我们可以在栈上布置一系列的返回地址与参数，这样可以进行多次的函数调用，通过函数尾部的ret语句控制程序的流程，而用程序中的一些pop/ret的代码块(称之为gadget)来平衡堆栈。其完成的事情无非就是放上/bin/sh，覆盖程序中某个函数的GOT为system的，然后ret到那个函数的plt就可以触发system(‘/bin/sh’)。由于是利用ret指令的exploit，所以叫Return-Oriented Programming。（如果没有开启ASLR，可以直接使用ret2libc技术）<br>好，这样来看，这种技术的难点自然就是如何在栈上布置返回地址以及函数参数了。而ROP模块的作用，就是自动地寻找程序里的gadget，自动在栈上部署对应的参数。</p>
-<p>常用函数：</p>
-<pre><code>re = remote(&apos;ftp.debian.org&apos;,21)  //远程连接
-p = process(&apos;/bin/sh&apos;) //本地调试
-send(data) : 发送数据
-sendline(data) : 发送一行数据，相当于在末尾加\n 
-recvline() ：接受一行数据 
-recvuntil((delims,drop=False)：一直读到delims的pattern出现为止
-recv(numb=4096, timeout=default) : 给出接收字节数,timeout指定超时 
+</code></pre><p>下面是一些可用的函数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">asm(address, assembly) : 在指定地址进行汇编</span><br><span class="line">bss(offset) : 返回bss段的位置，offset是偏移值</span><br><span class="line">checksec() : 对elf进行一些安全保护检查，例如NX, PIE等。</span><br><span class="line">disasm(address, n_bytes) : 在指定位置进行n_bytes个字节的反汇编</span><br><span class="line">offset_to_vaddr(offset) : 将文件中的偏移offset转换成虚拟地址VMA</span><br><span class="line">vaddr_to_offset(address) : 与上面的函数作用相反</span><br><span class="line">read(address, count) : 在address(VMA)位置读取count个字节</span><br><span class="line">write(address, data) : 在address(VMA)位置写入data</span><br><span class="line">section(name) : dump出指定section的数据</span><br></pre></td></tr></table></figure></p>
+<p>ROP链生成器：<br>先简单回顾一下==ROP的原理==，由于NX开启不能在栈上执行shellcode，我们可以在栈上布置一系列的返回地址与参数，这样可以进行多次的函数调用，通过函数尾部的ret语句控制程序的流程，而用程序中的一些pop/ret的代码块(称之为gadget)来平衡堆栈。其完成的事情无非就是放上/bin/sh，覆盖程序中某个函数的GOT为system的，然后ret到那个函数的plt就可以触发system(‘/bin/sh’)。由于是利用ret指令的exploit，所以叫Return-Oriented Programming。（如果没有开启ASLR，可以直接使用ret2libc技术）<br>好，这样来看，这种技术的难点自然就是如何在栈上布置返回地址以及函数参数了。而ROP模块的作用，就是自动地寻找程序里的gadget，自动在栈上部署对应的参数。</p>
+<p>常用函数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">re = remote(<span class="string">'ftp.debian.org'</span>,<span class="number">21</span>)  //远程连接</span><br><span class="line">p = process(<span class="string">'/bin/sh'</span>) //本地调试</span><br><span class="line">send(data) : 发送数据</span><br><span class="line">sendline(data) : 发送一行数据，相当于在末尾加\n </span><br><span class="line">recvline() ：接受一行数据 </span><br><span class="line">recvuntil((delims,drop=<span class="keyword">False</span>)：一直读到delims的pattern出现为止</span><br><span class="line">recv(numb=<span class="number">4096</span>, timeout=default) : 给出接收字节数,timeout指定超时 </span><br><span class="line"></span><br><span class="line">send(data) ：发送数据 </span><br><span class="line">sendline(data) : 发送一行数据，相当于在数据末尾加\n</span><br><span class="line">interactive() ： 直接进行交互，相当于回到shell的模式，在取得shell之后使用</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">elf = ELF(<span class="string">'./level2'</span>)</span><br><span class="line">sys_add = elf.symbols[<span class="string">"system"</span>]</span><br><span class="line">bin_add = elf.search(<span class="string">"/bin/sh"</span>).next()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">gdb filename  --使用gdb开始调试</span><br><span class="line">gdb中   disassemble  function_name  (反汇编某个函数)</span><br><span class="line">pattern_create  num  是生成一个字符串模板输入后根据EIP来确定覆盖<span class="keyword">return</span> addr的长度。</span><br><span class="line">pattern_offset    address  查询偏移量</span><br></pre></td></tr></table></figure></p>
+<p>对于整数的pack与数据的unpack，可以使用p32,p64,u32,u64这些函数，分别对应着32位和64位的整数。（主要是对整数进行打包，就是转换成二进制的形式，比如转换成地址。p32、p64是打包，u32、u64是解包。）</p>
+<p>ROPgadget命令：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ROPgadget--binary level2_x64 --only <span class="string">"pop|ret"</span>|grep rdi</span><br></pre></td></tr></table></figure></p>
 
-send(data) ：发送数据 
-sendline(data) : 发送一行数据，相当于在数据末尾加\n
-interactive() ： 直接进行交互，相当于回到shell的模式，在取得shell之后使用
-
-
-elf = ELF(&apos;./level2&apos;)
-sys_add = elf.symbols[&quot;system&quot;]
-bin_add = elf.search(&quot;/bin/sh&quot;).next()
-
-
-gdb filename  --使用gdb开始调试
-gdb中   disassemble  function_name  (反汇编某个函数)
-pattern_create  num  是生成一个字符串模板输入后根据EIP来确定覆盖return addr的长度。
-pattern_offset    address  查询偏移量
-</code></pre><p>对于整数的pack与数据的unpack，可以使用p32,p64,u32,u64这些函数，分别对应着32位和64位的整数。（主要是对整数进行打包，就是转换成二进制的形式，比如转换成地址。p32、p64是打包，u32、u64是解包。）</p>
-<p>ROPgadget命令：</p>
-<pre><code>ROPgadget--binary level2_x64 --only &quot;pop|ret&quot;|grep rdi 
-</code></pre>
     </article>
     <!-- license  -->
     
