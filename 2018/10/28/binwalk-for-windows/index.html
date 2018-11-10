@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">959</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">946</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -416,49 +416,17 @@ height:50vh;
 <p>—————————————————————————————-。 </p>
 <p>新建一个文件夹，并把文件夹的路径加入到系统变量path里（这样在cmd里就可以直接运行了。）</p>
 <p>在文件夹里新建一个binwalk.bat文件</p>
-<pre><code>@echo off
-echo * suggest: you&apos;d better to input the parameters enclosed in double quotes.
-echo * made by pcat
-python &quot;%~dp0\p_binwalk.py&quot; %1 %2 %3 %4 %5 %6 %7 %8 %9
-</code></pre><p>再新建一个p_binwalk.py文件（这里写得很简单，以后能力增长的时候可能会改写）</p>
-<pre><code># -*- coding:utf-8 -*-
-# author: pcat
-# http://pcat.cnblogs.com
-
-import sys
-import binwalk
-
-if __name__ == &quot;__main__&quot;:
-    lst=sys.argv
-    if len(lst)&lt;2:
-        print(&quot;No files.&quot;)
-        exit()
-    try:
-        if lst[1][0]==&apos;-&apos;:
-            binwalk.scan(*lst[2:],signature=lst[1])
-        elif lst[1][0]!=&apos;-&apos;:
-            binwalk.scan(*lst[1:],signature=True)
-    except:
-        pass
-</code></pre><p>只要这个文件夹的路径在系统变量path里和这2个文件存在着，那么你就可以在cmd里像linux那样使用binwalk了。<br>:)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">echo * suggest: you&apos;d better to input the parameters enclosed in double quotes.</span><br><span class="line">echo * made by pcat</span><br><span class="line">python &quot;%~dp0\p_binwalk.py&quot; %1 %2 %3 %4 %5 %6 %7 %8 %9</span><br><span class="line"></span><br><span class="line">再新建一个p_binwalk.py文件（这里写得很简单，以后能力增长的时候可能会改写）</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"><span class="comment"># author: pcat</span></span><br><span class="line"><span class="comment"># http://pcat.cnblogs.com</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> binwalk</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">	lst=sys.argv</span><br><span class="line">	<span class="keyword">if</span> len(lst)&lt;<span class="number">2</span>:</span><br><span class="line">	    print(<span class="string">"No files."</span>)</span><br><span class="line">	    exit()</span><br><span class="line">	<span class="keyword">try</span>:</span><br><span class="line">	    <span class="keyword">if</span> lst[<span class="number">1</span>][<span class="number">0</span>]==<span class="string">'-'</span>:</span><br><span class="line">	        binwalk.scan(*lst[<span class="number">2</span>:],signature=lst[<span class="number">1</span>])</span><br><span class="line">	    <span class="keyword">elif</span> lst[<span class="number">1</span>][<span class="number">0</span>]!=<span class="string">'-'</span>:</span><br><span class="line">	        binwalk.scan(*lst[<span class="number">1</span>:],signature=<span class="keyword">True</span>)</span><br><span class="line">	<span class="keyword">except</span>:</span><br><span class="line">	    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>只要这个文件夹的路径在系统变量path里和这2个文件存在着，那么你就可以在cmd里像linux那样使用binwalk了。<br>:)</p>
 <h2 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h2><ul>
 <li>另一种单文件的写法</li>
 </ul>
 <p>模仿我自己的另一篇文 uncompyle2 windows安装和使用方法</p>
 <p>新建一个文件夹，并把文件夹的路径加入到系统变量path里（这样在cmd里就可以直接运行了。）</p>
 <p>在文件夹里新建一个binwalk.bat 文件(事实上随你喜欢，取什么名字都可以)</p>
-<pre><code>:: author: pcat@chamd5.org
-:: http://pcat.cnblogs.com
-@echo off
-echo * suggest: you&apos;d better to input the parameters enclosed in double quotes.
-echo * made by pcat
-echo * ***********************************************************************
-if defined python_home (
-    python &quot;%python_home%\Scripts\binwalk&quot; %1 %2 %3 %4 %5 %6 %7 %8 %9
-)else (
-    echo &quot;you need to set PYTHON_HOME&quot;
-)
-</code></pre><p>（其中得先设置好PYTHON_HOME这种系统变量，如果你的python2.7是默认安装的，一般这个PYTHON_HOME就设置C:\Python27 ）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">:: author: pcat@chamd5.org</span><br><span class="line">:: http://pcat.cnblogs.com</span><br><span class="line">@echo off</span><br><span class="line">echo * suggest: you&apos;d better to input the parameters enclosed in double quotes.</span><br><span class="line">echo * made by pcat</span><br><span class="line">echo * ***********************************************************************</span><br><span class="line">if defined python_home (</span><br><span class="line">    python &quot;%python_home%\Scripts\binwalk&quot; %1 %2 %3 %4 %5 %6 %7 %8 %9</span><br><span class="line">)else (</span><br><span class="line">    echo &quot;you need to set PYTHON_HOME&quot;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>（其中得先设置好PYTHON_HOME这种系统变量，如果你的python2.7是默认安装的，一般这个PYTHON_HOME就设置C:\Python27 ）</p>
 <p>只要这个文件夹的路径在系统变量path里和这个bat文件存在着，那么你就可以在cmd里像linux那样使用binwalk了。</p>
 <h2 id="binwalk常用命令"><a href="#binwalk常用命令" class="headerlink" title="binwalk常用命令"></a>binwalk常用命令</h2><p>binwalk常用命令</p>
 <p>-e 分解出压缩包</p>
