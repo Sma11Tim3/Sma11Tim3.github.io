@@ -22,7 +22,7 @@
     <meta name="description" content="Not a product, no need to explain">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Pwntools使用简介 · Sma11_Tim3&#39;s Studio</title>
+    <title>Sma11_Tim3&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,8 +77,6 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -203,23 +201,14 @@
 </head>
 
     
-        <body class="post-body">
+        <body class="home-body">
     
     
-<header class="header">
+<header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">Sma11_Tim3&#39;s Studio.</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">Pwntools使用简介</a>
-            </div>
-    </div>
     
     <a class="home-link" href="/">Sma11_Tim3's Studio.</a>
 </header>
@@ -238,17 +227,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 404页  -->
+    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Pwntools使用简介
-            <!-- 404 -->
+            Sma11_Tim3's Studio.
+            <!-- 文章页  -->
             
         </h1>
         <!-- 副标题 -->
@@ -256,49 +245,12 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-            <!-- 404 -->
+                Know it & Make it
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Pwn">Pwn</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/10/28</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -399,94 +351,146 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <p>本文转载自<br><a href="https://blog.csdn.net/qq_29343201/article/details/51337025" target="_blank" rel="noopener">https://blog.csdn.net/qq_29343201/article/details/51337025</a><br><a id="more"></a></p>
-<h1 id="0x01-pwntools"><a href="#0x01-pwntools" class="headerlink" title="0x01 pwntools?"></a>0x01 pwntools?</h1><p>pwntools是一个ctf框架和漏洞利用开发库，用Python开发，由rapid设计，旨在让使用者简单快速的编写exploit。</p>
-<p>pwntools下载：<a href="https://pwntools.com/" target="_blank" rel="noopener">https://pwntools.com/</a></p>
-<p>文档在线:<a href="http://pwntools.readthedocs.io/en/latest/" target="_blank" rel="noopener">http://pwntools.readthedocs.io/en/latest/</a></p>
-<p>目前pwntools支持python2，如果需要python3，也有一个python3-pwntools。<br>安装方法其实最简单的是使用PYPI，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install pwntools</span><br></pre></td></tr></table></figure></p>
-<h1 id="0x02-使用简介"><a href="#0x02-使用简介" class="headerlink" title="0x02 使用简介"></a>0x02 使用简介</h1><h2 id="大致框架"><a href="#大致框架" class="headerlink" title="大致框架"></a>大致框架</h2><p>官网的一个简单样例<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">context(arch = <span class="string">'i386'</span>, os = <span class="string">'linux'</span>)</span><br><span class="line"></span><br><span class="line">r = remote(<span class="string">'exploitme.example.com'</span>, <span class="number">31337</span>)</span><br><span class="line"><span class="comment"># EXPLOIT CODE GOES HERE</span></span><br><span class="line">r.send(asm(shellcraft.sh()))</span><br><span class="line">r.interactive()</span><br></pre></td></tr></table></figure></p>
-<p>基本上仿造这个格式就可以写exp了。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br></pre></td></tr></table></figure></p>
-<p>用来导入pwntools模块<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context(arch = <span class="string">'i386'</span>, os = <span class="string">'linux'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>设置目标机的信息<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = remote(<span class="string">'exploitme.example.com'</span>, <span class="number">31337</span>)</span><br></pre></td></tr></table></figure></p>
-<p>用来建立一个远程连接，url或者ip作为地址，然后指明端口</p>
-<p>这里也可以仅仅使用本地文件,调试时方便:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r = process(<span class="string">"./test"</span>)</span><br></pre></td></tr></table></figure></p>
-<p>test即为文件名,这使得改变远程和本地十分方便.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">asm(shellcraft.sh())</span><br></pre></td></tr></table></figure></p>
-<p>asm()函数接收一个字符串作为参数，得到汇编码的机器代码。<br>比如<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>asm(<span class="string">'mov eax, 0'</span>)</span><br><span class="line"><span class="string">'\xb8\x00\x00\x00\x00'</span></span><br></pre></td></tr></table></figure></p>
-<p>shellcraft模块是shellcode的模块，包含一些生成shellcode的函数。</p>
-<p>其中的子模块声明架构，比如shellcraft.arm 是ARM架构的，shellcraft.amd64是AMD64架构，shellcraft.i386是Intel 80386架构的，以及有一个shellcraft.common是所有架构通用的。</p>
-<p>而这里的shellcraft.sh()则是执行/bin/sh的shellcode了</p>
-<p>r.send()将shellcode发送到远程连接</p>
-<p>最后，</p>
-<pre><code>r.interactive()
-</code></pre><p>将控制权交给用户，这样就可以使用打开的shell了</p>
-<h2 id="Context设置"><a href="#Context设置" class="headerlink" title="Context设置"></a>Context设置</h2><p>context是pwntools用来设置环境的功能。在很多时候，由于二进制文件的情况不同，我们可能需要进行一些环境设置才能够正常运行exp，比如有一些需要进行汇编，但是32的汇编和64的汇编不同，如果不设置context会导致一些问题。</p>
-<p>一般来说我们设置context只需要简单的一句话:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context(os=&apos;linux&apos;, arch=&apos;amd64&apos;, log_level=&apos;debug&apos;)</span><br></pre></td></tr></table></figure></p>
-<p>这句话的意思是： </p>
-<ol>
-<li>os设置系统为linux系统，在完成ctf题目的时候，大多数pwn题目的系统都是linux </li>
-<li></li>
-<li>arch设置架构为amd64，可以简单的认为设置为64位的模式，对应的32位模式是’i386’ </li>
-<li></li>
-<li>log_level设置日志输出的等级为debug，这句话在调试的时候一般会设置，这样pwntools会将完整的io过程都打印下来，使得调试更加方便，可以避免在完成CTF题目时出现一些和IO相关的错误。</li>
-</ol>
-<h2 id="数据打包"><a href="#数据打包" class="headerlink" title="数据打包"></a>数据打包</h2><p>数据打包,即将整数值转换为32位或者64位地址一样的表示方式,比如0x400010表示为\x10\x00\x40一样,这使得我们构造payload变得很方便</p>
-<p>用法:</p>
-<ul>
-<li>p32/p64:打包一个整数,分别打包为32或64位</li>
-<li>u32/u64:解包一个字符串,得到整数</li>
-</ul>
-<p>p对应pack,打包,u对应unpack,解包,简单好记<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload = p32(0xdeadbeef) # pack 32 bits number</span><br></pre></td></tr></table></figure></p>
-<p>数据输出<br>如果需要输出一些信息,最好使用pwntools自带的,因为和pwntools本来的格式吻合,看起来也比较舒服,用法:</p>
-<p>some_str = “hello, world”<br>log.info(some_str)<br>1<br>2<br>其中的info代表是log等级，也可以使用其他log等级。</p>
-<p>Cyclic Pattern<br>Cyclic pattern是一个很强大的功能，大概意思就是，使用pwntools生成一个pattern，pattern就是指一个字符串，可以通过其中的一部分数据去定位到他在一个字符串中的位置。</p>
-<p>在我们完成栈溢出题目的时候，使用pattern可以大大的减少计算溢出点的时间。<br>用法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cyclic(0x100) # 生成一个0x100大小的pattern，即一个特殊的字符串</span><br><span class="line">cyclic_find(0x61616161) # 找到该数据在pattern中的位置</span><br><span class="line">cyclic_find(&apos;aaaa&apos;) # 查找位置也可以使用字符串去定位</span><br></pre></td></tr></table></figure></p>
-<p>比如，我们在栈溢出的时候，首先构造cyclic(0x100)，或者更长长度的pattern，进行输入，输入后pc的值变味了0x61616161，那么我们通过cyclic_find(0x61616161)就可以得到从哪一个字节开始会控制PC寄存器了，避免了很多没必要的计算。</p>
-<h2 id="汇编与shellcode"><a href="#汇编与shellcode" class="headerlink" title="汇编与shellcode"></a>汇编与shellcode</h2><p>有的时候我们需要在写exp的时候用到简单的shellcode，pwntools提供了对简单的shellcode的支持。<br>首先，常用的，也是最简单的shellcode，即调用/bin/sh可以通过shellcraft得到：</p>
-<p>注意，由于各个平台，特别是32位和64位的shellcode不一样，所以最好先设置context。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(shellcraft.sh()) <span class="comment"># 打印出shellcode</span></span><br></pre></td></tr></table></figure></p>
-<p>不过，现在我们看到的shellcode还是汇编代码，不是能用的机器码，所以还需要进行一次汇编<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(asm(shellcraft.sh())) <span class="comment"># 打印出汇编后的shellcode</span></span><br></pre></td></tr></table></figure></p>
-<p>asm可以对汇编代码进行汇编，不过pwntools目前的asm实现还有一些缺陷，比如不能支持相对跳转等等，只可以进行简单的汇编操作。如果需要更复杂一些的汇编功能，可以使用keystone-engine项目，这里就不再赘述了。</p>
-<p>asm也是架构相关，所以一定要先设置context，避免一些意想不到的错误。</p>
-
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2018/10/28/binwalk-for-windows/">
+            
+                <span>binwalk for windows</span>
+        </a>
+        <div class="abstract-content">
+            <p>本文转载至：<a href="http://www.cnblogs.com/pcat/p/5256288.html" target="_blank" rel="noopener">http://www.cnblogs.com/pcat/p/5256288.html</a></p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="日常小工具">日常小工具</a>
+    
+</div>
+            
+        </div>
     </article>
-    <!-- license  -->
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2018/10/28/80x86汇编知识基础/" title="80x86汇编知识基础">
-                    <div class="nextTitle">80x86汇编知识基础</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/10/28/hello-world/" title="Hello World">
-                    <div class="prevTitle">Hello World</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
     
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src="/avatar/touxiang.jpg">
+    <div class="profile-name">Sma11_Tim3</div>
+    
+    <div class="profile-signature">
+        Not a product, no need to explain
+    </div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+            
+                <a href="mailto:825703058@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//https://github.com/Sma11Tim3" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    
+        <div class="friends">
+            <div>FRIENDS</div>
+            
+                
+                    <span>
+                        <a href="//naivete.cc" target="_black">friendA</a>
+                    </span>
+                
+            
+                
+                    <span>
+                        <a href="//www.google.com" target="_black">friendB</a>
+                    </span>
+                
+            
+                
+                    <span>
+                        <a href="//www.baidu.com" target="_black">friendC</a>
+                    </span>
+                
+            
+        </div>
+    
+    
+        <div class="about-me">
+            <a href="/about">ABOUT ME</a>
+        </div>
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">
@@ -569,24 +573,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0x01-pwntools"><span class="toc-number">1.</span> <span class="toc-text">0x01 pwntools?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#0x02-使用简介"><span class="toc-number">2.</span> <span class="toc-text">0x02 使用简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#大致框架"><span class="toc-number">2.1.</span> <span class="toc-text">大致框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Context设置"><span class="toc-number">2.2.</span> <span class="toc-text">Context设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据打包"><span class="toc-number">2.3.</span> <span class="toc-text">数据打包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#汇编与shellcode"><span class="toc-number">2.4.</span> <span class="toc-text">汇编与shellcode</span></a></li></ol></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -876,8 +862,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
