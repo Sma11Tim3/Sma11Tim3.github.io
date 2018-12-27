@@ -401,17 +401,13 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>本文转载至<a href="https://www.jianshu.com/p/8a89b1418bbd" target="_blank" rel="noopener">https://www.jianshu.com/p/8a89b1418bbd</a><br>舒哥哥牛逼，我就直接简化版了，需要学习具体操作的小伙伴自行去看舒哥哥的简书吧。</p>
+        <p>本文转载至<a href="https://www.jianshu.com/p/8a89b1418bbd" target="_blank" rel="noopener">https://www.jianshu.com/p/8a89b1418bbd</a><br><a id="more"></a><br>舒哥哥牛逼，我就直接简化版了，需要学习具体操作的小伙伴自行去看舒哥哥的简书吧。</p>
 <p>大众版使用方法</p>
-<p><strong>首先复制一下代码</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> courseCode;</span><br><span class="line">  <span class="keyword">var</span> timer;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> autoFill=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> frame = <span class="built_in">document</span>.getElementById(<span class="string">'rightDiv'</span>).getElementsByTagName(<span class="string">'iframe'</span>)[<span class="number">0</span>].contentWindow.document;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!frame || !frame.getElementById(<span class="string">'pjkc'</span>))</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> divJs = frame.getElementById(<span class="string">'divJs'</span>);</span><br><span class="line">    <span class="keyword">var</span> items = divJs.getElementsByTagName(<span class="string">'select'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> newCourseCode = frame.getElementById(<span class="string">'pjkc'</span>).value;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(newCourseCode,courseCode)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (newCourseCode == courseCode) &#123;</span><br><span class="line">      clearInterval(timer);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'评价完成'</span>);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    courseCode = newCourseCode;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; items.length; i++)</span><br><span class="line">      items[i].value = <span class="string">"A"</span></span><br><span class="line">    frame.getElementById(<span class="string">'Button1'</span>).click();</span><br><span class="line">  &#125;</span><br><span class="line">  timer = setInterval(autoFill, <span class="number">2000</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h1 id="首先复制一下代码"><a href="#首先复制一下代码" class="headerlink" title="首先复制一下代码"></a>首先复制一下代码</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> courseCode;</span><br><span class="line">  <span class="keyword">var</span> timer;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> autoFill=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> frame = <span class="built_in">document</span>.getElementById(<span class="string">'rightDiv'</span>).getElementsByTagName(<span class="string">'iframe'</span>)[<span class="number">0</span>].contentWindow.document;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!frame || !frame.getElementById(<span class="string">'pjkc'</span>))</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> divJs = frame.getElementById(<span class="string">'divJs'</span>);</span><br><span class="line">    <span class="keyword">var</span> items = divJs.getElementsByTagName(<span class="string">'select'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> newCourseCode = frame.getElementById(<span class="string">'pjkc'</span>).value;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(newCourseCode,courseCode)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (newCourseCode == courseCode) &#123;</span><br><span class="line">      clearInterval(timer);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'评价完成'</span>);</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    courseCode = newCourseCode;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; items.length; i++)</span><br><span class="line">      items[i].value = <span class="string">"A"</span></span><br><span class="line">    frame.getElementById(<span class="string">'Button1'</span>).click();</span><br><span class="line">  &#125;</span><br><span class="line">  timer = setInterval(autoFill, <span class="number">2000</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 <p>原来的是items[i].value = “1(完全同意)”，今年的改成了ABCD等级，就把值改一下就行了。</p>
-<p><strong>打开教务系统，进入教学评价页面</strong></p>
-<p><img src="https://i.imgur.com/GZHZfdK.png" alt=""></p>
-<p>接着打开控制台，推荐使用Chrome，按F12打开。</p>
-<p><img src="https://i.imgur.com/fioSalN.png" alt=""></p>
-<p>复制粘贴代码，回车搞定!!!</p>
-<p><img src="https://i.imgur.com/Zx8S1JT.png" alt=""></p>
+<h1 id="打开教务系统，进入教学评价页面"><a href="#打开教务系统，进入教学评价页面" class="headerlink" title="打开教务系统，进入教学评价页面"></a>打开教务系统，进入教学评价页面</h1><p><img src="https://i.imgur.com/GZHZfdK.png" alt=""></p>
+<h1 id="接着打开控制台，推荐使用Chrome，按F12打开。"><a href="#接着打开控制台，推荐使用Chrome，按F12打开。" class="headerlink" title="接着打开控制台，推荐使用Chrome，按F12打开。"></a>接着打开控制台，推荐使用Chrome，按F12打开。</h1><p><img src="https://i.imgur.com/fioSalN.png" alt=""></p>
+<h1 id="复制粘贴代码，回车搞定"><a href="#复制粘贴代码，回车搞定" class="headerlink" title="复制粘贴代码，回车搞定!!!"></a>复制粘贴代码，回车搞定!!!</h1><p><img src="https://i.imgur.com/Zx8S1JT.png" alt=""></p>
 <p><img src="https://i.imgur.com/uojEF2t.png" alt=""></p>
 
     </article>
@@ -545,7 +541,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#首先复制一下代码"><span class="toc-number">1.</span> <span class="toc-text">首先复制一下代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打开教务系统，进入教学评价页面"><span class="toc-number">2.</span> <span class="toc-text">打开教务系统，进入教学评价页面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接着打开控制台，推荐使用Chrome，按F12打开。"><span class="toc-number">3.</span> <span class="toc-text">接着打开控制台，推荐使用Chrome，按F12打开。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#复制粘贴代码，回车搞定"><span class="toc-number">4.</span> <span class="toc-text">复制粘贴代码，回车搞定!!!</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -711,27 +707,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/网鼎杯第一场/">网鼎杯第一场</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/hello-Covteam/">hello-Covteam</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwn入门笔记/">Pwn入门笔记</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwntools使用简介/">Pwntools使用简介</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/hello-Covteam/">hello-Covteam</a>
         </li>
     
     
@@ -742,6 +733,11 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/RSA/">RSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwn入门笔记/">Pwn入门笔记</a>
         </li>
     
     
@@ -759,15 +755,15 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="日常小工具"><span class="iconfont-archer">&#xe606;</span>日常小工具</span>
-    
         <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
+    
+        <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
     
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
         <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
     
-        <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
+        <span class="sidebar-tag-name" data-tags="日常小工具"><span class="iconfont-archer">&#xe606;</span>日常小工具</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
