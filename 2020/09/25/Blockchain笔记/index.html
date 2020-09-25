@@ -22,7 +22,7 @@
     <meta name="description" content="Not a product, no need to explain">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hello World · Sma11_Tim3&#39;s Studio</title>
+    <title>Blockchain笔记 · Sma11_Tim3&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">Sma11_Tim3&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">Blockchain笔记</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            Blockchain笔记
             <!-- 404 -->
             
         </h1>
@@ -264,14 +264,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="区块链">区块链</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">73</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">5.8k</span>阅读时长: <span class="post-count reading-time">19 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/10/28</span>
+                    <span class="post-intro-time">2020/09/25</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,15 +401,146 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>研究生科研方向区块链。做点平时的小笔记方便记忆吧。<br><a id="more"></a></p>
+<p><img src="C:\Users\Sma11_Tim3\AppData\Roaming\Typora\typora-user-images\image-20200825145819993.png" alt="image-20200825145819993"></p>
+<p>BTC协议：不断扩展最长合法链</p>
+<p>指针保存地址，hash指针保存地址以及对应的hash值。</p>
+<p>区块链中用hash指针代替了普通指针。</p>
+<p>最先产生的区块：创世区块            每一个区块都含有一个指向前一个区块的hash指针。（第一个区块没有）     hash值是将整个区块包括hash指针来进行hash计算得到的。</p>
+<p>当链中其中一个区块进行修改时，会导致其后面的区块的hash指针所指地址与之前不符，产生连锁反应，因此在检测时只需记住最后一个区块的hash值就可检测出对整个区块链中任一一个区块的修改。（因为修改任意一个区块会导致最后一个区块的hash值改变）</p>
+<p>挖矿设备：CPU–&gt;GPU–&gt;ASIC（矿机）</p>
+<p>p2p：P2P是英文peer to peer lending（或peer-to-peer）的缩写，意即个人对个人（伙伴对伙伴）。又称点对点网络借款，是一种将小额资金聚集起来借贷给有资金需求人群的一种民间小额借贷模式。属于<a href="https://baike.baidu.com/item/互联网金融/7040983" target="_blank" rel="noopener">互联网金融</a>（ITFIN）产品的一种。属于民间小额借贷，借助互联网、移动互联网技术的网络信贷平台及相关理财行为、金融服务。</p>
+<p>blockhead中的nonce（挖矿的目标值）为4字节（4byte）</p>
+<p>UTXO：当前未使用的交易输出</p>
+<p>Merkle Tree：Merkle Tree，通常也被称作Hash Tree，顾名思义，就是存储hash值的一棵树。Merkle树的叶子是数据块(例如，文件或者文件的集合)的hash值。非叶节点是其对应子节点串联字符串的hash值。</p>
+<p>soft fork：软分叉，当系统中拥有半数以上的算力的节点更新了软件，那么系统就不会出现永久性的分叉，可能会出现临时性的分叉。</p>
+<p>hard fork：硬分叉，必须是系统中所有的节点都更新软件，系统才不会出现永久性的分叉。如果小部分节点不更新，则系统会分成两条链。</p>
+<p>Ps：</p>
+<p>Question：比特币交易需要双方同时在线吗？</p>
+<p>Answer：比特币交易时不要求双方同时在线，因为交易时仅需要一方将交易信息写进区块中即可。</p>
+<p>Question：比特币交易时会不会出现从没听说过的账户？</p>
+<p>Answer：比特币账户在创建时不需要告诉任何节点或任何人，只需要在本地产生一个公私钥对即可，在转账时其他的节点才会知道这个账户。</p>
+<p>Question：如果用户的私钥丢失怎么办？</p>
+<p>Answer：如果账户的私钥丢失，账户中的钱变为死钱，在去中心化的系统中没有办法重置密钥。</p>
+<p>Question：如果用户的私钥泄露怎么办？</p>
+<p>Answer：一旦发生私钥泄露，用户需要将账户中的比特币转移（交易）到另一个新的账户中，因为私钥一旦生成不可修改。</p>
+<p>Question：如果交易转账时，收款人填错怎么办？</p>
+<p>Answer：没有办法，如果转账发布是没有办法取消交易的。可联系对方商量，无法强迫。 </p>
+<p><strong>比特币节点类型</strong></p>
+<p>比特币网络由多种类型的节点组成，其功能集一般包括网络路由（Network Route，简写为N）、完整区块链（Full BlockChain，简写为B）、矿工（Miner，简写为N）、钱包（Wallet简写为W）。</p>
+<p>重点注意理解：</p>
+<p><strong>（1）比特币和以太坊的工作机制是怎样实现的？</strong></p>
+<p>比特币是一种去中心化的数字货币，可以立即向世界任何地方的任何人付款。比特币使用对等技术在没有中央授权的情况下进行操作：交易管理和货币发行是由网络集体进行的。</p>
+<p>在比特币的区块链中，会有很多个节点，所有的节点都可以向上进行溯源，最终能够到达源头。这样源头也被称作为整个区块链链条中的第一个区块，在整个区块链中被看作是“创世区块”，每个区块的第一笔交易是一个特殊的交易叫区块中的第一笔交易是笔特殊交易，称为创币交易或者coinbase交易，其为矿工为自己铸币（即系统奖励给矿工成功打包区块的激励） 与 矿工费的交易。</p>
+<p>与常规交易不同，创币交易没有输入，不消耗UTXO。它只包含一个被称作coinbase的输入，仅仅用来创建新的比特币。创币交易有一个输出，支付到这个矿工的比特币地址。区块中的第一笔交易是笔特殊交易，称为创币交易或者coinbase交易，其为矿工为自己铸币（即系统奖励给矿工成功打包区块的激励） 与 矿工费的交易。</p>
+<p>比特币网络中的节点都是同时在寻找nonce试图打包生成区块，大约每10分钟会有一个节点找到符合条件的nonce挖出区块。也就是说，我们在寻找nonce的时候，大量的节点也在竞争寻找nonce，而且从概率上来说哈希算力大的节点找到nonce的速度更快。</p>
+<p>如果一个节点在寻找nonce时接收到其他节点打包生成的区块，其会检查该区块是否合法：如果合法则停止当前的工作，转而在该区块后重新构造区块；如果不合法则继续原来的区块构造。</p>
+<p>挖矿节点成功找到符合难度目标的nonce后立即将这个区块发给它的所有相邻节点。这些节点在接收并验证这个新区块后，也会继续传播此区块。（即沿着这条路径继续挖矿）</p>
+<p><strong>（2）共识机制的原理，PoW, PoS这些经典共识机制工作机制是怎样的？交易和区块如何发布和验证？</strong></p>
+<p>工作量证明/ProofofWork/PoW</p>
+<p>比特币系统没有中心化机构，人人参与铸币：每个参与比特币网络的全节点通过竞争解决数学难题的方式抢夺铸币的权利，谁第一个抢先解出数学难题即获得特定数量的比特币/BTC。而这个解决数学难题抢夺铸币权的过程就叫工作量证明（PoW, Proof of Work）。</p>
+<p>这是第一种共识算法（由中本聪在他的文章中提出），以创造分布式无信任的共识，解决双重支出问题。POW不是一个新概念，但中本聪将这一概念和其他现有概念(加密签名、merkle链和P2P网络)结合成一个可行的分布式共识系统，其中加密货币是第一个也是最基本的应用，非常具有创新性。</p>
+<p>区块链的参与者（被称为矿工）要在区块链上添加一个区块，参与者需要用完成了多少工作量来证明。比特币在区块生成过程中采用了pow机制，为了得到一个合理的随机数来解决数学问题，需要进行大量的计算，即按照一定的规则求哈希值。</p>
+<p>但是，第一个找到正确哈希值的人可以有机会向链中添加新的块。根据查询记录和检验区块链信息内容的证明，就能了解是谁完成了规定难度系数的工作量。</p>
+<p>优点：从2009年至今依然运行稳定，是经过测试的有效的共识算法。缺点：达成共识慢，处理交易的效率低，高耗能高污染。</p>
+<p>权益证明/ProofofStake/PoS</p>
+<p>权益证明的特点是没有复杂的计算，区块链的参与者不与他人竞争，而是抵押他们的资源，类似于把钱存在银行，银行会根据你的资金额度个时间给你分配相应的收益。参与者对网络安全很看重，因为他们自己手里持有网络中的TOKEN。</p>
+<p>系统根据参与者所拥有的“股权”来选择检验者，如参与者拥有10%的股份，那么将检验网络中10%的交易。参与者承诺的资源越多，网络允许该检查器创建区块的概率就越高。Pos的想法是，检查员持有的“股份”比例越高，操纵检查程序的兴趣就越低。</p>
+<p>优点：能源效率高，攻击者攻击成本高，不受规模经济影响。缺点：没有利害关系。</p>
+<p>交易的发布：将交易的内容写在最新的账簿页中，并写入到区块链最新的区块中且被各个挖矿小组公告，看到公告之后即确认比特币到账了 。</p>
+<p>以Alice向Bob支付10个BTC为例，首先需要交易的用户把交易传到网络中，也就是说Alice在向Bob支付10个BTC后需要把这笔交易全网传播，当这笔交易在比特币网络中传播开来后，这个时候矿工们开始通过比拼算力的方法挖矿来竞争记账权利，直到第一个矿工胜出然后把交易打包再次全网广播，那么其他收到消息的记账包的节点会对其进行验证，验证通过后加入自己的区块。</p>
+<p>交易的验证：用户A用私钥对文件进行签名，然后广播整个交易，收到广播的其他用户利用A的公钥对文件进行验证，如果验证成功则证明该笔交易中的BTC是来自于用户A。</p>
+<p>区块的发布：比特币网络中的节点都是同时在寻找nonce试图打包生成区块，大约每10分钟会有一个节点找到符合条件的nonce挖出区块。也就是说，我们在寻找nonce的时候，大量的节点也在竞争寻找nonce，而且从概率上来说哈希算力大的节点找到nonce的速度更快。</p>
+<p>如果一个节点在寻找nonce时接收到其他节点打包生成的区块，其会检查该区块是否合法：如果合法则停止当前的工作，转而在该区块后重新构造区块；如果不合法则继续原来的区块构造。</p>
+<p>挖矿节点成功找到符合难度目标的nonce后立即将这个区块发给它的所有相邻节点。这些节点在接收并验证这个新区块后，也会继续传播此区块。（即沿着这条路径继续挖矿）</p>
+<p>区块的验证：比特币网络中的节点在接收到传播过来的新区块，其会按照如下项目检查该区块是否合法：</p>
+<ul>
+<li><ul>
+<li>区块的数据结构语法上有效</li>
+<li>区块头的哈希值小于目标难度（确认包含足够的工作量证明）</li>
+<li>区块时间戳早于验证时刻未来两个小时（允许时间错误）</li>
+<li>区块大小在长度限制之内</li>
+<li>第一个交易（且只有第一个）是coinbase交易</li>
+<li>使用检查清单验证区块内的交易并确保它们的有效性</li>
+</ul>
+</li>
+</ul>
+<p>一旦节点验证通过了一个新的区块，它将尝试将新的区块连接到到现存的区块链，将它们组装起来。新区块在组装的过程中会有3中情况：</p>
+<ul>
+<li><ul>
+<li>第一种是可以连接到主链上的。这种情况最简单：当前区块的父区块是最长链上的最后一个区块，该链累积了最多的工作量，自然的新区块链接在该区块之后；</li>
+<li>第二种是从主链上产生分支的（备用链）。该种情况是节点先后收到两个（甚至多个）合法的区块，而且该区块的父区块相同。这样的情况，节点不会抛弃后收到的区块（因为当前并不能确认哪个区块会是主链上最终的区块），而是将所有合法的区块链接到父区块之后（链条产生分叉）。最终的区块需要等到下一个区块的到来才能决定，也就是下一个区块的父区块即最长链；</li>
+<li>最后一种是在已知链中没有找到已知父区块的。这种情况是由于网络传播延迟等原因，导致该节点未保持最新的区块链，所以只要区块合法就不会丢弃，而是暂存等待。</li>
+</ul>
+</li>
+</ul>
+<p>由上可知，一个区块成功的生成后并不意味着它就会是最终的区块（即成为最长链的一部分），而是需要等到该区块后链接6个以上区块才认为该区块是成功获得确认，该区块的生成者才能花费该区块coinbase交易获得的激励（铸币奖励 + 旷工费）。</p>
+<p><strong>（3）矿工是如何挖矿的？区块链上出现分叉系统如何处理？都有哪些面向区块链的攻击？</strong></p>
+<p>1.利用设备不断地进行哈希运算来找到一个值小于目标值nonce，找到后发布该区块等待验证之后即成功获取该区块中的比特币。</p>
+<p>2.比特币系统中，各矿工节点基于各自的计算机算力相互竞争来共同解决一个求解复杂但验证容易的SHA256数学难题，最快解决该难题的节点将获得区块链记账权和系统自动生成的比特币奖励。</p>
+<p>该数学难题可以表述为：根据当前难度值，通过搜索求解一个合适的随机数（Nonce）使得区块头各元数据的双SHA256哈希值小于或等于目标哈希值。</p>
+<p>分叉分为软分叉和硬分叉。</p>
+<p>软分叉：由于整个区块链系统软件的升级，一部分矿工没有来得及升级，出现了遵从不同机制产生的分叉，当矿工升级后该分叉就回消失。当半数以上的矿工升级了系统，这个分叉就只是临时性的分叉（软分叉）而不会是永久性的分叉（硬分叉）。</p>
+<p>硬分叉：指比特币区块格式或交易格式（这就是广泛流传的“共识”）发生改变时，未升级的节点拒绝验证已经升级的节点生产出的区块，不过已经升级的节点可以验证未升级节点生产出的区块，然后大家各自延续自己认为正确的链，所以分成两条链。</p>
+<p>区块链圈里第一个有影响力的硬分叉应该是以太坊的分叉事件。以太坊上一个著名的项目The DAO由于其自身漏洞，导致黑客窃取了当时价值约6000万美元的以太币。2016年7月，以太坊开发团队通过修改以太坊软件的代码，在第1920000个区块强行把The DAO及其子DAO的所有资金全部转到一个特定的退款合约地址，从而“夺回”黑客所控制的DAO合约币。</p>
+<p>由于一部分矿工并不认同这个修改，于是形成两条链，一条为以太坊（ETH），一条为以太坊经典（ETC），各自代表不同的社区共识以及价值观。当以太坊发生了这次硬分叉后，产生了两条区块链。由于这两条链在发生分叉之前的数据都是一样的，一个非常有意思的现象出现了：原本持有以太币（ETH）的人，发现自己除了持有原有的ETH外，又有了相同数量的ETC。</p>
+<p>也就是说，凭空的多出了一些资产。这些资产的价值具体怎样，还要看市场交易情况。但总的来说，区块链的硬分叉，没有减少资产，反而让人手里多了一种资产，看上去总归是一件不亏的事情，于是区块链分叉就成了一种资产凭空增加的方式。</p>
+<p>面向区块链的攻击：</p>
+<p>Doubed Spending（双重支持、双花攻击）是一种数字货币失败模式的构想，即同一笔数字货币可以被花用两次以上。不像具有实体的符号货币如硬币，电子文件可被复制，所以花用这个行为并不会从原持有者身上移除拥有的状态，也就是凭空多出已支付但未移除的货币，或是使收款者凭空收到多重支付的金额，犹如伪钞般，造成通货膨胀而导致货币贬值，从而不再让人信任并愿意持有及流通。防止双重支付需要其他的措施。</p>
+<p>区块链的共识机制决定着节点会认同最长链才是真实有效的。攻击者可以在当前最新区块上持续挖矿但不进行广播，从而隐藏自己挖出的区块。</p>
+<p>当攻击者节点隐藏的区块长于已在链上的公布的最长区块时再进行广播，从而成为最长链，使得原先的最长链进行回滚，从而实现双花等攻击。</p>
+<p>比特币在转账交易时，必须将所有的币转出，例如：A有10个BTC，其中3个转给B，那么剩下的7个BTC需要转给A‘（A的另一个账户地址），一般比特币钱包会自动生成地址。</p>
+<hr>
+<p>以太坊：改进版本的比特币        以太币（ETH）</p>
+<p>用权益证明代替比特币中的工作量证明</p>
+<p>以太坊的出块时间为10+s。相对于BTC大大缩短</p>
+<p>以太币在转账交易时，不用将所有的币转出，交易所剩下的以太币就存储在原本的用户的账户中，因此可以防御double spending attack。同时带来的问题是replay attack（重放攻击）， </p>
+<p>以太坊中的nonce为该账户所交易的次数，创建账户时nonce的值为0。这样可以防止replay attack。</p>
+<p> 以太坊支持智能合约，以太坊中的账户地址为160位（bits），40个16进制数。 </p>
+<p>以太坊的数据结构 ：MPT（Merkle Patricia Tree）。以太坊的状态树、交易树和收据树数据结构都是MPT。</p>
+<p>以太坊要支持回滚操作，必须保存历史状态，因为智能合约中的代码非常复杂，如果不保留历史状态无法根据现有结果推算出以前的状态。</p>
+<p>以太坊中共三棵树：状态树、交易数、收据树。</p>
+<p>交易树：每发布一个区块时，区块中的交易会组织成一个交易树也是一个Merkle Tree，这点和比特币类似。</p>
+<p>收据树：每个交易执行完后会记录一个收据，记录交易的相关信息，交易树和收据树一一对应。</p>
+<p>由于以太坊的智能合约执行过程比较复杂，因此增加收据树能够快速查询执行的结果。</p>
+<p>其中交易树和收据树只是收集了当前区块中的交易，而状态树是将系统中所有账户的状态都包含进去。 </p>
+<p>以太坊中的以太币不会经过固定时间，而每个区块中的以太币减半。</p>
+<p>以太坊中叔父区块中的交易是不执行的，只需要检查叔父区块是否符合挖矿难度。以太坊只执行整条合法链上的区块中的交易。</p>
+<p>以太坊的挖矿：会尽量使普通的设备也能够进行挖矿，来保证整个以太坊的安全性。</p>
+<p>POS（权益证明）：基于权益证明，省去了挖矿的过程，避免了能耗以及对环境的影响。</p>
+<p><strong>什么是智能合约</strong></p>
+<p>智能合约是运行在区块链上的一段代码，代码的逻辑定义了合约的内容。</p>
+<p>智能合约的账户保存了合约当前的运行状态</p>
+<ul>
+<li>balance：当前余额</li>
+<li>nonce：交易次数</li>
+<li>code：合约代码</li>
+<li>storage：存储。数据结构是一颗MPT</li>
+</ul>
+<p>Solidity是智能合约最常用的语言，语法上与JavaScript很接近。</p>
+<p>以太坊中各个矿工需要先执行智能合约再进行挖矿。</p>
+<p>矿工在验证区块中的交易时，不会获得任何的收益，但是必须验证每个交易否则不能够继续往下挖矿。</p>
+<p>执行发生错误的交易，依旧需要发布到区块链中，这样才能够扣除交易过程中产生的汽油费。</p>
+<p><strong>区块链中的跨链技术</strong></p>
+<p>三种主要的跨联策略：公证人机制、中继/侧链机制、哈希锁定机制。</p>
+<p><img src="C:\Users\Sma11_Tim3\AppData\Roaming\Typora\typora-user-images\image-20200921165924776.png" alt="image-20200921165924776"></p>
+<p>分布式一致性是分布式计算的根本问题之一。但是共识和一致性还是有着细微的差别：共识研究侧重于分布式节点达成一致的过程及算法，而一致性研究则侧重于节点共识过程最终达成的稳定状态。</p>
+<p>POS：工作量证明，POW：权益证明，DPoS：授权股份证明。</p>
+<p>拜占庭将军问题（Byzantine failures），是由莱斯利·兰伯特提出的点对点通信中的基本问题。含义是在存在消息丢失的不可靠信道上试图通过消息传递的方式达到一致性是不可能的。</p>
+<p>拜占庭容错（BFT）</p>
+<p>简略来说，拜占庭容错（BFT）是能够抵抗拜占庭将军问题导致的一系列失利的系统特点。 这意味着即使某些节点出现缺点或恶意行为，拜占庭容错系统也能够继续运转。</p>
+<p>分布式系统模型：时序模型和故障模型。</p>
+<ol>
+<li>时序模型（Timing Model）</li>
+</ol>
+<p>根据对时间的假设将分布式系统分为同步系统和异步系统。区别在于前者对时间有严格的假设，而后者没有。</p>
+<p>在同步分布式系统中，因为消息传递时间的上限是已知的所以可以通过超时（Timeout）来检测进程的（非拜占庭）故障。如果在同步模型下都不能够解决的问题，意味着没有时间保证的异步系统也不可能解决。</p>
+<p>目前大多数区块链共识算法的理论验证都是采用的同步系统假设，但是在实际的运行环境中一般都是采用的异步系统。</p>
+<ol start="2">
+<li>故障模型（Failure Model）</li>
+</ol>
+<p>根据故障的性质可分为崩溃故障、遗漏故障、时序故障和拜占庭故障。其中拜占庭故障是被认为分布式系统中最难解决的故障形式。</p>
+<p><img src="C:\Users\Sma11_Tim3\AppData\Roaming\Typora\typora-user-images\image-20200925121325421.png" alt="image-20200925121325421"></p>
 
     </article>
     <!-- license  -->
@@ -412,17 +549,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2018/10/28/Pwntools使用简介/" title="Pwntools使用简介">
-                    <div class="nextTitle">Pwntools使用简介</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/10/28/binwalk-for-windows/" title="binwalk for windows">
-                    <div class="prevTitle">binwalk for windows</div>
+                <a href="/2019/06/29/hello-Covteam/" title="hello-Covteam">
+                    <div class="prevTitle">hello-Covteam</div>
                 </a>
             
         </li>
@@ -541,7 +673,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
