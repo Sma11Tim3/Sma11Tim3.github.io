@@ -416,7 +416,7 @@ height:50vh;
 <p><strong>soft fork</strong>：软分叉，当系统中拥有半数以上的算力的节点更新了软件，那么系统就不会出现永久性的分叉，可能会出现临时性的分叉。</p>
 <p><strong>hard fork</strong>：硬分叉，必须是系统中所有的节点都更新软件，系统才不会出现永久性的分叉。如果小部分节点不更新，则系统会分成两条链。</p>
 <p><strong>比特币的区块结构</strong>：</p>
-<p><img src="G:\Desktop\1601300732193.jpg" alt="1601300732193"></p>
+<p><img src="https://i.loli.net/2020/09/29/vuMdpXTQks94nDL.jpg" alt="1601300732193.jpg"></p>
 <h2 id="比特币相关问题"><a href="#比特币相关问题" class="headerlink" title="比特币相关问题"></a>比特币相关问题</h2><h3 id="Question：比特币交易需要双方同时在线吗？"><a href="#Question：比特币交易需要双方同时在线吗？" class="headerlink" title="Question：比特币交易需要双方同时在线吗？"></a>Question：比特币交易需要双方同时在线吗？</h3><p>Answer：比特币交易时不要求双方同时在线，因为交易时仅需要一方将交易信息写进区块中即可。</p>
 <h3 id="Question：比特币交易时会不会出现从没听说过的账户？"><a href="#Question：比特币交易时会不会出现从没听说过的账户？" class="headerlink" title="Question：比特币交易时会不会出现从没听说过的账户？"></a>Question：比特币交易时会不会出现从没听说过的账户？</h3><p>Answer：比特币账户在创建时不需要告诉任何节点或任何人，只需要在本地产生一个公私钥对即可，在转账时其他的节点才会知道这个账户。</p>
 <h3 id="Question：如果用户的私钥丢失怎么办？"><a href="#Question：如果用户的私钥丢失怎么办？" class="headerlink" title="Question：如果用户的私钥丢失怎么办？"></a>Question：如果用户的私钥丢失怎么办？</h3><p>Answer：如果账户的私钥丢失，账户中的钱变为死钱，在去中心化的系统中没有办法重置密钥。</p>
@@ -487,7 +487,7 @@ height:50vh;
 <h2 id="以太坊的数据结构"><a href="#以太坊的数据结构" class="headerlink" title="以太坊的数据结构"></a><strong>以太坊的数据结构</strong></h2><p>MPT（Merkle Patricia Tree）。以太坊的状态树、交易树和收据树数据结构都是MPT。</p>
 <h2 id="以太坊的回滚操作"><a href="#以太坊的回滚操作" class="headerlink" title="以太坊的回滚操作"></a><strong>以太坊的回滚操作</strong></h2><p>以太坊要支持回滚操作，必须保存历史状态，因为智能合约中的代码非常复杂，如果不保留历史状态无法根据现有结果推算出以前的状态。</p>
 <p>以太坊中共三棵树：状态树、交易数、收据树。</p>
-<h2 id="完整的状态树"><a href="#完整的状态树" class="headerlink" title="完整的状态树"></a><strong>完整的状态树</strong></h2><p><img src="G:\Desktop\v2-57de44eb9c85a1f106845b052eda1e1d_720w.jpg" alt="v2-57de44eb9c85a1f106845b052eda1e1d_720w"></p>
+<h2 id="完整的状态树"><a href="#完整的状态树" class="headerlink" title="完整的状态树"></a><strong>完整的状态树</strong></h2><p><img src="https://i.loli.net/2020/09/29/3CGSKfy5DnXR4YN.jpg" alt="v2-57de44eb9c85a1f106845b052eda1e1d_720w.jpg"></p>
 <h2 id="交易树"><a href="#交易树" class="headerlink" title="交易树"></a><strong>交易树</strong></h2><p>每发布一个区块时，区块中的交易会组织成一个交易树也是一个Merkle Tree，这点和比特币类似。</p>
 <h2 id="收据树"><a href="#收据树" class="headerlink" title="收据树"></a><strong>收据树</strong></h2><p>每个交易执行完后会记录一个收据，记录交易的相关信息，交易树和收据树一一对应。由于以太坊的智能合约执行过程比较复杂，因此增加收据树能够快速查询执行的结果。</p>
 <h2 id="三棵树的区别"><a href="#三棵树的区别" class="headerlink" title="三棵树的区别"></a><strong>三棵树的区别</strong></h2><p>其中交易树和收据树只是收集了当前区块中的交易，而状态树是将系统中所有账户的状态都包含进去。</p>
@@ -503,7 +503,7 @@ height:50vh;
 <p><strong>智能合约的语言</strong>：Solidity是智能合约最常用的语言，语法上与JavaScript很接近。</p>
 <p><strong>以太坊和区块链矿工的不同</strong>：以太坊中各个矿工需要先执行智能合约再进行挖矿。矿工在验证区块中的交易时，不会获得任何的收益，但是必须验证每个交易否则不能够继续往下挖矿。执行发生错误的交易，依旧需要发布到区块链中，这样才能够扣除交易过程中产生的汽油费。</p>
 <h1 id="区块链中的跨链技术"><a href="#区块链中的跨链技术" class="headerlink" title="区块链中的跨链技术"></a><strong>区块链中的跨链技术</strong></h1><h2 id="三种主要的跨联策略"><a href="#三种主要的跨联策略" class="headerlink" title="三种主要的跨联策略"></a><strong>三种主要的跨联策略</strong></h2><p>公证人机制、中继/侧链机制、哈希锁定机制。</p>
-<p><img src="C:\Users\Sma11_Tim3\AppData\Roaming\Typora\typora-user-images\image-20200921165924776.png" alt="image-20200921165924776"></p>
+<p><img src="https://i.loli.net/2020/09/29/M4OfoVPcgT5uSCs.png" alt="image-20200921165924776.png"></p>
 <h2 id="分布式一致性和共识的区别："><a href="#分布式一致性和共识的区别：" class="headerlink" title="分布式一致性和共识的区别："></a><strong>分布式一致性和共识的区别</strong>：</h2><p>分布式一致性是分布式计算的根本问题之一。但是共识和一致性还是有着细微的差别：共识研究侧重于分布式节点达成一致的过程及算法，而一致性研究则侧重于节点共识过程最终达成的稳定状态。</p>
 <h2 id="拜占庭将军问题（Byzantine-failures）："><a href="#拜占庭将军问题（Byzantine-failures）：" class="headerlink" title="拜占庭将军问题（Byzantine failures）："></a><strong>拜占庭将军问题（Byzantine failures）</strong>：</h2><p>拜占庭将军问题是由莱斯利·兰伯特提出的点对点通信中的基本问题。含义是在存在消息丢失的不可靠信道上试图通过消息传递的方式达到一致性是不可能的。</p>
 <h2 id="拜占庭容错（BFT）"><a href="#拜占庭容错（BFT）" class="headerlink" title="拜占庭容错（BFT）"></a><strong>拜占庭容错（BFT）</strong></h2><p>简略来说，拜占庭容错（BFT）是能够抵抗拜占庭将军问题导致的一系列失利的系统特点。 这意味着即使某些节点出现缺点或恶意行为，拜占庭容错系统也能够继续运转。</p>
@@ -511,7 +511,7 @@ height:50vh;
 <p>在同步分布式系统中，因为消息传递时间的上限是已知的所以可以通过超时（Timeout）来检测进程的（非拜占庭）故障。如果在同步模型下都不能够解决的问题，意味着没有时间保证的异步系统也不可能解决。</p>
 <p>目前大多数区块链共识算法的理论验证都是采用的同步系统假设，但是在实际的运行环境中一般都是采用的异步系统。</p>
 <h3 id="故障模型（Failure-Model）"><a href="#故障模型（Failure-Model）" class="headerlink" title="故障模型（Failure Model）"></a><strong>故障模型（Failure Model）</strong></h3><p>根据故障的性质可分为崩溃故障、遗漏故障、时序故障和拜占庭故障。其中拜占庭故障是被认为分布式系统中最难解决的故障形式。</p>
-<p><img src="C:\Users\Sma11_Tim3\AppData\Roaming\Typora\typora-user-images\image-20200925121325421.png" alt="image-20200925121325421"></p>
+<p><img src="https://i.loli.net/2020/09/29/tiFZA2z5RCopXg8.png" alt="image-20200925121325421.png"></p>
 <h2 id="主流区块链共识算法"><a href="#主流区块链共识算法" class="headerlink" title="主流区块链共识算法"></a><strong>主流区块链共识算法</strong></h2><p>Pow共识算法，优势在于其架构简明扼要、有效可靠。可以实现某种意义上的公平性，即投入的算力越多就可以等比例的增加更多的获胜概率。Pow可以有效的抵御51%攻击，攻击者必须拥有超过整个系统中51%的算力，才有可能篡改比特币账本，这样使得攻击的成本变得十分昂贵，难以实现呢。另一方面，Pow共识机制也存在明显的缺陷，强大的算力造成了很大的资源量费（如电力），而且长达10分钟的交易确认时间使其相对不适合小额交易的商业应用。</p>
 <p><strong>Pos共识算法，目前主要包括三种Pos共识算法：</strong></p>
 <p>1、 Pos+Pow混合共识（Pos1.0）</p>
