@@ -411,7 +411,7 @@ height:50vh;
 <p>可以发现，我们这样进行部署之后，不仅 iPad 上面可以直接用它来进行开发，我们更换任意一台电脑，都可以直接连接自己服务器上的在线版 VS Code，在完全一致的环境下进行开发，<strong>实现我们自己的 Codespaces。</strong></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我的服务器（腾讯云，系统：Ubuntu 18.04 LTS），在电脑上或者Ipad上用SSH连接上我们的服务器，PC上推荐使用Xshell搭配Xftp。Ipad上可以下载Termius软件，效果如下：<img src="https://i.loli.net/2020/10/11/7zj4rZoIhyRQDuS.png" alt="76B8742B27222192D0EA97EE5E5E67AA.png"></p>
 <p>然后在服务器上下载code-server，其中code-server有很多版本最新版是3.5，实测会有一些不稳定可以自行选择以前的版本。</p>
-<p><img src="C:\Users\Sma11_Tim3\AppData\Roaming\Typora\typora-user-images\image-20201011194707830.png" alt="image-20201011194707830"></p>
+<p><img src="https://i.loli.net/2020/10/11/ZoGAMKFVfiy49QE.png" alt="image-20201011194707830.png"></p>
 <p>我们可以直接在远程服务器上执行下面的命令来下载 <code>.tar.gz</code> 压缩包，请注意命令末尾的 URL 地址，请记得按照你在 <code>code-server</code> Release 页面实际复制的地址进行填写：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o code-server-3.5.0.tar.gz https://github.com/cdr/code-server/releases/download/3.5.0/code-server-3.5.0-linux-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
 <p>如果出现下载不成功的，可以直接去GitHub上下载，然后将压缩包通过Xftp上传到服务器上。</p>
