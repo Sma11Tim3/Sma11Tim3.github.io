@@ -22,7 +22,7 @@
     <meta name="description" content="Not a product, no need to explain">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hello World · Sma11_Tim3&#39;s Studio</title>
+    <title>Ipad搭建Vscode编程环境 · Sma11_Tim3&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">Sma11_Tim3&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">Ipad搭建Vscode编程环境</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            Ipad搭建Vscode编程环境
             <!-- 404 -->
             
         </h1>
@@ -264,14 +264,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="日常小工具">日常小工具</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">73</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.7k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/10/28</span>
+                    <span class="post-intro-time">2020/10/11</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,15 +401,75 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>研一上算法课的时候有实操的课程，需要Vscode进行简单的编程。但是奈何电脑太重了，又舍不得买个新的轻薄本（就是穷），就想到了用ipad搭建环境。</p>
+<a id="more"></a>
+<p>看到了知乎大佬的一篇文章</p>
+<p><a href="https://zhuanlan.zhihu.com/p/141095838?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=584828023925248000&amp;utm_campaign=shareopn" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/141095838?utm_source=wechat_session&amp;utm_medium=social&amp;utm_oi=584828023925248000&amp;utm_campaign=shareopn</a></p>
+<p>知道了可以用code-server搭建在服务器上，在Safari浏览器（或者其他浏览器）上直接访问服务器IP+端口号就可以访问在线版本的vscode，上面的文件夹和文件就是直接访问服务器上的文件。整个的编译和运行过程都在服务器上进行，解决了Ipad OS不能够编译的问题。</p>
+<h2 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h2><p>在开始之前，为了帮助大家理解，我先来简单介绍借助 <code>code-server</code> 使用 iPad 进行远程开发的具体工作原理。<img src="https://i.loli.net/2020/10/11/uH2UJ7hgtZ8DseN.jpg" alt="微信图片_20201011193846.jpg"></p>
+<p>首先，我们前面提到的 <code>code-server</code> 实际上就是专门为浏览器设计优化的 VS Code，可以直接通过浏览器访问。在远程 Linux 服务器上面部署 <code>code-server</code> 之后，<code>code-server</code> 实际上就相当于一个「中转站」，为我们提供一个直接在 Linux 服务器上面修改文件、访问数据库、执行指令等等操作的「窗口」，而由于这一「窗口」同样在 Linux 服务器上面运行，使用任何一个浏览器都可以打开，所以 iPad 也不例外。这样，我们就能够借助在远程服务器上运行的 <code>code-server</code>，直接使用远程服务器上面的各种资源（包括服务器上强大的原生 Linux 环境、CPU / GPU 等计算资源、「无尽」的电量等等）进行开发工作。（当然，这也要求我们 iPad 端全程拥有网络连接。）</p>
+<p>可以发现，我们这样进行部署之后，不仅 iPad 上面可以直接用它来进行开发，我们更换任意一台电脑，都可以直接连接自己服务器上的在线版 VS Code，在完全一致的环境下进行开发，<strong>实现我们自己的 Codespaces。</strong></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我的服务器（腾讯云，系统：Ubuntu 18.04 LTS），在电脑上或者Ipad上用SSH连接上我们的服务器，PC上推荐使用Xshell搭配Xftp。Ipad上可以下载Termius软件，效果如下：<img src="https://i.loli.net/2020/10/11/7zj4rZoIhyRQDuS.png" alt="76B8742B27222192D0EA97EE5E5E67AA.png"></p>
+<p>然后在服务器上下载code-server，其中code-server有很多版本最新版是3.5，实测会有一些不稳定可以自行选择以前的版本。</p>
+<p><img src="C:\Users\Sma11_Tim3\AppData\Roaming\Typora\typora-user-images\image-20201011194707830.png" alt="image-20201011194707830"></p>
+<p>我们可以直接在远程服务器上执行下面的命令来下载 <code>.tar.gz</code> 压缩包，请注意命令末尾的 URL 地址，请记得按照你在 <code>code-server</code> Release 页面实际复制的地址进行填写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o code-server-3.5.0.tar.gz https://github.com/cdr/code-server/releases/download/3.5.0/code-server-3.5.0-linux-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+<p>如果出现下载不成功的，可以直接去GitHub上下载，然后将压缩包通过Xftp上传到服务器上。</p>
+<p>之后，我们使用 <code>tar</code> 工具解压下载得到的压缩包，之后进入解压好的文件目录中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 解压缩 tar.gz 压缩包</span><br><span class="line">tar xf code-server-3.5.0.tar.gz</span><br><span class="line"></span><br><span class="line"># 进入解压得到的文件夹</span><br><span class="line">cd code-server-3.5.0-linux-x86_64</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/10/11/Q1kFXsVEnNeKxwp.png" alt="0UIW2K_7MNM86S_Y_KHQE2G.png"></p>
+<p>我们将得到这样的一个文件夹，其中 <code>code-server</code> 是 Linux 可执行文件，我们直接运行即可在远程服务器上开启 <code>code-server</code>。</p>
+<p>为了后面能够更加方便的用 VSApp 使用 <code>code-server</code>，我们这里为我们的 <code>code-server</code> 设置一个密码。直接在服务器上运行下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PASSWORD=&quot;&#123;YOUR_CODE_SERVER_PASSWORD&#125;&quot;</span><br></pre></td></tr></table></figure>
+<p>将上面命令中的 <code>{YOUR_CODE_SERVER_PASSWORD}</code> 替换为你的密码即可。这里我们是在服务器上面设置了名为 <code>PASSWORD</code> 的环境变量为 <code>{YOUR_CODE_SERVER_PASSWORD}</code>，这样后面 <code>code-server</code>启动后就会直接读取这一环境变量并将之作为你的登录密码。（如果没有设置密码，在启动code-server程序的时候系统会随机给出一个密码以供登录）</p>
+<p>接下来，我们执行下面的命令启动 <code>code-server</code> 并开放给公网允许使用服务器地址访问：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./code-server --host &quot;0.0.0.0&quot;</span><br></pre></td></tr></table></figure>
+<p>之后，<code>code-server</code> 进程就在远程服务器上启动并开始监听 <code>8080</code> 端口了，同时可以看到 <code>code-server</code> 正在使用我们自定义的密码（custom password）作为认证密码。<strong>这里，我们还需要将</strong><code>code-server</code> <strong>默认监听的 8080 端口在服务器防火墙中设置开放</strong>，之后我们才能直接通过 <code>{服务器 IP 地址}:{code-server 端口}</code> 的 URL 地址在浏览器中直接访问 <code>code-server</code>。如果是阿里云或者腾讯云的服务器，在服务器上开启端口，还需要登录相应的网站上再开启一起端口，属于相应的保护机制吧。</p>
+<p>如果一切顺利，此时我们在 iPad （或者PC）上面用浏览器直接访问 <code>{服务器 IP 地址}:{code-server 端口}</code>，输入刚刚设置的密码，就能够打开一个完整的在线版 VS Code：<img src="https://i.loli.net/2020/10/11/bV6hXkRpiMDx2Wc.png" alt="__0UAA__M4H`ZXDV3NZPT_C.png"></p>
+<p>不过，虽然我们现在可以直接访问 <code>code-server</code> 了，但直接在 Safari 浏览器里面使用 <code>code-server</code> 体验还是比较糟糕，上面地址栏和下面外接键盘出现的菜单栏都让直接在浏览器里使用<code>code-server</code> 非常不顺畅，<strong>因此我们最好使用下面介绍的 VSApp 来管理、连接</strong> <code>code-server</code><strong>使用。</strong></p>
+<h2 id="使用-VSApp-优化-iPad-上使用-code-server-的体验"><a href="#使用-VSApp-优化-iPad-上使用-code-server-的体验" class="headerlink" title="使用 VSApp 优化 iPad 上使用 code-server 的体验"></a>使用 VSApp 优化 iPad 上使用 code-server 的体验</h2><p>VSApp 是一款专门为 iPad 优化的用来连接 <code>code-server</code> 的 iOS 原生应用。我们使用 VSApp 可以直接连接我们自己的 <code>code-server</code> 实例，自动登录，打造畅快的在线 VS Code 体验。同学们可以直接前往 <a href="https://link.zhihu.com/?target=https%3A//vseditor.app/" target="_blank" rel="noopener">VSApp - code-server 官网</a> 下载 iPadOS 版本的 VSApp。（在App Store里面搜索vsapp即可，现在该软件叫做Servediter）</p>
+<p>VSApp 原本是仅支持连接至它的开发者所部署的 <code>code-server</code> 上面的，因此也包含了 App 内购，最近 VSApp 才更新支持自部署服务器的连接。既然我们都已经自己部署了自己的 <code>code-server</code>，那么我们直接在菜单中选择「Self Hosted Server」，并依次填写：</p>
+<ul>
+<li><p>我们刚刚部署 <code>code-server</code> 的：</p>
+</li>
+<li><ul>
+<li><code>code-server URL</code> 刚刚在 Safari 中打开的 URL：<code>{服务器 IP 地址}:{code-server 端口}</code></li>
+<li><code>Instance password</code> 刚刚开启 <code>code-server</code> 时设置的密码</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>以及，我们服务器自己的：</p>
+</li>
+<li><ul>
+<li><code>Host</code>：服务器 IP 地址</li>
+<li><code>Username</code>：默认登录用户名</li>
+<li><code>Port</code>：登录 SSH 端口（默认 22 端口）</li>
+<li><code>Authentication</code>：登录服务器时使用的密码或公钥私钥对</li>
+</ul>
+</li>
+</ul>
+<p>再点击保存即可。<img src="https://i.loli.net/2020/10/11/qWlb6r4vs8Kt5y7.jpg" alt="微信图片_20201011201048.jpg"></p>
+<p>之后，我们就应该看到 VSApp 为我们加载了和刚刚 Safari 中访问时一样的在线版 VS Code。由于 VSApp 是一个独立的 iOS 应用，并专门为 <code>code-server</code> 进行了优化，因此我们不仅能够直接进入 App 即可登录，还不会出现像 Safari 直接访问时的出现的工具栏下滑问题。<img src="https://i.loli.net/2020/10/11/9AJnuQfypm8VswI.png" alt="C9AE736F285C55E5ABF7DF96F944F364.png"></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>VS Code 是一个强大的多功能代码编辑器，它不仅广受开发者的喜爱，许许多多普通用户也直接使用 VS Code 进行 <a href="https://link.zhihu.com/?target=https%3A//sspai.com/post/53327" target="_blank" rel="noopener">Markdown 文章撰写</a>、用来管理协作、进行数据分析，甚至可以用来 <a href="https://link.zhihu.com/?target=https%3A//marketplace.visualstudio.com/items%3FitemName%3Dniudai.vscode-zhihu" target="_blank" rel="noopener">发表知乎文章</a>、<a href="https://link.zhihu.com/?target=https%3A//marketplace.visualstudio.com/items%3FitemName%3Dnondanee.vsc-netease-music" target="_blank" rel="noopener">听网易云音乐歌曲</a> 等等。</p>
+<h2 id="个人建议和常见问题"><a href="#个人建议和常见问题" class="headerlink" title="个人建议和常见问题"></a>个人建议和常见问题</h2><h3 id="外设建议"><a href="#外设建议" class="headerlink" title="外设建议"></a>外设建议</h3><p>首先是对于ipad输入编程的问题，个人建议买一个外接键盘，资金充足可以购买官方键盘，资金不够但是特别喜欢官方配套的建议咸鱼捡漏能便宜不少。蓝牙键盘推荐罗技K380搭配使用效果很不错，另外还可以购买一个蓝牙鼠标，加上Ipad这三样东西也不会很重，但是凑齐之后使用体验很棒。</p>
+<h3 id="软件问题"><a href="#软件问题" class="headerlink" title="软件问题"></a>软件问题</h3><p>Ipad上的Servediter软件在使用的时候会有一些小bug，我在使用过程中遇到最烦的是：一旦服务器上code-server的密码被修改，Servediter会默认上一次的密码连接，连接不上之后无限重连陷入死循环中无法退出。每次遇到这种我都只能卸载掉重新安装，我已经将该问题评论给了作者希望下一个版本能够解决。</p>
+<p>另外在线版的Vscode运行的速度和响应时间大部分取决于服务器的性能，我的服务器是学生版10/月，因此仅仅适合做一些基础的编程工作。这个系统最大的不方便可能就是需要时刻联网了，经常会出现断连的情况。</p>
+<h3 id="后台运行问题"><a href="#后台运行问题" class="headerlink" title="后台运行问题"></a>后台运行问题</h3><p><a href="https://blog.csdn.net/dylan1998/article/details/108847545这篇文章中给出了修改配置文件的方式让code-server命令能够在任何一个文件夹运行，也修改了相应的密码和端口的配置文件，大家可以参考自取。" target="_blank" rel="noopener">https://blog.csdn.net/dylan1998/article/details/108847545这篇文章中给出了修改配置文件的方式让code-server命令能够在任何一个文件夹运行，也修改了相应的密码和端口的配置文件，大家可以参考自取。</a></p>
+<p>但是还是没有解决断开SSH连接之后程序停止运行的问题。经过测试在运行<code>./code-server --host &quot;0.0.0.0&quot;</code>这条命令之后必须保持与服务器的连接状态，一旦断开服务器就会关闭服务，在后面加&amp;让其后台运行也不可以。</p>
+<p>我的解决办法是利用Linux screen命令。</p>
+<p>Linux screen命令用于多重视窗管理程序。</p>
+<p>screen为多重视窗管理程序。此处所谓的视窗，是指一个全屏幕的文字模式画面。通常只有在使用telnet登入主机或是使用老式的终端机时，才有可能用到screen程序。</p>
+<p>首先我们输入命令<code>screen -S 作业名</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># screen -S 作业名//创建指定作业名的 screen 终端</span><br></pre></td></tr></table></figure>
+<p>此时会有清屏的效果出现，因为screen没有其他的运行成功提示，仅有的效果就是清屏。然后运行我们的<code>./code-server --host &quot;0.0.0.0&quot; &amp;</code>命令，如果配置了环境变量就不需要./了。等待code-server启动成功后，退出screen终端，方法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在 screen 终端 下 按下 Ctrl+a+d键</span><br></pre></td></tr></table></figure>
+<p>此时我们就能够回到开始的界面，然后输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># screen -ls  //显示已创建的screen终端</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/10/11/aZdsBgihcF2MEHl.png" alt="_~__8_MPRRJMZ3_7SHYFWKS.png"></p>
+<p>此时我们可以看到screen终端正在运行着，可以使用<code>screen -r 作业名</code>   的方式来重新进入到screen里面。更加详细的命令参考：<a href="https://www.runoob.com/linux/linux-comm-screen.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-comm-screen.html</a></p>
+<p>以上就是对Ipad上使用云服务器搭建Vscode开发环境的总结。</p>
+<p>By Covteam-Sma11_Tim3</p>
 
     </article>
     <!-- license  -->
@@ -412,17 +478,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2018/10/28/Pwntools使用简介/" title="Pwntools使用简介">
-                    <div class="nextTitle">Pwntools使用简介</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2018/10/28/binwalk-for-windows/" title="binwalk for windows">
-                    <div class="prevTitle">binwalk for windows</div>
+                <a href="/2020/09/29/计算机网络数学基础/" title="计算机网络数学基础">
+                    <div class="prevTitle">计算机网络数学基础</div>
                 </a>
             
         </li>
@@ -541,7 +602,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#工作原理"><span class="toc-number">1.</span> <span class="toc-text">工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-VSApp-优化-iPad-上使用-code-server-的体验"><span class="toc-number">3.</span> <span class="toc-text">使用 VSApp 优化 iPad 上使用 code-server 的体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-number">4.</span> <span class="toc-text">小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#个人建议和常见问题"><span class="toc-number">5.</span> <span class="toc-text">个人建议和常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#外设建议"><span class="toc-number">5.1.</span> <span class="toc-text">外设建议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软件问题"><span class="toc-number">5.2.</span> <span class="toc-text">软件问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后台运行问题"><span class="toc-number">5.3.</span> <span class="toc-text">后台运行问题</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
