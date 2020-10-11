@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">6.7k</span>阅读时长: <span class="post-count reading-time">22 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">8.8k</span>阅读时长: <span class="post-count reading-time">30 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -522,6 +522,56 @@ height:50vh;
 <h4 id="Pos共识算法的区块生产过程"><a href="#Pos共识算法的区块生产过程" class="headerlink" title="Pos共识算法的区块生产过程"></a><strong>Pos共识算法的区块生产过程</strong></h4><p>节点首先从自己所有的UTXO中选定一个座位Kernel，构造Coinbase交易，计算两次SHA256哈希值；如果不满足式子则重新构造Coinbase交易，重新构造的过程中时间戳（nTime）会改变；同时也可以改变Kernel以得到不同的Coinbase交易。循环此过程直到寻找到合格的区块为止。简化的式子为：<br>                 <strong>SHA256（SHA256（（Timestamp））&lt;Target X CoinAge</strong></p>
 <p>由于时间戳Timestamp是极其有限的，因此极大的缩短了Pos共识的搜索过程，不会浪费大量的能源消耗在搜索上面。同时该式子使得Kernel的币龄成为了影响找到合格区块的最大因素。</p>
 <p>同时为了防止利用币龄实施51%攻击，规定UTXO必须超过最小币龄stakeMinAge才能够参与生产区块，如果超过最大币龄stakeMaxAge，则币龄不会增长，实在按照最大币龄计算。</p>
+<h1 id="区块链网络"><a href="#区块链网络" class="headerlink" title="区块链网络"></a>区块链网络</h1><h2 id="数据传播协议"><a href="#数据传播协议" class="headerlink" title="数据传播协议"></a>数据传播协议</h2><p>节点通常采用TCP协议，一般的区块链网络主要包含以下核心场景。</p>
+<ul>
+<li>节点入网建立初始连接</li>
+<li>节点地址传播发现</li>
+<li>矿工、全节点同步区块交易</li>
+<li>客户端创建一笔交易</li>
+<li>矿工、全节点接收交易</li>
+<li>矿工、全节点挖出新区块，并广播到网络中</li>
+<li>矿工、全节点接收广播的消息</li>
+</ul>
+<h3 id="建立初始连接"><a href="#建立初始连接" class="headerlink" title="建立初始连接"></a>建立初始连接</h3><p>比特币节点之间建立连接的形式类似于“TCP”的三次握手协议，例如A向B发送包含基本认证信息的Version内容，B节点收到后先检查是否与自己兼容，如果兼容则连接并返回Verake消息，同时给A发送自己的Version，如果A检查后也兼容，则返回Verake，完成连接过程。</p>
+<h3 id="地址广播及发现"><a href="#地址广播及发现" class="headerlink" title="地址广播及发现"></a>地址广播及发现</h3><p>一旦建立连接新节点就会向相邻节点发送包含自身IP地址的addr消息。相邻节点再将此addr消息转发给各自相邻的节点。此外新节点还向相邻节点发送getaddr消息来获取相邻节点可以连接的节点列表。</p>
+<p><img src="https://i.loli.net/2020/10/11/GbiaQLkNfD13J6x.jpg" alt="1602400146737.jpg" style="zoom:150%;"></p>
+<h3 id="同步区块数据"><a href="#同步区块数据" class="headerlink" title="同步区块数据"></a>同步区块数据</h3><p>由于新节点只知道创世区块，因此需要同步。具体如下：</p>
+<ol>
+<li><p>连接双方发送同步消息getblocks，其包含各自本地区块链的顶端区块哈希值；</p>
+</li>
+<li><p>通过比较区块数多的向少的一方发送inv消息（这里的inv只是一个清单，无数据）；</p>
+</li>
+<li><p>接收方收到inv消息后，发送getdata消息请求数据；</p>
+<p><img src="https://i.loli.net/2020/10/11/VWglRzNX9JFxij1.jpg" alt="1602400146732.jpg" style="zoom:20%;"></p>
+</li>
+</ol>
+<h3 id="交易传播"><a href="#交易传播" class="headerlink" title="交易传播"></a>交易传播</h3><p>比特币系统的交易数据传播协议步骤如下：</p>
+<ol>
+<li>交易节点将新生成的交易数据向全网节点进行广播；</li>
+<li>每个节点将收到的交易数据存储到一个区块中；</li>
+<li>每个节点根据自身算力在区块中寻找到一个具有足够难度的工作量证明（挖矿）；</li>
+<li>节点找到工作量证明后向全网节点广播此区块（block消息）；</li>
+<li>仅当此区块中的所有交易都有效且之前未存在过，其他节点才认同该区块的有效性；</li>
+<li>其他节点接收该区块，并在该区块的尾部制造新的区块以延长该区块链，而将被接收区块的随机哈希值视为先于新区块的随机哈希值。</li>
+</ol>
+<h3 id="检测节点存活"><a href="#检测节点存活" class="headerlink" title="检测节点存活"></a>检测节点存活</h3><p>ping消息有助于判断接收方是否离线。接收方回复pong消息表明自己在线，默认情况下，20分钟未响应ping消息的节点被认为断开连接。</p>
+<h2 id="数据验证机制"><a href="#数据验证机制" class="headerlink" title="数据验证机制"></a>数据验证机制</h2><p>当新区块在区块链中传播时，每个接收到区块的节点都会对区块进行独立验证，成功验证的区块才会进行转发，这样可以尽早杜绝无效或者是恶意的数据在区块链中传播，预防小部分节点串通作恶导致无效区块被接收，尽最大的可能保证网络中传播区块的正确性。</p>
+<h2 id="矿池网络协议"><a href="#矿池网络协议" class="headerlink" title="矿池网络协议"></a>矿池网络协议</h2><p><strong>Getwork协议：</strong>可以认为是最早的挖矿协议——实现区块链数据与挖矿逻辑剥离，拥有完成数据的节点构造区块头。挖矿的主要过程是递增遍历Nonce，必要时可以未调整Timestamp字段。</p>
+<p><strong>Stratum协议：</strong>利用Merkle树结构特性，从coinbase构造hashMerkleroot，无须全部交易，只要把与coinbase涉及到的Merkle路径上的hash值返回即可。如区块含有N笔交易，这种方式能将数据规模压缩至log2(N)。Stratum协议不但保证给矿工增加了足够的搜索空间，而且仅需要很少的数据交互，这是该协议最好的地方。</p>
+<h1 id="常见的漏洞和攻击手段"><a href="#常见的漏洞和攻击手段" class="headerlink" title="常见的漏洞和攻击手段"></a>常见的漏洞和攻击手段</h1><p>区块链的每个层次都存在一定的安全隐患。除了木马、蠕虫等恶意入侵，中间人攻击、后门攻击等传统网络空间安全需要面对的恶意攻击外，还衍生出了诸如：51%攻击、双花攻击等针对区块链的攻击行为。</p>
+<p>根据攻击目的不同，可以把区块链上常见的攻击手段划分为针对共识一致性攻击、针对扩展性的攻击、针对激励策略的攻击、针对智能合约的攻击手段以及由区块链使用的底层技术或上层应用漏洞衍生出来的安全问题。</p>
+<p><img src="https://i.loli.net/2020/10/11/Uq7vCncNyX1GobK.jpg" alt="1602400146742.jpg"></p>
+<h2 id="针对一致性的攻击"><a href="#针对一致性的攻击" class="headerlink" title="针对一致性的攻击"></a>针对一致性的攻击</h2><h3 id="双花攻击"><a href="#双花攻击" class="headerlink" title="双花攻击"></a>双花攻击</h3><p>也被叫做二次支付攻击或者双重支付攻击，顾名思义是攻击者想重复花费自己账户中的余额的攻击行为，是破坏共识一致性的典型攻击方式，也是数字货币设计方案设计中首先需要解决的问题。以区块链为例，攻击者想要重复花费常用的方式是在完成一笔交易后，再产生一条更长的区块链分叉，此时包含原交易的区块链会被大多数矿工丢弃。</p>
+<h3 id="51-攻击"><a href="#51-攻击" class="headerlink" title="51%攻击"></a>51%攻击</h3><p>在基于Pow的比特币中矿工需要依赖算力竞争区块链的记账权。51% 攻击则利用比特币的使用算力作为竞争条件，理论上当攻击者拥有51%及以上的算力时，可以控制整个区块链系统。当攻击者拥有绝对的算力优势时，可以随意的控制区块的产生，制造分叉，实施双花攻击、Dos攻击等等，破坏比特币的安全性和去中心化。51%攻击也指在Pos区块链中拥有超过50%权益的优势攻击者可以对Pos区块链进行控制。</p>
+<h2 id="针对扩展性的攻击"><a href="#针对扩展性的攻击" class="headerlink" title="针对扩展性的攻击"></a>针对扩展性的攻击</h2><h3 id="Dos攻击"><a href="#Dos攻击" class="headerlink" title="Dos攻击"></a>Dos攻击</h3><p>Dos攻击也被称作拒绝服务攻击，是利用合理的服务请求来占用过多的目标节点服务资源，增加目标节点网络负载，形成网络拥堵，从而使正常的用户无法得到服务响应的攻击。针对传统互联网Dos攻击可分为三类：利用软件实现的缺陷、利用协议的漏洞、利用资源压制。</p>
+<p>同样区块链也容易遭受到Dos攻击，造成区块链吞吐量低、交易确认时间长、节点无法服务等情况。根据攻击目标不同可以分类为：</p>
+<ol>
+<li><strong>对区块链效率的Dos攻击：</strong>攻击者利用粉尘攻击发布大量交易，造成网络拥堵形成大量交易排队等候的情况，同时占用矿工的存储空间。</li>
+<li><strong>对单一用户节点的Dos攻击：</strong>攻击者如果拥有大量的算力、权益或者其他的网络资源时，可以有针对性的拒绝某一些对自己不利的交易，并使得这些交易在短时间内或者永久都不会被写入区块中。</li>
+<li><strong>对智能合约的Dos攻击：</strong>攻击者利用智能合约的漏洞对智能合约发起Dos攻击，使得智能合约在一段时间甚至永久不能够正常执行。</li>
+</ol>
+<h3 id="粉尘攻击"><a href="#粉尘攻击" class="headerlink" title="粉尘攻击"></a>粉尘攻击</h3><p>区块大小和生成区块的时间间隔受限，使得比特币系统的拓展性差。攻击者利用这一特点发动粉尘攻击，通过广播大量的低金额交易来增加区块链网络的负载，占据矿工交易池的硬盘空间，造成大量的交易正在排队等待验证的情况，进而对网络中其他有意义的交易进行Dos攻击，严重影响了共识效率和系统的吞吐量。由于比特币系统是区中心化的因此很难防御粉尘攻击，当存在粉尘攻击时，只能通过提高交易费的形式来确保更快的被矿工打包记录。</p>
+<h3 id="空块攻击"><a href="#空块攻击" class="headerlink" title="空块攻击"></a>空块攻击</h3><p>矿工为了尽快解决Pow问题，仅填充区块的头部，而不验证打包任何交易，视图在挖矿的过程中能够更快的发布区块得到出块奖励。虽然该攻击不影响区块链的有效性，但是却拖慢了交易验证和记录的效率，加剧了Pow共识算法拓展性差的问题。</p>
 
     </article>
     <!-- license  -->
@@ -530,12 +580,17 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2020/09/29/计算机网络数学基础/" title="计算机网络数学基础">
+                    <div class="nextTitle">计算机网络数学基础</div>
+                </a>
+            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/06/29/hello-Covteam/" title="hello-Covteam">
-                    <div class="prevTitle">hello-Covteam</div>
+                <a href="/2019/06/29/hello-Covteam/" title="Hello-Covteam">
+                    <div class="prevTitle">Hello-Covteam</div>
                 </a>
             
         </li>
@@ -654,7 +709,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#区块链中的基础知识"><span class="toc-number">1.</span> <span class="toc-text">区块链中的基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#比特币相关问题"><span class="toc-number">1.1.</span> <span class="toc-text">比特币相关问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Question：比特币交易需要双方同时在线吗？"><span class="toc-number">1.1.1.</span> <span class="toc-text">Question：比特币交易需要双方同时在线吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question：比特币交易时会不会出现从没听说过的账户？"><span class="toc-number">1.1.2.</span> <span class="toc-text">Question：比特币交易时会不会出现从没听说过的账户？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question：如果用户的私钥丢失怎么办？"><span class="toc-number">1.1.3.</span> <span class="toc-text">Question：如果用户的私钥丢失怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question：如果用户的私钥泄露怎么办？"><span class="toc-number">1.1.4.</span> <span class="toc-text">Question：如果用户的私钥泄露怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question：如果交易转账时，收款人填错怎么办？"><span class="toc-number">1.1.5.</span> <span class="toc-text">Question：如果交易转账时，收款人填错怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比特币节点类型"><span class="toc-number">1.1.6.</span> <span class="toc-text">比特币节点类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#比特币和以太坊的工作机制是怎样实现的？"><span class="toc-number">1.2.</span> <span class="toc-text">比特币和以太坊的工作机制是怎样实现的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#共识机制的原理，PoW-PoS这些经典共识机制工作机制是怎样的？交易和区块如何发布和验证？"><span class="toc-number">1.3.</span> <span class="toc-text">共识机制的原理，PoW, PoS这些经典共识机制工作机制是怎样的？交易和区块如何发布和验证？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#工作量证明-Proof-of-Work-PoW"><span class="toc-number">1.3.1.</span> <span class="toc-text">工作量证明/Proof of Work/PoW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#权益证明-Proof-of-Stake-PoS"><span class="toc-number">1.3.2.</span> <span class="toc-text">权益证明/Proof of Stake/PoS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#交易的发布"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">交易的发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#交易的验证"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">交易的验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区块的发布"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">区块的发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区块的验证"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">区块的验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矿工是如何挖矿的？区块链上出现分叉系统如何处理？都有哪些面向区块链的攻击？"><span class="toc-number">1.3.3.</span> <span class="toc-text">矿工是如何挖矿的？区块链上出现分叉系统如何处理？都有哪些面向区块链的攻击？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软分叉和硬分叉："><span class="toc-number">1.3.4.</span> <span class="toc-text">软分叉和硬分叉：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向区块链的攻击："><span class="toc-number">1.3.5.</span> <span class="toc-text">面向区块链的攻击：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#以太坊（改进版本的比特币）特点"><span class="toc-number">2.</span> <span class="toc-text">以太坊（改进版本的比特币）特点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#以太坊的数据结构"><span class="toc-number">2.1.</span> <span class="toc-text">以太坊的数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#以太坊的回滚操作"><span class="toc-number">2.2.</span> <span class="toc-text">以太坊的回滚操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完整的状态树"><span class="toc-number">2.3.</span> <span class="toc-text">完整的状态树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#交易树"><span class="toc-number">2.4.</span> <span class="toc-text">交易树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#收据树"><span class="toc-number">2.5.</span> <span class="toc-text">收据树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三棵树的区别"><span class="toc-number">2.6.</span> <span class="toc-text">三棵树的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#以太坊的挖矿"><span class="toc-number">2.7.</span> <span class="toc-text">以太坊的挖矿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是智能合约？"><span class="toc-number">2.8.</span> <span class="toc-text">什么是智能合约？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#区块链中的跨链技术"><span class="toc-number">3.</span> <span class="toc-text">区块链中的跨链技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#三种主要的跨联策略"><span class="toc-number">3.1.</span> <span class="toc-text">三种主要的跨联策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式一致性和共识的区别："><span class="toc-number">3.2.</span> <span class="toc-text">分布式一致性和共识的区别：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拜占庭将军问题（Byzantine-failures）："><span class="toc-number">3.3.</span> <span class="toc-text">拜占庭将军问题（Byzantine failures）：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拜占庭容错（BFT）"><span class="toc-number">3.4.</span> <span class="toc-text">拜占庭容错（BFT）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式系统模型：时序模型和故障模型"><span class="toc-number">3.5.</span> <span class="toc-text">分布式系统模型：时序模型和故障模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时序模型（Timing-Model）"><span class="toc-number">3.5.1.</span> <span class="toc-text">时序模型（Timing Model）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#故障模型（Failure-Model）"><span class="toc-number">3.5.2.</span> <span class="toc-text">故障模型（Failure Model）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主流区块链共识算法"><span class="toc-number">3.6.</span> <span class="toc-text">主流区块链共识算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一代Pos-Pow混合共识："><span class="toc-number">3.6.1.</span> <span class="toc-text">第一代Pos+Pow混合共识：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#币龄"><span class="toc-number">3.6.1.1.</span> <span class="toc-text">币龄</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pos共识算法的区块生产过程"><span class="toc-number">3.6.1.2.</span> <span class="toc-text">Pos共识算法的区块生产过程</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#区块链中的基础知识"><span class="toc-number">1.</span> <span class="toc-text">区块链中的基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#比特币相关问题"><span class="toc-number">1.1.</span> <span class="toc-text">比特币相关问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Question：比特币交易需要双方同时在线吗？"><span class="toc-number">1.1.1.</span> <span class="toc-text">Question：比特币交易需要双方同时在线吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question：比特币交易时会不会出现从没听说过的账户？"><span class="toc-number">1.1.2.</span> <span class="toc-text">Question：比特币交易时会不会出现从没听说过的账户？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question：如果用户的私钥丢失怎么办？"><span class="toc-number">1.1.3.</span> <span class="toc-text">Question：如果用户的私钥丢失怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question：如果用户的私钥泄露怎么办？"><span class="toc-number">1.1.4.</span> <span class="toc-text">Question：如果用户的私钥泄露怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Question：如果交易转账时，收款人填错怎么办？"><span class="toc-number">1.1.5.</span> <span class="toc-text">Question：如果交易转账时，收款人填错怎么办？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比特币节点类型"><span class="toc-number">1.1.6.</span> <span class="toc-text">比特币节点类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#比特币和以太坊的工作机制是怎样实现的？"><span class="toc-number">1.2.</span> <span class="toc-text">比特币和以太坊的工作机制是怎样实现的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#共识机制的原理，PoW-PoS这些经典共识机制工作机制是怎样的？交易和区块如何发布和验证？"><span class="toc-number">1.3.</span> <span class="toc-text">共识机制的原理，PoW, PoS这些经典共识机制工作机制是怎样的？交易和区块如何发布和验证？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#工作量证明-Proof-of-Work-PoW"><span class="toc-number">1.3.1.</span> <span class="toc-text">工作量证明/Proof of Work/PoW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#权益证明-Proof-of-Stake-PoS"><span class="toc-number">1.3.2.</span> <span class="toc-text">权益证明/Proof of Stake/PoS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#交易的发布"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">交易的发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#交易的验证"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">交易的验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区块的发布"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">区块的发布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#区块的验证"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">区块的验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#矿工是如何挖矿的？区块链上出现分叉系统如何处理？都有哪些面向区块链的攻击？"><span class="toc-number">1.3.3.</span> <span class="toc-text">矿工是如何挖矿的？区块链上出现分叉系统如何处理？都有哪些面向区块链的攻击？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#软分叉和硬分叉："><span class="toc-number">1.3.4.</span> <span class="toc-text">软分叉和硬分叉：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向区块链的攻击："><span class="toc-number">1.3.5.</span> <span class="toc-text">面向区块链的攻击：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#以太坊（改进版本的比特币）特点"><span class="toc-number">2.</span> <span class="toc-text">以太坊（改进版本的比特币）特点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#以太坊的数据结构"><span class="toc-number">2.1.</span> <span class="toc-text">以太坊的数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#以太坊的回滚操作"><span class="toc-number">2.2.</span> <span class="toc-text">以太坊的回滚操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完整的状态树"><span class="toc-number">2.3.</span> <span class="toc-text">完整的状态树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#交易树"><span class="toc-number">2.4.</span> <span class="toc-text">交易树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#收据树"><span class="toc-number">2.5.</span> <span class="toc-text">收据树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三棵树的区别"><span class="toc-number">2.6.</span> <span class="toc-text">三棵树的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#以太坊的挖矿"><span class="toc-number">2.7.</span> <span class="toc-text">以太坊的挖矿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是智能合约？"><span class="toc-number">2.8.</span> <span class="toc-text">什么是智能合约？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#区块链中的跨链技术"><span class="toc-number">3.</span> <span class="toc-text">区块链中的跨链技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#三种主要的跨联策略"><span class="toc-number">3.1.</span> <span class="toc-text">三种主要的跨联策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式一致性和共识的区别："><span class="toc-number">3.2.</span> <span class="toc-text">分布式一致性和共识的区别：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拜占庭将军问题（Byzantine-failures）："><span class="toc-number">3.3.</span> <span class="toc-text">拜占庭将军问题（Byzantine failures）：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拜占庭容错（BFT）"><span class="toc-number">3.4.</span> <span class="toc-text">拜占庭容错（BFT）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式系统模型：时序模型和故障模型"><span class="toc-number">3.5.</span> <span class="toc-text">分布式系统模型：时序模型和故障模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时序模型（Timing-Model）"><span class="toc-number">3.5.1.</span> <span class="toc-text">时序模型（Timing Model）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#故障模型（Failure-Model）"><span class="toc-number">3.5.2.</span> <span class="toc-text">故障模型（Failure Model）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主流区块链共识算法"><span class="toc-number">3.6.</span> <span class="toc-text">主流区块链共识算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一代Pos-Pow混合共识："><span class="toc-number">3.6.1.</span> <span class="toc-text">第一代Pos+Pow混合共识：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#币龄"><span class="toc-number">3.6.1.1.</span> <span class="toc-text">币龄</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pos共识算法的区块生产过程"><span class="toc-number">3.6.1.2.</span> <span class="toc-text">Pos共识算法的区块生产过程</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#区块链网络"><span class="toc-number">4.</span> <span class="toc-text">区块链网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据传播协议"><span class="toc-number">4.1.</span> <span class="toc-text">数据传播协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#建立初始连接"><span class="toc-number">4.1.1.</span> <span class="toc-text">建立初始连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#地址广播及发现"><span class="toc-number">4.1.2.</span> <span class="toc-text">地址广播及发现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同步区块数据"><span class="toc-number">4.1.3.</span> <span class="toc-text">同步区块数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#交易传播"><span class="toc-number">4.1.4.</span> <span class="toc-text">交易传播</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检测节点存活"><span class="toc-number">4.1.5.</span> <span class="toc-text">检测节点存活</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据验证机制"><span class="toc-number">4.2.</span> <span class="toc-text">数据验证机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#矿池网络协议"><span class="toc-number">4.3.</span> <span class="toc-text">矿池网络协议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见的漏洞和攻击手段"><span class="toc-number">5.</span> <span class="toc-text">常见的漏洞和攻击手段</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#针对一致性的攻击"><span class="toc-number">5.1.</span> <span class="toc-text">针对一致性的攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#双花攻击"><span class="toc-number">5.1.1.</span> <span class="toc-text">双花攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#51-攻击"><span class="toc-number">5.1.2.</span> <span class="toc-text">51%攻击</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#针对扩展性的攻击"><span class="toc-number">5.2.</span> <span class="toc-text">针对扩展性的攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dos攻击"><span class="toc-number">5.2.1.</span> <span class="toc-text">Dos攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#粉尘攻击"><span class="toc-number">5.2.2.</span> <span class="toc-text">粉尘攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空块攻击"><span class="toc-number">5.2.3.</span> <span class="toc-text">空块攻击</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -827,22 +882,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 13
+        Total : 14
         </div>
         <!-- search  -->
         
@@ -855,6 +897,11 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href="/2020/09/29/计算机网络数学基础/">计算机网络数学基础</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -872,7 +919,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/hello-Covteam/">hello-Covteam</a>
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/hello-Covteam/">Hello-Covteam</a>
         </li>
     
     
@@ -901,6 +948,21 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwntools使用简介/">Pwntools使用简介</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/80x86汇编知识基础/">80x86汇编知识基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/RSA/">RSA</a>
         </li>
     
@@ -911,22 +973,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwn入门笔记/">Pwn入门笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/80x86汇编知识基础/">80x86汇编知识基础</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwntools使用简介/">Pwntools使用简介</a>
         </li>
     
     
@@ -944,23 +991,23 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
-    
-        <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
-    
-        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
-    
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
         <span class="sidebar-tag-name" data-tags="日常小工具"><span class="iconfont-archer">&#xe606;</span>日常小工具</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
+        <span class="sidebar-tag-name" data-tags="数学基础"><span class="iconfont-archer">&#xe606;</span>数学基础</span>
+    
+        <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
+    
         <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
     
-        <span class="sidebar-tag-name" data-tags="区块链"><span class="iconfont-archer">&#xe606;</span>区块链</span>
+        <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
     
-        <span class="sidebar-tag-name" data-tags="区块链、研究生"><span class="iconfont-archer">&#xe606;</span>区块链、研究生</span>
+        <span class="sidebar-tag-name" data-tags="区块链"><span class="iconfont-archer">&#xe606;</span>区块链</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
