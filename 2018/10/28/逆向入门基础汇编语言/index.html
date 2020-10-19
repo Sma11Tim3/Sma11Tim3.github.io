@@ -1,0 +1,104 @@
+<main class="main post-page">
+    <article class="article-entry">
+        <p>入了二进制的坑，真的是又爱又恨，入门难，进阶难，精通难。—–TM什么都难。<br><a id="more"></a></p>
+<h2 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h2><p>以下以8086CPU的寄存器为例（8086CPU的寄存器均为16位）。</p>
+<p>8086下的通用寄存器有AX、BX、CX、DX。用于存放一般的数据，因此被称为通用寄存器。</p>
+<p><strong>AX，BX，CX，DX 称作为数据寄存器：</strong></p>
+<p>AX (Accumulator)：累加寄存器，也称之为累加器；</p>
+<p>BX (Base)：基地址寄存器；</p>
+<p>CX (Count)：计数器寄存器；</p>
+<p>DX (Data)：数据寄存器；</p>
+<p><strong>SP 和 BP 又称作为指针寄存器：</strong></p>
+<p>SP (Stack Pointer)：堆栈指针寄存器；</p>
+<p>BP (Base Pointer)：基指针寄存器；</p>
+<p><strong>SI 和 DI 又称作为变址寄存器：</strong></p>
+<p>SI (Source Index)：源变址寄存器；</p>
+<p>DI (Destination Index)：目的变址寄存器；</p>
+<hr>
+<p>由于在 8086 之前的 CPU 为 8 位 CPU，所以为了兼容以前的 8 位程序，</p>
+<p>在 8086 CPU 中，每一个数据寄存器都可以当做两个单独的寄存器来使用，</p>
+<p>由此，每一个 16 位寄存器就可以当做 2 个独立的 8 位寄存器来使用了 。</p>
+<ul>
+<li><p>AX 寄存器可以分为两个独立的 8 位的 AH 和 AL 寄存器；</p>
+</li>
+<li><p>BX 寄存器可以分为两个独立的 8 位的 BH 和 BL 寄存器；</p>
+</li>
+<li><p>CX 寄存器可以分为两个独立的 8 位的 CH 和 CL 寄存器；</p>
+</li>
+<li><p>DX 寄存器可以分为两个独立的 8 位的 DH 和 DL 寄存器；</p>
+</li>
+</ul>
+<p>除了上面 4 个数据寄存器以外，其他寄存器均不可以分为两个独立的 8 位寄存器 ；</p>
+<p>下面给出一幅 16 位数据寄存器的结构图：</p>
+<p>表示 16 位 寄存器 AX 可以表示成两个 8 位寄存器，</p>
+<p>其中 AH 表示高位的 8 位寄存器，AL 表示低位的 8 位寄存器 。</p>
+<p><img src="https://i.imgur.com/nagIyLm.png" alt=""></p>
+<h2 id="控制寄存器"><a href="#控制寄存器" class="headerlink" title="控制寄存器"></a>控制寄存器</h2><p>IP (Instruction Pointer)：指令指针寄存器；</p>
+<p>FLAG：标志寄存器；</p>
+<h2 id="段寄存器"><a href="#段寄存器" class="headerlink" title="段寄存器"></a>段寄存器</h2><p>CS (Code Segment)：代码段寄存器；</p>
+<p>DS (Data Segment)：数据段寄存器；</p>
+<p>SS (Stack Segment)：堆栈段寄存器；</p>
+<p>ES (Extra Segment)：附加段寄存器；</p>
+<h2 id="指针寄存器（BP，SP）："><a href="#指针寄存器（BP，SP）：" class="headerlink" title="指针寄存器（BP，SP）："></a>指针寄存器（BP，SP）：</h2><p>SS:存放栈的段地址</p>
+<p>SP:堆栈寄存器SP(stack pointer)存放栈的偏移地址</p>
+<p>BP: 基数指针寄存器BP(base pointer)是一个寄存器，它的用途有点特殊，是和堆栈指针SP联合使用的，作为SP校准使用的，只有在寻找堆栈里的数据和使用个别的寻址方式时候才能用到</p>
+<p>在函数进入时：<br>push bp     // 保存bp指针<br>mov bp,sp  // 将sp指针传给bp，此时bp指向sp的基地址。</p>
+<p>函数结束时：<br>mov sp,bp  // 将原sp指针传回给sp<br>pop bp       // 恢复原bp的值。<br>ret              // 退出子函数</p>
+<h2 id="标志寄存器（FLAG）"><a href="#标志寄存器（FLAG）" class="headerlink" title="标志寄存器（FLAG）:"></a>标志寄存器（FLAG）:</h2><p>前面呢，已经介绍了  8086  CPU  14 个寄存器中的 13 个了，下面我们将介绍最后一个寄存器也就是  FLAG  寄存器，</p>
+<p>FLAG  寄存器之所以放到最后一个介绍，是因为其和其他的一些寄存器不同，像   AX，BX，CX，DX  这些寄存器来说，</p>
+<p>它们都是用来存放数据的，当然  FLAG  中存放的也是数据啦，</p>
+<p>呵呵，不过，AX，BX 这些寄存器中的数据是作为一个整体使用的，</p>
+<p>最多也就分成一个  AL  和  AH  使用而已，但是在  FLAG  中，数据是按位起作用的，</p>
+<p>也就是说，FLAG  中的每一个位都表示不同的状态，</p>
+<p>由于一个位也就能表示  0  和  1 ，自然，FLAG  中的每一个位就是用来描述状态的，</p>
+<p>而且  FLAG  寄存器中存储的信息通常又被称作程序状态字（PSW） 。</p>
+<p><strong>下面我给出一幅  FLAG  寄存器中各个位的示意图：</strong></p>
+<p><img src="https://i.imgur.com/kWjAO5h.png" alt=""></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>上面介绍了一些简单的寄存器知识，要入门二进制要跳的坑还有点多，在此推荐一本汇编书：《汇编语言》–清华大学出版社  by王爽 有兴趣的小伙伴自己买书来看咯。</p>
+<p>by Covteam-Sma11_Tim3<br>生活不易，多才多艺。</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2018/10/28/逆向入门基础汇编语言/">http://yoursite.com/2018/10/28/逆向入门基础汇编语言/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2018/10/28/逆向入门基础汇编语言/">October 28th 2018, 12:25:24 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2018/10/28/逆向入门基础汇编语言/">October 28th 2018, 1:39:48 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2018/10/28/网鼎杯第一场/" title="网鼎杯第一场">
+                    <div class="nextTitle">网鼎杯第一场</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2018/10/28/RSA/" title="RSA">
+                    <div class="prevTitle">RSA</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
