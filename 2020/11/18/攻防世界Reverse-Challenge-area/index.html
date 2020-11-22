@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sma11_Tim3">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sma11_Tim3">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="Not a product, no need to explain">
+    <meta name="description" content="研究生阶段重拾CTF，未来的路还是喜欢网络攻防，既然喜欢那就坚持下去吧。">
+<meta name="keywords" content="Reverse">
+<meta property="og:type" content="article">
+<meta property="og:title" content="攻防世界Reverse Challenge area">
+<meta property="og:url" content="http://yoursite.com/2020/11/18/攻防世界Reverse-Challenge-area/index.html">
+<meta property="og:site_name" content="Know it &amp; Make it">
+<meta property="og:description" content="研究生阶段重拾CTF，未来的路还是喜欢网络攻防，既然喜欢那就坚持下去吧。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118183353945.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118183656039.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118184155710.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118184648648.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118184946291.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118185802028.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118185948576.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118190550516.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118191246053.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118191333145.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118191345604.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118191703777.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118191741480.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118192509330.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118192541883.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118192738318.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118193435005.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118193813147.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118194317962.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118194404722.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118194505923.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118194547929.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118195041381.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118195156665.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118195402248.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201118200052287.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201120221014760.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201120221107134.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201120221159810.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201120221701866.png">
+<meta property="og:image" content="f:/手机备份照片/Typora临时图片/image-20201120221727849.png">
+<meta property="og:updated_time" content="2020-11-22T06:12:11.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="攻防世界Reverse Challenge area">
+<meta name="twitter:description" content="研究生阶段重拾CTF，未来的路还是喜欢网络攻防，既然喜欢那就坚持下去吧。">
+<meta name="twitter:image" content="f:/手机备份照片/Typora临时图片/image-20201118183353945.png">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>攻防世界Reverse Challenge area · Sma11_Tim3&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/img_0006.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Sma11_Tim3&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">攻防世界Reverse Challenge area</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Sma11_Tim3's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            攻防世界Reverse Challenge area
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2.6k</span>阅读时长: <span class="post-count reading-time">13 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/11/18</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>研究生阶段重拾CTF，未来的路还是喜欢网络攻防，既然喜欢那就坚持下去吧。</p>
+<a id="more"></a>
+<h1 id="Guess-the-Number"><a href="#Guess-the-Number" class="headerlink" title="Guess-the-Number"></a>Guess-the-Number</h1><p>用Android Kill打开或者用Java Decompiler打开。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118183353945.png" alt="image-20201118183353945"></p>
+<p>重点在guess_number函数，只有当my_number/5==guess_number时，打印出正确信息的if块，跟进去以后发现if块中的内容和guess_numbe没啥关系。因此最终guess_number应该为my_number/5=309137378。在命令行中执行命令，即可得到flag。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118183656039.png" alt="image-20201118183656039"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a7b08c546302cc1fd2a4d48bf2bf2ddb</span><br></pre></td></tr></table></figure>
+<h1 id="Shuffle1"><a href="#Shuffle1" class="headerlink" title="Shuffle1"></a>Shuffle1</h1><p>拖进IDA，找到main函数，F5。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118184155710.png" alt="image-20201118184155710"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SECCON&#123;Welcome to the SECCON 2014 CTF!&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="re-for-50-plz-50"><a href="#re-for-50-plz-50" class="headerlink" title="re-for-50-plz-50"></a>re-for-50-plz-50</h1><p>发现是MIPS的文件，咋也不知道是什么啊！！！！<br>然后没管直接打开，结果发现转函数时：</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118184648648.png" alt="image-20201118184648648"></p>
+<p>额，MIPS文件不能够直接用F5查看伪代码。</p>
+<p>最后经过查找资料，了解到MIPS是一个指令集<br>与汇编时不同的两个东西~~<br>必须恶补一下！！！<br>找到一篇好的文章~</p>
+<p><a href="https://www.cnblogs.com/thoupin/p/4018455.html" target="_blank" rel="noopener">https://www.cnblogs.com/thoupin/p/4018455.html</a></p>
+<p>找一下关键的部分。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118184946291.png" alt="image-20201118184946291"></p>
+<p>发现了一段字符串和异或（XOR），尝试一下提取出来运算试试。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line">#coding=utf-8</span><br><span class="line"></span><br><span class="line">s1=&quot;cbtcqLUBChERV[[Nh@_X^D]X_YPV[CJ&quot;</span><br><span class="line">num=0x37</span><br><span class="line">flag=&apos;&apos;</span><br><span class="line">for i in range(len(s1)):</span><br><span class="line">	flag+=chr(ord(s1[i])^num)</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TUCTF&#123;but_really_whoisjohngalt&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="dmd-50"><a href="#dmd-50" class="headerlink" title="dmd-50"></a>dmd-50</h1><p><img src="F:\手机备份照片\Typora临时图片\image-20201118185802028.png" alt="image-20201118185802028"></p>
+<p>进去之后发现需要比对一个字符串780438d5b6e29db0898bc4f0225935c0，但是从上面有经过一个md5函数，提取出来在线解一下。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118185948576.png" alt="image-20201118185948576"></p>
+<p>发现结果是grape但是类型是经过了两次md5加密的，猜测需要输入的flag是grape进行md5加密一次，测试发现正确。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b781cbb29054db12f88f08c6e161c199</span><br></pre></td></tr></table></figure>
+<h1 id="parallel-comparator-200"><a href="#parallel-comparator-200" class="headerlink" title="parallel-comparator-200"></a>parallel-comparator-200</h1><p>是一道C语言代码审计的题目。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;pthread.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FLAG_LEN 20</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> * <span class="title">checking</span><span class="params">(<span class="keyword">void</span> *arg)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *result = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="keyword">char</span> *argument = (<span class="keyword">char</span> *)arg;</span><br><span class="line">    *result = (argument[<span class="number">0</span>]+argument[<span class="number">1</span>]) ^ argument[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">highly_optimized_parallel_comparsion</span><span class="params">(<span class="keyword">char</span> *user_string)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> initialization_number;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">char</span> generated_string[FLAG_LEN + <span class="number">1</span>];</span><br><span class="line">    generated_string[FLAG_LEN] = <span class="string">'\0'</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> ((initialization_number = random()) &gt;= <span class="number">64</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> first_letter;</span><br><span class="line">    first_letter = (initialization_number % <span class="number">26</span>) + <span class="number">97</span>;</span><br><span class="line">    <span class="comment">//initialization_number=37</span></span><br><span class="line">    <span class="keyword">pthread_t</span> thread[FLAG_LEN];</span><br><span class="line">    <span class="keyword">char</span> differences[FLAG_LEN] = &#123;<span class="number">0</span>, <span class="number">9</span>, <span class="number">-9</span>, <span class="number">-1</span>, <span class="number">13</span>, <span class="number">-13</span>, <span class="number">-4</span>, <span class="number">-11</span>, <span class="number">-9</span>, <span class="number">-1</span>, <span class="number">-7</span>, <span class="number">6</span>, <span class="number">-13</span>, <span class="number">13</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">-13</span>, <span class="number">-11</span>, <span class="number">6</span>, <span class="number">-7</span>&#125;;</span><br><span class="line">    <span class="keyword">char</span> *arguments[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; FLAG_LEN; i++) &#123;</span><br><span class="line">        arguments[i] = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="number">3</span>*<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">        arguments[i][<span class="number">0</span>] = first_letter;</span><br><span class="line">        arguments[i][<span class="number">1</span>] = differences[i];</span><br><span class="line">        arguments[i][<span class="number">2</span>] = user_string[i];</span><br><span class="line"> </span><br><span class="line">        pthread_create((<span class="keyword">pthread_t</span>*)(thread+i), <span class="literal">NULL</span>, checking, arguments[i]);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">void</span> *result;</span><br><span class="line">    <span class="keyword">int</span> just_a_string[FLAG_LEN] = &#123;<span class="number">115</span>, <span class="number">116</span>, <span class="number">114</span>, <span class="number">97</span>, <span class="number">110</span>, <span class="number">103</span>, <span class="number">101</span>, <span class="number">95</span>, <span class="number">115</span>, <span class="number">116</span>, <span class="number">114</span>, <span class="number">105</span>, <span class="number">110</span>, <span class="number">103</span>, <span class="number">95</span>, <span class="number">105</span>, <span class="number">116</span>, <span class="number">95</span>, <span class="number">105</span>, <span class="number">115</span>&#125;;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; FLAG_LEN; i++) &#123;</span><br><span class="line">        pthread_join(*(thread+i), &amp;result);</span><br><span class="line">        generated_string[i] = *(<span class="keyword">char</span> *)result + just_a_string[i];</span><br><span class="line">        <span class="built_in">free</span>(result);</span><br><span class="line">        <span class="built_in">free</span>(arguments[i]);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> is_ok = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; FLAG_LEN; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (generated_string[i] != just_a_string[i])</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *user_string = (<span class="keyword">char</span> *)<span class="built_in">calloc</span>(FLAG_LEN+<span class="number">1</span>, <span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    fgets(user_string, FLAG_LEN+<span class="number">1</span>, <span class="built_in">stdin</span>);</span><br><span class="line">    <span class="keyword">int</span> is_ok = highly_optimized_parallel_comparsion(user_string);</span><br><span class="line">    <span class="keyword">if</span> (is_ok)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"You win!\n"</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Wrong!\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关键代码分析</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">generated_string[i] = *(<span class="keyword">char</span> *)result + just_a_string[i];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (generated_string[i] != just_a_string[i])</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118190550516.png" alt="image-20201118190550516"></p>
+<p>写出对应的脚本：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FLAG_LEN 20</span></span><br><span class="line"><span class="keyword">char</span> differences[FLAG_LEN] = &#123;<span class="number">0</span>, <span class="number">9</span>, <span class="number">-9</span>, <span class="number">-1</span>, <span class="number">13</span>, <span class="number">-13</span>, <span class="number">-4</span>, <span class="number">-11</span>, <span class="number">-9</span>, <span class="number">-1</span>, <span class="number">-7</span>, <span class="number">6</span>, <span class="number">-13</span>, <span class="number">13</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">-13</span>, <span class="number">-11</span>, <span class="number">6</span>, <span class="number">-7</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;       </span><br><span class="line">      <span class="keyword">int</span> initialization_number,first_letter;</span><br><span class="line">      <span class="keyword">while</span> ((initialization_number = random()) &gt;= <span class="number">64</span>);  </span><br><span class="line">      first_letter = (initialization_number % <span class="number">26</span>) + <span class="number">97</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;FLAG_LEN;i++)</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%c"</span>,first_letter+differences[i]);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line">differences = [<span class="number">0</span>, <span class="number">9</span>, <span class="number">-9</span>, <span class="number">-1</span>, <span class="number">13</span>, <span class="number">-13</span>, <span class="number">-4</span>, <span class="number">-11</span>, <span class="number">-9</span>, <span class="number">-1</span>, <span class="number">-7</span>, <span class="number">6</span>, <span class="number">-13</span>, <span class="number">13</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">-13</span>, <span class="number">-11</span>, <span class="number">6</span>, <span class="number">-7</span>]</span><br><span class="line">first_letter = <span class="number">108</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">''</span>.join([chr(first_letter+differences[i]) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(differences))]))</span><br></pre></td></tr></table></figure>
+<h1 id="secret-galaxy-300"><a href="#secret-galaxy-300" class="headerlink" title="secret-galaxy-300"></a>secret-galaxy-300</h1><p>拖进去发现主函数就两个函数，跟进去之后也没有什么特别的。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118191246053.png" alt="image-20201118191246053"></p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118191333145.png" alt="image-20201118191333145"></p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118191345604.png" alt="image-20201118191345604"></p>
+<p>拖进OD尝试动态调试一下。</p>
+<p>直接在输出相应的语句的地方下个断点。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118191703777.png" alt="image-20201118191703777"></p>
+<p>运行到这里，右键智能搜索一下字符串。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118191741480.png" alt="image-20201118191741480"></p>
+<p>发现了一个可疑的字符串，aliens_are_around_us。提交就是flag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aliens_are_around_us</span><br></pre></td></tr></table></figure>
+<h1 id="srm-50"><a href="#srm-50" class="headerlink" title="srm-50"></a>srm-50</h1><p><img src="F:\手机备份照片\Typora临时图片\image-20201118192509330.png" alt="image-20201118192509330"></p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118192541883.png" alt="image-20201118192541883"></p>
+<p>一共两个检查的地方，一个检查邮箱一个检查数字。检查邮箱的地方发现只要有@和.这两个就可以了。重点是后面的if，简单的运算一下就能知道值。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118192738318.png" alt="image-20201118192738318"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CZ9dmq4c8g9G7bAX</span><br></pre></td></tr></table></figure>
+<h1 id="simple-check-100"><a href="#simple-check-100" class="headerlink" title="simple-check-100"></a>simple-check-100</h1><p><img src="F:\手机备份照片\Typora临时图片\image-20201118193435005.png" alt="image-20201118193435005"></p>
+<p>进去之后发现最主要的地方就是check_key函数，看一下汇编代码。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118193813147.png" alt="image-20201118193813147"></p>
+<p>发现check_key函数是否成功就取决于eax函数的值。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118194317962.png" alt="image-20201118194317962"></p>
+<p>使用gdb调试，下断点运行到test这条语句，查看一下rax寄存器的值。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118194404722.png" alt="image-20201118194404722"></p>
+<p>这里rax的值为0，我们将其修改为1。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118194505923.png" alt="image-20201118194505923"></p>
+<p>然后continue，执行就能得到flag。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118194547929.png" alt="image-20201118194547929"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag_is_you_know_cracking!!!</span><br></pre></td></tr></table></figure>
+<h1 id="Mysterious"><a href="#Mysterious" class="headerlink" title="Mysterious"></a>Mysterious</h1><p>很简答的一道题。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118195041381.png" alt="image-20201118195041381"></p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118195156665.png" alt="image-20201118195156665"></p>
+<p>可以看到判断里面v10=123，v12、v13、v14分别是xyz，因为上一条语句v10=atoi(&amp;string)+1。所以应该输入的值为122，再加上后面三个参数xyz。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118195402248.png" alt="image-20201118195402248"></p>
+<h1 id="Newbie-calculations"><a href="#Newbie-calculations" class="headerlink" title="Newbie_calculations"></a>Newbie_calculations</h1><p>这题也是很有意思的，看得有点眼睛痛。</p>
+<p>main函数里面一堆函数调用，最后打印出v120[]数组里面的值，也就是需要的flag，仔细看了一下之后发现就是3个函数。</p>
+<p>sub_401000、sub_401100、sub_401220</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201118200052287.png" alt="image-20201118200052287"></p>
+<p>这个函数一堆操作，但是我们只关心a1和a2。第一个循环减了v4次，第二个有加了v5次，最后还加了一次，简化一下，发现最后的结果就是返回两个值相加。</p>
+<p>接下来依次分析剩下的两个函数。最后可以得到如下结果：</p>
+<p>sub_401000函数返回两数相加</p>
+<p>sub_401100函数返回两数相乘</p>
+<p>sub_401220函数返回两数相减</p>
+<p>将整个函数重新写一遍运行出来：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">sub_401100</span><span class="params">(<span class="keyword">int</span> *a1, <span class="keyword">int</span> a2)</span><span class="comment">//a1 * a2</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *a1 = *a1 * a2;</span><br><span class="line">    <span class="keyword">return</span> a1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">sub_401000</span><span class="params">(<span class="keyword">int</span> *a1, <span class="keyword">int</span> a2)</span><span class="comment">//a1 + a2</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *a1 = *a1 + a2;</span><br><span class="line">    <span class="keyword">return</span> a1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">sub_401220</span><span class="params">(<span class="keyword">int</span> *a1, <span class="keyword">int</span> a2)</span><span class="comment">//a1 - a2</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    *a1 = *a1 -a2;</span><br><span class="line">    <span class="keyword">return</span> a1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> *v3; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v4; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v5; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v6; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v7; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v8; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v9; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v10; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v11; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v12; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v13; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v14; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v15; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v16; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v17; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v18; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v19; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v20; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v21; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v22; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v23; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v24; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v25; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v26; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v27; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v28; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v29; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v30; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v31; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v32; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v33; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v34; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v35; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v36; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v37; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v38; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v39; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v40; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v41; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v42; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v43; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v44; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v45; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v46; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v47; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v48; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v49; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v50; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v51; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v52; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v53; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v54; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v55; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v56; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v57; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v58; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v59; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v60; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v61; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v62; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v63; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v64; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v65; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v66; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v67; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v68; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v69; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v70; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v71; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v72; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v73; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v74; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v75; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v76; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v77; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v78; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v79; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v80; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v81; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v82; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v83; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v84; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v85; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v86; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v87; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v88; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v89; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v90; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v91; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v92; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v93; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v94; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v95; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v96; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v97; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v98; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v99; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v100; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v101; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v102; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v103; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v104; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v105; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v106; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v107; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v108; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v109; <span class="comment">// ST1C_4</span></span><br><span class="line">  <span class="keyword">int</span> *v110; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v111; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v112; <span class="comment">// ST20_4</span></span><br><span class="line">  <span class="keyword">int</span> *v113; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v114; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">int</span> *v115; <span class="comment">// ST20_4</span></span><br><span class="line">  <span class="keyword">int</span> *v116; <span class="comment">// eax</span></span><br><span class="line">  <span class="keyword">signed</span> <span class="keyword">int</span> i; <span class="comment">// [esp+4h] [ebp-90h]</span></span><br><span class="line">  <span class="keyword">signed</span> <span class="keyword">int</span> j; <span class="comment">// [esp+8h] [ebp-8Ch]</span></span><br><span class="line">  <span class="keyword">int</span> v120[<span class="number">33</span>]; <span class="comment">// [esp+Ch] [ebp-88h]</span></span><br><span class="line">  <span class="keyword">int</span> v121; <span class="comment">// [esp+10h] [ebp-84h]</span></span><br><span class="line">  <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; <span class="number">32</span>; ++i )</span><br><span class="line">    v120[i] = <span class="number">1</span>;</span><br><span class="line">  v121 = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">puts</span>(<span class="string">"Your flag is:"</span>);</span><br><span class="line">  v3 = sub_401100(&amp;v120[<span class="number">0</span>], <span class="number">1000000000</span>);</span><br><span class="line">  v4 = sub_401220(v3, <span class="number">999999950</span>);</span><br><span class="line">  sub_401100(v4, <span class="number">2</span>);</span><br><span class="line">  v5 =  sub_401000(&amp;v120[<span class="number">1</span>], <span class="number">5000000</span>);</span><br><span class="line">  v6 = sub_401220(v5, <span class="number">6666666</span>);</span><br><span class="line">  v7 = sub_401000(v6, <span class="number">1666666</span>);</span><br><span class="line">  v8 =  sub_401000(v7, <span class="number">45</span>);</span><br><span class="line">  v9 = sub_401100(v8, <span class="number">2</span>);</span><br><span class="line">  sub_401000(v9, <span class="number">5</span>);</span><br><span class="line">  v10 = sub_401100(&amp;v120[<span class="number">2</span>], <span class="number">1000000000</span>);</span><br><span class="line">  v11 = sub_401220(v10, <span class="number">999999950</span>);</span><br><span class="line">  v12 = sub_401100(v11, <span class="number">2</span>);</span><br><span class="line">  sub_401000(v12, <span class="number">2</span>);</span><br><span class="line">  v13 =  sub_401000(&amp;v120[<span class="number">3</span>], <span class="number">55</span>);</span><br><span class="line">  v14 = sub_401220(v13, <span class="number">3</span>);</span><br><span class="line">  v15 =  sub_401000(v14, <span class="number">4</span>);</span><br><span class="line">  sub_401220(v15, <span class="number">1</span>);</span><br><span class="line">  v16 = sub_401100(&amp;v120[<span class="number">4</span>], <span class="number">100000000</span>);</span><br><span class="line">  v17 = sub_401220(v16, <span class="number">99999950</span>);</span><br><span class="line">  v18 = sub_401100(v17, <span class="number">2</span>);</span><br><span class="line">  sub_401000(v18, <span class="number">2</span>);</span><br><span class="line">  v19 = sub_401220(&amp;v120[<span class="number">5</span>], <span class="number">1</span>);</span><br><span class="line">  v20 = sub_401100(v19, <span class="number">1000000000</span>);</span><br><span class="line">  v21 =  sub_401000(v20, <span class="number">55</span>);</span><br><span class="line">  sub_401220(v21, <span class="number">3</span>);</span><br><span class="line">  v22 = sub_401100(&amp;v120[<span class="number">6</span>], <span class="number">1000000</span>);</span><br><span class="line">  v23 = sub_401220(v22, <span class="number">999975</span>);</span><br><span class="line">  sub_401100(v23, <span class="number">4</span>);</span><br><span class="line">  v24 =  sub_401000(&amp;v120[<span class="number">7</span>], <span class="number">55</span>);</span><br><span class="line">  v25 = sub_401220(v24, <span class="number">33</span>);</span><br><span class="line">  v26 =  sub_401000(v25, <span class="number">44</span>);</span><br><span class="line">  sub_401220(v26, <span class="number">11</span>);</span><br><span class="line">  v27 = sub_401100(&amp;v120[<span class="number">8</span>], <span class="number">10</span>);</span><br><span class="line">  v28 = sub_401220(v27, <span class="number">5</span>);</span><br><span class="line">  v29 = sub_401100(v28, <span class="number">8</span>);</span><br><span class="line">  sub_401000(v29, <span class="number">9</span>);</span><br><span class="line">  v30 =  sub_401000(&amp;v120[<span class="number">9</span>], <span class="number">0</span>);</span><br><span class="line">  v31 = sub_401220(v30, <span class="number">0</span>);</span><br><span class="line">  v32 =  sub_401000(v31, <span class="number">11</span>);</span><br><span class="line">  v33 = sub_401220(v32, <span class="number">11</span>);</span><br><span class="line">  sub_401000(v33, <span class="number">53</span>);</span><br><span class="line">  v34 =  sub_401000(&amp;v120[<span class="number">10</span>], <span class="number">49</span>);</span><br><span class="line">  v35 = sub_401220(v34, <span class="number">2</span>);</span><br><span class="line">  v36 =  sub_401000(v35, <span class="number">4</span>);</span><br><span class="line">  sub_401220(v36, <span class="number">2</span>);</span><br><span class="line">  v37 = sub_401100(&amp;v120[<span class="number">11</span>], <span class="number">1000000</span>);</span><br><span class="line">  v38 = sub_401220(v37, <span class="number">999999</span>);</span><br><span class="line">  v39 = sub_401100(v38, <span class="number">4</span>);</span><br><span class="line">  sub_401000(v39, <span class="number">50</span>);</span><br><span class="line">  v40 = sub_401000(&amp;v120[<span class="number">12</span>], <span class="number">1</span>);</span><br><span class="line">  v41 = sub_401000(v40, <span class="number">1</span>);</span><br><span class="line">  v42 = sub_401000(v41, <span class="number">1</span>);</span><br><span class="line">  v43 = sub_401000(v42, <span class="number">1</span>);</span><br><span class="line">  v44 = sub_401000(v43, <span class="number">1</span>);</span><br><span class="line">  v45 = sub_401000(v44, <span class="number">1</span>);</span><br><span class="line">  v46 = sub_401000(v45, <span class="number">10</span>);</span><br><span class="line">  sub_401000(v46, <span class="number">32</span>);</span><br><span class="line">  v47 = sub_401100(&amp;v120[<span class="number">13</span>], <span class="number">10</span>);</span><br><span class="line">  v48 = sub_401220(v47, <span class="number">5</span>);</span><br><span class="line">  v49 = sub_401100(v48, <span class="number">8</span>);</span><br><span class="line">  v50 = sub_401000(v49, <span class="number">9</span>);</span><br><span class="line">  sub_401000(v50, <span class="number">48</span>);</span><br><span class="line">  v51 = sub_401220(&amp;v120[<span class="number">14</span>], <span class="number">1</span>);</span><br><span class="line">  v52 = sub_401100(v51, <span class="number">-294967296</span>);</span><br><span class="line">  v53 =  sub_401000(v52, <span class="number">55</span>);</span><br><span class="line">  sub_401220(v53, <span class="number">3</span>);</span><br><span class="line">  v54 = sub_401000(&amp;v120[<span class="number">15</span>], <span class="number">1</span>);</span><br><span class="line">  v55 = sub_401000(v54, <span class="number">2</span>);</span><br><span class="line">  v56 = sub_401000(v55, <span class="number">3</span>);</span><br><span class="line">  v57 = sub_401000(v56, <span class="number">4</span>);</span><br><span class="line">  v58 = sub_401000(v57, <span class="number">5</span>);</span><br><span class="line">  v59 = sub_401000(v58, <span class="number">6</span>);</span><br><span class="line">  v60 = sub_401000(v59, <span class="number">7</span>);</span><br><span class="line">  sub_401000(v60, <span class="number">20</span>);</span><br><span class="line">  v61 = sub_401100(&amp;v120[<span class="number">16</span>], <span class="number">10</span>);</span><br><span class="line">  v62 = sub_401220(v61, <span class="number">5</span>);</span><br><span class="line">  v63 = sub_401100(v62, <span class="number">8</span>);</span><br><span class="line">  v64 = sub_401000(v63, <span class="number">9</span>);</span><br><span class="line">  sub_401000(v64, <span class="number">48</span>);</span><br><span class="line">  v65 = sub_401000(&amp;v120[<span class="number">17</span>], <span class="number">7</span>);</span><br><span class="line">  v66 = sub_401000(v65, <span class="number">6</span>);</span><br><span class="line">  v67 = sub_401000(v66, <span class="number">5</span>);</span><br><span class="line">  v68 = sub_401000(v67, <span class="number">4</span>);</span><br><span class="line">  v69 = sub_401000(v68, <span class="number">3</span>);</span><br><span class="line">  v70 = sub_401000(v69, <span class="number">2</span>);</span><br><span class="line">  v71 = sub_401000(v70, <span class="number">1</span>);</span><br><span class="line">  sub_401000(v71, <span class="number">20</span>);</span><br><span class="line">  v72 = sub_401000(&amp;v120[<span class="number">18</span>], <span class="number">7</span>);</span><br><span class="line">  v73 = sub_401000(v72, <span class="number">2</span>);</span><br><span class="line">  v74 = sub_401000(v73, <span class="number">4</span>);</span><br><span class="line">  v75 = sub_401000(v74, <span class="number">3</span>);</span><br><span class="line">  v76 = sub_401000(v75, <span class="number">6</span>);</span><br><span class="line">  v77 = sub_401000(v76, <span class="number">5</span>);</span><br><span class="line">  v78 = sub_401000(v77, <span class="number">1</span>);</span><br><span class="line">  sub_401000(v78, <span class="number">20</span>);</span><br><span class="line">  v79 = sub_401100(&amp;v120[<span class="number">19</span>], <span class="number">1000000</span>);</span><br><span class="line">  v80 = sub_401220(v79, <span class="number">999999</span>);</span><br><span class="line">  v81 = sub_401100(v80, <span class="number">4</span>);</span><br><span class="line">  v82 =  sub_401000(v81, <span class="number">50</span>);</span><br><span class="line">  sub_401220(v82, <span class="number">1</span>);</span><br><span class="line">  v83 = sub_401220(&amp;v120[<span class="number">20</span>], <span class="number">1</span>);</span><br><span class="line">  v84 = sub_401100(v83, <span class="number">-294967296</span>);</span><br><span class="line">  v85 =  sub_401000(v84, <span class="number">49</span>);</span><br><span class="line">  sub_401220(v85, <span class="number">1</span>);</span><br><span class="line">  v86 = sub_401220(&amp;v120[<span class="number">21</span>], <span class="number">1</span>);</span><br><span class="line">  v87 = sub_401100(v86, <span class="number">1000000000</span>);</span><br><span class="line">  v88 =  sub_401000(v87, <span class="number">54</span>);</span><br><span class="line">  v89 = sub_401220(v88, <span class="number">1</span>);</span><br><span class="line">  v90 =  sub_401000(v89, <span class="number">1000000000</span>);</span><br><span class="line">  sub_401220(v90, <span class="number">1000000000</span>);</span><br><span class="line">  v91 =  sub_401000(&amp;v120[<span class="number">22</span>], <span class="number">49</span>);</span><br><span class="line">  v92 = sub_401220(v91, <span class="number">1</span>);</span><br><span class="line">  v93 =  sub_401000(v92, <span class="number">2</span>);</span><br><span class="line">  sub_401220(v93, <span class="number">1</span>);</span><br><span class="line">  v94 = sub_401100(&amp;v120[<span class="number">23</span>], <span class="number">10</span>);</span><br><span class="line">  v95 = sub_401220(v94, <span class="number">5</span>);</span><br><span class="line">  v96 = sub_401100(v95, <span class="number">8</span>);</span><br><span class="line">  v97 = sub_401000(v96, <span class="number">9</span>);</span><br><span class="line">  sub_401000(v97, <span class="number">48</span>);</span><br><span class="line">  v98 = sub_401000(&amp;v120[<span class="number">24</span>], <span class="number">1</span>);</span><br><span class="line">  v99 = sub_401000(v98, <span class="number">3</span>);</span><br><span class="line">  v100 = sub_401000(v99, <span class="number">3</span>);</span><br><span class="line">  v101 = sub_401000(v100, <span class="number">3</span>);</span><br><span class="line">  v102 = sub_401000(v101, <span class="number">6</span>);</span><br><span class="line">  v103 = sub_401000(v102, <span class="number">6</span>);</span><br><span class="line">  v104 = sub_401000(v103, <span class="number">6</span>);</span><br><span class="line">  sub_401000(v104, <span class="number">20</span>);</span><br><span class="line">  v105 =  sub_401000(&amp;v120[<span class="number">25</span>], <span class="number">55</span>);</span><br><span class="line">  v106 = sub_401220(v105, <span class="number">33</span>);</span><br><span class="line">  v107 =  sub_401000(v106, <span class="number">44</span>);</span><br><span class="line">  v108 = sub_401220(v107, <span class="number">11</span>);</span><br><span class="line">  sub_401000(v108, <span class="number">42</span>);</span><br><span class="line">  sub_401000(&amp;v120[<span class="number">26</span>], v120[<span class="number">25</span>]);</span><br><span class="line">  sub_401000(&amp;v120[<span class="number">27</span>], v120[<span class="number">12</span>]);</span><br><span class="line">  *v109 = v120[<span class="number">27</span>];</span><br><span class="line">  v110 = sub_401220(&amp;v120[<span class="number">28</span>], <span class="number">1</span>);</span><br><span class="line">  v111 =  sub_401000(v110, *v109);</span><br><span class="line">  sub_401220(v111, <span class="number">1</span>);</span><br><span class="line">  *v112 = v120[<span class="number">23</span>];</span><br><span class="line">  v113 = sub_401220(&amp;v120[<span class="number">29</span>], <span class="number">1</span>);</span><br><span class="line">  v114 = sub_401100(v113, <span class="number">1000000</span>);</span><br><span class="line">  sub_401000(v114, v120[<span class="number">23</span>]);</span><br><span class="line">  v116 =  sub_401000(&amp;v120[<span class="number">30</span>], <span class="number">1</span>);</span><br><span class="line">  sub_401100(v116, v120[<span class="number">27</span>]);</span><br><span class="line">  sub_401000(&amp;v120[<span class="number">31</span>], v120[<span class="number">30</span>]);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"CTF&#123;"</span>);</span><br><span class="line">  <span class="keyword">for</span> ( j = <span class="number">0</span>; j &lt; <span class="number">32</span>; ++j )</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c"</span>, v120[j]);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"&#125;\n"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="re1-100"><a href="#re1-100" class="headerlink" title="re1-100"></a>re1-100</h1><p>拿到先file查一下看看。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201120221014760.png" alt="image-20201120221014760"></p>
+<p>64位直接进ida。</p>
+<p>shift+F12进字符串表，定位到关键字符串处。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201120221107134.png" alt="image-20201120221107134"></p>
+<p>跟进去找到引用函数，F5。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201120221159810.png" alt="image-20201120221159810"></p>
+<p>一大堆东西，看到我们的输入都存在了bufWrite里面。然后又把bufWrite写进了bufParentRead里。前面的几个函数看函数名是检查是否开启Debugger模式和检查输入是字符串还是数字。看到后面重点来了。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201120221701866.png" alt="image-20201120221701866"></p>
+<p>开头结尾为{}，字符串长度42。前10位和后10位分别为53fc275d81和4938ae4efd。最后和{daf29f59034938ae4efd53fc275d81053ed5be8c}做比较，中间要经过一个confuseKey函数。跟进confuseKey函数看一下。</p>
+<p><img src="F:\手机备份照片\Typora临时图片\image-20201120221727849.png" alt="image-20201120221727849"></p>
+<p>过程简单，现将input分成四个部分，然后分别存进szPart1,2,3,4中。然后利用strcat函数调换顺序为3412，存入input中。</p>
+<p>因此只需将之前得到的字符串{daf29f59034938ae4efd53fc275d81053ed5be8c}，分成4分按照1234的顺序排好即可。最终的flag为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">53fc275d81053ed5be8cdaf29f59034938ae4efd</span><br></pre></td></tr></table></figure>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2020/11/18/攻防世界Reverse-Challenge-area/">http://yoursite.com/2020/11/18/攻防世界Reverse-Challenge-area/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2020/11/18/攻防世界Reverse-Challenge-area/">November 18th 2020, 6:21:42 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2020/11/18/攻防世界Reverse-Challenge-area/">November 22nd 2020, 2:12:11 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/10/28/计算机网络数学基础/" title="计算机网络数学基础">
+                    <div class="prevTitle">计算机网络数学基础</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:825703058@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//https://github.com/Sma11Tim3" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Guess-the-Number"><span class="toc-number">1.</span> <span class="toc-text">Guess-the-Number</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shuffle1"><span class="toc-number">2.</span> <span class="toc-text">Shuffle1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#re-for-50-plz-50"><span class="toc-number">3.</span> <span class="toc-text">re-for-50-plz-50</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dmd-50"><span class="toc-number">4.</span> <span class="toc-text">dmd-50</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#parallel-comparator-200"><span class="toc-number">5.</span> <span class="toc-text">parallel-comparator-200</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#secret-galaxy-300"><span class="toc-number">6.</span> <span class="toc-text">secret-galaxy-300</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#srm-50"><span class="toc-number">7.</span> <span class="toc-text">srm-50</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#simple-check-100"><span class="toc-number">8.</span> <span class="toc-text">simple-check-100</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mysterious"><span class="toc-number">9.</span> <span class="toc-text">Mysterious</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Newbie-calculations"><span class="toc-number">10.</span> <span class="toc-text">Newbie_calculations</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#re1-100"><span class="toc-number">11.</span> <span class="toc-text">re1-100</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 18
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/18</span><a class="archive-post-title" href="/2020/11/18/攻防世界Reverse-Challenge-area/">攻防世界Reverse Challenge area</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2020/10/28/计算机网络数学基础/">计算机网络数学基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/2020/10/14/最大网络流量-Maximum-Network-Flow/">最大网络流(Maximum Network Flow)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/2020/10/14/红黑树-Red-Black-Tree/">红黑树(Red Black Tree)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/11</span><a class="archive-post-title" href="/2020/10/11/Ipad搭建Vscode编程环境/">Ipad搭建Vscode编程环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/25</span><a class="archive-post-title" href="/2020/09/25/Blockchain笔记/">Blockchain笔记</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/hello-Covteam/">Hello-Covteam</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href="/2019/03/17/2018蓝桥杯总结/">2018蓝桥杯总结</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/27</span><a class="archive-post-title" href="/2018/12/27/拜托教务系统强制评价/">拜托教务系统强制评价</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/2018Covteam招新赛/">2018Covteam招新赛</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/80x86汇编知识基础/">80x86汇编知识基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwn入门笔记/">Pwn入门笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwntools使用简介/">Pwntools使用简介</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/RSA/">RSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/网鼎杯第一场/">网鼎杯第一场</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/binwalk-for-windows/">binwalk for windows</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/hello-world/">Hello World</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
+    
+        <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
+    
+        <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
+    
+        <span class="sidebar-tag-name" data-tags="日常小工具"><span class="iconfont-archer">&#xe606;</span>日常小工具</span>
+    
+        <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
+    
+        <span class="sidebar-tag-name" data-tags="区块链"><span class="iconfont-archer">&#xe606;</span>区块链</span>
+    
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学基础"><span class="iconfont-archer">&#xe606;</span>数学基础</span>
+    
+        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Sma11_Tim3"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+

@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="Know it &amp; Make it">
 <meta property="og:description" content="区块链中的数学很重要，推荐《计算机网络数学基础》这本书重点学习，搭配《应用随机过程概率模型导论》食用更佳。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-15T07:08:27.894Z">
+<meta property="og:updated_time" content="2020-11-22T08:55:00.679Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络数学基础">
 <meta name="twitter:description" content="区块链中的数学很重要，推荐《计算机网络数学基础》这本书重点学习，搭配《应用随机过程概率模型导论》食用更佳。">
@@ -285,7 +285,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">5.2k</span>阅读时长: <span class="post-count reading-time">20 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">5.8k</span>阅读时长: <span class="post-count reading-time">23 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -416,7 +416,7 @@ height:50vh;
     <article class="article-entry">
         <p>区块链中的数学很重要，推荐《计算机网络数学基础》这本书重点学习，搭配《应用随机过程概率模型导论》食用更佳。<br><a id="more"></a></p>
 <p>参考链接：<a href="https://blog.csdn.net/bitcarmanlee/article/details/82819860" target="_blank" rel="noopener">https://blog.csdn.net/bitcarmanlee/article/details/82819860</a></p>
-<h1 id="马尔可夫链"><a href="#马尔可夫链" class="headerlink" title="马尔可夫链"></a>马尔可夫链</h1><h2 id="马尔可夫不等式"><a href="#马尔可夫不等式" class="headerlink" title="马尔可夫不等式"></a>马尔可夫不等式</h2><p>如果X是均值为μ的非负随机变量，则对于任一常量a&gt;0有：<br>$$<br>p(X≥a)≤{μ\over a}<br>$$</p>
+<h1 id="马尔可夫链"><a href="#马尔可夫链" class="headerlink" title="马尔可夫链"></a>马尔可夫链</h1><h2 id="马尔可夫不等式"><a href="#马尔可夫不等式" class="headerlink" title="马尔可夫不等式"></a>马尔可夫不等式</h2><p>如果X是均值为μ的非负随机变量，则对于任一常量a&gt;0有：<br>$$<br>p(X≥a)≤{μ \over a}<br>$$</p>
 <h2 id="什么是马尔可夫链"><a href="#什么是马尔可夫链" class="headerlink" title="什么是马尔可夫链"></a>什么是马尔可夫链</h2><p>马尔可夫链（Markov chain），又称离散时间马尔可夫链（discrete-time Markov chain），因俄国数学家安德烈·马尔可夫得名，为状态空间中经过从一个状态到另一个状态的转换的随机过程。该过程要求具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。这种特定类型的“无记忆性”称作马尔可夫性质。</p>
 <p>对于一个马尔可夫链，在给定过去的状态$X_0,X_1,…，X_{n-1}$和现在的状态$X_n$时，将来的状态$X_{n+1}$的条件分布独立于过去的状态，且只依赖于现在的状态。用数学公式来描述就是：<br>$$<br>P(x_{n+1}|…,x_{n-2},x_{x-1},x_n)=P(x_{n+1}|x_n)<br>$$<br>这个马尔科夫链是表示股市模型的，共有三种状态：牛市（Bull market）, 熊市（Bear market）和横盘（Stagnant market）。每一个状态都以一定的概率转化到下一个状态。比如，牛市以0.025的概率转化到横盘的状态。这个状态概率转化图可以以矩阵的形式表示。如果我们定义矩阵阵P某一位置P(i, j)的值为P(j|i)，即从状态i变为状态j的概率。另外定义牛市、熊市、横盘的状态分别为0、1、2，这样我们得到了马尔科夫链模型的状态转移矩阵为：<br>$$<br>\begin{matrix}   0.9 &amp; 0.075 &amp; 0.025 \   0.15 &amp; 0.8 &amp; 0.05 \   0.25 &amp; 0.25 &amp; 0.5  \end{matrix}<br>$$<br>当这个状态转移矩阵P确定以后，整个股市模型就已经确定。</p>
 <h2 id="转移概率矩阵-状态转移矩阵"><a href="#转移概率矩阵-状态转移矩阵" class="headerlink" title="转移概率矩阵(状态转移矩阵)"></a>转移概率矩阵(状态转移矩阵)</h2><p>转移概率矩阵<br>●对于一个马尔可夫链{$P_n,n=1,2…$}，称以m步转移概率$P_{ij}(m)$为<br>元素的矩阵P(m)=($P_{ij}(m)$)为马尔可夫链的m步转移矩阵。<br>性质:<br>(1) 0 ≤$P_{ij}(m)$ ≤1:概率在0~1之间<br>(2) 对于任意的i∈E，$\sum_{j∈E}P_{ij}(m)$: 概率之和为1</p>
@@ -455,19 +455,20 @@ height:50vh;
 <h3 id="两个基本定理"><a href="#两个基本定理" class="headerlink" title="两个基本定理"></a>两个基本定理</h3><p><strong>定理一：</strong>一个不可简约的马尔可夫链的状态处于一下几种情况之一：都是过渡的，都是零常返的或者都是非零常返的。如果任意一个状态是周期的，那么所有的状态都是周期的，且有相同的周期r。</p>
 <p><strong>定理二：</strong>在一个不可简约且非周期的齐次马尔可夫链中，概率分布的极限<br>$$<br>π^<em>=\lim_{n \to ∞}π(n)<br>$$<br>总是存在并且与初始状态概率分布π(0)独立。更进一步，如果所有的状态是各态经历的(非零常返，且非周期)，那么处于状态$j$的平稳概率$π_j^</em>$非零且可以通过以下公式组唯一确定：<br>$$<br>f(x)=\left{<br>\begin{aligned}<br>\sum_jπ_j^<em> =1 \<br>π_j^</em> =\sum_jπ<em>j^*p</em>{ij}<br>\end{aligned}<br>\right.<br>$$</p>
 <h3 id="连续时间马尔可夫链"><a href="#连续时间马尔可夫链" class="headerlink" title="连续时间马尔可夫链"></a>连续时间马尔可夫链</h3><p>时间参数离散的马尔可夫链：每一次时钟步进就发生状态改变。而连续时间参数的链中状态转移的发生于时钟步进无关。其中两者的主要差异在于：需要考虑连续时间链中状态转移发生在某些瞬间$t_1,t_2,t_3…$而不是每次时钟步进就发生一次状态转移。时间参数连续过程中最特殊的类型为：<strong>生灭过程</strong>。</p>
-<p>连续时间随机过程的马尔可夫性质：随机过程X(t)是一个连续时间的马尔可夫链，如果对于所有的整数n和任意的时间序列$t_1,t_2,…,t_{n+1}$且$t_1&lt;t_2&lt;…&lt;t_{n+1}$有：<br>$$<br>P(X(t_{n+1}))=j|X(t_1)=i_1,X(t_2)=i_2,…,X(t_n)=i_n)<br>\=P(X(t_{n+1}))=j|X(t_n)=i_n<br>$$<br>直观上来看，这意味着未来的状态$X(t_{n+1})$仅仅依赖于当前的状态$i_n$。</p>
+<p>连续时间随机过程的马尔可夫性质：随机过程X(t)是一个连续时间的马尔可夫链，如果对于所有的整数n和任意的时间序列$t_1,t_2,…,t_{n+1}$且$t_1&lt;t_2&lt;…&lt;t_{n+1}$有：<br>$$<br>P(X(t_{n+1}))=j|X(t_1)=i_1,X(t_2)=i_2,…,X(t_n)=i_n)<br>$$<br>$$<br>=P(X(t_{n+1}))=j|X(t_n)=i_n<br>$$</p>
+<p>直观上来看，这意味着未来的状态$X(t_{n+1})$仅仅依赖于当前的状态$i_n$。</p>
 <h3 id="连续时间马尔可夫链中的平稳概率分布"><a href="#连续时间马尔可夫链中的平稳概率分布" class="headerlink" title="连续时间马尔可夫链中的平稳概率分布"></a>连续时间马尔可夫链中的平稳概率分布</h3><p>连续时间马尔可夫链中的平稳概率分布的定义与时间参数离散情形下类似。</p>
 <p>用以下公式定义从状态$i$到$j$的状态转移概率：<br>$$<br>p_{ij}(t)=P(X(s+t)=j|X(s)=i)<br>$$<br>在任一时间$s$处于状态$i$，那么经过一段时间$t$之后它转移到状态j的概率$p_{ij}(t)$</p>
 <p>给出。此概率值与$s$的取值独立，因为这个过程是齐次的。</p>
 <p>定义变量$q_{ij}$，其表示该过程离开状态$i$到$j$（此外$i$和$j$不同）的速率为：<br>$$<br>q_{ij}=\lim_{\Delta t \to ∞}[p_{ij}(\Delta t)]/\Delta t<br>$$<br>该式子意义为：已经在状态$i$的条件下，在任一长度为$\Delta t$的时间区域内该过程从$i$到$j$的概率为$q_{ij}\Delta t$。另外用以下公式定义值为负的变量$q_{ii}$：<br>$$<br>q_{ii}=-\sum_{j≠i}q_{ij}<br>$$<br>$-q_{ij}$表示在时间长度为$\Delta t$的区域中该过程不在停留在状态$i$的速率。因为有$\sum_jp_{ij}(t)=1$（在任一时刻t，该链转移到某些状态，包括当前的状态），我们有<br>$$<br>\sum_jq_{ij}(t)=0<br>$$<br>通过以上的变量，定义在时刻t处于状态j的概率随着时间的变化为$π_j(t)$：<br>$$<br>\frac {dπ<em>j(t)}{dt}=q</em>{jj}π<em>j(t)+\sum</em>{k≠j}q_{kj}π_k(t)<br>$$<br>接下来需要注重一个更小的子类：连续时间生灭过程。</p>
 <h2 id="生灭过程"><a href="#生灭过程" class="headerlink" title="生灭过程"></a>生灭过程</h2><p>连续时间齐次马尔可夫链中一个特殊的分类，该分类过程状态的转移只允许从状态$j$到$j-1$或者$j+1$（如果这些状态存在）。这类随机过程非常适合描述队列中顾客的到达与离开过程，其中状态下标对应于等待服务的顾客数量。</p>
-<p>具体的来说：如果在系统中的顾客数量为j，那么这个马尔可夫链就认为处于状态$j$。到达一个顾客，该过程转移到状态$j+1$，<strong>转移发生的速率</strong>为$q_{j,j+1}$。相对的顾客的离开使该过程从状态$j$移动到$j-1$，并且<strong>发生速率为</strong>$q_{j,j-1}$。具体公式<br>$$<br>\lambda_j=q_{j,j+1}<br>\<br>\mu_j=q_{j,j-1}<br>$$<br>这两个式子为出生和死亡速率。这些速率可以是<strong>状态独立</strong>，但是由于该过程的齐次性，不能是<strong>时间独立</strong>的。同样根据定义，在状态$i$，对于除了取值$i,i+1,i-1$的所有$j$转移概率$q_{ij}$都为0。即：只有$q_{ii},q_{i,i+1},q_{i,i-1}$三个式子有取值，其余的式子取值均为0。另外根据以上的式子可以得出：<br>$$<br>q_{jj}=-(\lambda_j+\mu_j)<br>$$<br>对于一个生灭过程，处于状态$j$有一个直观上的意义：人口数量为$j$，即排队系统中有$j$个顾客。一般来说，在状态$j$的时候，我们有一个顾客在接受服务并且有$j-1$个顾客在队列中等待服务。</p>
-<h3 id="生灭过程的平稳概率分布"><a href="#生灭过程的平稳概率分布" class="headerlink" title="生灭过程的平稳概率分布"></a>生灭过程的平稳概率分布</h3><p>因为生灭过程是一个各态历经的时间连续的马尔可夫链，它的平稳概率分布为：<br>$$<br>\left{<br>\begin{aligned}<br>q_{jj}π^<em><em>j+\sum</em>{k≠j}q_{kj}π_k^</em>=0<br>\<br>\sum_jπ_j^<em>=1<br>\end{aligned}<br>\right.<br>$$<br>用$π_j^</em>P_j$表示在状态$j$的平稳概率，并用以上的公式替代相关的变量可以得到以下的公式：<br>$$<br>\left{<br>\begin{aligned}<br>&amp;0=-(\lambda_j+\mu_j)π<em>j^*+\lambda</em>{j-1}π<em>{j-1}+\mu</em>{j+1}π^<em>_{j+1} \qquad &amp;j≥1<br>\<br>&amp;0=-\lambda_0π_0^</em>+\mu_1π_1^<em> \qquad &amp;j=0<br>\<br>&amp;\sum_jπ_j^</em>=1<br>\end{aligned}<br>\right.<br>$$<br>以矩阵形式表示，我们可以将前两个公式写为<br>$$<br>PQ=0<br>$$<br>其中<br>$$<br>P=\left[ \begin{matrix} π_0^<em> \qquad π_1^</em> \qquad π_2^* \qquad… \end{matrix} \right]</p>
-<p>\</p>
-<p>Q=\left[ \begin{matrix} -\lambda_0 &amp; \lambda_0 &amp; 0  &amp; 0 &amp;…\ \mu_1 &amp; -(\lambda_1+\mu_1) &amp; \lambda_1 &amp; 0 &amp; …\ 0 &amp; \mu_2 &amp; -(\lambda_2+\mu_2) &amp; \lambda_2 &amp; … \ … &amp; … &amp; … &amp; … &amp; … \end{matrix} \right]<br>$$<br>如果人口的规模有界限那么，这两个矩阵也是有限维的。定义$P(t)$如下：<br>$$<br>P=\left[ \begin{matrix} π_0(t) \qquad π_1(t) \qquad π_2(t)<br>\qquad … \end{matrix} \right]<br>$$<br>最终可以将式子重写为：<br>$$<br>dP(t)/dt=P(t)Q<br>$$</p>
+<p>具体的来说：如果在系统中的顾客数量为j，那么这个马尔可夫链就认为处于状态$j$。到达一个顾客，该过程转移到状态$j+1$，<strong>转移发生的速率</strong>为$q_{j,j+1}$。相对的顾客的离开使该过程从状态$j$移动到$j-1$，并且<strong>发生速率为</strong>$q_{j,j-1}$。具体公式<br>$$<br>\lambda_j=q_{j,j+1}<br>$$</p>
+<p>$$<br>\mu_j=q_{j,j-1}<br>$$<br>这两个式子为出生和死亡速率。这些速率可以是<strong>状态独立</strong>，但是由于该过程的齐次性，不能是<strong>时间独立</strong>的。同样根据定义，在状态$i$，对于除了取值$i,i+1,i-1$的所有$j$转移概率$q_{ij}$都为0。即：只有$q_{ii},q_{i,i+1},q_{i,i-1}$三个式子有取值，其余的式子取值均为0。另外根据以上的式子可以得出：<br>$$<br>q_{jj}=-(\lambda_j+\mu_j)<br>$$<br>对于一个生灭过程，处于状态$j$有一个直观上的意义：人口数量为$j$，即排队系统中有$j$个顾客。一般来说，在状态$j$的时候，我们有一个顾客在接受服务并且有$j-1$个顾客在队列中等待服务。</p>
+<h3 id="生灭过程的平稳概率分布"><a href="#生灭过程的平稳概率分布" class="headerlink" title="生灭过程的平稳概率分布"></a>生灭过程的平稳概率分布</h3><p>因为生灭过程是一个各态历经的时间连续的马尔可夫链，它的平稳概率分布为：<br>$$<br>\left{<br>\begin{aligned}<br>q_{jj}π^<em><em>j+\sum</em>{k≠j}q_{kj}π_k^</em>=0<br>\<br>\sum_jπ_j^<em>=1<br>\end{aligned}<br>\right.<br>$$<br>用$π_j^</em>P_j$表示在状态$j$的平稳概率，并用以上的公式替代相关的变量可以得到以下的公式：<br>$$<br>\left{<br>\begin{aligned}<br>&amp;0=-(\lambda_j+\mu_j)π<em>j^*+\lambda</em>{j-1}π<em>{j-1}+\mu</em>{j+1}π^<em>_{j+1} \qquad &amp;j≥1<br>\<br>&amp;0=-\lambda_0π_0^</em>+\mu_1π_1^<em> \qquad &amp;j=0<br>\<br>&amp;\sum_jπ_j^</em>=1<br>\end{aligned}<br>\right.<br>$$<br>以矩阵形式表示，我们可以将前两个公式写为<br>$$<br>PQ=0<br>$$<br>其中<br>$$<br>P=\left[ \begin{matrix} π_0^<em> \qquad π_1^</em> \qquad π_2^* \qquad… \end{matrix} \right]<br>$$</p>
+<p>$$<br>Q=\left[ \begin{matrix} -\lambda_0 &amp; \lambda_0 &amp; 0  &amp; 0 &amp;…\ \mu_1 &amp; -(\lambda_1+\mu_1) &amp; \lambda_1 &amp; 0 &amp; …\ 0 &amp; \mu_2 &amp; -(\lambda_2+\mu_2) &amp; \lambda_2 &amp; … \ … &amp; … &amp; … &amp; … &amp; … \end{matrix} \right]<br>$$<br>如果人口的规模有界限那么，这两个矩阵也是有限维的。定义$P(t)$如下：<br>$$<br>P=\left[ \begin{matrix} π_0(t) \qquad π_1(t) \qquad π_2(t)<br>\qquad … \end{matrix} \right]<br>$$<br>最终可以将式子重写为：<br>$$<br>dP(t)/dt=P(t)Q<br>$$</p>
 <p>矩阵Q被称为<strong>转移速率矩阵</strong>，研究生灭过程的第一步就是写出其Q矩阵。</p>
 <p>注意到的是Q的对角线上的元素，即$q_{jj}$是离开状态$j$的概率值的负值。另外第$j$列中$q_{j-1,j}$比如($q_{01}$)，表示从状态$j-1$到状态$j$的速率，相应的$q_{j+1,j}$比如($q_{32}$)，表示从状态$j+1$到状态$j$的速率。其他所有的元素均为0。<strong>并且每一行所有元素加起来为0。</strong></p>
-<h2 id="M-M-1队列"><a href="#M-M-1队列" class="headerlink" title="M/M/1队列"></a>M/M/1队列</h2><p>M/M/1队列是对简单的排队系统。这里的a/b/c记号又称为<strong>肯达尔记号</strong>，字母的意义为：</p>
+<h1 id="M-M-1队列"><a href="#M-M-1队列" class="headerlink" title="M/M/1队列"></a>M/M/1队列</h1><p>M/M/1队列是对简单的排队系统。这里的a/b/c记号又称为<strong>肯达尔记号</strong>，字母的意义为：</p>
 <ul>
 <li>a部分，即到达过程，具有马尔可夫性；是一个到达间隔时间服从指数分布的泊松过程。</li>
 <li>b部分，即离开过程，具有马尔可夫性；是一个离开间隔时间服从指数分布的泊松过程。</li>
@@ -477,6 +478,14 @@ height:50vh;
 <p>根据M/M/1队列的长期特性可以得到<br>$$<br>π_0^<em>=1-\frac {\lambda}{\mu}<br>$$<br>其中比率$\lambda/\mu$表示到达速率占服务速率的比例，该比例可以看作系统利用率。这个值单独用$\rho$表示。因此可以得到<br>$$<br>π_0^</em>=1-\rho<br>$$<br>其直观意义为系统闲置（即$π_0^*$）的概率为（1—系统利用率）。</p>
 <p>现在表示处于某一状态$j$的平稳概率为：<br>$$<br>π_j^*=\rho^j(1-\rho)<br>$$<br>对于具体的实例，当数据包达到速率接近链路的容量时，连接该链路的路由器或交换机的队列将无限增长，造成数据包丢失。根据大量数据分析得出，我们应该保证系统利用率不会超过大约70%。一旦界限被超过，要么服务请求被丢弃，要么增加新的服务容量使得利用率降低。</p>
 <p>根据Little定理可知，系统中的平均顾客数量=平均等待时间×平均到达率<br>$$<br>平均等待时间=\frac{\frac{\rho}{\lambda}}{(1-\rho)}=\frac{\frac{1}{\mu}}{(1-\rho)}<br>$$<br>这个量在系统利用率接近1时同样将无限增长。</p>
+<h2 id="M-M-∞队列：及时响应的服务器"><a href="#M-M-∞队列：及时响应的服务器" class="headerlink" title="M/M/∞队列：及时响应的服务器"></a>M/M/∞队列：及时响应的服务器</h2><p>假设一个队列服务提供者为每一个新到达顾客提供一个新的服务器，当有$j$个顾客时，同时也有$j$个服务器。可以得到处于状态$j$的平稳概率为：<br>$$<br>\pi_j^<em>=\pi_0^</em>\prod _{i=1}^{j-1}\frac{\lambda}{(i+1)\mu}=\pi_0^<em>(\frac{\lambda}{\mu})^j\frac{1}{j!}<br>$$<br>利用标准多项式展开$e^x=\sum_{j=0}^∞\frac{x^j}{j!}$。<br>$$<br>\pi_0^</em>=e^{-\frac{\lambda}{\mu}}<br>$$<br>以及<br>$$<br>\pi_j^<em>=\pi_0^</em>\prod_{i=0}^{i-1}\frac{\lambda}{(i+1)\mu}=e^{-\frac{\lambda}{\mu}}(\frac{\lambda}{\mu})^j\frac{1}{j!}<br>$$<br>该式子表明处于状态$j$的平稳概率由参数为$\frac{\lambda}{\mu}$的泊松分布给出。因此，在“无限”服务器情形下，队列中的顾客数量服从泊松分布。我们通过计算参数为$\frac{\lambda}{\mu}$的泊松分布，其平均值来得到队列中顾客的期望数量。</p>
+<h2 id="M-M-1-K-有限缓存"><a href="#M-M-1-K-有限缓存" class="headerlink" title="M/M/1/K:有限缓存"></a>M/M/1/K:有限缓存</h2><p>假设队列系统只有K-1个缓存。总顾客数量（包括正在被服务的顾客）不能超过K，状态K时到达的顾客都将丢失。意味着这个系统将不会进入状态K+1，K+2，…。</p>
+<p>状态转移速率为：<br>$$<br>\lambda_j=<br>\left{<br>\begin{aligned}<br>&amp;\lambda  \qquad j&lt;K<br>\<br>&amp;0  \qquad  j≥K<br>\end{aligned}<br>\right.<br>$$<br>并且有$\mu_j=\mu \qquad j=1,2,…,K$</p>
+<p>可以推出公式：<br>$$<br>\pi_j^<em>=<br>\left{<br>\begin{aligned}<br>&amp;\pi_0^</em>(\frac{\lambda}{\mu})^j  &amp;\qquad j≤K<br>\<br>&amp;0  \qquad  &amp;j&gt;K<br>\end{aligned}<br>\right.<br>$$</p>
+<p>$$<br>\pi_0^*=<br>\left{<br>\begin{aligned}<br>&amp;\frac{1-\frac{\lambda}{\mu}}{1-(\frac{\lambda}{\mu})^{(k+1)}}(\frac{\lambda}{\mu})^j=\frac{1-\rho}{1-\rho^{(k+1)}}\rho^j  &amp;\qquad j≤k<br>\<br>&amp;0  \qquad  &amp;j&gt;k<br>\end{aligned}<br>\right.<br>$$</p>
+<p>其意义为$\pi_k^<em>$的直观意义是当系统的缓存大小为k-1时，系统处于“满”的状态。所以$\pi^</em>_k$可以理解为M/M/1/K队列的<strong>阻塞概率</strong>。</p>
+<h2 id="M-D-1-确定服务时间"><a href="#M-D-1-确定服务时间" class="headerlink" title="M/D/1:确定服务时间"></a>M/D/1:确定服务时间</h2><p>考虑这么一个派对系统，用户的到达是一个泊松过程，但是服务时间是确定的。用$\mu$表示离开间隔时间，用$\rho=\frac{\lambda}{\mu}$表示利用率，那么只要有$\lambda&lt;\mu$系统就是稳定的。<br>$$<br>系统中的平均顾客数量为=\rho+\frac{\rho^2}{2(1-\rho)}<br>$$</p>
+<p>$$<br>平均响应时间=\frac{1}{\mu}+\frac{\rho}{2\mu(1-\rho)}<br>$$</p>
 
     </article>
     <!-- license  -->
@@ -485,7 +494,7 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
             </p><p>原文链接：<a href="http://yoursite.com/2020/10/28/计算机网络数学基础/">http://yoursite.com/2020/10/28/计算机网络数学基础/</a>
             </p><p>发表日期：<a href="http://yoursite.com/2020/10/28/计算机网络数学基础/">October 28th 2020, 7:57:03 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2020/10/28/计算机网络数学基础/">November 15th 2020, 3:08:27 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2020/10/28/计算机网络数学基础/">November 22nd 2020, 4:55:00 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -493,12 +502,17 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2020/11/18/攻防世界Reverse-Challenge-area/" title="攻防世界Reverse Challenge area">
+                    <div class="nextTitle">攻防世界Reverse Challenge area</div>
+                </a>
+            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2020/10/25/关于图的一些算法/" title="关于图的一些算法">
-                    <div class="prevTitle">关于图的一些算法</div>
+                <a href="/2020/10/14/红黑树-Red-Black-Tree/" title="红黑树(Red Black Tree)">
+                    <div class="prevTitle">红黑树(Red Black Tree)</div>
                 </a>
             
         </li>
@@ -621,7 +635,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#马尔可夫链"><span class="toc-number">1.</span> <span class="toc-text">马尔可夫链</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#马尔可夫不等式"><span class="toc-number">1.1.</span> <span class="toc-text">马尔可夫不等式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是马尔可夫链"><span class="toc-number">1.2.</span> <span class="toc-text">什么是马尔可夫链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转移概率矩阵-状态转移矩阵"><span class="toc-number">1.3.</span> <span class="toc-text">转移概率矩阵(状态转移矩阵)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#马尔可夫链细致平稳条件"><span class="toc-number">1.4.</span> <span class="toc-text">马尔可夫链细致平稳条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#马尔可夫过程"><span class="toc-number">1.5.</span> <span class="toc-text">马尔可夫过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#齐次马尔可夫过程"><span class="toc-number">1.5.1.</span> <span class="toc-text">齐次马尔可夫过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不可简约性"><span class="toc-number">1.5.2.</span> <span class="toc-text">不可简约性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常返性"><span class="toc-number">1.5.3.</span> <span class="toc-text">常返性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#周期性"><span class="toc-number">1.5.4.</span> <span class="toc-text">周期性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各态历经性"><span class="toc-number">1.5.5.</span> <span class="toc-text">各态历经性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各态经历的马尔可夫链"><span class="toc-number">1.5.6.</span> <span class="toc-text">各态经历的马尔可夫链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#马尔可夫链的平稳概率"><span class="toc-number">1.5.7.</span> <span class="toc-text">马尔可夫链的平稳概率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两个基本定理"><span class="toc-number">1.5.8.</span> <span class="toc-text">两个基本定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连续时间马尔可夫链"><span class="toc-number">1.5.9.</span> <span class="toc-text">连续时间马尔可夫链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连续时间马尔可夫链中的平稳概率分布"><span class="toc-number">1.5.10.</span> <span class="toc-text">连续时间马尔可夫链中的平稳概率分布</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生灭过程"><span class="toc-number">1.6.</span> <span class="toc-text">生灭过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生灭过程的平稳概率分布"><span class="toc-number">1.6.1.</span> <span class="toc-text">生灭过程的平稳概率分布</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#M-M-1队列"><span class="toc-number">1.7.</span> <span class="toc-text">M/M/1队列</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#马尔可夫链"><span class="toc-number">1.</span> <span class="toc-text">马尔可夫链</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#马尔可夫不等式"><span class="toc-number">1.1.</span> <span class="toc-text">马尔可夫不等式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是马尔可夫链"><span class="toc-number">1.2.</span> <span class="toc-text">什么是马尔可夫链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转移概率矩阵-状态转移矩阵"><span class="toc-number">1.3.</span> <span class="toc-text">转移概率矩阵(状态转移矩阵)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#马尔可夫链细致平稳条件"><span class="toc-number">1.4.</span> <span class="toc-text">马尔可夫链细致平稳条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#马尔可夫过程"><span class="toc-number">1.5.</span> <span class="toc-text">马尔可夫过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#齐次马尔可夫过程"><span class="toc-number">1.5.1.</span> <span class="toc-text">齐次马尔可夫过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不可简约性"><span class="toc-number">1.5.2.</span> <span class="toc-text">不可简约性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常返性"><span class="toc-number">1.5.3.</span> <span class="toc-text">常返性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#周期性"><span class="toc-number">1.5.4.</span> <span class="toc-text">周期性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各态历经性"><span class="toc-number">1.5.5.</span> <span class="toc-text">各态历经性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各态经历的马尔可夫链"><span class="toc-number">1.5.6.</span> <span class="toc-text">各态经历的马尔可夫链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#马尔可夫链的平稳概率"><span class="toc-number">1.5.7.</span> <span class="toc-text">马尔可夫链的平稳概率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两个基本定理"><span class="toc-number">1.5.8.</span> <span class="toc-text">两个基本定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连续时间马尔可夫链"><span class="toc-number">1.5.9.</span> <span class="toc-text">连续时间马尔可夫链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连续时间马尔可夫链中的平稳概率分布"><span class="toc-number">1.5.10.</span> <span class="toc-text">连续时间马尔可夫链中的平稳概率分布</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#生灭过程"><span class="toc-number">1.6.</span> <span class="toc-text">生灭过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#生灭过程的平稳概率分布"><span class="toc-number">1.6.1.</span> <span class="toc-text">生灭过程的平稳概率分布</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#M-M-1队列"><span class="toc-number">2.</span> <span class="toc-text">M/M/1队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#M-M-∞队列：及时响应的服务器"><span class="toc-number">2.1.</span> <span class="toc-text">M/M/∞队列：及时响应的服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#M-M-1-K-有限缓存"><span class="toc-number">2.2.</span> <span class="toc-text">M/M/1/K:有限缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#M-D-1-确定服务时间"><span class="toc-number">2.3.</span> <span class="toc-text">M/D/1:确定服务时间</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -634,6 +648,8 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
     
     
     
@@ -852,12 +868,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2020/10/28/计算机网络数学基础/">计算机网络数学基础</a>
+            <span class="archive-post-date">11/18</span><a class="archive-post-title" href="/2020/11/18/攻防世界Reverse-Challenge-area/">攻防世界Reverse Challenge area</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/25</span><a class="archive-post-title" href="/2020/10/25/关于图的一些算法/">关于图的一些算法</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2020/10/28/计算机网络数学基础/">计算机网络数学基础</a>
         </li>
     
     
@@ -930,17 +946,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/RSA/">RSA</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwntools使用简介/">Pwntools使用简介</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/RSA/">RSA</a>
         </li>
     
     
@@ -950,7 +961,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/hello-world/">Hello World</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
         </li>
     
     
@@ -958,24 +969,29 @@ top:50vh;
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/binwalk-for-windows/">binwalk for windows</a>
         </li>
     
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/hello-world/">Hello World</a>
+        </li>
+    
     </ul></div>
   </div>
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
-    
         <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
     
+        <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
+    
         <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
+    
+        <span class="sidebar-tag-name" data-tags="日常小工具"><span class="iconfont-archer">&#xe606;</span>日常小工具</span>
     
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
         <span class="sidebar-tag-name" data-tags="区块链"><span class="iconfont-archer">&#xe606;</span>区块链</span>
     
         <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
-    
-        <span class="sidebar-tag-name" data-tags="日常小工具"><span class="iconfont-archer">&#xe606;</span>日常小工具</span>
     
         <span class="sidebar-tag-name" data-tags="数学基础"><span class="iconfont-archer">&#xe606;</span>数学基础</span>
     
