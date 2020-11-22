@@ -419,7 +419,7 @@ height:50vh;
 <p>2.查看所使用的防护技术<br>接下来，我们可以用checksec脚本来查询该文件使用了哪些防护技术。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">checksec --file file</span><br></pre></td></tr></table></figure></p>
 <p>操作系统提供了许多安全机制来尝试降低或阻止缓冲区溢出攻击带来的安全风险，包括DEP、ASLR等。在编写漏洞利用代码的时候，需要特别注意目标进程是否开启了DEP（Linux下对应NX）、ASLR（Linux下对应PIE）等机制，例如存在DEP（NX）的话就不能直接执行栈上的数据，存在ASLR的话各个系统调用的地址就是随机化的。checksec脚本可以在这里下载。</p>
 <p>Checksec：<a href="http://www.trapkit.de/tools/checksec.sh" target="_blank" rel="noopener">http://www.trapkit.de/tools/checksec.sh</a></p>
-<p>Tubes读写接口：<br>对于一次攻击而言前提就是与目标服务器或者程序进行交互，这里就可以用remote(address,port)产生一个远程的socket然后就可以读写了。</p>
+<p>Tubes读写接口：<br>对于一次攻击而言前提就是与目标服务器或者程序进行交互，这里就可以用remote(address,port)产生一个远程的socket然后就可以读写了。<br>&gt;</p>
 <blockquote>
 <blockquote>
 <blockquote>

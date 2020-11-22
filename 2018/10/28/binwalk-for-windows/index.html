@@ -426,7 +426,7 @@ height:50vh;
 <p>git clone <a href="https://github.com/devttys0/binwalk" target="_blank" rel="noopener">https://github.com/devttys0/binwalk</a><br>cd binwalk<br>python setup.py install<br>（如果你机子没有安装过git，你可以直接访问项目地址，点击里面的Download Zip下载后解压即可）</p>
 <p>安装后，python里输入import binwalk不会报错，说明可以在python里调用binwalk（用法请自己浏览上面提供的wiki），用起来可以达到我们分析文件的目的。</p>
 <p>但我们喜欢linux里binwalk的使用方法，也想在windows上达到同样的效果，python安装目录下Script里那个binwalk文件（没任何后缀名）其实是一个py文件，在Script文件夹里用python运行它的话，可以达到效果，可是在Script文件夹外就犯愁了，因为cmd里不能运行没后缀的文件，而python binwalk这样的运行方式不行（因为必须指定binwalk的路径，但是如果指定了又很麻烦），而若是修改为binwalk.py，一运行又会报错，总之头疼。</p>
-<p>—————————————————————————————-。 </p>
+<p>————————————————————————————————————————————。 </p>
 <p>新建一个文件夹，并把文件夹的路径加入到系统变量path里（这样在cmd里就可以直接运行了。）</p>
 <p>在文件夹里新建一个binwalk.bat文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">echo * suggest: you&apos;d better to input the parameters enclosed in double quotes.</span><br><span class="line">echo * made by pcat</span><br><span class="line">python &quot;%~dp0\p_binwalk.py&quot; %1 %2 %3 %4 %5 %6 %7 %8 %9</span><br><span class="line"></span><br><span class="line">再新建一个p_binwalk.py文件（这里写得很简单，以后能力增长的时候可能会改写）</span><br></pre></td></tr></table></figure>
@@ -443,7 +443,7 @@ height:50vh;
 <p>只要这个文件夹的路径在系统变量path里和这个bat文件存在着，那么你就可以在cmd里像linux那样使用binwalk了。</p>
 <h2 id="binwalk常用命令"><a href="#binwalk常用命令" class="headerlink" title="binwalk常用命令"></a>binwalk常用命令</h2><p>binwalk常用命令</p>
 <p>-e 分解出压缩包</p>
-<p>binwalk -e pcat.bin<br>-D或者–dd 分解某种类型的文件（在windows里要用双引号括起来）</p>
+<p>binwalk -e pcat.bin<br>-D或者—dd 分解某种类型的文件（在windows里要用双引号括起来）</p>
 <p>binwalk -D=jpeg pcat.bin<br>-M 递归分解扫描出来的文件（得跟-e或者-D配合使用）</p>
 <p>binwalk -eM pcat.bin<br>其他的可以参考：<a href="https://github.com/devttys0/binwalk/wiki/Usage" target="_blank" rel="noopener">https://github.com/devttys0/binwalk/wiki/Usage</a></p>
 

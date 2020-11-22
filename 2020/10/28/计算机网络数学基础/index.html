@@ -285,7 +285,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">5.8k</span>阅读时长: <span class="post-count reading-time">23 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">5.7k</span>阅读时长: <span class="post-count reading-time">22 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -416,9 +416,14 @@ height:50vh;
     <article class="article-entry">
         <p>区块链中的数学很重要，推荐《计算机网络数学基础》这本书重点学习，搭配《应用随机过程概率模型导论》食用更佳。<br><a id="more"></a></p>
 <p>参考链接：<a href="https://blog.csdn.net/bitcarmanlee/article/details/82819860" target="_blank" rel="noopener">https://blog.csdn.net/bitcarmanlee/article/details/82819860</a></p>
-<h1 id="马尔可夫链"><a href="#马尔可夫链" class="headerlink" title="马尔可夫链"></a>马尔可夫链</h1><h2 id="马尔可夫不等式"><a href="#马尔可夫不等式" class="headerlink" title="马尔可夫不等式"></a>马尔可夫不等式</h2><p>如果X是均值为μ的非负随机变量，则对于任一常量a&gt;0有：<br>$$<br>p(X≥a)≤{μ \over a}<br>$$</p>
-<h2 id="什么是马尔可夫链"><a href="#什么是马尔可夫链" class="headerlink" title="什么是马尔可夫链"></a>什么是马尔可夫链</h2><p>马尔可夫链（Markov chain），又称离散时间马尔可夫链（discrete-time Markov chain），因俄国数学家安德烈·马尔可夫得名，为状态空间中经过从一个状态到另一个状态的转换的随机过程。该过程要求具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。这种特定类型的“无记忆性”称作马尔可夫性质。</p>
-<p>对于一个马尔可夫链，在给定过去的状态$X_0,X_1,…，X_{n-1}$和现在的状态$X_n$时，将来的状态$X_{n+1}$的条件分布独立于过去的状态，且只依赖于现在的状态。用数学公式来描述就是：<br>$$<br>P(x_{n+1}|…,x_{n-2},x_{x-1},x_n)=P(x_{n+1}|x_n)<br>$$<br>这个马尔科夫链是表示股市模型的，共有三种状态：牛市（Bull market）, 熊市（Bear market）和横盘（Stagnant market）。每一个状态都以一定的概率转化到下一个状态。比如，牛市以0.025的概率转化到横盘的状态。这个状态概率转化图可以以矩阵的形式表示。如果我们定义矩阵阵P某一位置P(i, j)的值为P(j|i)，即从状态i变为状态j的概率。另外定义牛市、熊市、横盘的状态分别为0、1、2，这样我们得到了马尔科夫链模型的状态转移矩阵为：<br>$$<br>\begin{matrix}   0.9 &amp; 0.075 &amp; 0.025 \   0.15 &amp; 0.8 &amp; 0.05 \   0.25 &amp; 0.25 &amp; 0.5  \end{matrix}<br>$$<br>当这个状态转移矩阵P确定以后，整个股市模型就已经确定。</p>
+<h1 id="马尔可夫链"><a href="#马尔可夫链" class="headerlink" title="马尔可夫链"></a>马尔可夫链</h1><h2 id="马尔可夫不等式"><a href="#马尔可夫不等式" class="headerlink" title="马尔可夫不等式"></a>马尔可夫不等式</h2><p>如果X是均值为μ的非负随机变量，则对于任一常量a&gt;0有：</p>
+<script type="math/tex; mode=display">
+p(X≥a)≤{μ \over a}</script><h2 id="什么是马尔可夫链"><a href="#什么是马尔可夫链" class="headerlink" title="什么是马尔可夫链"></a>什么是马尔可夫链</h2><p>马尔可夫链（Markov chain），又称离散时间马尔可夫链（discrete-time Markov chain），因俄国数学家安德烈·马尔可夫得名，为状态空间中经过从一个状态到另一个状态的转换的随机过程。该过程要求具备“无记忆”的性质：下一状态的概率分布只能由当前状态决定，在时间序列中它前面的事件均与之无关。这种特定类型的“无记忆性”称作马尔可夫性质。</p>
+<p>对于一个马尔可夫链，在给定过去的状态$X_0,X_1,…，X_{n-1}$和现在的状态$X_n$时，将来的状态$X_{n+1}$的条件分布独立于过去的状态，且只依赖于现在的状态。用数学公式来描述就是：</p>
+<script type="math/tex; mode=display">
+P(x_{n+1}|…,x_{n-2},x_{x-1},x_n)=P(x_{n+1}|x_n)</script><p>这个马尔科夫链是表示股市模型的，共有三种状态：牛市（Bull market）, 熊市（Bear market）和横盘（Stagnant market）。每一个状态都以一定的概率转化到下一个状态。比如，牛市以0.025的概率转化到横盘的状态。这个状态概率转化图可以以矩阵的形式表示。如果我们定义矩阵阵P某一位置P(i, j)的值为P(j|i)，即从状态i变为状态j的概率。另外定义牛市、熊市、横盘的状态分别为0、1、2，这样我们得到了马尔科夫链模型的状态转移矩阵为：</p>
+<script type="math/tex; mode=display">
+\begin{matrix}   0.9 & 0.075 & 0.025 \\   0.15 & 0.8 & 0.05 \\   0.25 & 0.25 & 0.5  \end{matrix}</script><p>当这个状态转移矩阵P确定以后，整个股市模型就已经确定。</p>
 <h2 id="转移概率矩阵-状态转移矩阵"><a href="#转移概率矩阵-状态转移矩阵" class="headerlink" title="转移概率矩阵(状态转移矩阵)"></a>转移概率矩阵(状态转移矩阵)</h2><p>转移概率矩阵<br>●对于一个马尔可夫链{$P_n,n=1,2…$}，称以m步转移概率$P_{ij}(m)$为<br>元素的矩阵P(m)=($P_{ij}(m)$)为马尔可夫链的m步转移矩阵。<br>性质:<br>(1) 0 ≤$P_{ij}(m)$ ≤1:概率在0~1之间<br>(2) 对于任意的i∈E，$\sum_{j∈E}P_{ij}(m)$: 概率之和为1</p>
 <p>从上面的例子不难看出来，整个马尔可夫链模型的核心是状态转移矩阵P。那这个矩阵P有一些什么有意思的地方呢？接下来再看一下。<br>以股市模型为例，假设初始状态为t 0 = [ 0.1 , 0.2 , 0.7 ] t_0 = [0.1, 0.2, 0.7]<em>t</em>0=[0.1,0.2,0.7]，然后算之后的状态。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">markov</span><span class="params">()</span>:</span></span><br><span class="line">    init_array = np.array([<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.7</span>])</span><br><span class="line">    transfer_matrix = np.array([[<span class="number">0.9</span>, <span class="number">0.075</span>, <span class="number">0.025</span>],</span><br><span class="line">                               [<span class="number">0.15</span>, <span class="number">0.8</span>, <span class="number">0.05</span>],</span><br><span class="line">                               [<span class="number">0.25</span>, <span class="number">0.25</span>, <span class="number">0.5</span>]])</span><br><span class="line">    restmp = init_array</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">25</span>):</span><br><span class="line">        res = np.dot(restmp, transfer_matrix)</span><br><span class="line">        <span class="keyword">print</span> i, <span class="string">"\t"</span>, res</span><br><span class="line">        restmp = res</span><br><span class="line"></span><br><span class="line">markov()</span><br></pre></td></tr></table></figure>
@@ -431,14 +436,18 @@ height:50vh;
 <h2 id="马尔可夫链细致平稳条件"><a href="#马尔可夫链细致平稳条件" class="headerlink" title="马尔可夫链细致平稳条件"></a>马尔可夫链细致平稳条件</h2><p>首先，马尔科夫链要能收敛，需要满足以下条件：<br>1.可能的状态数是有限的。<br>2.状态间的转移概率需要固定不变。<br>3.从任意状态能够转变到任意状态。<br>4.不能是简单的循环，例如全是从x到y再从y到x。</p>
 <p>以上是马尔可夫链收敛的必要条件。</p>
 <h2 id="马尔可夫过程"><a href="#马尔可夫过程" class="headerlink" title="马尔可夫过程"></a>马尔可夫过程</h2><p>马尔可夫过程性质（时间参数离散的随机过程情形）的形式化表示：</p>
-<p>​                    $$P(X_{n+1})=P(X_{n+1}=j|X_n=i_n)$$</p>
+<p>​                    <script type="math/tex">P(X_{n+1})=P(X_{n+1}=j|X_n=i_n)</script></p>
 <p>条件概论$P(X_{n+1}=j|X_n=i_n)$称之为从状态$i_n$转移到j的转移概论。</p>
 <p>马尔可夫性质允许我们忘记除了当前随机变量的值（其中包括了所有过去的行为）外所有的历史信息。</p>
 <p>为了简化问题，在考虑时间连续马尔可夫过程之间，我们首先讨论遵守马尔可夫性质的时间参数离散过程，其又可称为<strong>离散时间马尔可夫链</strong>。</p>
 <p>如果一个随机过程的转移概率是依赖于时间的，则称其为<strong>非齐次马尔可夫过程</strong></p>
 <p>设定转移概率是时间独立的，这样的过程位置为<strong>时齐或齐次马尔可夫过程</strong>。其定义为：对于任意n，我们定义时间独立的从状态$i$转移到$j$的转移概率为$P_{ij}=P(X_n=j|X_{n-1}=i)$。</p>
 <p>右随机矩阵：是实方阵，其中每一行求和为1。</p>
-<h3 id="齐次马尔可夫过程"><a href="#齐次马尔可夫过程" class="headerlink" title="齐次马尔可夫过程"></a>齐次马尔可夫过程</h3><p>给定一个齐次马尔可夫链的状态转移概率$P_{ij}$的集合，我们可以定义从状态$i$到$j$的m步转移概率为：<br>$$<br>p_{ij}^{(m)}=P(X_{n+m}=j|X_n=i)=\sum_kp_{ik}^{m-1}p_{kj}\qquad m=2,3,….<br>$$<br>上式乘积形式的和来自于独立事件的相加（即通过m-1步跳转到某个中间状态），每一个相加的项都是一个乘积，这是因为这是两个独立事件的组合（从状态$i$到$k$事件和从状态$k$到$m$事件）。这些关系仅仅因为马尔可夫链的特性而存在。相应的<strong>切普曼-柯尔莫戈洛夫</strong>方程表述如下：<br>$$<br>p_{ij}^{(m)}=P(X_{n+m}=j|X_n=i)=\sum_kp_{ik}p_{kj}^{m-1}\qquad m=2,3,….<br>$$<br>以上两个公式的区别：第一个公式中的过程轨迹是经过m-1步从状态$i$到达$k$，然后再经过一步从状态$k$到达$j$。第二个公式中的过程轨迹是经过一步从状态$i$到达$k$，然后再经过$n-1$步从状态$k$到达$j$。很明显这两个公式等价。</p>
+<h3 id="齐次马尔可夫过程"><a href="#齐次马尔可夫过程" class="headerlink" title="齐次马尔可夫过程"></a>齐次马尔可夫过程</h3><p>给定一个齐次马尔可夫链的状态转移概率$P_{ij}$的集合，我们可以定义从状态$i$到$j$的m步转移概率为：</p>
+<script type="math/tex; mode=display">
+p_{ij}^{(m)}=P(X_{n+m}=j|X_n=i)=\sum_kp_{ik}^{m-1}p_{kj}\qquad m=2,3,....</script><p>上式乘积形式的和来自于独立事件的相加（即通过m-1步跳转到某个中间状态），每一个相加的项都是一个乘积，这是因为这是两个独立事件的组合（从状态$i$到$k$事件和从状态$k$到$m$事件）。这些关系仅仅因为马尔可夫链的特性而存在。相应的<strong>切普曼-柯尔莫戈洛夫</strong>方程表述如下：</p>
+<script type="math/tex; mode=display">
+p_{ij}^{(m)}=P(X_{n+m}=j|X_n=i)=\sum_kp_{ik}p_{kj}^{m-1}\qquad m=2,3,....</script><p>以上两个公式的区别：第一个公式中的过程轨迹是经过m-1步从状态$i$到达$k$，然后再经过一步从状态$k$到达$j$。第二个公式中的过程轨迹是经过一步从状态$i$到达$k$，然后再经过$n-1$步从状态$k$到达$j$。很明显这两个公式等价。</p>
 <h3 id="不可简约性"><a href="#不可简约性" class="headerlink" title="不可简约性"></a>不可简约性</h3><p>如果一个随机过程中的每一个状态都可以经过有限步从其他任意状态到达，那么这样的过程称之为<strong>不可简约的</strong>，否则就是<strong>可简约的</strong>。更进一步，如果一个随机过程的状态可以分为几个子集，子集之间是互相不可到达的，那么我们称之为<strong>可分离的子链</strong>。</p>
 <h3 id="常返性"><a href="#常返性" class="headerlink" title="常返性"></a>常返性</h3><p>对于一个随机过程中的每个状态$j$，一下两个条件必定有一个成立：在进入状态$j$之后，经过有限步回到状态$j$的概率为1，或者在有限步之内不能重返的概率非零。如果返回一个状态是肯定的，我们称这个状态为<strong>常返的</strong>，否则称为<strong>过渡的</strong>。</p>
 <p>用$f_j^n$表示经过n步之后第一次返回状态j的概率。如果有$\sum_{n=1}^∞f_j^n=1$，那么状态$j$为常返的，否则为过渡的。</p>
@@ -453,20 +462,70 @@ height:50vh;
 <p>对于一个齐次链，期望在一个某一个状态的概率也是时间无关的（如果从一个状态转移到另一个状态的概率与时间无关，那么处于这一状态的概率也应该是与时间无关的）。</p>
 <p>马尔可夫链的平稳概率分布如下：假定我们从初始分布π(0)=$π^<em>$开始。那么如果对于所有的n有π(0)=$π^</em>$。$π^*$同样也是这个链的平稳分布。如果我们以每个状态$j$所定义平稳分布开始，那么根据转移概率从各个状态转移到其他状态，并不会改变马尔可夫链处于每个状态的概率。</p>
 <h3 id="两个基本定理"><a href="#两个基本定理" class="headerlink" title="两个基本定理"></a>两个基本定理</h3><p><strong>定理一：</strong>一个不可简约的马尔可夫链的状态处于一下几种情况之一：都是过渡的，都是零常返的或者都是非零常返的。如果任意一个状态是周期的，那么所有的状态都是周期的，且有相同的周期r。</p>
-<p><strong>定理二：</strong>在一个不可简约且非周期的齐次马尔可夫链中，概率分布的极限<br>$$<br>π^<em>=\lim_{n \to ∞}π(n)<br>$$<br>总是存在并且与初始状态概率分布π(0)独立。更进一步，如果所有的状态是各态经历的(非零常返，且非周期)，那么处于状态$j$的平稳概率$π_j^</em>$非零且可以通过以下公式组唯一确定：<br>$$<br>f(x)=\left{<br>\begin{aligned}<br>\sum_jπ_j^<em> =1 \<br>π_j^</em> =\sum_jπ<em>j^*p</em>{ij}<br>\end{aligned}<br>\right.<br>$$</p>
-<h3 id="连续时间马尔可夫链"><a href="#连续时间马尔可夫链" class="headerlink" title="连续时间马尔可夫链"></a>连续时间马尔可夫链</h3><p>时间参数离散的马尔可夫链：每一次时钟步进就发生状态改变。而连续时间参数的链中状态转移的发生于时钟步进无关。其中两者的主要差异在于：需要考虑连续时间链中状态转移发生在某些瞬间$t_1,t_2,t_3…$而不是每次时钟步进就发生一次状态转移。时间参数连续过程中最特殊的类型为：<strong>生灭过程</strong>。</p>
-<p>连续时间随机过程的马尔可夫性质：随机过程X(t)是一个连续时间的马尔可夫链，如果对于所有的整数n和任意的时间序列$t_1,t_2,…,t_{n+1}$且$t_1&lt;t_2&lt;…&lt;t_{n+1}$有：<br>$$<br>P(X(t_{n+1}))=j|X(t_1)=i_1,X(t_2)=i_2,…,X(t_n)=i_n)<br>$$<br>$$<br>=P(X(t_{n+1}))=j|X(t_n)=i_n<br>$$</p>
-<p>直观上来看，这意味着未来的状态$X(t_{n+1})$仅仅依赖于当前的状态$i_n$。</p>
+<p><strong>定理二：</strong>在一个不可简约且非周期的齐次马尔可夫链中，概率分布的极限</p>
+<script type="math/tex; mode=display">
+π^*=\lim_{n \to ∞}π(n)</script><p>总是存在并且与初始状态概率分布π(0)独立。更进一步，如果所有的状态是各态经历的(非零常返，且非周期)，那么处于状态$j$的平稳概率$π_j^*$非零且可以通过以下公式组唯一确定：</p>
+<script type="math/tex; mode=display">
+f(x)=\left\{
+\begin{aligned}
+\sum_jπ_j^* =1 \\
+π_j^* =\sum_jπ_j^*p_{ij}
+\end{aligned}
+\right.</script><h3 id="连续时间马尔可夫链"><a href="#连续时间马尔可夫链" class="headerlink" title="连续时间马尔可夫链"></a>连续时间马尔可夫链</h3><p>时间参数离散的马尔可夫链：每一次时钟步进就发生状态改变。而连续时间参数的链中状态转移的发生于时钟步进无关。其中两者的主要差异在于：需要考虑连续时间链中状态转移发生在某些瞬间$t_1,t_2,t_3…$而不是每次时钟步进就发生一次状态转移。时间参数连续过程中最特殊的类型为：<strong>生灭过程</strong>。</p>
+<p>连续时间随机过程的马尔可夫性质：随机过程X(t)是一个连续时间的马尔可夫链，如果对于所有的整数n和任意的时间序列$t_1,t_2,…,t_{n+1}$且$t_1&lt;t_2&lt;…&lt;t_{n+1}$有：</p>
+<script type="math/tex; mode=display">
+P(X(t_{n+1}))=j|X(t_1)=i_1,X(t_2)=i_2,...,X(t_n)=i_n)</script><script type="math/tex; mode=display">
+=P(X(t_{n+1}))=j|X(t_n)=i_n</script><p>直观上来看，这意味着未来的状态$X(t_{n+1})$仅仅依赖于当前的状态$i_n$。</p>
 <h3 id="连续时间马尔可夫链中的平稳概率分布"><a href="#连续时间马尔可夫链中的平稳概率分布" class="headerlink" title="连续时间马尔可夫链中的平稳概率分布"></a>连续时间马尔可夫链中的平稳概率分布</h3><p>连续时间马尔可夫链中的平稳概率分布的定义与时间参数离散情形下类似。</p>
-<p>用以下公式定义从状态$i$到$j$的状态转移概率：<br>$$<br>p_{ij}(t)=P(X(s+t)=j|X(s)=i)<br>$$<br>在任一时间$s$处于状态$i$，那么经过一段时间$t$之后它转移到状态j的概率$p_{ij}(t)$</p>
+<p>用以下公式定义从状态$i$到$j$的状态转移概率：</p>
+<script type="math/tex; mode=display">
+p_{ij}(t)=P(X(s+t)=j|X(s)=i)</script><p>在任一时间$s$处于状态$i$，那么经过一段时间$t$之后它转移到状态j的概率$p_{ij}(t)$</p>
 <p>给出。此概率值与$s$的取值独立，因为这个过程是齐次的。</p>
-<p>定义变量$q_{ij}$，其表示该过程离开状态$i$到$j$（此外$i$和$j$不同）的速率为：<br>$$<br>q_{ij}=\lim_{\Delta t \to ∞}[p_{ij}(\Delta t)]/\Delta t<br>$$<br>该式子意义为：已经在状态$i$的条件下，在任一长度为$\Delta t$的时间区域内该过程从$i$到$j$的概率为$q_{ij}\Delta t$。另外用以下公式定义值为负的变量$q_{ii}$：<br>$$<br>q_{ii}=-\sum_{j≠i}q_{ij}<br>$$<br>$-q_{ij}$表示在时间长度为$\Delta t$的区域中该过程不在停留在状态$i$的速率。因为有$\sum_jp_{ij}(t)=1$（在任一时刻t，该链转移到某些状态，包括当前的状态），我们有<br>$$<br>\sum_jq_{ij}(t)=0<br>$$<br>通过以上的变量，定义在时刻t处于状态j的概率随着时间的变化为$π_j(t)$：<br>$$<br>\frac {dπ<em>j(t)}{dt}=q</em>{jj}π<em>j(t)+\sum</em>{k≠j}q_{kj}π_k(t)<br>$$<br>接下来需要注重一个更小的子类：连续时间生灭过程。</p>
+<p>定义变量$q_{ij}$，其表示该过程离开状态$i$到$j$（此外$i$和$j$不同）的速率为：</p>
+<script type="math/tex; mode=display">
+q_{ij}=\lim_{\Delta t \to ∞}[p_{ij}(\Delta t)]/\Delta t</script><p>该式子意义为：已经在状态$i$的条件下，在任一长度为$\Delta t$的时间区域内该过程从$i$到$j$的概率为$q_{ij}\Delta t$。另外用以下公式定义值为负的变量$q_{ii}$：</p>
+<script type="math/tex; mode=display">
+q_{ii}=-\sum_{j≠i}q_{ij}</script><p>$-q_{ij}$表示在时间长度为$\Delta t$的区域中该过程不在停留在状态$i$的速率。因为有$\sum_jp_{ij}(t)=1$（在任一时刻t，该链转移到某些状态，包括当前的状态），我们有</p>
+<script type="math/tex; mode=display">
+\sum_jq_{ij}(t)=0</script><p>通过以上的变量，定义在时刻t处于状态j的概率随着时间的变化为$π_j(t)$：</p>
+<script type="math/tex; mode=display">
+\frac {dπ_j(t)}{dt}=q_{jj}π_j(t)+\sum_{k≠j}q_{kj}π_k(t)</script><p>接下来需要注重一个更小的子类：连续时间生灭过程。</p>
 <h2 id="生灭过程"><a href="#生灭过程" class="headerlink" title="生灭过程"></a>生灭过程</h2><p>连续时间齐次马尔可夫链中一个特殊的分类，该分类过程状态的转移只允许从状态$j$到$j-1$或者$j+1$（如果这些状态存在）。这类随机过程非常适合描述队列中顾客的到达与离开过程，其中状态下标对应于等待服务的顾客数量。</p>
-<p>具体的来说：如果在系统中的顾客数量为j，那么这个马尔可夫链就认为处于状态$j$。到达一个顾客，该过程转移到状态$j+1$，<strong>转移发生的速率</strong>为$q_{j,j+1}$。相对的顾客的离开使该过程从状态$j$移动到$j-1$，并且<strong>发生速率为</strong>$q_{j,j-1}$。具体公式<br>$$<br>\lambda_j=q_{j,j+1}<br>$$</p>
-<p>$$<br>\mu_j=q_{j,j-1}<br>$$<br>这两个式子为出生和死亡速率。这些速率可以是<strong>状态独立</strong>，但是由于该过程的齐次性，不能是<strong>时间独立</strong>的。同样根据定义，在状态$i$，对于除了取值$i,i+1,i-1$的所有$j$转移概率$q_{ij}$都为0。即：只有$q_{ii},q_{i,i+1},q_{i,i-1}$三个式子有取值，其余的式子取值均为0。另外根据以上的式子可以得出：<br>$$<br>q_{jj}=-(\lambda_j+\mu_j)<br>$$<br>对于一个生灭过程，处于状态$j$有一个直观上的意义：人口数量为$j$，即排队系统中有$j$个顾客。一般来说，在状态$j$的时候，我们有一个顾客在接受服务并且有$j-1$个顾客在队列中等待服务。</p>
-<h3 id="生灭过程的平稳概率分布"><a href="#生灭过程的平稳概率分布" class="headerlink" title="生灭过程的平稳概率分布"></a>生灭过程的平稳概率分布</h3><p>因为生灭过程是一个各态历经的时间连续的马尔可夫链，它的平稳概率分布为：<br>$$<br>\left{<br>\begin{aligned}<br>q_{jj}π^<em><em>j+\sum</em>{k≠j}q_{kj}π_k^</em>=0<br>\<br>\sum_jπ_j^<em>=1<br>\end{aligned}<br>\right.<br>$$<br>用$π_j^</em>P_j$表示在状态$j$的平稳概率，并用以上的公式替代相关的变量可以得到以下的公式：<br>$$<br>\left{<br>\begin{aligned}<br>&amp;0=-(\lambda_j+\mu_j)π<em>j^*+\lambda</em>{j-1}π<em>{j-1}+\mu</em>{j+1}π^<em>_{j+1} \qquad &amp;j≥1<br>\<br>&amp;0=-\lambda_0π_0^</em>+\mu_1π_1^<em> \qquad &amp;j=0<br>\<br>&amp;\sum_jπ_j^</em>=1<br>\end{aligned}<br>\right.<br>$$<br>以矩阵形式表示，我们可以将前两个公式写为<br>$$<br>PQ=0<br>$$<br>其中<br>$$<br>P=\left[ \begin{matrix} π_0^<em> \qquad π_1^</em> \qquad π_2^* \qquad… \end{matrix} \right]<br>$$</p>
-<p>$$<br>Q=\left[ \begin{matrix} -\lambda_0 &amp; \lambda_0 &amp; 0  &amp; 0 &amp;…\ \mu_1 &amp; -(\lambda_1+\mu_1) &amp; \lambda_1 &amp; 0 &amp; …\ 0 &amp; \mu_2 &amp; -(\lambda_2+\mu_2) &amp; \lambda_2 &amp; … \ … &amp; … &amp; … &amp; … &amp; … \end{matrix} \right]<br>$$<br>如果人口的规模有界限那么，这两个矩阵也是有限维的。定义$P(t)$如下：<br>$$<br>P=\left[ \begin{matrix} π_0(t) \qquad π_1(t) \qquad π_2(t)<br>\qquad … \end{matrix} \right]<br>$$<br>最终可以将式子重写为：<br>$$<br>dP(t)/dt=P(t)Q<br>$$</p>
-<p>矩阵Q被称为<strong>转移速率矩阵</strong>，研究生灭过程的第一步就是写出其Q矩阵。</p>
+<p>具体的来说：如果在系统中的顾客数量为j，那么这个马尔可夫链就认为处于状态$j$。到达一个顾客，该过程转移到状态$j+1$，<strong>转移发生的速率</strong>为$q_{j,j+1}$。相对的顾客的离开使该过程从状态$j$移动到$j-1$，并且<strong>发生速率为</strong>$q_{j,j-1}$。具体公式</p>
+<script type="math/tex; mode=display">
+\lambda_j=q_{j,j+1}</script><script type="math/tex; mode=display">
+\mu_j=q_{j,j-1}</script><p>这两个式子为出生和死亡速率。这些速率可以是<strong>状态独立</strong>，但是由于该过程的齐次性，不能是<strong>时间独立</strong>的。同样根据定义，在状态$i$，对于除了取值$i,i+1,i-1$的所有$j$转移概率$q_{ij}$都为0。即：只有$q_{ii},q_{i,i+1},q_{i,i-1}$三个式子有取值，其余的式子取值均为0。另外根据以上的式子可以得出：</p>
+<script type="math/tex; mode=display">
+q_{jj}=-(\lambda_j+\mu_j)</script><p>对于一个生灭过程，处于状态$j$有一个直观上的意义：人口数量为$j$，即排队系统中有$j$个顾客。一般来说，在状态$j$的时候，我们有一个顾客在接受服务并且有$j-1$个顾客在队列中等待服务。</p>
+<h3 id="生灭过程的平稳概率分布"><a href="#生灭过程的平稳概率分布" class="headerlink" title="生灭过程的平稳概率分布"></a>生灭过程的平稳概率分布</h3><p>因为生灭过程是一个各态历经的时间连续的马尔可夫链，它的平稳概率分布为：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+q_{jj}π^*_j+\sum_{k≠j}q_{kj}π_k^*=0 
+\\
+\sum_jπ_j^*=1
+\end{aligned}
+\right.</script><p>用$π_j^*P_j$表示在状态$j$的平稳概率，并用以上的公式替代相关的变量可以得到以下的公式：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+&0=-(\lambda_j+\mu_j)π_j^*+\lambda_{j-1}π_{j-1}+\mu_{j+1}π^*_{j+1} \qquad &j≥1
+\\
+&0=-\lambda_0π_0^*+\mu_1π_1^* \qquad &j=0
+\\
+&\sum_jπ_j^*=1
+\end{aligned}
+\right.</script><p>以矩阵形式表示，我们可以将前两个公式写为</p>
+<script type="math/tex; mode=display">
+PQ=0</script><p>其中</p>
+<script type="math/tex; mode=display">
+P=\left[ \begin{matrix} π_0^* \qquad π_1^* \qquad π_2^* \qquad... \end{matrix} \right]</script><script type="math/tex; mode=display">
+Q=\left[ \begin{matrix} -\lambda_0 & \lambda_0 & 0  & 0 &...\\ \mu_1 & -(\lambda_1+\mu_1) & \lambda_1 & 0 & ...\\ 0 & \mu_2 & -(\lambda_2+\mu_2) & \lambda_2 & ... \\ ... & ... & ... & ... & ... \end{matrix} \right]</script><p>如果人口的规模有界限那么，这两个矩阵也是有限维的。定义$P(t)$如下：</p>
+<script type="math/tex; mode=display">
+P=\left[ \begin{matrix} π_0(t) \qquad π_1(t) \qquad π_2(t) 
+\qquad ... \end{matrix} \right]</script><p>最终可以将式子重写为：</p>
+<script type="math/tex; mode=display">
+dP(t)/dt=P(t)Q</script><p>矩阵Q被称为<strong>转移速率矩阵</strong>，研究生灭过程的第一步就是写出其Q矩阵。</p>
 <p>注意到的是Q的对角线上的元素，即$q_{jj}$是离开状态$j$的概率值的负值。另外第$j$列中$q_{j-1,j}$比如($q_{01}$)，表示从状态$j-1$到状态$j$的速率，相应的$q_{j+1,j}$比如($q_{32}$)，表示从状态$j+1$到状态$j$的速率。其他所有的元素均为0。<strong>并且每一行所有元素加起来为0。</strong></p>
 <h1 id="M-M-1队列"><a href="#M-M-1队列" class="headerlink" title="M/M/1队列"></a>M/M/1队列</h1><p>M/M/1队列是对简单的排队系统。这里的a/b/c记号又称为<strong>肯达尔记号</strong>，字母的意义为：</p>
 <ul>
@@ -475,18 +534,57 @@ height:50vh;
 <li>c部分，系统中只有一个服务器。</li>
 </ul>
 <p>M/M/1队列是一个生灭马尔可夫过程，其中到达速率$\lambda$和离开速率$\mu$都是状态独立的。</p>
-<p>根据M/M/1队列的长期特性可以得到<br>$$<br>π_0^<em>=1-\frac {\lambda}{\mu}<br>$$<br>其中比率$\lambda/\mu$表示到达速率占服务速率的比例，该比例可以看作系统利用率。这个值单独用$\rho$表示。因此可以得到<br>$$<br>π_0^</em>=1-\rho<br>$$<br>其直观意义为系统闲置（即$π_0^*$）的概率为（1—系统利用率）。</p>
-<p>现在表示处于某一状态$j$的平稳概率为：<br>$$<br>π_j^*=\rho^j(1-\rho)<br>$$<br>对于具体的实例，当数据包达到速率接近链路的容量时，连接该链路的路由器或交换机的队列将无限增长，造成数据包丢失。根据大量数据分析得出，我们应该保证系统利用率不会超过大约70%。一旦界限被超过，要么服务请求被丢弃，要么增加新的服务容量使得利用率降低。</p>
-<p>根据Little定理可知，系统中的平均顾客数量=平均等待时间×平均到达率<br>$$<br>平均等待时间=\frac{\frac{\rho}{\lambda}}{(1-\rho)}=\frac{\frac{1}{\mu}}{(1-\rho)}<br>$$<br>这个量在系统利用率接近1时同样将无限增长。</p>
-<h2 id="M-M-∞队列：及时响应的服务器"><a href="#M-M-∞队列：及时响应的服务器" class="headerlink" title="M/M/∞队列：及时响应的服务器"></a>M/M/∞队列：及时响应的服务器</h2><p>假设一个队列服务提供者为每一个新到达顾客提供一个新的服务器，当有$j$个顾客时，同时也有$j$个服务器。可以得到处于状态$j$的平稳概率为：<br>$$<br>\pi_j^<em>=\pi_0^</em>\prod _{i=1}^{j-1}\frac{\lambda}{(i+1)\mu}=\pi_0^<em>(\frac{\lambda}{\mu})^j\frac{1}{j!}<br>$$<br>利用标准多项式展开$e^x=\sum_{j=0}^∞\frac{x^j}{j!}$。<br>$$<br>\pi_0^</em>=e^{-\frac{\lambda}{\mu}}<br>$$<br>以及<br>$$<br>\pi_j^<em>=\pi_0^</em>\prod_{i=0}^{i-1}\frac{\lambda}{(i+1)\mu}=e^{-\frac{\lambda}{\mu}}(\frac{\lambda}{\mu})^j\frac{1}{j!}<br>$$<br>该式子表明处于状态$j$的平稳概率由参数为$\frac{\lambda}{\mu}$的泊松分布给出。因此，在“无限”服务器情形下，队列中的顾客数量服从泊松分布。我们通过计算参数为$\frac{\lambda}{\mu}$的泊松分布，其平均值来得到队列中顾客的期望数量。</p>
+<p>根据M/M/1队列的长期特性可以得到</p>
+<script type="math/tex; mode=display">
+π_0^*=1-\frac {\lambda}{\mu}</script><p>其中比率$\lambda/\mu$表示到达速率占服务速率的比例，该比例可以看作系统利用率。这个值单独用$\rho$表示。因此可以得到</p>
+<script type="math/tex; mode=display">
+π_0^*=1-\rho</script><p>其直观意义为系统闲置（即$π_0^*$）的概率为（1—系统利用率）。</p>
+<p>现在表示处于某一状态$j$的平稳概率为：</p>
+<script type="math/tex; mode=display">
+π_j^*=\rho^j(1-\rho)</script><p>对于具体的实例，当数据包达到速率接近链路的容量时，连接该链路的路由器或交换机的队列将无限增长，造成数据包丢失。根据大量数据分析得出，我们应该保证系统利用率不会超过大约70%。一旦界限被超过，要么服务请求被丢弃，要么增加新的服务容量使得利用率降低。</p>
+<p>根据Little定理可知，系统中的平均顾客数量=平均等待时间×平均到达率</p>
+<script type="math/tex; mode=display">
+平均等待时间=\frac{\frac{\rho}{\lambda}}{(1-\rho)}=\frac{\frac{1}{\mu}}{(1-\rho)}</script><p>这个量在系统利用率接近1时同样将无限增长。</p>
+<h2 id="M-M-∞队列：及时响应的服务器"><a href="#M-M-∞队列：及时响应的服务器" class="headerlink" title="M/M/∞队列：及时响应的服务器"></a>M/M/∞队列：及时响应的服务器</h2><p>假设一个队列服务提供者为每一个新到达顾客提供一个新的服务器，当有$j$个顾客时，同时也有$j$个服务器。可以得到处于状态$j$的平稳概率为：</p>
+<script type="math/tex; mode=display">
+\pi_j^*=\pi_0^*\prod _{i=1}^{j-1}\frac{\lambda}{(i+1)\mu}=\pi_0^*(\frac{\lambda}{\mu})^j\frac{1}{j!}</script><p>利用标准多项式展开$e^x=\sum_{j=0}^∞\frac{x^j}{j!}$。</p>
+<script type="math/tex; mode=display">
+\pi_0^*=e^{-\frac{\lambda}{\mu}}</script><p>以及</p>
+<script type="math/tex; mode=display">
+\pi_j^*=\pi_0^*\prod_{i=0}^{i-1}\frac{\lambda}{(i+1)\mu}=e^{-\frac{\lambda}{\mu}}(\frac{\lambda}{\mu})^j\frac{1}{j!}</script><p>该式子表明处于状态$j$的平稳概率由参数为$\frac{\lambda}{\mu}$的泊松分布给出。因此，在“无限”服务器情形下，队列中的顾客数量服从泊松分布。我们通过计算参数为$\frac{\lambda}{\mu}$的泊松分布，其平均值来得到队列中顾客的期望数量。</p>
 <h2 id="M-M-1-K-有限缓存"><a href="#M-M-1-K-有限缓存" class="headerlink" title="M/M/1/K:有限缓存"></a>M/M/1/K:有限缓存</h2><p>假设队列系统只有K-1个缓存。总顾客数量（包括正在被服务的顾客）不能超过K，状态K时到达的顾客都将丢失。意味着这个系统将不会进入状态K+1，K+2，…。</p>
-<p>状态转移速率为：<br>$$<br>\lambda_j=<br>\left{<br>\begin{aligned}<br>&amp;\lambda  \qquad j&lt;K<br>\<br>&amp;0  \qquad  j≥K<br>\end{aligned}<br>\right.<br>$$<br>并且有$\mu_j=\mu \qquad j=1,2,…,K$</p>
-<p>可以推出公式：<br>$$<br>\pi_j^<em>=<br>\left{<br>\begin{aligned}<br>&amp;\pi_0^</em>(\frac{\lambda}{\mu})^j  &amp;\qquad j≤K<br>\<br>&amp;0  \qquad  &amp;j&gt;K<br>\end{aligned}<br>\right.<br>$$</p>
-<p>$$<br>\pi_0^*=<br>\left{<br>\begin{aligned}<br>&amp;\frac{1-\frac{\lambda}{\mu}}{1-(\frac{\lambda}{\mu})^{(k+1)}}(\frac{\lambda}{\mu})^j=\frac{1-\rho}{1-\rho^{(k+1)}}\rho^j  &amp;\qquad j≤k<br>\<br>&amp;0  \qquad  &amp;j&gt;k<br>\end{aligned}<br>\right.<br>$$</p>
-<p>其意义为$\pi_k^<em>$的直观意义是当系统的缓存大小为k-1时，系统处于“满”的状态。所以$\pi^</em>_k$可以理解为M/M/1/K队列的<strong>阻塞概率</strong>。</p>
-<h2 id="M-D-1-确定服务时间"><a href="#M-D-1-确定服务时间" class="headerlink" title="M/D/1:确定服务时间"></a>M/D/1:确定服务时间</h2><p>考虑这么一个派对系统，用户的到达是一个泊松过程，但是服务时间是确定的。用$\mu$表示离开间隔时间，用$\rho=\frac{\lambda}{\mu}$表示利用率，那么只要有$\lambda&lt;\mu$系统就是稳定的。<br>$$<br>系统中的平均顾客数量为=\rho+\frac{\rho^2}{2(1-\rho)}<br>$$</p>
-<p>$$<br>平均响应时间=\frac{1}{\mu}+\frac{\rho}{2\mu(1-\rho)}<br>$$</p>
-
+<p>状态转移速率为：</p>
+<script type="math/tex; mode=display">
+\lambda_j=
+\left\{
+\begin{aligned}
+&\lambda  \qquad j<K
+\\
+&0  \qquad  j≥K
+\end{aligned}
+\right.</script><p>并且有$\mu_j=\mu \qquad j=1,2,…,K$</p>
+<p>可以推出公式：</p>
+<script type="math/tex; mode=display">
+\pi_j^*=
+\left\{
+\begin{aligned}
+&\pi_0^*(\frac{\lambda}{\mu})^j  &\qquad j≤K
+\\
+&0  \qquad  &j>K
+\end{aligned}
+\right.</script><script type="math/tex; mode=display">
+\pi_0^*=
+\left\{
+\begin{aligned}
+&\frac{1-\frac{\lambda}{\mu}}{1-(\frac{\lambda}{\mu})^{(k+1)}}(\frac{\lambda}{\mu})^j=\frac{1-\rho}{1-\rho^{(k+1)}}\rho^j  &\qquad j≤k
+\\
+&0  \qquad  &j>k
+\end{aligned}
+\right.</script><p>其意义为$\pi_k^<em>$的直观意义是当系统的缓存大小为k-1时，系统处于“满”的状态。所以$\pi^</em>_k$可以理解为M/M/1/K队列的<strong>阻塞概率</strong>。</p>
+<h2 id="M-D-1-确定服务时间"><a href="#M-D-1-确定服务时间" class="headerlink" title="M/D/1:确定服务时间"></a>M/D/1:确定服务时间</h2><p>考虑这么一个派对系统，用户的到达是一个泊松过程，但是服务时间是确定的。用$\mu$表示离开间隔时间，用$\rho=\frac{\lambda}{\mu}$表示利用率，那么只要有$\lambda&lt;\mu$系统就是稳定的。</p>
+<script type="math/tex; mode=display">
+系统中的平均顾客数量为=\rho+\frac{\rho^2}{2(1-\rho)}</script><script type="math/tex; mode=display">
+平均响应时间=\frac{1}{\mu}+\frac{\rho}{2\mu(1-\rho)}</script>
     </article>
     <!-- license  -->
     

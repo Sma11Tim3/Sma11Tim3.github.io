@@ -461,13 +461,10 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <p>紧张刺激的招新赛终于结束了，快来学一波姿势吧。<br><a id="more"></a></p>
-<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><p>#####Easy XSS</p>
-<p><code>payload:?name=dazhutizi&quot;&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;</code><br><code>得到：flag{- .... . ..-. .. .-. ... - -..- ... ... ..-. .-.. .- --. }</code><br><code>摩斯解密：flag{THEFIRSTXSSFLAG}</code></p>
-<p>#####Maybe Difficult XSS</p>
-<p><code>payload:?keyword=dazhutizi&quot;&gt;&lt;A HREF=&quot;javascript:alert()&quot;&gt;flag&lt;/a&gt;</code></p>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><h5 id="Easy-XSS"><a href="#Easy-XSS" class="headerlink" title="Easy XSS"></a>Easy XSS</h5><p><code>payload:?name=dazhutizi&quot;&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;</code><br><code>得到：flag{- .... . ..-. .. .-. ... - -..- ... ... ..-. .-.. .- --. }</code><br><code>摩斯解密：flag{THEFIRSTXSSFLAG}</code></p>
+<h5 id="Maybe-Difficult-XSS"><a href="#Maybe-Difficult-XSS" class="headerlink" title="Maybe Difficult XSS"></a>Maybe Difficult XSS</h5><p><code>payload:?keyword=dazhutizi&quot;&gt;&lt;A HREF=&quot;javascript:alert()&quot;&gt;flag&lt;/a&gt;</code></p>
 <p><code>flag{W0w_iS_D1fficu1t_XSS&#39;s_F1ag}</code></p>
-<p>#####Easy php</p>
-<p>此题要是输入一个符合要求的数字，那么在sleep()的时候需要等上2个月了。is_numeric函数能够处理正常的数字以及十六进制或0x开头的字符串。而(int)处理十六或0x开头的字符串时会返回0。</p>
+<h5 id="Easy-php"><a href="#Easy-php" class="headerlink" title="Easy php"></a>Easy php</h5><p>此题要是输入一个符合要求的数字，那么在sleep()的时候需要等上2个月了。is_numeric函数能够处理正常的数字以及十六进制或0x开头的字符串。而(int)处理十六或0x开头的字符串时会返回0。</p>
 <p><code>payload1:?TIME=6e6</code></p>
 <p><code>payload2:?TIME=0x4f1a00</code></p>
 <h5 id="未来chrome"><a href="#未来chrome" class="headerlink" title="未来chrome"></a>未来chrome</h5><p><strong>看到网页</strong></p>
@@ -535,17 +532,17 @@ height:50vh;
 <pre><code>import string
 import collections
 import sets, sys
-c1=&apos;220900155b09223d3a270a5813260d1a07111a0e3257137a5d&apos;
-c2=&apos;08080415083b3f3b3b69030d131f0c00005005027f535d575d&apos;
-c3=&apos;15090547342135742b20031113020417545400042d4b434714&apos;
-c4=&apos;084c1204132a3d31736927545b17040110111a0f3e46135a09&apos;
-c5=&apos;0f1f4113132a703b31251754561c06010d411a0e305c135e18&apos;
-c6=&apos;0e0305470f2731207f201d545e13111b115c0f133651525f11&apos;
-c7=&apos;461c13080d2a3e742b264e1656520b1c00110d153e51585619&apos;
-c8=&apos;031a04155b2636742b210b5458171c531d424e0c3a4247130e&apos;
-c9=&apos;05191302576f1c312b69231113190b1c031107017f4b5c465d&apos;
-c10=&apos;011e04025b3839203769031113060a5301420b472b5a5a405d&apos;
-# c11=&apos;080f131e0b3b393b31691d175b170816545002103e4b401d0c&apos;
+c1=&#39;220900155b09223d3a270a5813260d1a07111a0e3257137a5d&#39;
+c2=&#39;08080415083b3f3b3b69030d131f0c00005005027f535d575d&#39;
+c3=&#39;15090547342135742b20031113020417545400042d4b434714&#39;
+c4=&#39;084c1204132a3d31736927545b17040110111a0f3e46135a09&#39;
+c5=&#39;0f1f4113132a703b31251754561c06010d411a0e305c135e18&#39;
+c6=&#39;0e0305470f2731207f201d545e13111b115c0f133651525f11&#39;
+c7=&#39;461c13080d2a3e742b264e1656520b1c00110d153e51585619&#39;
+c8=&#39;031a04155b2636742b210b5458171c531d424e0c3a4247130e&#39;
+c9=&#39;05191302576f1c312b69231113190b1c031107017f4b5c465d&#39;
+c10=&#39;011e04025b3839203769031113060a5301420b472b5a5a405d&#39;
+# c11=&#39;080f131e0b3b393b31691d175b170816545002103e4b401d0c&#39;
 ciphers = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]
 # The target ciphertext we want to crack
 #target_cipher = &quot;0529242a631234122d2b36697f13272c207f2021283a6b0c7908&quot;
@@ -562,11 +559,11 @@ def target_fix(target_cipher):
     counter = collections.Counter()
     # for each other ciphertext
     for index, ciphertext2 in enumerate(ciphers):
-      if current_index != index: # don&apos;t xor a ciphertext with itself
-        for indexOfChar, char in enumerate(strxor(ciphertext.decode(&apos;hex&apos;),
-ciphertext2.decode(&apos;hex&apos;))): # Xor the two ciphertexts
+      if current_index != index: # don&#39;t xor a ciphertext with itself
+        for indexOfChar, char in enumerate(strxor(ciphertext.decode(&#39;hex&#39;),
+ciphertext2.decode(&#39;hex&#39;))): # Xor the two ciphertexts
           # If a character in the xored result is a alphanumeric character,
-it means there was probably a space character in one of the plaintexts (we don&apos;t know
+it means there was probably a space character in one of the plaintexts (we don&#39;t know
 which one)
           if char in string.printable and char.isalpha():
 counter[indexOfChar] += 1 # Increment the counter at this index
@@ -580,19 +577,19 @@ XORS, then the space character was likely from the current_index cipher!
     #print knownSpaceIndexes # Shows all the positions where we now know the key!
     # Now Xor the current_index with spaces, and at the knownSpaceIndexes positions
 we get the key back!
-    xor_with_spaces = strxor(ciphertext.decode(&apos;hex&apos;),&apos; &apos;*150)
+    xor_with_spaces = strxor(ciphertext.decode(&#39;hex&#39;),&#39; &#39;*150)
     for index in knownSpaceIndexes:
-      # Store the key&apos;s value at the correct position
-      final_key[index] = xor_with_spaces[index].encode(&apos;hex&apos;)
+      # Store the key&#39;s value at the correct position
+      final_key[index] = xor_with_spaces[index].encode(&#39;hex&#39;)
       # Record that we known the key at this position
       known_key_positions.add(index)
-  # Construct a hex key from the currently known key, adding in &apos;00&apos; hex chars where
+  # Construct a hex key from the currently known key, adding in &#39;00&#39; hex chars where
 we do not know (to make a complete hex string)
-  final_key_hex = &apos;&apos;.join([val if val is not None else &apos;00&apos; for val in final_key])
+  final_key_hex = &#39;&#39;.join([val if val is not None else &#39;00&#39; for val in final_key])
   # Xor the currently known key with the target cipher
-  output = strxor(target_cipher.decode(&apos;hex&apos;),final_key_hex.decode(&apos;hex&apos;))
+  output = strxor(target_cipher.decode(&#39;hex&#39;),final_key_hex.decode(&#39;hex&#39;))
   print &quot;Fix this sentence:&quot;
-  print &apos;&apos;.join([char if index in known_key_positions else &apos;*&apos; for index, char in
+  print &#39;&#39;.join([char if index in known_key_positions else &#39;*&#39; for index, char in
 enumerate(output)])+&quot;\n&quot;
   # WAIT.. MANUAL STEP HERE
   # This output are printing a * if that character is not known yet
@@ -604,19 +601,18 @@ if you a&quot;
   target_plaintext = &quot;cure, Let Me know if you a&quot;
   print &quot;Fixed:&quot;
   print target_plaintext+&quot;\n&quot;
-  key = strxor(target_cipher.decode(&apos;hex&apos;),target_plaintext)
+  key = strxor(target_cipher.decode(&#39;hex&#39;),target_plaintext)
   print &quot;Decrypted msg:&quot;
   for cipher in ciphers:
-    print strxor(cipher.decode(&apos;hex&apos;),key)
+    print strxor(cipher.decode(&#39;hex&#39;),key)
   print &quot;\nPrivate key recovered: &quot;+key+&quot;\n&quot;
 
 for i in ciphers:
   target_fix(i)
 </code></pre><h4 id="Base全家桶"><a href="#Base全家桶" class="headerlink" title="Base全家桶"></a>Base全家桶</h4><p>直接上脚本<br>​    import base64<br>​    s1=”4C4A575851324332474E324547574B594A563546514D4B4747464D564F4E4C474B4E56454D32435947464A484D56444E4D5134513D3D3D3D”<br>​    s1=base64.b16decode(s1)<br>​    s1=base64.b32decode(s1)<br>​    s1=base64.b64decode(s1)<br>​    print s1</p>
 <p><img src="https://i.imgur.com/czWI5Ud.png" alt=""></p>
-<p>####多次Base64</p>
-<pre><code>import base64
-a = open(&apos;base64.txt&apos;)
+<h4 id="多次Base64"><a href="#多次Base64" class="headerlink" title="多次Base64"></a>多次Base64</h4><pre><code>import base64
+a = open(&#39;base64.txt&#39;)
 try:
     b = a.read( )
 finally:
@@ -628,11 +624,10 @@ except:
     print b;
     break;
 </code></pre><p>flag{base64_base64_base64}</p>
-<p>####随机Base64</p>
-<pre><code>import base64
+<h4 id="随机Base64"><a href="#随机Base64" class="headerlink" title="随机Base64"></a>随机Base64</h4><pre><code>import base64
 f = open(&quot;code.txt&quot;)
 file = f.read()
-n = &apos;&apos;
+n = &#39;&#39;
 steps= []
 while True:    
     try:
@@ -690,29 +685,22 @@ def main():
     c2 = invert(c2, n)
 
   m = pow(c1,s1,n)*pow(c2,s2,n) % n
-  print hex(m)[2:].replace(&apos;l&apos;,&apos;&apos;).decode(&apos;hex&apos;)
+  print hex(m)[2:].replace(&#39;l&#39;,&#39;&#39;).decode(&#39;hex&#39;)
 #  print n2s(m)
 
-if __name__ == &apos;__main__&apos;:
+if __name__ == &#39;__main__&#39;:
   main()
-</code></pre><h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><p>####大鲨鱼</p>
-<p><img src="https://i.imgur.com/LbtobF1.png" alt=""></p>
+</code></pre><h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h4 id="大鲨鱼"><a href="#大鲨鱼" class="headerlink" title="大鲨鱼"></a>大鲨鱼</h4><p><img src="https://i.imgur.com/LbtobF1.png" alt=""></p>
 <h4 id="Start-in-the-sky"><a href="#Start-in-the-sky" class="headerlink" title="Start in the sky"></a>Start in the sky</h4><p>emmmmm        没什么好说的，右键属性查看详细信息发现flag。</p>
-<p>####暴力破解</p>
-<p>使用Zipper爆破，纯数字。得到压缩密码，里面就是flag。</p>
-<p>####pg8</p>
-<p><img src="https://i.imgur.com/JNCub5r.png" alt=""></p>
-<p>####密码给了谁</p>
-<p>翻看数据包发现了user得到base64码</p>
+<h4 id="暴力破解"><a href="#暴力破解" class="headerlink" title="暴力破解"></a>暴力破解</h4><p>使用Zipper爆破，纯数字。得到压缩密码，里面就是flag。</p>
+<h4 id="pg8"><a href="#pg8" class="headerlink" title="pg8"></a>pg8</h4><p><img src="https://i.imgur.com/JNCub5r.png" alt=""></p>
+<h4 id="密码给了谁"><a href="#密码给了谁" class="headerlink" title="密码给了谁"></a>密码给了谁</h4><p>翻看数据包发现了user得到base64码</p>
 <p><img src="https://i.imgur.com/Re3LfxR.png" alt=""></p>
 <p>解密得到邮箱，从而得到flag</p>
 <p><img src="https://i.imgur.com/Ytf7F77.png" alt=""></p>
-<p>####图种</p>
-<p>图片另存到桌面，修改后缀名为zip，解压缩得flag.txt<br>flag{C16CD2BCE86CF5824E6C2128E6B636CA}</p>
-<p>####音乐里的秘密</p>
-<p>音乐另存为本地，用au打开发现摩斯密码，解密<br><img src="https://i.imgur.com/Zw1Smsb.png" alt=""></p>
-<p>####crc32</p>
-<p>根据所给压缩包crc32爆破，使用工具crc32-master</p>
+<h4 id="图种"><a href="#图种" class="headerlink" title="图种"></a>图种</h4><p>图片另存到桌面，修改后缀名为zip，解压缩得flag.txt<br>flag{C16CD2BCE86CF5824E6C2128E6B636CA}</p>
+<h4 id="音乐里的秘密"><a href="#音乐里的秘密" class="headerlink" title="音乐里的秘密"></a>音乐里的秘密</h4><p>音乐另存为本地，用au打开发现摩斯密码，解密<br><img src="https://i.imgur.com/Zw1Smsb.png" alt=""></p>
+<h4 id="crc32"><a href="#crc32" class="headerlink" title="crc32"></a>crc32</h4><p>根据所给压缩包crc32爆破，使用工具crc32-master</p>
 <p><img src="https://i.imgur.com/KnoQsQg.png" alt=""></p>
 <p>寻找合适结果组合得压缩包密码ctf_covteam_com_66</p>
 <p>解压得covteam.txt</p>
@@ -722,12 +710,10 @@ if __name__ == &apos;__main__&apos;:
 <p>得到一张图的base64，转图片得到一张二维码</p>
 <p><img src="https://i.imgur.com/2QyLSQG.png" alt=""></p>
 <p>解码得flag{D41D8CD98F00B204E9800998ECF8427E}</p>
-<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><p>####easy andriod</p>
-<p>在手机上下载下来 随便 输入flag发现输入不能为空和错误的字样</p>
+<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><h4 id="easy-andriod"><a href="#easy-andriod" class="headerlink" title="easy andriod"></a>easy andriod</h4><p>在手机上下载下来 随便 输入flag发现输入不能为空和错误的字样</p>
 <p><img src="https://i.imgur.com/ViL7dBl.png" alt=""></p>
 <p><img src="https://i.imgur.com/sDaRJID.png" alt=""></p>
-<p>####秘密</p>
-<p><img src="https://i.imgur.com/UASH6RS.png" alt=""></p>
+<h4 id="秘密"><a href="#秘密" class="headerlink" title="秘密"></a>秘密</h4><p><img src="https://i.imgur.com/UASH6RS.png" alt=""></p>
 <p>看到Native函数getPass()<br>比较的String来自于这个函数，所以直接逆向.so文件。<br>IDA打开</p>
 <p><img src="https://i.imgur.com/OexkgHQ.png" alt=""></p>
 <h4 id="这道题只值50分"><a href="#这道题只值50分" class="headerlink" title="这道题只值50分"></a>这道题只值50分</h4><p><img src="https://i.imgur.com/iVUrwNH.png" alt=""></p>
@@ -736,11 +722,9 @@ if __name__ == &apos;__main__&apos;:
 <h2 id="Reverse"><a href="#Reverse" class="headerlink" title="Reverse"></a>Reverse</h2><h4 id="RE的入门"><a href="#RE的入门" class="headerlink" title="RE的入门"></a>RE的入门</h4><p>直接拖进IDA中 直接F5</p>
 <p><img src="https://i.imgur.com/uRcH1bR.png" alt=""></p>
 <p>得到flag</p>
-<p>####宣讲会的RE</p>
-<p>丢入ida中  找到关键的比较函数，比较的是输入和字符串”232+1”。</p>
+<h4 id="宣讲会的RE"><a href="#宣讲会的RE" class="headerlink" title="宣讲会的RE"></a>宣讲会的RE</h4><p>丢入ida中  找到关键的比较函数，比较的是输入和字符串”232+1”。</p>
 <p><img src="https://i.imgur.com/KWeqpac.png" alt=""></p>
-<p>####so easy re</p>
-<p>解法一：</p>
+<h4 id="so-easy-re"><a href="#so-easy-re" class="headerlink" title="so easy re"></a>so easy re</h4><p>解法一：</p>
 <p>IDA进去之后会发现字符串{Hacking_for_fun}</p>
 <p>后面的操作是将字符串中的i转换为1,r换为1。</p>
 <p>所以最后的答案是{Hack1ng_fo1_fun}</p>
@@ -749,25 +733,23 @@ if __name__ == &apos;__main__&apos;:
 <p><img src="https://i.imgur.com/IjJWdZL.png" alt=""></p>
 <p>然后执行并输入随意的字符串，长度符合即可。寄存器中可以看到flag。</p>
 <p><img src="https://i.imgur.com/Tx4uren.png" alt=""></p>
-<p>####Easy Reverse</p>
-<p><img src="https://i.imgur.com/H5wxoVk.png" alt=""></p>
+<h4 id="Easy-Reverse"><a href="#Easy-Reverse" class="headerlink" title="Easy Reverse"></a>Easy Reverse</h4><p><img src="https://i.imgur.com/H5wxoVk.png" alt=""></p>
 <p><img src="https://i.imgur.com/l7uDJnE.png" alt=""></p>
 <p>解密脚本</p>
 <pre><code>byte_8049AE0 = &quot;lk2j9Gh}AgfY4ds-a6QW1#k5ER_T[cvLbV7nOm3ZeX{CMt8SZo]U&quot;
 byte_8049B15 = [0x48,0x5D,0x8D,0x24,0x84,0x27,0x99,0x9F,0x54,0x18,0x1E,0x69,0x7E,0x33,0x15,0x72,0x8D,0x33,0x24,0x63,0x21,0x54,0x0C,0x78,0x78,0x78,0x78,0x78,0x1B,0x00,0x00]
-flag = &apos;&apos;
+flag = &#39;&#39;
 for v3 in range(29):
     flag += byte_8049AE0[(byte_8049B15[v3]/3 -2)]
 print flag
-</code></pre><p>####简单的函数加密</p>
-<p>首先PEid查壳</p>
+</code></pre><h4 id="简单的函数加密"><a href="#简单的函数加密" class="headerlink" title="简单的函数加密"></a>简单的函数加密</h4><p>首先PEid查壳</p>
 <p><img src="https://i.imgur.com/0LozMQo.png" alt=""></p>
 <p>脱壳之后找到关键函数</p>
 <p><img src="https://i.imgur.com/nPgUyZd.png" alt=""></p>
 <p>写解密脚本</p>
 <pre><code>#include &lt;stdio.h&gt;
 #include &lt;string.h&gt; 
-char cflag[20]={&apos;1&apos;,&apos;f&apos;,&apos;l&apos;,&apos;R&apos;,&apos;{&apos;,&apos;_&apos;,&apos;_&apos;,&apos;a&apos;,&apos;}&apos;,&apos;_&apos;,&apos;3&apos;,&apos;m&apos;,&apos;a&apos;,&apos;2&apos;,&apos;g&apos;,&apos;3&apos;,&apos;e&apos;}; 
+char cflag[20]={&#39;1&#39;,&#39;f&#39;,&#39;l&#39;,&#39;R&#39;,&#39;{&#39;,&#39;_&#39;,&#39;_&#39;,&#39;a&#39;,&#39;}&#39;,&#39;_&#39;,&#39;3&#39;,&#39;m&#39;,&#39;a&#39;,&#39;2&#39;,&#39;g&#39;,&#39;3&#39;,&#39;e&#39;}; 
 void change(int a,int b);
 char flag[18];
 void change(int a,int b)
@@ -793,7 +775,7 @@ int main()
     printf(&quot;%s&quot;,cflag);
 }
 </code></pre><p><img src="https://i.imgur.com/vpCJSNF.png" alt=""></p>
-<p>生活不易，多才多艺。<br>by Covteam–Sma11-Tim3</p>
+<p>生活不易，多才多艺。<br>by Covteam—Sma11-Tim3</p>
 
     </article>
     <!-- license  -->
@@ -943,7 +925,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB"><span class="toc-number">1.</span> <span class="toc-text">WEB</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#未来chrome"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">未来chrome</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#F12"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">F12</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#变量覆盖"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">变量覆盖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#简单验证"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">简单验证</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Who-si-he"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">Who si he</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#夏风的日记"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">夏风的日记</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一-背景知识"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">一 背景知识</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-1-yaml"><span class="toc-number">1.0.0.8.1.</span> <span class="toc-text">1.1 yaml</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#1-2-序列化"><span class="toc-number">1.0.0.8.2.</span> <span class="toc-text">1.2 序列化</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#1-3-反序列化"><span class="toc-number">1.0.0.8.3.</span> <span class="toc-text">1.3 反序列化</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二-出题思路"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">二 出题思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三-解题过程"><span class="toc-number">1.0.0.10.</span> <span class="toc-text">三 解题过程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四-复现文件"><span class="toc-number">1.0.0.11.</span> <span class="toc-text">四 复现文件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Crypto"><span class="toc-number">2.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#onetime-pad"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">onetime pad :</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Base全家桶"><span class="toc-number">2.0.1.</span> <span class="toc-text">Base全家桶</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Easy-RSA"><span class="toc-number">2.0.2.</span> <span class="toc-text">Easy RSA</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MISC"><span class="toc-number">3.</span> <span class="toc-text">MISC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Start-in-the-sky"><span class="toc-number">3.0.1.</span> <span class="toc-text">Start in the sky</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android"><span class="toc-number">4.</span> <span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#这道题只值50分"><span class="toc-number">4.0.1.</span> <span class="toc-text">这道题只值50分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pwn"><span class="toc-number">5.</span> <span class="toc-text">Pwn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reverse"><span class="toc-number">6.</span> <span class="toc-text">Reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RE的入门"><span class="toc-number">6.0.1.</span> <span class="toc-text">RE的入门</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#WEB"><span class="toc-number">1.</span> <span class="toc-text">WEB</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Easy-XSS"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">Easy XSS</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Maybe-Difficult-XSS"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">Maybe Difficult XSS</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Easy-php"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">Easy php</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#未来chrome"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">未来chrome</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#F12"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">F12</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#变量覆盖"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">变量覆盖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#简单验证"><span class="toc-number">1.0.0.7.</span> <span class="toc-text">简单验证</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Who-si-he"><span class="toc-number">1.0.0.8.</span> <span class="toc-text">Who si he</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#夏风的日记"><span class="toc-number">1.0.0.9.</span> <span class="toc-text">夏风的日记</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python"><span class="toc-number">1.0.0.10.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一-背景知识"><span class="toc-number">1.0.0.11.</span> <span class="toc-text">一 背景知识</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-1-yaml"><span class="toc-number">1.0.0.11.1.</span> <span class="toc-text">1.1 yaml</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#1-2-序列化"><span class="toc-number">1.0.0.11.2.</span> <span class="toc-text">1.2 序列化</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#1-3-反序列化"><span class="toc-number">1.0.0.11.3.</span> <span class="toc-text">1.3 反序列化</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二-出题思路"><span class="toc-number">1.0.0.12.</span> <span class="toc-text">二 出题思路</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三-解题过程"><span class="toc-number">1.0.0.13.</span> <span class="toc-text">三 解题过程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四-复现文件"><span class="toc-number">1.0.0.14.</span> <span class="toc-text">四 复现文件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Crypto"><span class="toc-number">2.</span> <span class="toc-text">Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#onetime-pad"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">onetime pad :</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Base全家桶"><span class="toc-number">2.0.1.</span> <span class="toc-text">Base全家桶</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多次Base64"><span class="toc-number">2.0.2.</span> <span class="toc-text">多次Base64</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#随机Base64"><span class="toc-number">2.0.3.</span> <span class="toc-text">随机Base64</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Easy-RSA"><span class="toc-number">2.0.4.</span> <span class="toc-text">Easy RSA</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MISC"><span class="toc-number">3.</span> <span class="toc-text">MISC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#大鲨鱼"><span class="toc-number">3.0.1.</span> <span class="toc-text">大鲨鱼</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Start-in-the-sky"><span class="toc-number">3.0.2.</span> <span class="toc-text">Start in the sky</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#暴力破解"><span class="toc-number">3.0.3.</span> <span class="toc-text">暴力破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pg8"><span class="toc-number">3.0.4.</span> <span class="toc-text">pg8</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#密码给了谁"><span class="toc-number">3.0.5.</span> <span class="toc-text">密码给了谁</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图种"><span class="toc-number">3.0.6.</span> <span class="toc-text">图种</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#音乐里的秘密"><span class="toc-number">3.0.7.</span> <span class="toc-text">音乐里的秘密</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#crc32"><span class="toc-number">3.0.8.</span> <span class="toc-text">crc32</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Android"><span class="toc-number">4.</span> <span class="toc-text">Android</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#easy-andriod"><span class="toc-number">4.0.1.</span> <span class="toc-text">easy andriod</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#秘密"><span class="toc-number">4.0.2.</span> <span class="toc-text">秘密</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#这道题只值50分"><span class="toc-number">4.0.3.</span> <span class="toc-text">这道题只值50分</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pwn"><span class="toc-number">5.</span> <span class="toc-text">Pwn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reverse"><span class="toc-number">6.</span> <span class="toc-text">Reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RE的入门"><span class="toc-number">6.0.1.</span> <span class="toc-text">RE的入门</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#宣讲会的RE"><span class="toc-number">6.0.2.</span> <span class="toc-text">宣讲会的RE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#so-easy-re"><span class="toc-number">6.0.3.</span> <span class="toc-text">so easy re</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Easy-Reverse"><span class="toc-number">6.0.4.</span> <span class="toc-text">Easy Reverse</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#简单的函数加密"><span class="toc-number">6.0.5.</span> <span class="toc-text">简单的函数加密</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

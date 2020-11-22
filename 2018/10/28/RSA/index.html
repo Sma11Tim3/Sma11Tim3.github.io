@@ -29,7 +29,6 @@
 <meta property="og:description" content="打了蛮多场CTF，每次密码学都有逃不过的RSA，是时候来总结一波了，就决定是你啦RSA。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.imgur.com/Ea32utq.png">
-<meta property="og:image" content="https://i.imgur.com/FJF3ykD.png">
 <meta property="og:image" content="https://i.imgur.com/OvhndnX.png">
 <meta property="og:image" content="https://i.imgur.com/2PbbhBf.png">
 <meta property="og:image" content="https://i.imgur.com/srbUNRj.png">
@@ -291,7 +290,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">2.1k</span>阅读时长: <span class="post-count reading-time">8 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.6k</span>阅读时长: <span class="post-count reading-time">6 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -456,7 +455,62 @@ height:50vh;
 <center> p=gcd(n1,n2) </center>
 
 <p>可以得到：</p>
-<center>n1=pq1</center><br><center>n2=pq2</center><br>这样就能直接分解两个不同的n值了。<br><br>欧几里得算法的时间复杂度为O(log n)。这个时间复杂度即便是4096 bit也是秒破级别。<br><br><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gcd</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> a &lt; b:</span><br><span class="line">     	a, b = b, a</span><br><span class="line">    <span class="keyword">while</span> b != <span class="number">0</span>:</span><br><span class="line">     	temp = a % b</span><br><span class="line">     	a = b</span><br><span class="line">    	b = temp</span><br><span class="line">    <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure><br><br>此类处理方法一般是题目给了若干个n，均不相同，并且都是2048bit，4096bit级别，无法正面硬杠，并且明文都没什么联系，e也一般取65537。<br><br>eg:<br><br>在一个题目中，你拿到了两个n，e都为65537，两个n分别为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n1=9051013965404084482870087864821455535159008696042953021965631089095795348830954383127323853272528967729311045179605407693592665683311660581204886571146327720288455874927281128121117323579691204792399913106627543274457036172455814805715668293705603675386878220947722186914112990452722174363713630297685159669328951520891938403452797650685849523658191947411429068829734053745180460758604283051344339641429819373112365211739216160420494167071996438506850526168389386850499796102003625404245645796271690310748804327</span><br><span class="line">n2=13225948396179603816062046418717214792668512413625091569997524364243995991961018894150059207824093837420451375240550310050209398964506318518991620142575926623780411532257230701985821629425722030608722035570690474171259238153947095310303522831971664666067542649034461621725656234869005501293423975184701929729170077280251436216167293058560030089006140224375425679571181787206982712477261432579537981278055755344573767076951793312062480275004564657590263719816033564139497109942073701755011873153205366238585665743</span><br></pre></td></tr></table></figure><br><br>直接分解n显然是不可能的，经过尝试发现：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> gcd(n1,n2)</span><br></pre></td></tr></table></figure><br><br>得到下面的结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1564859779720039565508870182569324208117555667917997801104862601098933699462849007879184203051278194180664616470669559575370868384820368930104560074538872199213236203822337186927275879139590248731148622362880471439310489228147093224418374555428793546002109</span><br></pre></td></tr></table></figure><br><br>故得到了两个n的公因子p，进一步求出两个n的q，剩下的就是之前的活了。<br><br># 如何分解n #<br><br><strong>Fermat方法与Pollard rho方法</strong><br><br>介绍：<br><br>针对大整数的分解有很多种算法，性能上各有优异，有Fermat方法，Pollard rho方法，试除法，以及椭圆曲线法，连分数法，二次筛选法，数域分析法等等。其中一些方法应用在RSA的攻击上也有奇效。<br><br>在p，q的取值差异过大，或者p，q的取值过于相近的时候，Format方法与Pollard rho方法都可以很快将n分解成功。<br><br>此类分解方法有一个开源项目yafu将其自动化实现了，不论n的大小，只要p和q存在相差过大或者过近时，都可以通过yafu很快地分解成功。<br><br>在不能在线分解和不能利用公约数分解之后都可以用yafu试一试。<br><br>eg:<br><a href="https://www.jarvisoj.com (Medium RSA" target="_blank" rel="noopener">https://www.jarvisoj.com (Medium RSA)</a>)<br><br>进入yafu之后输入factor(n)即可。<br><br><br><img src="https://i.imgur.com/FJF3ykD.png" alt=""><br><br>两个p39就是我们要得p,q。<br><br><br># 低加密指数攻击 #<br><strong>简介：</strong><br>当e=3时，如果明文过小，导致明文的三次方仍然小于n，那么通过直接对密文三次开方，即可得到明文。<br><br>即：<br><br><center>m^e mod n</center>
+<center>n1=pq1</center>
+<center>n2=pq2</center>
+这样就能直接分解两个不同的n值了。
+
+欧几里得算法的时间复杂度为O(log n)。这个时间复杂度即便是4096 bit也是秒破级别。
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gcd</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> a &lt; b:</span><br><span class="line">     	a, b = b, a</span><br><span class="line">    <span class="keyword">while</span> b != <span class="number">0</span>:</span><br><span class="line">     	temp = a % b</span><br><span class="line">     	a = b</span><br><span class="line">    	b = temp</span><br><span class="line">    <span class="keyword">return</span> a</span><br></pre></td></tr></table></figure>
+
+此类处理方法一般是题目给了若干个n，均不相同，并且都是2048bit，4096bit级别，无法正面硬杠，并且明文都没什么联系，e也一般取65537。
+
+eg:
+
+在一个题目中，你拿到了两个n，e都为65537，两个n分别为：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n1=9051013965404084482870087864821455535159008696042953021965631089095795348830954383127323853272528967729311045179605407693592665683311660581204886571146327720288455874927281128121117323579691204792399913106627543274457036172455814805715668293705603675386878220947722186914112990452722174363713630297685159669328951520891938403452797650685849523658191947411429068829734053745180460758604283051344339641429819373112365211739216160420494167071996438506850526168389386850499796102003625404245645796271690310748804327</span><br><span class="line">n2=13225948396179603816062046418717214792668512413625091569997524364243995991961018894150059207824093837420451375240550310050209398964506318518991620142575926623780411532257230701985821629425722030608722035570690474171259238153947095310303522831971664666067542649034461621725656234869005501293423975184701929729170077280251436216167293058560030089006140224375425679571181787206982712477261432579537981278055755344573767076951793312062480275004564657590263719816033564139497109942073701755011873153205366238585665743</span><br></pre></td></tr></table></figure>
+
+直接分解n显然是不可能的，经过尝试发现：
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> gcd(n1,n2)</span><br></pre></td></tr></table></figure>
+
+得到下面的结果
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1564859779720039565508870182569324208117555667917997801104862601098933699462849007879184203051278194180664616470669559575370868384820368930104560074538872199213236203822337186927275879139590248731148622362880471439310489228147093224418374555428793546002109</span><br></pre></td></tr></table></figure>
+
+故得到了两个n的公因子p，进一步求出两个n的q，剩下的就是之前的活了。
+
+# 如何分解n #
+
+**Fermat方法与Pollard rho方法**
+
+介绍：
+
+针对大整数的分解有很多种算法，性能上各有优异，有Fermat方法，Pollard rho方法，试除法，以及椭圆曲线法，连分数法，二次筛选法，数域分析法等等。其中一些方法应用在RSA的攻击上也有奇效。
+
+在p，q的取值差异过大，或者p，q的取值过于相近的时候，Format方法与Pollard rho方法都可以很快将n分解成功。
+
+此类分解方法有一个开源项目yafu将其自动化实现了，不论n的大小，只要p和q存在相差过大或者过近时，都可以通过yafu很快地分解成功。
+
+在不能在线分解和不能利用公约数分解之后都可以用yafu试一试。
+
+eg: 
+[https://www.jarvisoj.com (Medium RSA)](https://www.jarvisoj.com (Medium RSA))
+
+进入yafu之后输入factor(n)即可。
+
+
+![](https://i.imgur.com/FJF3ykD.png)
+
+两个p39就是我们要得p,q。
+
+
+# 低加密指数攻击 #
+**简介：**
+当e=3时，如果明文过小，导致明文的三次方仍然小于n，那么通过直接对密文三次开方，即可得到明文。
+
+即：
+
+<center>m^e mod n</center>
 
 <p>如果e=3，且m^e&lt;n，那么：</p>
 <center>c = m^e , e=3</center>
@@ -472,7 +526,7 @@ height:50vh;
 <p>eg:<a href="https://www.jarvisoj.com (Extremely hard RSA" target="_blank" rel="noopener">https://www.jarvisoj.com (Extremely hard RSA)</a>)</p>
 <p>关键代码如下：此题通过不断给明文+n开三次方即可求得：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">	<span class="keyword">if</span>(gmpy.root(c+i*N, <span class="number">3</span>)[<span class="number">1</span>]==<span class="number">1</span>):</span><br><span class="line">		<span class="keyword">print</span> gmpy.root(c+i*N, <span class="number">3</span>)</span><br><span class="line">		<span class="keyword">break</span></span><br><span class="line">	i=i+<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
 <h1 id="低解密指数攻击"><a href="#低解密指数攻击" class="headerlink" title="低解密指数攻击"></a>低解密指数攻击</h1><p>与低加密指数相同，低解密指数可以加快解密的过程，但是者也带来了安全问题。那么一种基于连分数(一个数论当中的问题)的特殊攻击类型就可以危害RSA的安全。此时需要满足：</p>
-<center>q&lt;p&lt;2q</center>
+<center>q<p<2q< center="">
 
 <p>如果满足上述条件，通过Wiener Attack可以在多项式时间中分解n。</p>
 <p>rsa-wiener-attack的攻击源码开源在了github中，采取python编写，可以很容易使用。</p>
@@ -499,7 +553,8 @@ height:50vh;
 <center>s1e1+s2e2=1</center>
 
 <p>又因为：</p>
-<center>c1≡m^e1(mod n)</center><br><center>c2≡m^e2(mod n)</center>
+<center>c1≡m^e1(mod n)</center>
+<center>c2≡m^e2(mod n)</center>
 
 <p>通过代入化简可以得出:</p>
 <center>(c1^s1)(c2^s2)≡m(mod n)</center>
@@ -512,7 +567,7 @@ height:50vh;
 <p>若转载本文请注明出处。</p>
 <p>by Covteam-Sma11_Tim3</p>
 <p>生活不易，多才多艺。</p>
-
+</p<2q<></center>
     </article>
     <!-- license  -->
     
