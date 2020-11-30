@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sma11_Tim3">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sma11_Tim3">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="Not a product, no need to explain">
+    <meta name="description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572/article/details/102505256">
+<meta name="keywords" content="MATLAB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB使用教程(五)">
+<meta property="og:url" content="http://yoursite.com/2020/11/29/MATLAB使用教程(五)/index.html">
+<meta property="og:site_name" content="Know it &amp; Make it">
+<meta property="og:description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572/article/details/102505256">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/181922-33113.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/184119-974885.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/184430-678196.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/193336-746929.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/190915-377676.png">
+<meta property="og:updated_time" content="2020-11-30T11:44:32.239Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MATLAB使用教程(五)">
+<meta name="twitter:description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572/article/details/102505256">
+<meta name="twitter:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/181922-33113.png">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>MATLAB使用教程(五) · Sma11_Tim3&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/img_0006.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Sma11_Tim3&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">MATLAB使用教程(五)</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Sma11_Tim3's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            MATLAB使用教程(五)
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="MATLAB">MATLAB</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.8k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/11/29</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572/article/details/102505256" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572/article/details/102505256</a></p>
+<a id="more"></a>
+<h1 id="前期回顾"><a href="#前期回顾" class="headerlink" title="前期回顾"></a>前期回顾</h1><p>在上期教程中，我们学习了下面的知识点：</p>
+<ol>
+<li>如何声明、定义、调用函数（文件）。</li>
+<li>给函数传递参数、接受函数的返回值。</li>
+<li>MATLAB中矩阵的简单使用和下标索引。</li>
+<li>给我们代码模块化。</li>
+<li>MATLAB中for循环（遍历）的使用。</li>
+<li>如何从一个文件调用另一个函数文件。</li>
+</ol>
+<h1 id="本期目标"><a href="#本期目标" class="headerlink" title="本期目标"></a>本期目标</h1><p>在数学中经常遇见的一个问题就是方程求解，特别是线性代数中，很经常遇见线性方程组的求解问题，今天就来用MATLAB来探讨线性方程组的求解问题。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="一般方程"><a href="#一般方程" class="headerlink" title="一般方程"></a>一般方程</h2><p>一般来讲，我们看到的方程都是这个样式的：$ax=b$，其中$a、b$都是常数，很显然，这时候$x$的解就是$b/a$。</p>
+<p>也就是说我们拿后面的值除以前面的系数，即可得到解$X$。</p>
+<h2 id="方程组（目前仅讨论方程个数和未知数个数一样的情况）"><a href="#方程组（目前仅讨论方程个数和未知数个数一样的情况）" class="headerlink" title="方程组（目前仅讨论方程个数和未知数个数一样的情况）"></a>方程组（目前仅讨论方程个数和未知数个数一样的情况）</h2><p>刚刚我们讲的是一般方程，那推广到线性方程组，假设我们现在有个这样的方程：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+4x_1+x_2-2x_3=1  
+\\
+2x_1+2x_2+x_3=2
+\\
+3x_1+x_2-x_3=3
+\end{aligned}
+\right.</script><p>相信大家运用高中知识也能很快的求出这个方程的答案，但是，如果四阶？五阶甚至更高呢?不如转换为矩阵的方法。</p>
+<p>根据线性代数的知识，我们可以得到这样一个增广矩阵：</p>
+<script type="math/tex; mode=display">
+\left[ \begin{matrix} 4 & 1 & -2 & 1\\ 2 & 2 & 1 & 2\\ 3 & 1 & -1 & 3\end{matrix} \right]</script><p>那我们令系数矩阵是A，结果矩阵是B，这个解矩阵X该怎么算呢?</p>
+<h2 id="额外知识"><a href="#额外知识" class="headerlink" title="额外知识"></a>额外知识</h2><p>此部分提供给还未学过线性代数的同学看，如果知道基本知识可以先行跳过。</p>
+<p>上面的矩阵方程可以视为这样的矩阵方程：</p>
+<script type="math/tex; mode=display">
+\left[ \begin{matrix} 4 & 1 & -2 \\ 2 & 2 & 1 \\ 3 & 1 & -1\end{matrix} \right]\left[ \begin{matrix} x_1 \\ x_2 \\ x_3 \end{matrix} \right]=\left[ \begin{matrix} 1\\ 2\\ 3\end{matrix} \right]</script><p>其中，令X为未知数的矩阵，前面的三乘三的系数矩阵称为A，等号右边的结果矩阵称为B，方程组即可表述为：</p>
+<p>AX = B，求X。</p>
+<p>矩阵A的列数和矩阵X的行数相同时才可写成此种形式，因为当A的列数（这里是三列）等于X的行数（这里是三行）才能进行矩阵乘法运算。</p>
+<p>矩阵乘法运算是这样的：</p>
+<script type="math/tex; mode=display">
+\left[ \begin{matrix} a_{11} & a_{12} \\ a_{21} & a_{22}\end{matrix} \right]\left[ \begin{matrix} b_1\\ b_2\end{matrix} \right]=\left[ \begin{matrix} a_{11}*b_1+ a_{12}*b_2 \\ a_{21} *b_1+ a_{22}*b_2\end{matrix} \right]</script><p>易看出：如果A是 n 行 m 列，则X需要是 m 行 s 列才可相乘，且结果矩阵必是 n 行 s 列。</p>
+<p>所以按照上面的运算法则，我们就可以看出，矩阵方程和原来的方程组是等价的。</p>
+<h2 id="回到正文"><a href="#回到正文" class="headerlink" title="回到正文"></a>回到正文</h2><p>我们已经得到了方程组对应的矩阵方程$\left[ \begin{matrix} 4 &amp; 1 &amp; -2 \\ 2 &amp; 2 &amp; 1 \\ 3 &amp; 1 &amp; -1\end{matrix} \right]\left[ \begin{matrix} x_1 \\ x_2 \\ x_3 \end{matrix} \right]=\left[ \begin{matrix} 1\\ 2\\ 3\end{matrix} \right]$</p>
+<p>那么编程的第一件事就应该是在程序里面表述这个方程组。下面看代码：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 方程组求解</span></span><br><span class="line">clc;</span><br><span class="line">clear;</span><br><span class="line">A = [<span class="number">4</span> <span class="number">1</span> <span class="number">-2</span>;</span><br><span class="line">     <span class="number">2</span> <span class="number">2</span>  <span class="number">1</span>;</span><br><span class="line">     <span class="number">3</span> <span class="number">1</span> <span class="number">-1</span>];</span><br><span class="line"><span class="comment">% 定义一个3行3列的矩阵A，行与行之间使用分号隔开，每一行之间的元素使用空格隔开</span></span><br><span class="line">B = [<span class="number">1</span>;</span><br><span class="line">     <span class="number">2</span>; </span><br><span class="line">     <span class="number">3</span>]; <span class="comment">%定义矩阵B</span></span><br><span class="line"><span class="built_in">disp</span>(A);<span class="built_in">disp</span>(B); <span class="comment">%显示A和B</span></span><br></pre></td></tr></table></figure>
+<p>现在我们便可以在程序中得到两个矩阵，分别是A和B，定义的时候也可以不换行，但是换行定义看起来毕竟方便、易读。</p>
+<p>运行代码就能看到我们定义的这两个矩阵：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/181922-33113.png" alt="image-20201130181920794"></p>
+<p>同样，我们也可以在右边的工作区查看我们的这两个变量：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/184119-974885.png" alt="image-20201130184111771"></p>
+<p>还可以双击其名称查看详细的信息。</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/184430-678196.png" alt="image-20201130184428190"></p>
+<p>现在，我们得到了两个矩阵，万事俱备，只欠东风，我们现在只需要一个除法即可得出这个解矩阵X。</p>
+<p>现在在最后面加入这个代码：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = A\B;  <span class="comment">% 左除</span></span><br><span class="line"><span class="built_in">disp</span>(X);</span><br></pre></td></tr></table></figure>
+<p>可能会有些人觉得奇怪，怎么A在左边并且这个写的是斜杠呢？</p>
+<p>如果我们学习过矩阵便知道，矩阵的乘法是没法前后调换的，即 AB 不等于 BA，也就是说，AX = B，要求这个X，我们需要在两边的左边同时除以A（严谨说法叫做乘以A的逆矩阵），即 1/A <em> A </em>X = 1/A <em> B，也叫做左除，而在MATLAB中，左除符号就是这个“ \ ”符号，所以应这样使用，即 A \ B代表 1/A </em> B（严谨来说，就是A的逆矩阵*B），即可得到X。</p>
+<p>运行后我们便可看到解矩阵的结果：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/193336-746929.png" alt="image-20201130190216861"></p>
+<h2 id="左除和右除"><a href="#左除和右除" class="headerlink" title="左除和右除"></a>左除和右除</h2><p>上面讲的是左除，下面我们来说说右除，也就是在右边乘以1/A（严谨说法叫做A的逆矩阵），那么这个方程组应该是这样的：</p>
+<p>$XA=B$</p>
+<p>如果A和B不变的话，对应的矩阵应该是这样的：</p>
+<script type="math/tex; mode=display">
+\left[ \begin{matrix} x_1 \\ x_2 \\ x_3 \end{matrix} \right]\left[ \begin{matrix} 4 & 1 & -2 \\ 2 & 2 & 1 \\ 3 & 1 & -1\end{matrix} \right]=\left[ \begin{matrix} 1\\ 2\\ 3\end{matrix} \right]</script><p>然后根据乘法的运算法则，可以发现，这个方程是没法解的（因为根本就没法乘，前面矩阵1列，后面矩阵3行，不相等，没法进行乘法运算）</p>
+<p>所以，如果进行这样的乘法运算，我们需要把X的解矩阵变换（注意，变换后乘出来的结果和之前的方程组不一样，不一样！）：</p>
+<script type="math/tex; mode=display">
+\left[ \begin{matrix} x_1 & x_2 & x_3 \end{matrix} \right]\left[ \begin{matrix} 4 & 1 & -2 \\ 2 & 2 & 1 \\ 3 & 1 & -1\end{matrix} \right]=\left[ \begin{matrix} 1& 2 & 3\end{matrix} \right]</script><p>那么根据运算律，我们可以得到现在的方程组是：</p>
+<script type="math/tex; mode=display">
+\left\{
+\begin{aligned}
+&4x_1+2x_2+3x_3=1  
+\\
+&x_1+2x_2+x_3=2
+\\
+&2x_1+x_2-x_3=3
+\end{aligned}
+\right.</script><p>那么这个X如何求呢？</p>
+<p>根据原方程： XA = B，我们需要在等号两端的右边同时乘以 1/A（严谨来说是A的逆矩阵），即：</p>
+<p>X <em> A </em> 1/A = B <em> 1/A（左右千万不能放错） ==&gt; X = B</em>1/A</p>
+<p>在代码中，右除是这样写的（注意代码改动，因为矩阵B变了）：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 方程组求解,右除</span></span><br><span class="line">clc;</span><br><span class="line">clear;</span><br><span class="line">A = [<span class="number">4</span> <span class="number">1</span> <span class="number">-2</span>;</span><br><span class="line">     <span class="number">2</span> <span class="number">2</span>  <span class="number">1</span>;</span><br><span class="line">     <span class="number">3</span> <span class="number">1</span> <span class="number">-1</span>];</span><br><span class="line"><span class="comment">% 定义一个3行3列的矩阵A，行与行之间使用分号隔开，每一行之间的元素使用空格隔开</span></span><br><span class="line">B = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>]; <span class="comment">%定义矩阵B</span></span><br><span class="line"><span class="built_in">disp</span>(A);<span class="built_in">disp</span>(B); <span class="comment">%显示A和B</span></span><br><span class="line">X = B/A;  <span class="comment">% 右除</span></span><br><span class="line"><span class="built_in">disp</span>(X);</span><br></pre></td></tr></table></figure>
+<p>然后运行：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202011/30/190915-377676.png" alt="image-20201130190914357"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>今天我们学习了如下的知识：</p>
+<ol>
+<li>在MATLAB中定义矩阵。</li>
+<li>线性代数矩阵乘法运算、求解知识。</li>
+<li>关于矩阵乘法左除、右除的区别。</li>
+<li>在MATLAB中求解两种矩阵方程的方法。</li>
+</ol>
+<p>by Covteam-Sma11_Tim3</p>
+<p>生活不易，多才多艺。</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(五)/">http://yoursite.com/2020/11/29/MATLAB使用教程(五)/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(五)/">November 29th 2020, 8:35:00 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(五)/">November 30th 2020, 7:44:32 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2020/11/29/MATLAB使用教程(六)/" title="MATLAB使用教程(六)">
+                    <div class="nextTitle">MATLAB使用教程(六)</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/11/29/MATLAB使用教程(四)/" title="MATLAB使用教程(四)">
+                    <div class="prevTitle">MATLAB使用教程(四)</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:825703058@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//https://github.com/Sma11Tim3" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前期回顾"><span class="toc-number">1.</span> <span class="toc-text">前期回顾</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#本期目标"><span class="toc-number">2.</span> <span class="toc-text">本期目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-number">3.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一般方程"><span class="toc-number">3.1.</span> <span class="toc-text">一般方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方程组（目前仅讨论方程个数和未知数个数一样的情况）"><span class="toc-number">3.2.</span> <span class="toc-text">方程组（目前仅讨论方程个数和未知数个数一样的情况）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#额外知识"><span class="toc-number">3.3.</span> <span class="toc-text">额外知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回到正文"><span class="toc-number">3.4.</span> <span class="toc-text">回到正文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#左除和右除"><span class="toc-number">3.5.</span> <span class="toc-text">左除和右除</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 27
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(七)/">MATLAB使用教程(七)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(九)/">MATLAB使用教程(九)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(五)/">MATLAB使用教程(五)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(三)/">MATLAB使用教程(三)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(六)/">MATLAB使用教程(六)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(八)/">MATLAB使用教程(八)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(二)/">MATLAB使用教程(二)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(四)/">MATLAB使用教程(四)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(一)/">MATLAB使用教程(一)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/18</span><a class="archive-post-title" href="/2020/11/18/攻防世界Reverse-Challenge-area/">攻防世界Reverse Challenge area</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2020/10/28/计算机网络数学基础/">计算机网络数学基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/2020/10/14/最大网络流量-Maximum-Network-Flow/">最大网络流(Maximum Network Flow)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/2020/10/14/红黑树-Red-Black-Tree/">红黑树(Red Black Tree)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/11</span><a class="archive-post-title" href="/2020/10/11/Ipad搭建Vscode编程环境/">Ipad搭建Vscode编程环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/25</span><a class="archive-post-title" href="/2020/09/25/Blockchain笔记/">Blockchain笔记</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/hello-Covteam/">Hello-Covteam</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href="/2019/03/17/2018蓝桥杯总结/">2018蓝桥杯总结</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/27</span><a class="archive-post-title" href="/2018/12/27/拜托教务系统强制评价/">拜托教务系统强制评价</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/2018Covteam招新赛/">2018Covteam招新赛</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/80x86汇编知识基础/">80x86汇编知识基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwntools使用简介/">Pwntools使用简介</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwn入门笔记/">Pwn入门笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/RSA/">RSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/网鼎杯第一场/">网鼎杯第一场</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/binwalk-for-windows/">binwalk for windows</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/hello-world/">Hello World</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
+    
+        <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
+    
+        <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
+    
+        <span class="sidebar-tag-name" data-tags="MATLAB"><span class="iconfont-archer">&#xe606;</span>MATLAB</span>
+    
+        <span class="sidebar-tag-name" data-tags="区块链"><span class="iconfont-archer">&#xe606;</span>区块链</span>
+    
+        <span class="sidebar-tag-name" data-tags="日常小工具"><span class="iconfont-archer">&#xe606;</span>日常小工具</span>
+    
+        <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
+    
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+    
+        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学基础"><span class="iconfont-archer">&#xe606;</span>数学基础</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Sma11_Tim3"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
