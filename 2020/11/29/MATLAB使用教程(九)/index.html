@@ -20,18 +20,28 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="Not a product, no need to explain">
-    <meta name="description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572/article/details/102505256">
+    <meta name="description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572">
 <meta name="keywords" content="MATLAB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MATLAB使用教程(九)">
 <meta property="og:url" content="http://yoursite.com/2020/11/29/MATLAB使用教程(九)/index.html">
 <meta property="og:site_name" content="Know it &amp; Make it">
-<meta property="og:description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572/article/details/102505256">
+<meta property="og:description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-29T12:48:13.530Z">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/111726-947935.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/112014-811491.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/112107-685961.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/112148-557665.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/112310-745511.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/113629-768994.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/113534-474597.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/113754-676557.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/113810-975854.png">
+<meta property="og:updated_time" content="2020-12-01T03:41:05.766Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MATLAB使用教程(九)">
-<meta name="twitter:description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572/article/details/102505256">
+<meta name="twitter:description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572">
+<meta name="twitter:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/111726-947935.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -285,7 +295,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">45</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -414,8 +424,62 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572/article/details/102505256" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572/article/details/102505256</a></p>
+        <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572</a></p>
 <a id="more"></a>
+<h1 id="前期回顾"><a href="#前期回顾" class="headerlink" title="前期回顾"></a>前期回顾</h1><p>上期我们学习了如下的内容：</p>
+<ol>
+<li>学习了二重积分的概念，以及应用的大概场景。</li>
+<li>学会了如何在一个figure里面绘制多个图像</li>
+<li>学会了如何在matlab中绘制图像、对目标区域填充颜色并命名标题</li>
+<li>学会了怎么使用matlab的integral2计算二重积分</li>
+<li>学会了怎么在matlab中声明（定义）一个函数句柄，或者说创建一个多元函数，以及怎么反解某个变量。</li>
+<li>学会了怎么在matlab中绘制二维曲面的图像。</li>
+</ol>
+<h1 id="MATLAB数据可视化"><a href="#MATLAB数据可视化" class="headerlink" title="MATLAB数据可视化"></a>MATLAB数据可视化</h1><h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><p>绘制图形（二维）一般使用plot函数，这个函数一般能满足很多画图的功能了，比如我们能绘制一个函数图像：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 使用plot绘图</span></span><br><span class="line">clear all;</span><br><span class="line">syms x;     <span class="comment">% 声明一个符号x</span></span><br><span class="line">x = <span class="number">0</span>:<span class="number">0.01</span>:<span class="number">20</span>;  <span class="comment">% 给定范围</span></span><br><span class="line">f = <span class="built_in">sin</span>(x);   <span class="comment">% 声明函数</span></span><br><span class="line"><span class="built_in">figure</span>;     <span class="comment">% 打开绘图窗口</span></span><br><span class="line"><span class="built_in">plot</span>(f);    <span class="comment">% 画图</span></span><br><span class="line">title(<span class="string">'y=sinx'</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/111726-947935.png" alt="image-20201201111725549"></p>
+<p>里面的知识之前都涉及到了，大家还有没有印象。</p>
+<p>除了绘制函数，也能绘制矩阵，还记得怎么定义一个矩阵吗？忘了的小伙伴们可以看下面的代码回忆一下</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 绘制矩阵图像</span></span><br><span class="line">clear all;</span><br><span class="line">A = [<span class="number">4</span> <span class="number">1</span> <span class="number">-2</span>;</span><br><span class="line">     <span class="number">2</span> <span class="number">2</span>  <span class="number">1</span>;</span><br><span class="line">     <span class="number">3</span> <span class="number">1</span> <span class="number">-1</span>];  <span class="comment">% 定义一个矩阵</span></span><br><span class="line"> <span class="built_in">figure</span>;</span><br><span class="line"> <span class="built_in">plot</span>(A);</span><br><span class="line"> title(<span class="string">'一个矩阵'</span>);</span><br></pre></td></tr></table></figure>
+<p>大家不妨先设想一下，如果是你来设计软件，你怎么去绘制一个矩阵的图像呢？</p>
+<p>在MATLAB中，它们的解决方案是使用折线图绘制矩阵，横坐标代表第几个，每一行用一条线表示，纵坐标表示某个横坐标处的高度，下面是绘制的图像：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/112014-811491.png" alt="image-20201201112013230"></p>
+<p>下面以函数为例，现在我感觉这个线不行，我想换成虚线、换成其他颜色，甚至我想用其他符号代替，怎么办呢？下面有个表格：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/112107-685961.png" alt="image-20201201112105824"></p>
+<p>假设我想用青色、虚线，用o画一条线，那么我的参数应该是这样的（参数在plot里面）：</p>
+<p>‘—oc’或’o—c’或’c—o’或其他，不区分顺序，并且也可以省略其中任意个，例如我的程序：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 使用plot绘图</span></span><br><span class="line">clear all;</span><br><span class="line">syms x;     <span class="comment">% 声明一个符号x</span></span><br><span class="line">x = <span class="number">0</span>:<span class="number">0.01</span>:<span class="number">20</span>;  <span class="comment">% 给定范围</span></span><br><span class="line">f = <span class="built_in">sin</span>(x);   <span class="comment">% 声明函数</span></span><br><span class="line"><span class="built_in">figure</span>;     <span class="comment">% 打开绘图窗口</span></span><br><span class="line"><span class="built_in">plot</span>(f,<span class="string">'o--c'</span>);    <span class="comment">% 画图</span></span><br><span class="line">title(<span class="string">'y=sinx o--c'</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/112148-557665.png" alt="image-20201201112146518"></p>
+<h2 id="在同一个figure里面绘制多个图形"><a href="#在同一个figure里面绘制多个图形" class="headerlink" title="在同一个figure里面绘制多个图形"></a>在同一个figure里面绘制多个图形</h2><p>我们经常遇到一些情况，需要在同一幅图里面比较多个函数，这就需要画在一起来对比，比如我们比较tanx和sinx和x在0-pi/2之间的大小时，这时候需要做如下处理，我们就能很轻易地看出tanx&gt;x&gt;sinx这个结论了（0&lt;x&lt;pi/2时）：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/112310-745511.png" alt="image-20201201112310097"></p>
+<p>此时的代码如下（范围我为什么不写pi/2呢，大家可以试一下，tanx在-&gt;pi/2时趋于无穷大）：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 同时绘制多个函数在一起</span></span><br><span class="line">clear all;</span><br><span class="line">syms x;</span><br><span class="line">x = <span class="number">0</span>:<span class="number">0.01</span>:<span class="built_in">pi</span>/<span class="number">3</span>;  <span class="comment">% 设置x的取值范围</span></span><br><span class="line"><span class="comment">% f = [sin(x);</span></span><br><span class="line"><span class="comment">%    tan(x);</span></span><br><span class="line"><span class="comment">%    x];  % 定义一个函数的矩阵</span></span><br><span class="line">f = [<span class="built_in">sin</span>(x);<span class="built_in">tan</span>(x);x];</span><br><span class="line"><span class="built_in">figure</span>;</span><br><span class="line"><span class="built_in">plot</span>(x, f);</span><br></pre></td></tr></table></figure>
+<p>注意，这里我的plot的参数是两个，之前，参数是一个，只有一个 f 传了进去，其实，之前使用plot传递一个参数，画的图是一个向量的图，因为f 里面存储的是x区间对应的取值。</p>
+<p>比如上面代码，x = 0:0.01:pi/3，意思是，在0-pi/3的范围中，从0开始，每隔0.01取值，所以x是一个一维的数组:</p>
+<p>[0, 0.01, 0.02 ………………………….]</p>
+<p>所以f 存储的仅仅是每个x 值对应的函数结果，而此时调用plot，绘制的是这个向量。</p>
+<p>此时，我们使用 plot(x, f)，绘制的不再是向量了，而是一组坐标，第一个是横坐标，第二个是纵坐标，所以我们把x 放在第一个参数位置，f 放在第二个参数位置，如果上面代码中使用 plot(f, x)，则会是这样的图形：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/113629-768994.png" alt="image-20201201113622490"></p>
+<p>因为此时plot 将 f 作为横坐标，x 作为纵坐标来绘制图形，所以你会看到一个和上面的图像关于 y=x 对称的图像。</p>
+<p>但是，plot(x, f) 绘图的本质仍然是对这 x 区间里的很多点的绘制。</p>
+<p>我们使用x = 0: 0.5: pi/3 和 x = 0:0.001:pi/3 两种区间的图像是截然不同的：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/113534-474597.png" alt="image-20201201113449259"></p>
+<p>出现这种现象的原因，主要就是打点的问题了，在第一种里，x仅仅取到了三个点：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/113754-676557.png" alt="image-20201201113751892"></p>
+<p>而后面的 x = 0:0.001:pi/3 则取到了上千个打点处，</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/113810-975854.png" alt="image-20201201113810687"></p>
+<p>而我们上数学课时也都知道，画的点越多，连接各点画出来的图形越光滑、精确，这就是这两个图像出现的原因。</p>
+<h1 id="本期小结"><a href="#本期小结" class="headerlink" title="本期小结"></a>本期小结</h1><p>相比于前几期的内容，本期内容似乎有点轻松，但是我感觉也算是讲清楚了plot的用法（至少现阶段绝对是够用了，并且能准确的理解里面的内容），下面来小结一下吧：</p>
+<ol>
+<li>学会了使用plot绘制一个向量</li>
+<li>学会了使用plot绘制一个函数图像</li>
+<li>学会了使用plot绘制一个矩阵的折线图</li>
+<li>学会了绘制多个函数在同一个图像中</li>
+<li>懂得了x 和函数 f 的实质内容</li>
+<li>学会了定制绘图的曲线样式。</li>
+</ol>
+<p>最后，希望大家都能一起进步，加油！！！</p>
+
     </article>
     <!-- license  -->
     
@@ -423,7 +487,7 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
             </p><p>原文链接：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(九)/">http://yoursite.com/2020/11/29/MATLAB使用教程(九)/</a>
             </p><p>发表日期：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(九)/">November 29th 2020, 8:36:00 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(九)/">November 29th 2020, 8:48:13 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(九)/">December 1st 2020, 11:41:05 am</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -559,7 +623,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前期回顾"><span class="toc-number">1.</span> <span class="toc-text">前期回顾</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MATLAB数据可视化"><span class="toc-number">2.</span> <span class="toc-text">MATLAB数据可视化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#绘图"><span class="toc-number">2.1.</span> <span class="toc-text">绘图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在同一个figure里面绘制多个图形"><span class="toc-number">2.2.</span> <span class="toc-text">在同一个figure里面绘制多个图形</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#本期小结"><span class="toc-number">3.</span> <span class="toc-text">本期小结</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

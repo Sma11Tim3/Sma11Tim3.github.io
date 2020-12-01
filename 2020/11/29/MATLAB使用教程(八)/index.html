@@ -20,18 +20,25 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="Not a product, no need to explain">
-    <meta name="description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572/article/details/102505256">
+    <meta name="description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572">
 <meta name="keywords" content="MATLAB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MATLAB使用教程(八)">
 <meta property="og:url" content="http://yoursite.com/2020/11/29/MATLAB使用教程(八)/index.html">
 <meta property="og:site_name" content="Know it &amp; Make it">
-<meta property="og:description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572/article/details/102505256">
+<meta property="og:description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-11-30T13:54:02.140Z">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/103347-3747.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/103929-188481.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/105407-111627.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/110032-683041.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/110434-649072.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/110528-531874.png">
+<meta property="og:updated_time" content="2020-12-01T03:14:03.493Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MATLAB使用教程(八)">
-<meta name="twitter:description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572/article/details/102505256">
+<meta name="twitter:description" content="做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至https://blog.csdn.net/qq_38431572">
+<meta name="twitter:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/103347-3747.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
@@ -285,7 +292,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">45</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -414,8 +421,46 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572/article/details/102505256" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572/article/details/102505256</a></p>
+        <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572</a></p>
 <a id="more"></a>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在<a href="http://smalltime.work/2020/11/29/MATLAB%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B(%E5%85%AD" target="_blank" rel="noopener">第本系列第六篇</a>/)中，我们讲解了一下相对来讲最普通的不定积分和定积分的问题，相信大家对积分已经有了大概的了解了，可是仍有一些小问题，比如如何计算多个变量的积分，比如二重积分、甚至三重三重积分呢？本讲中，我将做详细讲解。</p>
+<h1 id="本期内容"><a href="#本期内容" class="headerlink" title="本期内容"></a>本期内容</h1><p>首先复习一下一元的定积分、然后讲解二重积分，如果可能，讲解三重积分。</p>
+<h1 id="复习定积分"><a href="#复习定积分" class="headerlink" title="复习定积分"></a>复习定积分</h1><p>在之前，先复习一下之前学习的内容。使用MATLAB求解定积分的步骤大概如下：</p>
+<ol>
+<li>定义符号变量（syms关键字）</li>
+<li>定义内联函数（inline函数）</li>
+<li>使用MATLAB内置函数进行计算定积分或者不定积分（使用int函数，具体求解定积分还是不定积分，根据参数的数量决定）</li>
+</ol>
+<p>我们都知道：定积分是求解一个图形与坐标轴围成的面积。而今天我们需要深入理解一下：定积分是求解两条曲线之间围成的面积，如果只有一个公式，比如$x$，我们可以理解成 $y=x$ 这个函数减去了 $y=0$这个常数函数，或者说，上面函数与x轴围成的面积减去了下面函数与x轴围成的面积（并且这个面积在x轴上方是正的，下方是负的），这样我们就可以推广，假设我们现在有两条曲线，一个是$sinx$，一个是$e^x$ ,我们求在$0-\pi$的范围内，两个图形围成的面积，容易知道，两个图形大概是这样围起来的：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/103347-3747.png" alt="image-20201201103345829"></p>
+<p>PS: 上图的代码和讲解如下</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 目标图像</span></span><br><span class="line">clc;clear all;  <span class="comment">% 清除原先的东西</span></span><br><span class="line"> </span><br><span class="line">x = <span class="number">0</span>:<span class="number">0.01</span>:<span class="built_in">pi</span>;  <span class="comment">% x的范围是0-pi，以0.01为一个小分割点细分出一个范围</span></span><br><span class="line">y1 = <span class="built_in">sin</span>(x);    <span class="comment">% sinx</span></span><br><span class="line">y2 = <span class="built_in">exp</span>(x);    <span class="comment">% e^x</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">figure</span>;         <span class="comment">% 弄一个figure的框体</span></span><br><span class="line"><span class="built_in">hold</span> on;        <span class="comment">% 保持这个窗体，保证后面的内容都画在了上面，hold off解除</span></span><br><span class="line"> </span><br><span class="line">subplot(<span class="number">221</span>);   <span class="comment">% 开辟子窗体，221:共2行2列，里面的第一个</span></span><br><span class="line">fill(x,y1,<span class="string">'r'</span>); <span class="comment">% 画图并填充颜色，变量是x，函数是y1，颜色是r，红色</span></span><br><span class="line">title(<span class="string">'y=sinx'</span>);<span class="comment">% 设置标题，必需先fill，才能添加标题，否则会失败</span></span><br><span class="line"> </span><br><span class="line">subplot(<span class="number">222</span>);   <span class="comment">% 开辟子窗体，222，共2行2列，里面第二个</span></span><br><span class="line">fill(x,y2,<span class="string">'b'</span>); <span class="comment">% b 蓝色</span></span><br><span class="line">title(<span class="string">'y=e^x'</span>);</span><br><span class="line"> </span><br><span class="line">subplot(<span class="number">223</span>);   <span class="comment">% 开辟子窗体，223，共2行2列，里面第三个</span></span><br><span class="line">fill([x, <span class="built_in">fliplr</span>(x)],[y1,<span class="built_in">fliplr</span>(y2)],<span class="string">'g'</span>);</span><br><span class="line">                <span class="comment">% 两个函数直接填充颜色，每一个方括号代表一个函数的内容</span></span><br><span class="line">title(<span class="string">'两个函数中间的部分'</span>);</span><br><span class="line"><span class="built_in">hold</span> off;</span><br></pre></td></tr></table></figure>
+<p>OK，那么我们就可以很容易的使用int()函数算出这样一个定积分，代码如下：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 对上面的函数进行计算定积分</span></span><br><span class="line">clear;clc;</span><br><span class="line">syms x;</span><br><span class="line">f = sym(<span class="built_in">exp</span>(x) - <span class="built_in">sin</span>(x));</span><br><span class="line">res_int = int(f, x, <span class="number">0</span>, <span class="built_in">pi</span>);</span><br><span class="line"><span class="built_in">disp</span>(res_int);</span><br></pre></td></tr></table></figure>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/103929-188481.png" alt="image-20201201103927338"></p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/105407-111627.png" alt="image-20201201105407046"></p>
+<h2 id="二重积分"><a href="#二重积分" class="headerlink" title="二重积分"></a>二重积分</h2><p>关于二重积分的相关知识，大家自行下去学习吧。直接举出一个例子，假设底面如图所示（灰色阴影部分）：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/110032-683041.png" alt="image-20201201110030737"></p>
+<p>先积分x(Y型)时区域可表示为：$Dx=\{(x,y)|0&lt;=y&lt;=1, y&lt;=x&lt;=1\}$。</p>
+<p>先积分y(X型)时区域可表示为：$Dy = \{(x,y)|0&lt;=y&lt;=x, 0&lt;=x&lt;=1\}$。</p>
+<p>下面我们以X型为例，使用MATLAB计算曲面为$f(x,y) = xcos(y)$的曲顶柱体的体积：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/110434-649072.png" alt="image-20201201110432580"></p>
+<p>详细的代码以及注释见下方：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 计算二重积分</span></span><br><span class="line">clc;</span><br><span class="line">clear all;</span><br><span class="line">f = @(x,y)x.*<span class="built_in">cos</span>(y); <span class="comment">% 定义一个函数句柄，两个变量分别是x,y</span></span><br><span class="line"><span class="comment">% 这样定义函数句柄时，需要在所有的运算前加一个.（表示对应元素各自计算，不按照矩阵的规则）</span></span><br><span class="line">ymax = @(x) x;  <span class="comment">% 根据0&lt;=y&lt;=x处，右方的y=x反解出y，</span></span><br><span class="line">res = integral2(f,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,ymax);</span><br><span class="line"><span class="comment">% 计算二重积分的函数 </span></span><br><span class="line"><span class="comment">% integral2(fun, xmin, xmax, ymin, ymax)</span></span><br><span class="line"><span class="built_in">disp</span>(res);</span><br></pre></td></tr></table></figure>
+<p>最后，让我们欣赏一下这个曲面的形状吧：</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/01/110528-531874.png" alt="image-20201201110526373"></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 看一看这个曲面吧</span></span><br><span class="line">[x,y] = <span class="built_in">meshgrid</span>(<span class="number">0</span>:<span class="number">0.001</span>:<span class="number">1</span>, <span class="number">0</span>:<span class="number">0.001</span>:<span class="number">1</span>);</span><br><span class="line"><span class="comment">% 设置x和y的区间，以及细分程度</span></span><br><span class="line">z = (x.*<span class="built_in">cos</span>(y));  <span class="comment">% 使用一个z来代表这个函数</span></span><br><span class="line">mesh(x,y,z)  <span class="comment">% 画出二维曲面图像</span></span><br><span class="line">title(<span class="string">'x*cos(y)'</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="今日小结"><a href="#今日小结" class="headerlink" title="今日小结"></a>今日小结</h1><p>今天我们学到了如下的知识：</p>
+<ol>
+<li>复习了之前学习的定积分、不定积分的内容</li>
+<li>学习了二重积分的概念，以及应用的大概场景：求曲顶柱体体积，平面薄片质量（底面换位薄片，被积函数即薄片面密度的函数）等。</li>
+<li>学会了如何在一个figure里面绘制多个图像</li>
+<li>学会了如何在MATLAB中绘制图像、对目标区域填充颜色并命名标题</li>
+<li>学会了怎么使用MATLAB的integral2计算二重积分</li>
+<li>学会了怎么在MATLAB中声明（定义）一个函数句柄，或者说创建一个多元函数，以及怎么反解一个函数中某个变量（y = @(x) x ，此处函数是y=x），其实说白了，反解函数就是定义函数句柄。</li>
+<li>学会了怎么在MATLAB中绘制二维曲面的图像。</li>
+</ol>
+
     </article>
     <!-- license  -->
     
@@ -423,7 +468,7 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
             </p><p>原文链接：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(八)/">http://yoursite.com/2020/11/29/MATLAB使用教程(八)/</a>
             </p><p>发表日期：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(八)/">November 29th 2020, 8:35:51 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(八)/">November 30th 2020, 9:54:02 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2020/11/29/MATLAB使用教程(八)/">December 1st 2020, 11:14:03 am</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -564,7 +609,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#本期内容"><span class="toc-number">2.</span> <span class="toc-text">本期内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#复习定积分"><span class="toc-number">3.</span> <span class="toc-text">复习定积分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二重积分"><span class="toc-number">3.1.</span> <span class="toc-text">二重积分</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#今日小结"><span class="toc-number">4.</span> <span class="toc-text">今日小结</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
