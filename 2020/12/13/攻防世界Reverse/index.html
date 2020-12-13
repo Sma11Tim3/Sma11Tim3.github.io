@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/03/221639-122461.png">
 <meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/09/105956-36081.png">
 <meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/09/110258-792740.png">
-<meta property="og:updated_time" content="2020-12-13T07:14:14.911Z">
+<meta property="og:updated_time" content="2020-12-13T07:16:42.709Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="攻防世界Reverse">
 <meta name="twitter:description" content="研究生阶段重拾CTF，未来的路还是喜欢网络攻防，既然喜欢那就坚持下去吧。">
@@ -736,7 +736,8 @@ height:50vh;
 <p>首先判定了一下长度，检查输入的字符串的开头为EIS{结尾为}。花括号中间的字符串判定在第32行中的sub_4011C0函数中，跟进去看一看。（部分变量名和函数名为了方便我修改了一下）</p>
 <p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/09/110258-792740.png" alt="image-20201209110257155"></p>
 <p>逻辑过程很清楚，首先将输入的字符串括号中的部分赋值给v8，然后进行大小写转换，大写变小写，小写变大写，接着进行一些数值运算（第33行），具体为</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">byte4420B0[i](v8^<span class="number">0x55</span>)+<span class="number">72</span></span><br><span class="line">byte4420B0=[<span class="number">0x0D</span>, <span class="number">0x13</span>, <span class="number">0x17</span>, <span class="number">0x11</span>, <span class="number">0x02</span>, <span class="number">0x01</span>, <span class="number">0x20</span>, <span class="number">0x1D</span>, <span class="number">0x0C</span>, <span class="number">0x02</span>, <span class="number">0x19</span>, <span class="number">0x2F</span>, <span class="number">0x17</span>, <span class="number">0x2B</span>, <span class="number">0x24</span>, <span class="number">0x1F</span>, <span class="number">0x1E</span>, <span class="number">0x16</span>, <span class="number">0x09</span>, <span class="number">0x0F</span>, </span><br><span class="line"><span class="number">0x15</span>, <span class="number">0x27</span>, <span class="number">0x13</span>, <span class="number">0x26</span>, <span class="number">0x0A</span>, <span class="number">0x2F</span>, <span class="number">0x1E</span>, <span class="number">0x1A</span>, <span class="number">0x2D</span>, <span class="number">0x0C</span>, <span class="number">0x22</span>, <span class="number">0x04</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">byte4420B0[i](v8^<span class="number">0x55</span>)+<span class="number">72</span></span><br><span class="line">byte4420B0=[<span class="number">0x0D</span>, <span class="number">0x13</span>, <span class="number">0x17</span>, <span class="number">0x11</span>, <span class="number">0x02</span>, <span class="number">0x01</span>, <span class="number">0x20</span>, <span class="number">0x1D</span>, <span class="number">0x0C</span>, <span class="number">0x02</span>, <span class="number">0x19</span>, <span class="number">0x2F</span>, <span class="number">0x17</span>, <span class="number">0x2B</span>, <span class="number">0x24</span>, <span class="number">0x1F</span>, <span class="number">0x1E</span>, <span class="number">0x16</span>, <span class="number">0x09</span>, <span class="number">0x0F</span>, </span><br><span class="line"><span class="number">0x15</span>, <span class="number">0x27</span>, <span class="number">0x13</span>, <span class="number">0x26</span>, <span class="number">0x0A</span>, <span class="number">0x2F</span>, <span class="number">0x1E</span>, <span class="number">0x1A</span>, <span class="number">0x2D</span>, <span class="number">0x0C</span>, <span class="number">0x22</span>, <span class="number">0x04</span>]</span><br><span class="line">str=<span class="string">"GONDPHyGjPEKruv&#123;&#123;pj]X@rF"</span></span><br></pre></td></tr></table></figure>
+<p>最后和字符串作比较，写脚本爆破即可：</p>
 <h1 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h1>
     </article>
     <!-- license  -->
@@ -745,7 +746,7 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
             </p><p>原文链接：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse/">http://yoursite.com/2020/12/13/攻防世界Reverse/</a>
             </p><p>发表日期：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse/">December 13th 2020, 3:02:11 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse/">December 13th 2020, 3:14:14 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse/">December 13th 2020, 3:16:42 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
