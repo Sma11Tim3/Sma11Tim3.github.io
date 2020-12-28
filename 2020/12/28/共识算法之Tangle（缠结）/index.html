@@ -20,20 +20,24 @@
     <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="Not a product, no need to explain">
-    <meta name="description" content="Not a product, no need to explain">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Know it &amp; Make it">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+    <meta name="description" content="最近在学习tangle共识算法。IOTA是第三代公有分布式账本,基于有向无环图结构。IOTA中将这种DAG称之为缠结Tangle。">
+<meta name="keywords" content="Blockchain">
+<meta property="og:type" content="article">
+<meta property="og:title" content="共识算法之Tangle（缠结）">
+<meta property="og:url" content="http://yoursite.com/2020/12/28/共识算法之Tangle（缠结）/index.html">
 <meta property="og:site_name" content="Know it &amp; Make it">
-<meta property="og:description" content="Not a product, no need to explain">
+<meta property="og:description" content="最近在学习tangle共识算法。IOTA是第三代公有分布式账本,基于有向无环图结构。IOTA中将这种DAG称之为缠结Tangle。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/28/222826-478584.png">
+<meta property="og:updated_time" content="2020-12-28T14:32:55.023Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Know it &amp; Make it">
-<meta name="twitter:description" content="Not a product, no need to explain">
+<meta name="twitter:title" content="共识算法之Tangle（缠结）">
+<meta name="twitter:description" content="最近在学习tangle共识算法。IOTA是第三代公有分布式账本,基于有向无环图结构。IOTA中将这种DAG称之为缠结Tangle。">
+<meta name="twitter:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/28/222826-478584.png">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Sma11_Tim3&#39;s Studio</title>
+    <title>共识算法之Tangle（缠结） · Sma11_Tim3&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -214,12 +218,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Sma11_Tim3&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">共识算法之Tangle（缠结）</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">Sma11_Tim3's Studio.</a>
 </header>
@@ -231,24 +246,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            共识算法之Tangle（缠结）
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Blockchain">Blockchain</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2.4k</span>阅读时长: <span class="post-count reading-time">8 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/12/28</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -349,304 +414,79 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/12/28/共识算法之Tangle（缠结）/">
-            
-                <span>共识算法之Tangle（缠结）</span>
-        </a>
-        <div class="abstract-content">
-            <p>最近在学习tangle共识算法。IOTA是第三代公有分布式账本,基于有向无环图结构。IOTA中将这种DAG称之为缠结Tangle。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Blockchain">Blockchain</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>最近在学习tangle共识算法。IOTA是第三代公有分布式账本,基于有向无环图结构。IOTA中将这种DAG称之为缠结Tangle。</p>
+<a id="more"></a>
+<p>严格来讲，Tangle（中文翻译为缠结）并不属于区块链技术。因为Tangle系统没有矿工将交易打包成区块这样一个过程，而且Tangle网络也不是区块链的链式网络，而是由一个个的交易组成的DAG网络（DirectedAcyclic Graph，有向无环图）结构。之所以将Tangle作为一种和PoW、PoS、DPoS等并列的共识机制来谈，主要是因为Tangle也是一种重要的，实现去中心化的，分布式账本结构的技术。业内比较知名的，采用Tangle技术的加密货币有IOTA和Byteball。</p>
+<h1 id="传统共识算法在物联网环境下的缺陷"><a href="#传统共识算法在物联网环境下的缺陷" class="headerlink" title="传统共识算法在物联网环境下的缺陷"></a>传统共识算法在物联网环境下的缺陷</h1><p>工作量证明（PoW）和权益证明（PoS）这两种传统的共识算法都工作在“单链”架构上；这样会导致在账本中只有主链上的区块才是被认为是有效的，而分叉的区块被认为是非法且无效的。为了减少分叉并使区块链网络中的节点账本信息统一，共识算法必须降低区块生成的速率。</p>
+<h2 id="导致的瓶颈"><a href="#导致的瓶颈" class="headerlink" title="导致的瓶颈"></a>导致的瓶颈</h2><p>以上的问题导致了算法的性能瓶颈：</p>
+<ol>
+<li>交替吞吐量受限：区块生成速率低加之区块容量有限，导致了采用这两种传统共识算法的区块链系统往往每秒只能处理几至几十笔交易（比特币每秒至多能处理7 笔交易，以太坊每秒至多能处理15笔），无法承载物联网以指数增长的节点和需求。</li>
+<li>交易共识时延大：为了保障系统中数据的安全，在交易加入区块链后，必须累积足够的后续区块才算达成共识，但由于区块生成速率低，达成共识需要花费较长时间（比特币系统需要累积6 个区块才算达成共识，平均花费60 分钟；以太坊系统需要累积12 个区块才算达成共识，平均花费3 分钟）</li>
+<li>除了这两个问题外，为了保证单链结构账本的安全性，单个区块需要包含足够大的算力或者币龄，这就导致了：参与共识的成本高：只有算力大或资产多的节点才有权力生成区块；而物联网场景中，节点的算力资源通常十分有限，而给每个节点都提供充足资产的代价也太高。</li>
+<li>交易手续费昂贵：由于参与共识的成本高，生成区块只能由资源丰富的矿工来完成。由此，进行交易的节点需要提供交易手续费作为矿工的酬劳，以激励它们进行工作，这对于微交易居多的物联网场景来讲是一种极大的负担。</li>
+</ol>
+<h1 id="基于有向无环图的共识算法"><a href="#基于有向无环图的共识算法" class="headerlink" title="基于有向无环图的共识算法"></a>基于有向无环图的共识算法</h1><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>​        基于有向无环图(Directed Acyclic Graph，DAG)共识算法（简称DAG 共识）采用了DAG 结构的账本来代替传统单链结构的账本，可解决传统共识算法（比如PoW、PoS 和PBFT）在物联网应用中的所固有缺陷。基于DAG 的账本即为分叉式的账本，这种结构在传统的共识算法中被认为是非法的，因为它可能引发双花的问题。但DAG 共识利用了一些有效的算法（比如：马尔可夫链蒙特卡罗算法、虚拟投票算法等）来解决基于DAG 的账本中的双花问，使节点只要验证了之前的旧区块便可随时将新区块随时接入到账本中，因而区块生成速率不再受限制，可实现极大的交易吞吐量。另外，由于DAG 共识的区块接入成本低，在DAG 共识中所有节点即为交易发送者，也为交易处理者，无需再为专门的矿工提供手续费。高交易吞吐量、低接入成本、可扩展性强以及零手续费正是物联网场景所需要而PoW、PoS 和PBFT 不能同时具备的，因此，DAG 共识更具有应用于物联网这种微交易频繁的场景的潜力。常见的DAG 共识有缠结(Tangle)、哈希图(Hashgraph)、字节雪球(Byteball)等。其中缠结是第一个提出且专门致力于物联网应用的DAG 共识，目前其顶层系统IOTA 的市值也排在基于DAG 的账本之首。</p>
+<p>​        缠结是专门为物联网产业而提出的加密货币IOTA②所采用的共识算法。如图所示，缠结采用了基于DAG 的账本来储存交易，以实现极大的交易吞吐量。在缠结中，节点处理两个旧区块并进行少量工作量证明可随时将新区块接入账本，由于这个共识过程资源消耗小，因此网络中所有节点都有能力自己处理自己的交易，而交易达成共识的速度，也会随着网络负载（指网络中新区块数量）的增大而变快。在介绍共识过程之前，先对缠结中的一些基本概念进行说明：</p>
+<p>(1) 区块和边缘区块：图中的每一个区块都由网络中的某个节点所发出，用于存储自身的交易。除了交易外，区块中还包含数字签名、所认证区块的哈希值、随机数等。边缘区块(tips)为已经接入图中但未被认证过的区块，图中H和I为当前状态的边缘区块。</p>
+<p>(2) 直接验证和间接验证：图中的所有的有向边都代表某个区块直接验证了所指向的区块是否合法，比如：图中H和C之间的箭头表示H直接认证了C。如果某两个区块之间存在多跳的有向路径，则称为间接认证，比如：图中I 间接确认了E。</p>
+<p>(3) 自身权重和累积权重：一个区块自身的权重（简称自重）与将该区块接入至账本中所作出的工作量成比例。一个区块的累积权重则定义为该区块的自重再加上那些直接或间接认证该区块的区块的自重和。新加入区块直接或间接认证某个区块都会将其自重累加到被认证区块的累积权重上。一个区块的累积权重越大，被篡改的几率就会越低。</p>
+<p>(4) 共识阈值：由系统所设定，当一个区块的累积权重达到系统给定的阈值，则被认为是达成了共识。阈值的设定会影响共识时延（达成共识的速度）和系统的安全性。</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/28/222826-478584.png" alt="image-20201228222825335"></p>
+<h2 id="共识过程和MCMC算法"><a href="#共识过程和MCMC算法" class="headerlink" title="共识过程和MCMC算法"></a>共识过程和MCMC算法</h2><p>​        如果网络中的节点想要将一个新区块接入账本中进行分布式存储，即让所有节点承认此区块有权存在于该分布式账本中，节点需完成如下操作：第一，创建一个新区块加入自己的交易，并利用自己的私匙为交易的输入签名，防止其在广播过程中被篡改。第二，根据马尔可夫链蒙特卡罗(Markov Chain Monte Carlo，MCMC)算法（后文介绍）选择两个边缘区块，并验证这两个区块中的交易是否与账本中的其他交易冲突。</p>
+<p>这里选择边缘区块的原因：</p>
+<p>第一是为了保证新加入的区块得到及时认证。</p>
+<p>第二是为了间接验证更多的区块，从而提高共识效率。</p>
+<p>第三，寻找一个随机数，使得区块头的哈希值满足目标值，然后将区块广播至网络中；与PoW类似之处在于区块的生成都需要完成一定的工作量，不同之处在于缠结工作量较小，主要用于防止女巫攻击。</p>
+<p>第四，当其余节点收到该区块时，会根据数字签名和随机数来判断该区块是否合法，如果合法，将区块加入自己的本地账本中。</p>
+<p>第五，一个新区块加人账本中后，需要等待后续到来的区块对其加以认证，使其累积权重不断增加。累积权重越大被篡改的几率越低。</p>
+<p>第六，区块的累积权重达到共识阈值，区块中的交易被全网节点认为是一笔成功的交易。</p>
+<p>​        MCMC 算法：在生成新区块时，节点需要利用MCMC 算法选择两个边缘区块加以认证。MCMC 算法工作原理如下：将N 个质点独立放置于累积权重为某一特定区间中的旧区块上，让质点往边缘区块的方向进行独立离散时间随机游走。在游走过程中，质点会倾向于从累积权重更大的区块通过，最后抵达边缘区块，质点停留数量最多的两个区块即为被选中区块。也就是说MCMC 算法会选中基于DAG 的账本中累积权重较大的分支，丢弃那些累积权重较小的分支，以达到抵御双花攻击的目的。</p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/12/13/攻防世界Reverse-Challenge-area/">
-            
-                <span>攻防世界Reverse-Challenge-area</span>
-        </a>
-        <div class="abstract-content">
-            <p>研究生阶段重拾CTF，未来的路还是喜欢网络攻防，既然喜欢那就坚持下去吧。</p>
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2020/12/28/共识算法之Tangle（缠结）/">http://yoursite.com/2020/12/28/共识算法之Tangle（缠结）/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2020/12/28/共识算法之Tangle（缠结）/">December 28th 2020, 10:47:21 am</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2020/12/28/共识算法之Tangle（缠结）/">December 28th 2020, 10:32:55 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/12/03/ida动态调试elf-无坑详细/">
-            
-                <span>ida动态调试elf(无坑详细)</span>
-        </a>
-        <div class="abstract-content">
-            <p>在做逆向题的时候，经常会用到动态调试，虽然win下有OD，Linux下有GDB，但是难免有时候还是会用到ida动态调试Linux下的文件，因此写一个教程。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/12/02/MATLAB仿真模拟分布/">
-            
-                <span>MATLAB仿真模拟分布</span>
-        </a>
-        <div class="abstract-content">
-            <p>使用MATLAB来模拟具体的模型，依次介绍：泊松过程，指数分布，生灭过程。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MATLAB">MATLAB</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/12/02/Markov-chain-And-Queuing-theory/">
-            
-                <span>Markov chain And Queuing theory</span>
-        </a>
-        <div class="abstract-content">
-            <p>马尔可夫链是随机过程中一种非常重要的统计模型，在研究中的应用十分的广泛，以下记录一些相关的知识点。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Blockchain">Blockchain</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/11/29/MATLAB使用教程(九)/">
-            
-                <span>MATLAB使用教程(九)</span>
-        </a>
-        <div class="abstract-content">
-            <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572</a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MATLAB">MATLAB</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/11/29/MATLAB使用教程(八)/">
-            
-                <span>MATLAB使用教程(八)</span>
-        </a>
-        <div class="abstract-content">
-            <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572</a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MATLAB">MATLAB</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/11/29/MATLAB使用教程(七)/">
-            
-                <span>MATLAB使用教程(七)</span>
-        </a>
-        <div class="abstract-content">
-            <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572</a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MATLAB">MATLAB</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/11/29/MATLAB使用教程(六)/">
-            
-                <span>MATLAB使用教程(六)</span>
-        </a>
-        <div class="abstract-content">
-            <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572</a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MATLAB">MATLAB</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/11/29/MATLAB使用教程(五)/">
-            
-                <span>MATLAB使用教程(五)</span>
-        </a>
-        <div class="abstract-content">
-            <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572</a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MATLAB">MATLAB</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/12/13/攻防世界Reverse-Challenge-area/" title="攻防世界Reverse-Challenge-area">
+                    <div class="prevTitle">攻防世界Reverse-Challenge-area</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT ></a>
-    </nav>
     
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -731,6 +571,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#传统共识算法在物联网环境下的缺陷"><span class="toc-number">1.</span> <span class="toc-text">传统共识算法在物联网环境下的缺陷</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#导致的瓶颈"><span class="toc-number">1.1.</span> <span class="toc-text">导致的瓶颈</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于有向无环图的共识算法"><span class="toc-number">2.</span> <span class="toc-text">基于有向无环图的共识算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">2.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#共识过程和MCMC算法"><span class="toc-number">2.2.</span> <span class="toc-text">共识过程和MCMC算法</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1408,6 +1266,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

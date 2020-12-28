@@ -109,7 +109,7 @@
 <meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/19/153959-822760.png">
 <meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/19/155351-739124.png">
 <meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/19/155256-985095.png">
-<meta property="og:updated_time" content="2020-12-19T07:54:13.976Z">
+<meta property="og:updated_time" content="2020-12-28T03:12:29.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="攻防世界Reverse-Challenge-area">
 <meta name="twitter:description" content="研究生阶段重拾CTF，未来的路还是喜欢网络攻防，既然喜欢那就坚持下去吧。">
@@ -852,6 +852,7 @@ height:50vh;
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment">#coding=utf-8</span></span><br><span class="line">firstchar = [<span class="number">0x41</span>, <span class="number">0x69</span>, <span class="number">0x6E</span>, <span class="number">0x45</span>, <span class="number">0x6F</span>, <span class="number">0x61</span>]</span><br><span class="line">thirdchar = [<span class="number">0x2ef</span>, <span class="number">0x2c4</span>, <span class="number">0x2dc</span>, <span class="number">0x2c7</span>, <span class="number">0x2de</span>, <span class="number">0x2fc</span>]</span><br><span class="line">masterarray = [<span class="number">0x1d7</span>, <span class="number">0xc</span>, <span class="number">0x244</span>, <span class="number">0x25e</span>, <span class="number">0x93</span>, <span class="number">0x6c</span>]</span><br><span class="line">v7_num = []</span><br><span class="line">v7=<span class="number">0x29a</span></span><br><span class="line">flag1=<span class="string">''</span></span><br><span class="line">flag2=<span class="string">''</span></span><br><span class="line">flag3=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>):</span><br><span class="line">	flag1+=chr(firstchar[i])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">18</span>):</span><br><span class="line">	v7_num.append(v7)</span><br><span class="line">	v7 += (v7%<span class="number">5</span>)</span><br><span class="line">temp=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,<span class="number">20</span>,<span class="number">3</span>):</span><br><span class="line">	flag2+=chr(v7_num[i]^thirdchar[temp])</span><br><span class="line">	temp+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">xor_num=[]</span><br><span class="line"></span><br><span class="line">temp=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">18</span>,<span class="number">3</span>):</span><br><span class="line">	xor_num.append(ord(flag1[temp])^v7_num[i])</span><br><span class="line">	temp+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">temp=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">19</span>,<span class="number">3</span>):</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">32</span>,<span class="number">128</span>):</span><br><span class="line">		num=(v7_num[i]^j)*xor_num[temp]%thirdchar[temp]</span><br><span class="line">		<span class="keyword">if</span>(num==masterarray[temp]):</span><br><span class="line">			flag3+=chr(j)</span><br><span class="line">			temp+=<span class="number">1</span></span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">print(flag1)</span><br><span class="line">print(flag3)</span><br><span class="line">print(flag2)</span><br><span class="line"></span><br><span class="line">flag=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>):</span><br><span class="line">	flag+=flag1[i]</span><br><span class="line">	flag+=flag3[i]</span><br><span class="line">	flag+=flag2[i]</span><br><span class="line">	</span><br><span class="line">print(<span class="string">'tuctf&#123;'</span>+flag+<span class="string">'&#125;'</span>)</span><br></pre></td></tr></table></figure>
 <p>我的代码很烂，因此去搜了一下其他大佬的wp写的很简洁，可以参考一下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"> </span><br><span class="line">firstchar =   [<span class="number">0x41</span>,  <span class="number">0x69</span>,  <span class="number">0x6e</span>,  <span class="number">0x45</span>,  <span class="number">0x6f</span>,  <span class="number">0x61</span>]</span><br><span class="line">thirdchar =   [<span class="number">0x2ef</span>, <span class="number">0x2c4</span>, <span class="number">0x2dc</span>, <span class="number">0x2c7</span>, <span class="number">0x2de</span>, <span class="number">0x2fc</span>]</span><br><span class="line">masterarray = [<span class="number">0x1d7</span>, <span class="number">0xc</span>,   <span class="number">0x244</span>, <span class="number">0x25e</span>, <span class="number">0x93</span>,  <span class="number">0x6c</span>]</span><br><span class="line"> </span><br><span class="line">xor_number=<span class="number">0x29a</span></span><br><span class="line">xor_array=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">18</span>):</span><br><span class="line">	xor_array.append(xor_number)</span><br><span class="line">	xor_number+=xor_number%<span class="number">5</span></span><br><span class="line"> </span><br><span class="line">flag=<span class="string">"tuctf&#123;"</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">6</span>):</span><br><span class="line">	one=firstchar[i]</span><br><span class="line">	three=thirdchar[i] ^ xor_array[(i*<span class="number">3</span>) + <span class="number">2</span>]</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">256</span>):</span><br><span class="line">		<span class="keyword">if</span> masterarray[i]==(j^xor_array[i*<span class="number">3</span>+<span class="number">1</span>])*(one^xor_array[i*<span class="number">3</span>])%thirdchar[i]:</span><br><span class="line">			flag+=chr(one)+chr(j)+chr(three)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">flag+=<span class="string">"&#125;"</span></span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tuctf&#123;AfricanOrEuropean?&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="serial-150"><a href="#serial-150" class="headerlink" title="serial-150"></a>serial-150</h1><h1 id="secret-string-400"><a href="#secret-string-400" class="headerlink" title="secret-string-400"></a>secret-string-400</h1><p>又发现了一个新的类型题目，下载题目之后发现是.gz文件，在Linux下解压之后得到两个文件task.html和machine.js，熟悉web流程的都知道这是配套的。</p>
 <p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/19/155351-739124.png" alt="image-20201218220942298"></p>
 <p>这个html文件是可以直接打开成网页的，配套的js文件里面过于复杂看不太懂，去网上找了一下相关的wp，大佬给出了一个解决办法，可以修改js代码里的run函数输出相应的log。</p>
@@ -860,6 +861,7 @@ height:50vh;
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="number">0</span>pcode1,z,alert(<span class="number">1</span>);<span class="comment">//êObjectÿ	ÿÿÿ</span></span><br><span class="line">alert(<span class="number">2</span>);<span class="comment">//êxÿvar f=window.machine.registers[1].userinput//</span></span><br><span class="line"><span class="keyword">var</span> i = f.length<span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> nonce = <span class="string">'groke'</span>;<span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> j = <span class="number">0</span>;<span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> out = [];<span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> eq = <span class="literal">true</span>;<span class="comment">//</span></span><br><span class="line"><span class="keyword">while</span>(j &lt; i)&#123;<span class="comment">//</span></span><br><span class="line">out.push(f.charCodeAt(j) ^ nonce.charCodeAt(j%<span class="number">5</span>))<span class="comment">//</span></span><br><span class="line">j++;<span class="comment">//</span></span><br><span class="line">&#125;<span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> ex =  [<span class="number">1</span>, <span class="number">30</span>, <span class="number">14</span>, <span class="number">12</span>, <span class="number">69</span>, <span class="number">14</span>, <span class="number">1</span>, <span class="number">85</span>, <span class="number">75</span>, <span class="number">50</span>, <span class="number">40</span>, <span class="number">37</span>, <span class="number">48</span>, <span class="number">24</span>, <span class="number">10</span>, <span class="number">56</span>, <span class="number">55</span>, <span class="number">46</span>, <span class="number">56</span>, <span class="number">60</span>];<span class="comment">//</span></span><br><span class="line"><span class="keyword">if</span> (ex.length == out.length) &#123;<span class="comment">//</span></span><br><span class="line">j = <span class="number">0</span>;<span class="comment">//</span></span><br><span class="line"><span class="keyword">while</span>(j &lt; ex.length)&#123;<span class="comment">//</span></span><br><span class="line"><span class="keyword">if</span>(ex[j] != out[j])<span class="comment">//</span></span><br><span class="line">eq = <span class="literal">false</span>;<span class="comment">//</span></span><br><span class="line">j += <span class="number">1</span>;<span class="comment">//</span></span><br><span class="line">&#125;<span class="comment">//</span></span><br><span class="line"><span class="keyword">if</span>(eq)&#123;<span class="comment">//</span></span><br><span class="line">alert(<span class="string">'YOU WIN!'</span>);<span class="comment">//</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">alert(<span class="string">'NOPE!'</span>);</span><br><span class="line">&#125;&#125;<span class="keyword">else</span>&#123;alert(<span class="string">'NOPE!'</span>);&#125;<span class="comment">//ÿ	ÿÿÿ</span></span><br><span class="line">alert(<span class="number">3</span>);<span class="comment">//êxÿ	ÿÿÿ</span></span><br><span class="line">alert(<span class="number">4</span>);<span class="comment">//</span></span><br><span class="line">alert(<span class="number">5</span>);<span class="comment">//</span></span><br><span class="line">alert(<span class="number">6</span>);<span class="comment">//</span></span><br><span class="line">alert(<span class="number">7</span>);<span class="comment">//</span></span><br></pre></td></tr></table></figure>
 <p>里面给了一个数组ex和一个字符串nonce=”groke”，还有的操作就是异或了，不管先将数组中的值与字符串异或输出试试。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># coding=utf-8</span></span><br><span class="line">num = [<span class="number">1</span>, <span class="number">30</span>, <span class="number">14</span>, <span class="number">12</span>, <span class="number">69</span>, <span class="number">14</span>, <span class="number">1</span>, <span class="number">85</span>, <span class="number">75</span>, <span class="number">50</span>, <span class="number">40</span>, <span class="number">37</span>, <span class="number">48</span>, <span class="number">24</span>, <span class="number">10</span>, <span class="number">56</span>, <span class="number">55</span>, <span class="number">46</span>, <span class="number">56</span>, <span class="number">60</span>]</span><br><span class="line">s1 = <span class="string">"groke"</span></span><br><span class="line">flag = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(num)):</span><br><span class="line">    flag += chr(num[i] ^ ord(s1[i % <span class="number">5</span>]))</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag is: WOW_so_EASY</span><br></pre></td></tr></table></figure>
 
     </article>
     <!-- license  -->
@@ -868,13 +870,18 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
             </p><p>原文链接：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse-Challenge-area/">http://yoursite.com/2020/12/13/攻防世界Reverse-Challenge-area/</a>
             </p><p>发表日期：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse-Challenge-area/">December 13th 2020, 3:02:11 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse-Challenge-area/">December 19th 2020, 3:54:13 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse-Challenge-area/">December 28th 2020, 11:12:29 am</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2020/12/28/共识算法之Tangle（缠结）/" title="共识算法之Tangle（缠结）">
+                    <div class="nextTitle">共识算法之Tangle（缠结）</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -1391,9 +1398,24 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 30
+        Total : 31
         </div>
         <!-- search  -->
         
@@ -1406,6 +1428,11 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/28</span><a class="archive-post-title" href="/2020/12/28/共识算法之Tangle（缠结）/">共识算法之Tangle（缠结）</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1439,17 +1466,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(二)/">MATLAB使用教程(二)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(九)/">MATLAB使用教程(九)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(五)/">MATLAB使用教程(五)</a>
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(二)/">MATLAB使用教程(二)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(八)/">MATLAB使用教程(八)</a>
         </li>
     
     
@@ -1459,7 +1486,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(八)/">MATLAB使用教程(八)</a>
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(五)/">MATLAB使用教程(五)</a>
         </li>
     
     
@@ -1542,17 +1569,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwntools使用简介/">Pwntools使用简介</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwn入门笔记/">Pwn入门笔记</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/RSA/">RSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwntools使用简介/">Pwntools使用简介</a>
         </li>
     
     
@@ -1567,12 +1594,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/binwalk-for-windows/">binwalk for windows</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/hello-world/">Hello World</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/hello-world/">Hello World</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/binwalk-for-windows/">binwalk for windows</a>
         </li>
     
     </ul></div>
@@ -1580,9 +1607,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
-    
         <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
+    
+        <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
     
         <span class="sidebar-tag-name" data-tags="Blockchain"><span class="iconfont-archer">&#xe606;</span>Blockchain</span>
     
@@ -1591,8 +1618,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Daily gadgets"><span class="iconfont-archer">&#xe606;</span>Daily gadgets</span>
     
         <span class="sidebar-tag-name" data-tags="MATLAB"><span class="iconfont-archer">&#xe606;</span>MATLAB</span>
-    
-        <span class="sidebar-tag-name" data-tags="Math"><span class="iconfont-archer">&#xe606;</span>Math</span>
     
         <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
