@@ -109,7 +109,15 @@
 <meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/19/153959-822760.png">
 <meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/19/155351-739124.png">
 <meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/19/155256-985095.png">
-<meta property="og:updated_time" content="2020-12-28T03:12:29.238Z">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/29/222346-567157.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/29/222556-791825.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/29/222708-772759.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/29/222949-285586.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/29/223211-982899.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/30/163451-811368.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/30/163427-635350.png">
+<meta property="og:image" content="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/30/164555-194171.png">
+<meta property="og:updated_time" content="2020-12-30T08:53:28.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="攻防世界Reverse-Challenge-area">
 <meta name="twitter:description" content="研究生阶段重拾CTF，未来的路还是喜欢网络攻防，既然喜欢那就坚持下去吧。">
@@ -367,7 +375,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">10.1k</span>阅读时长: <span class="post-count reading-time">50 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">11.3k</span>阅读时长: <span class="post-count reading-time">55 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -862,6 +870,38 @@ height:50vh;
 <p>里面给了一个数组ex和一个字符串nonce=”groke”，还有的操作就是异或了，不管先将数组中的值与字符串异或输出试试。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># coding=utf-8</span></span><br><span class="line">num = [<span class="number">1</span>, <span class="number">30</span>, <span class="number">14</span>, <span class="number">12</span>, <span class="number">69</span>, <span class="number">14</span>, <span class="number">1</span>, <span class="number">85</span>, <span class="number">75</span>, <span class="number">50</span>, <span class="number">40</span>, <span class="number">37</span>, <span class="number">48</span>, <span class="number">24</span>, <span class="number">10</span>, <span class="number">56</span>, <span class="number">55</span>, <span class="number">46</span>, <span class="number">56</span>, <span class="number">60</span>]</span><br><span class="line">s1 = <span class="string">"groke"</span></span><br><span class="line">flag = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(num)):</span><br><span class="line">    flag += chr(num[i] ^ ord(s1[i % <span class="number">5</span>]))</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag is: WOW_so_EASY</span><br></pre></td></tr></table></figure>
+<h1 id="crazy"><a href="#crazy" class="headerlink" title="crazy"></a>crazy</h1><p>这道题本身不难，怪自己心浮气躁没有细心的好好分析。64位的elf程序，拖进ida中查找字符。</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/29/222346-567157.png" alt="image-20201229222344498"></p>
+<p>发现了可惜字符跟进去看看。</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/29/222556-791825.png" alt="image-20201229222553590"></p>
+<p>可以看到是C++的程序，所以整体看上去比较凌乱，重点在于27行、46行、56行和57行。</p>
+<p>27行对应的是cin输入，46行跟进去看看。</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/29/222708-772759.png" alt="image-20201229222706253"></p>
+<p>发现将input的值存入了v23+16的位置和v23+48的位置，两者的差值为32，并且在v23+80的位置存入了一个字符串，长度也为32位。</p>
+<p>56行的代码如下</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/29/222949-285586.png" alt="image-20201229222938423"></p>
+<p>会发现3个关键的地方，第一个是判定字符串的长度为32，这里的额this+16代表的就是之前的v23，之所以+16是因为刚才input的值是从v23+16的地方开始存储的。接着将v23+16位置的值依次进行异或和加法运算，下面同样如此。最后来看57行</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/29/223211-982899.png" alt="image-20201229223210679"></p>
+<p>首先for循环中将this+80位置开始的值存入v1中，前面已经说过v23+80的值存入的是一个字符串。接着if语句来判断v23+16的值与v23+80中的值是否相等即可。</p>
+<p>那么分析之后我们的流程和逻辑就清晰了，我们输入的字符串长度为32，每个字符会经过两次异或和加法运算，得到的结果与系统中的字符串匹配。脚本的结果输入到程序中拿flag。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># coding=utf-8</span></span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line">str = <span class="string">"327a6c4304ad5938eaf0efb6cc3e53dc"</span></span><br><span class="line">flag = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(str)):</span><br><span class="line">    num = (ord(str[i]) - <span class="number">11</span>) ^ <span class="number">0x13</span></span><br><span class="line">    num = (num - <span class="number">23</span>) ^ <span class="number">0x50</span></span><br><span class="line">    flag += chr(num)</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;tMx~qdstOs~crvtwb~aOba&#125;qddtbrtcd&#125;</span><br></pre></td></tr></table></figure>
+<p>运行脚本得到的值放到程序中跑一下就能得到flag。</p>
+<h1 id="Windows-Reverse1"><a href="#Windows-Reverse1" class="headerlink" title="Windows_Reverse1"></a>Windows_Reverse1</h1><p>逻辑及其清晰，但是很怪的题目，给自己提醒不要过分依赖于IDA的F5，多看汇编多用OD调试。</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/30/163451-811368.png" alt="image-20201230162008366"></p>
+<p>将我们的输入放入sub_401000函数中但是最后的check处却是用的check_buf做比较，先进到函数中看看再说。</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/30/163427-635350.png" alt="image-20201230162132734"></p>
+<p>input-v1的值赋给v4，在后面的do while循环中将byte_402FF8数组中的值以v1[v4]为下标赋给v1。</p>
+<p>1.其中input是通过函数传参的方式，v1是通过压栈的方式传递的参数。</p>
+<p>2.最迷惑的地方是v1[v4]这个地方，注意到v1[v4]其实也可以写成v1+v4，在刚开始的时候v1+v4等于input，随着v1的递增v1[v4]也会遍历input数组中的各个元素的地址。</p>
+<p>3.而地址又怎么能作为数组的索引呢? 这里就是 IDA 背锅了, 换言之, 做题还是不能太依赖于反编译后的伪代码. 查看了反汇编代码后, 发现其实是将input字符串中的字符本身作为byte_402FF8的索引, 取值后放入v1数组中。</p>
+<p>4.查看位于byte_402FF8的值。</p>
+<p><img src="https://tuchuangtong-1253718723.cos.ap-shanghai.myqcloud.com/typora/202012/30/164555-194171.png" alt="image-20201230164554556"></p>
+<p>这一堆问号更是懵了，这里就要考验你思维的连贯性了. 要知道ASCII编码表里的可视字符就得是32往后了, 所以, byte_402FF8里凡是位于32以前的数统统都是迷惑项. 不会被索引到的. 往下看, 咦? 这一坨是什么. 再一算地址的差值. 没错, 这一坨就是与a1数组中的各个元素进行替换的字符 !</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">hexData=[</span><br><span class="line">    <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0xF8</span>, <span class="number">0xAE</span>, <span class="number">0x1D</span>, <span class="number">0x3E</span>, <span class="number">0x07</span>, <span class="number">0x51</span>, <span class="number">0xE2</span>, <span class="number">0xC1</span>,</span><br><span class="line">    <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFE</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>,</span><br><span class="line">    <span class="number">0x7E</span>, <span class="number">0x7D</span>, <span class="number">0x7C</span>, <span class="number">0x7B</span>, <span class="number">0x7A</span>, <span class="number">0x79</span>, <span class="number">0x78</span>, <span class="number">0x77</span>, <span class="number">0x76</span>, <span class="number">0x75</span>, <span class="number">0x74</span>, <span class="number">0x73</span>, <span class="number">0x72</span>, <span class="number">0x71</span>, <span class="number">0x70</span>, <span class="number">0x6F</span>,</span><br><span class="line">    <span class="number">0x6E</span>, <span class="number">0x6D</span>, <span class="number">0x6C</span>, <span class="number">0x6B</span>, <span class="number">0x6A</span>, <span class="number">0x69</span>, <span class="number">0x68</span>, <span class="number">0x67</span>, <span class="number">0x66</span>, <span class="number">0x65</span>, <span class="number">0x64</span>, <span class="number">0x63</span>, <span class="number">0x62</span>, <span class="number">0x61</span>, <span class="number">0x60</span>, <span class="number">0x5F</span>,</span><br><span class="line">    <span class="number">0x5E</span>, <span class="number">0x5D</span>, <span class="number">0x5C</span>, <span class="number">0x5B</span>, <span class="number">0x5A</span>, <span class="number">0x59</span>, <span class="number">0x58</span>, <span class="number">0x57</span>, <span class="number">0x56</span>, <span class="number">0x55</span>, <span class="number">0x54</span>, <span class="number">0x53</span>, <span class="number">0x52</span>, <span class="number">0x51</span>, <span class="number">0x50</span>, <span class="number">0x4F</span>,</span><br><span class="line">    <span class="number">0x4E</span>, <span class="number">0x4D</span>, <span class="number">0x4C</span>, <span class="number">0x4B</span>, <span class="number">0x4A</span>, <span class="number">0x49</span>, <span class="number">0x48</span>, <span class="number">0x47</span>, <span class="number">0x46</span>, <span class="number">0x45</span>, <span class="number">0x44</span>, <span class="number">0x43</span>, <span class="number">0x42</span>, <span class="number">0x41</span>, <span class="number">0x40</span>, <span class="number">0x3F</span>,</span><br><span class="line">    <span class="number">0x3E</span>, <span class="number">0x3D</span>, <span class="number">0x3C</span>, <span class="number">0x3B</span>, <span class="number">0x3A</span>, <span class="number">0x39</span>, <span class="number">0x38</span>, <span class="number">0x37</span>, <span class="number">0x36</span>, <span class="number">0x35</span>, <span class="number">0x34</span>, <span class="number">0x33</span>, <span class="number">0x32</span>, <span class="number">0x31</span>, <span class="number">0x30</span>, <span class="number">0x2F</span>,</span><br><span class="line">    <span class="number">0x2E</span>, <span class="number">0x2D</span>, <span class="number">0x2C</span>, <span class="number">0x2B</span>, <span class="number">0x2A</span>, <span class="number">0x29</span>, <span class="number">0x28</span>, <span class="number">0x27</span>, <span class="number">0x26</span>, <span class="number">0x25</span>, <span class="number">0x24</span>, <span class="number">0x23</span>, <span class="number">0x22</span>, <span class="number">0x21</span>, <span class="number">0x20</span>, <span class="number">0x00</span>,</span><br><span class="line">    <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x90</span>, <span class="number">0x19</span>, <span class="number">0x9F</span>, <span class="number">0x00</span>, <span class="number">0xA8</span>, <span class="number">0x2C</span>, <span class="number">0x9F</span> ]</span><br><span class="line">str=<span class="string">'DDCTF&#123;reverseME&#125;'</span></span><br><span class="line">flag=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(str)):</span><br><span class="line">  flag+=chr(hexData[ord(str[i])])</span><br><span class="line">print(<span class="string">'flag&#123;'</span>+flag+<span class="string">'&#125;'</span>)</span><br></pre></td></tr></table></figure>
+<p>另外在看其他大佬的wp的时候发现可以用OD调试，我自己去调试之后发现根据自己输入的值会得到对应的值输入，比如：输入123456得到mlkjih，并且调换输入顺序之后映射跟着调换。查了一下ASCII表发现，这些对应的值的特点是相加之和均为158，也就是说我们输入的值被158减去之后就是输出值，输出值要与字符串DDCTF{reverseME}相匹配即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># coding=utf-8</span></span><br><span class="line">s3 = <span class="string">"DDCTF&#123;reverseME&#125;"</span></span><br><span class="line">flag = <span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(s3)):</span><br><span class="line">    flag += chr(<span class="number">158</span> - ord(s3[i]))</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<p>这个代码就很简洁了，虽然过程并不严谨，仅供参考吧，放出一个大佬的WP<a href="https://www.52pojie.cn/thread-1180981-1-1.html" target="_blank" rel="noopener">https://www.52pojie.cn/thread-1180981-1-1.html</a></p>
 
     </article>
     <!-- license  -->
@@ -870,7 +910,7 @@ height:50vh;
             <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
             </p><p>原文链接：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse-Challenge-area/">http://yoursite.com/2020/12/13/攻防世界Reverse-Challenge-area/</a>
             </p><p>发表日期：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse-Challenge-area/">December 13th 2020, 3:02:11 pm</a>
-            </p><p>更新日期：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse-Challenge-area/">December 28th 2020, 11:12:29 am</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2020/12/13/攻防世界Reverse-Challenge-area/">December 30th 2020, 4:53:28 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -879,8 +919,8 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href="/2020/12/28/共识算法之Tangle（缠结）/" title="共识算法之Tangle（缠结）">
-                    <div class="nextTitle">共识算法之Tangle（缠结）</div>
+                <a href="/2020/12/28/共识算法之Tangle(缠结)/" title="共识算法之Tangle(缠结)">
+                    <div class="nextTitle">共识算法之Tangle(缠结)</div>
                 </a>
             
         </li>
@@ -1011,7 +1051,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Guess-the-Number"><span class="toc-number">1.</span> <span class="toc-text">Guess-the-Number</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shuffle1"><span class="toc-number">2.</span> <span class="toc-text">Shuffle1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#re-for-50-plz-50"><span class="toc-number">3.</span> <span class="toc-text">re-for-50-plz-50</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dmd-50"><span class="toc-number">4.</span> <span class="toc-text">dmd-50</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#parallel-comparator-200"><span class="toc-number">5.</span> <span class="toc-text">parallel-comparator-200</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#secret-galaxy-300"><span class="toc-number">6.</span> <span class="toc-text">secret-galaxy-300</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#srm-50"><span class="toc-number">7.</span> <span class="toc-text">srm-50</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#simple-check-100"><span class="toc-number">8.</span> <span class="toc-text">simple-check-100</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mysterious"><span class="toc-number">9.</span> <span class="toc-text">Mysterious</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Newbie-calculations"><span class="toc-number">10.</span> <span class="toc-text">Newbie_calculations</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#re1-100"><span class="toc-number">11.</span> <span class="toc-text">re1-100</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#answer-to-everything"><span class="toc-number">12.</span> <span class="toc-text">answer_to_everything</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#elrond32"><span class="toc-number">13.</span> <span class="toc-text">elrond32</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gametime"><span class="toc-number">14.</span> <span class="toc-text">gametime</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tt3441810"><span class="toc-number">15.</span> <span class="toc-text">tt3441810</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#re2-cpp-is-awesome"><span class="toc-number">16.</span> <span class="toc-text">re2-cpp-is-awesome</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#re4-unvm"><span class="toc-number">17.</span> <span class="toc-text">re4-unvm</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#流浪者"><span class="toc-number">18.</span> <span class="toc-text">流浪者</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#666"><span class="toc-number">19.</span> <span class="toc-text">666</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SignIn"><span class="toc-number">20.</span> <span class="toc-text">SignIn</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#easy-Maze"><span class="toc-number">21.</span> <span class="toc-text">easy_Maze</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ReverseMe-120"><span class="toc-number">22.</span> <span class="toc-text">ReverseMe-120</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reversing-x64Elf-100"><span class="toc-number">23.</span> <span class="toc-text">Reversing-x64Elf-100</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IgniteMe"><span class="toc-number">24.</span> <span class="toc-text">IgniteMe</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#debug"><span class="toc-number">25.</span> <span class="toc-text">debug</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hackme"><span class="toc-number">26.</span> <span class="toc-text">hackme</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#babyRE"><span class="toc-number">27.</span> <span class="toc-text">babyRE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#EASYHOOK"><span class="toc-number">28.</span> <span class="toc-text">EASYHOOK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#EasyRE"><span class="toc-number">29.</span> <span class="toc-text">EasyRE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#babymips"><span class="toc-number">30.</span> <span class="toc-text">babymips</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#reverse-for-the-holy-grail-350"><span class="toc-number">31.</span> <span class="toc-text">reverse-for-the-holy-grail-350</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#serial-150"><span class="toc-number">32.</span> <span class="toc-text">serial-150</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#secret-string-400"><span class="toc-number">33.</span> <span class="toc-text">secret-string-400</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Guess-the-Number"><span class="toc-number">1.</span> <span class="toc-text">Guess-the-Number</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shuffle1"><span class="toc-number">2.</span> <span class="toc-text">Shuffle1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#re-for-50-plz-50"><span class="toc-number">3.</span> <span class="toc-text">re-for-50-plz-50</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dmd-50"><span class="toc-number">4.</span> <span class="toc-text">dmd-50</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#parallel-comparator-200"><span class="toc-number">5.</span> <span class="toc-text">parallel-comparator-200</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#secret-galaxy-300"><span class="toc-number">6.</span> <span class="toc-text">secret-galaxy-300</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#srm-50"><span class="toc-number">7.</span> <span class="toc-text">srm-50</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#simple-check-100"><span class="toc-number">8.</span> <span class="toc-text">simple-check-100</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Mysterious"><span class="toc-number">9.</span> <span class="toc-text">Mysterious</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Newbie-calculations"><span class="toc-number">10.</span> <span class="toc-text">Newbie_calculations</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#re1-100"><span class="toc-number">11.</span> <span class="toc-text">re1-100</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#answer-to-everything"><span class="toc-number">12.</span> <span class="toc-text">answer_to_everything</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#elrond32"><span class="toc-number">13.</span> <span class="toc-text">elrond32</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#gametime"><span class="toc-number">14.</span> <span class="toc-text">gametime</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tt3441810"><span class="toc-number">15.</span> <span class="toc-text">tt3441810</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#re2-cpp-is-awesome"><span class="toc-number">16.</span> <span class="toc-text">re2-cpp-is-awesome</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#re4-unvm"><span class="toc-number">17.</span> <span class="toc-text">re4-unvm</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#流浪者"><span class="toc-number">18.</span> <span class="toc-text">流浪者</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#666"><span class="toc-number">19.</span> <span class="toc-text">666</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SignIn"><span class="toc-number">20.</span> <span class="toc-text">SignIn</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#easy-Maze"><span class="toc-number">21.</span> <span class="toc-text">easy_Maze</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ReverseMe-120"><span class="toc-number">22.</span> <span class="toc-text">ReverseMe-120</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reversing-x64Elf-100"><span class="toc-number">23.</span> <span class="toc-text">Reversing-x64Elf-100</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IgniteMe"><span class="toc-number">24.</span> <span class="toc-text">IgniteMe</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#debug"><span class="toc-number">25.</span> <span class="toc-text">debug</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hackme"><span class="toc-number">26.</span> <span class="toc-text">hackme</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#babyRE"><span class="toc-number">27.</span> <span class="toc-text">babyRE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#EASYHOOK"><span class="toc-number">28.</span> <span class="toc-text">EASYHOOK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#EasyRE"><span class="toc-number">29.</span> <span class="toc-text">EasyRE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#babymips"><span class="toc-number">30.</span> <span class="toc-text">babymips</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#reverse-for-the-holy-grail-350"><span class="toc-number">31.</span> <span class="toc-text">reverse-for-the-holy-grail-350</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#serial-150"><span class="toc-number">32.</span> <span class="toc-text">serial-150</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#secret-string-400"><span class="toc-number">33.</span> <span class="toc-text">secret-string-400</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#crazy"><span class="toc-number">34.</span> <span class="toc-text">crazy</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows-Reverse1"><span class="toc-number">35.</span> <span class="toc-text">Windows_Reverse1</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1413,9 +1453,22 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 31
+        Total : 32
         </div>
         <!-- search  -->
         
@@ -1426,12 +1479,26 @@ top:50vh;
     
     
     
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href="/2021/03/01/分布式账本之IOTA/">分布式账本之IOTA</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/28</span><a class="archive-post-title" href="/2020/12/28/共识算法之Tangle（缠结）/">共识算法之Tangle（缠结）</a>
+            <span class="archive-post-date">12/28</span><a class="archive-post-title" href="/2020/12/28/共识算法之Tangle(缠结)/">共识算法之Tangle(缠结)</a>
         </li>
     
     
@@ -1456,17 +1523,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(七)/">MATLAB使用教程(七)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(三)/">MATLAB使用教程(三)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(九)/">MATLAB使用教程(九)</a>
         </li>
     
     
@@ -1476,12 +1533,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(八)/">MATLAB使用教程(八)</a>
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(九)/">MATLAB使用教程(九)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(六)/">MATLAB使用教程(六)</a>
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(七)/">MATLAB使用教程(七)</a>
         </li>
     
     
@@ -1491,7 +1548,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(六)/">MATLAB使用教程(六)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(四)/">MATLAB使用教程(四)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(八)/">MATLAB使用教程(八)</a>
         </li>
     
     
@@ -1506,12 +1573,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/2020/10/14/最大网络流量-Maximum-Network-Flow/">最大网络流(Maximum Network Flow)</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/2020/10/14/红黑树-Red-Black-Tree/">红黑树(Red Black Tree)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/2020/10/14/红黑树-Red-Black-Tree/">红黑树(Red Black Tree)</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/2020/10/14/最大网络流量-Maximum-Network-Flow/">最大网络流(Maximum Network Flow)</a>
         </li>
     
     
@@ -1569,17 +1636,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwn入门笔记/">Pwn入门笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/RSA/">RSA</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwntools使用简介/">Pwntools使用简介</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwn入门笔记/">Pwn入门笔记</a>
         </li>
     
     
@@ -1607,21 +1674,21 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
+        <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
     
         <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
     
         <span class="sidebar-tag-name" data-tags="Blockchain"><span class="iconfont-archer">&#xe606;</span>Blockchain</span>
     
-        <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
-    
         <span class="sidebar-tag-name" data-tags="Daily gadgets"><span class="iconfont-archer">&#xe606;</span>Daily gadgets</span>
     
         <span class="sidebar-tag-name" data-tags="MATLAB"><span class="iconfont-archer">&#xe606;</span>MATLAB</span>
     
-        <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
+        <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
     
         <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+    
+        <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
     
         <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
     
