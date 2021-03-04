@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Sma11_Tim3">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Sma11_Tim3">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="Not a product, no need to explain">
+    <meta name="description" content="本文转载至：https://www.sohu.com/a/387199411_100027726">
+<meta name="keywords" content="Blockchain">
+<meta property="og:type" content="article">
+<meta property="og:title" content="区块链常用术语汇总">
+<meta property="og:url" content="http://yoursite.com/2021/03/04/区块链常用术语汇总/index.html">
+<meta property="og:site_name" content="Know it &amp; Make it">
+<meta property="og:description" content="本文转载至：https://www.sohu.com/a/387199411_100027726">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-03-04T12:03:05.122Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="区块链常用术语汇总">
+<meta name="twitter:description" content="本文转载至：https://www.sohu.com/a/387199411_100027726">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>区块链常用术语汇总 · Sma11_Tim3&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/img_0006.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Sma11_Tim3&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">区块链常用术语汇总</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Sma11_Tim3's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            区块链常用术语汇总
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Blockchain">Blockchain</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">20.1k</span>阅读时长: <span class="post-count reading-time">69 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/03/04</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>本文转载至：<a href="https://www.sohu.com/a/387199411_100027726" target="_blank" rel="noopener">https://www.sohu.com/a/387199411_100027726</a></p>
+<a id="more"></a>
+<h1 id="（一）基础概念"><a href="#（一）基础概念" class="headerlink" title="（一）基础概念"></a><strong>（一）基础概念</strong></h1><h3 id="1、区块链-Blockchain"><a href="#1、区块链-Blockchain" class="headerlink" title="1、区块链/Blockchain"></a>1、区块链/Blockchain</h3><p>区块链技术是指通过去中心化和去信任的方式集体维护一个可靠数据库的技术方案。</p>
+<h3 id="2、去信任-Trustless"><a href="#2、去信任-Trustless" class="headerlink" title="2、去信任/Trustless"></a>2、去信任/Trustless</h3><p>去信任表示用户不需要相信任何第三方。用户使用去信任的系统或技术处理交易时非常安全和顺畅，交易双方都可以安全地交易，而不需要依赖信任的第三方。</p>
+<h3 id="3、点对点-Peer-to-Peer-P2P"><a href="#3、点对点-Peer-to-Peer-P2P" class="headerlink" title="3、点对点/Peer-to-Peer/P2P"></a>3、点对点/Peer-to-Peer/P2P</h3><p>通过允许单个节点与其他节点直接交互，无需通过中介机构，从而实现整个系统像有组织的集体一样运作的系统。</p>
+<h3 id="4、去中心化-Decentralized"><a href="#4、去中心化-Decentralized" class="headerlink" title="4、去中心化/Decentralized"></a>4、去中心化/Decentralized</h3><p>去中心化是区块链最基本的特征，指区块链不依赖于中心的管理节点，能够实现数据的分布式记录、存储和更新。</p>
+<h3 id="5、中本聪-Satoshis-Nakamoto"><a href="#5、中本聪-Satoshis-Nakamoto" class="headerlink" title="5、中本聪/Satoshis Nakamoto"></a>5、中本聪/Satoshis Nakamoto</h3><p>中本聪是比特币的发明人或发明组织，目前身份存疑。“中本聪”也可能仅仅是个化名。中本聪于2008年发表了一篇名为《比特币：一种点对点式的电子现金系统》（Bitcoin: A Peer-to-Peer Electronic Cash System）的论文，描述了一种被称为“比特币”的电子 货币及其算法，被视为是区块链的第一个成功实践。</p>
+<h1 id="（二）区块数据"><a href="#（二）区块数据" class="headerlink" title="（二）区块数据"></a><strong>（二）区块数据</strong></h1><h3 id="1、区块-Block"><a href="#1、区块-Block" class="headerlink" title="1、区块/Block"></a>1、区块/Block</h3><p>区块是在区块链网络上承载交易数据的数据包，是一种被标记上时间戳和之前一个区块 的哈希值的数据结构，区块经过网络的共识机制验证并确认区块中的交易。</p>
+<h3 id="2、父块-Parent-Block"><a href="#2、父块-Parent-Block" class="headerlink" title="2、父块/Parent Block"></a>2、父块/Parent Block</h3><p>父块是指区块的前一个区块，区块链通过在区块头记录区块以及父块的哈希值来在时间上排序。</p>
+<h3 id="3、区块头-Block-Header"><a href="#3、区块头-Block-Header" class="headerlink" title="3、区块头/Block Header"></a>3、区块头/Block Header</h3><p>记录当前区块的元信息，包含当前版本号、上一区块的哈希值、时间戳、随机数、Merkle Root的哈希值等数据。此外，区块体的数据记录通过Merkle Tree的哈希过程生成唯一的Merkle Root记录于区块头。</p>
+<h3 id="4、区块体-Block-Body"><a href="#4、区块体-Block-Body" class="headerlink" title="4、区块体/Block Body"></a>4、区块体/Block Body</h3><p>记录一定时间内所生成的详细数据，包括当前区块经过验证的、区块创建过程中生成的所有交易记录或是其他信息，可以理解为账本的一种表现形式。</p>
+<h3 id="5、哈希值-散列值-Hash-Values-Hash-Codes-Hash-Sums-Hashes"><a href="#5、哈希值-散列值-Hash-Values-Hash-Codes-Hash-Sums-Hashes" class="headerlink" title="5、哈希值/散列值/Hash Values /Hash Codes /Hash Sums /Hashes"></a>5、哈希值/散列值/Hash Values /Hash Codes /Hash Sums /Hashes</h3><p>哈希值通常用一个短的随机字母和数字组成的字符串来代表，是一组任意长度的输入信息通过哈希算法得到的“数据指纹”。因为计算机在底层机器码是采用二进制的模式，因此通过哈希算法得到的任意长度的二进制值映射为较短的固定长度的二进制值，即哈希值。此外，哈希值是一段数据唯一且极其紧凑的数值表示形式，如果通过哈希一段明文得到哈希值，哪怕只更改该段明文中的任意一个字母，随后得到的哈希值都将不同。</p>
+<h3 id="6、哈希函数-哈希算法-Hash-Function"><a href="#6、哈希函数-哈希算法-Hash-Function" class="headerlink" title="6、哈希函数/哈希算法/ Hash Function"></a>6、哈希函数/哈希算法/ Hash Function</h3><p>一般的线性表中，记录在结构中的相对位置是随机的，即和记录的关键字之间不存在确定的关系，因此在结构中查找记录时需进行一系列和关键字的比较。这一查找方法建立在“比较“的基础上，查找的效率依赖于查找过程中所进行的比较次数。理想的情况是能直接找到需要的记录，因此必须在记录的存储位置和它的关键字之间建立一个确定的对应关系f，使每个关键字和结构中一个唯一的存储位置相对应。这个对应关系f就是哈希函数。</p>
+<p>例如，全体的长整数的取值作为一个取值空间，映射到全部的字节整数的取值的空间，这个映射函数就是HASH函数。通常这种映射函数是从一个非常大的取值空间映射到一个非常小的取值空间，由于不是一对一的映射，HASH函数转换后不可逆，即不可能通过逆操作和HASH值还原出原始的值，而且受到计算能力限制也无法还原出所有可能的全部原始值。</p>
+<p>HASH函数运用在字典表等需要快速查找的数据结构中，他的计算复杂度几乎是O(1)，不会随着数据量增加而增加。</p>
+<p>另外一种用途就是文件签名，文件内容很多，将文件内容通过HASH函数处理后得到一个HASH值，验证这个文件是否被修改过，只需要把文件内容用同样的HASH函数处理后得到HASH值再比对和文件一起传送的HASH值即可，如不公开HASH算法，那么信道是无法篡改文件内容的时候篡改文件HASH值，一般应用的时候，HASH算法是公开的，这时候会用一个非对称加密算法加密一下这个HASH值，这样即便能够计算HASH值，但没有加密密钥依然无法篡改加密后HASH值。</p>
+<p>HASH算法的另外一个很广泛的用途，就是很多程序员都会使用的在数据库中保存用户密码的算法，通常不会直接保存用户密码（这样DBA就能看到用户密码啦，好危险啊），而是保存密码的HASH值，验证的时候，用相同的HASH函数计算用户输入的密码得到计算HASH值然后比对数据库中存储的HASH值是否一致，从而完成验证。由于用户的密码的一样的可能性是很高的，防止DBA猜测用户密码，我们还会用一种俗称“撒盐”的过程，就是计算密码的HASH值之前，把密码和另外一个会比较发散的数据拼接，通常我们会用用户创建时间的毫秒部分。这样计算的HASH值不大会都是一样的，会很发散。</p>
+<h3 id="7、时间戳-Timestamp"><a href="#7、时间戳-Timestamp" class="headerlink" title="7、时间戳/Timestamp"></a>7、时间戳/Timestamp</h3><p>时间戳从区块生成的那一刻起就存在于区块之中，是用于标识交易时间的字符序列，具备唯一性，时间戳用以记录并表明存在的、完整的、可验证的数据，是每一次交易记录的认证。</p>
+<h3 id="8、随机数-一次性的随机数-Nonce-Nonce"><a href="#8、随机数-一次性的随机数-Nonce-Nonce" class="headerlink" title="8、随机数/一次性的随机数/Nonce Nonce"></a>8、随机数/一次性的随机数/Nonce Nonce</h3><p>是指“只使用一次的随机数”，在挖矿中是一种用于挖掘加密货币的自动生成的、毫无意义的随机数，在解决数学难题的问题中被使用一次之后，如果不能解决该难题则 该随机数就会被拒绝，而一个新的Nonce也会被测试出来并且直到问题解决，当问题解决时矿工就会得到加密货币作为奖励。在区块结构中，Nonce是基于工作量证明所设计的随机数字，通过难度调整来增加或减少其计算时间；在信息安全中，Nonce是一个在加密通信只能使用一次的数字；在认证协议中，Nonce是一个随机或伪随机数，以避免重放攻击。</p>
+<h3 id="9、梅克尔树-Merkle-Tree"><a href="#9、梅克尔树-Merkle-Tree" class="headerlink" title="9、梅克尔树/Merkle Tree"></a>9、梅克尔树/Merkle Tree</h3><p>梅克尔树（又叫哈希树）是一种二叉树，是一种高效和安全的组织数据的方法，被用来 快速查询验证特定交易是否存在，由一个根节点、一组中间节点和一组叶节点组成。它使用哈希算法将大量的书面信息转换成一串独立的字母或数字。最底层的叶节点包含存储数据或其哈希值，每个中间节点是它的两个子节点内容的哈希值，根节点也是由它的两个子节点内容的哈希值组成。</p>
+<h3 id="10、区块容量-Block-Size"><a href="#10、区块容量-Block-Size" class="headerlink" title="10、区块容量/Block Size"></a>10、区块容量/Block Size</h3><p>区块链的每个区块，都是用来承载某个时间段内的数据的，每个区块通过时间的先后顺 序，使用密码学技术将其串联起来，形成一个完整的分布式数据库，区块容量代表了一个区块能容纳多少数据的能力。</p>
+<h3 id="11、未花费的交易输出-Unspent-Transaction-Output-UTXO"><a href="#11、未花费的交易输出-Unspent-Transaction-Output-UTXO" class="headerlink" title="11、未花费的交易输出/Unspent Transaction Output/UTXO"></a>11、未花费的交易输出/Unspent Transaction Output/UTXO</h3><p>未花费的交易输出是一个包含交易数据和执行代码的数据结构，可以理解为收到的但尚 未花费的加密货币清单。比特币和其他加密货币在其区块链技术中使用 UTXO，以验 证一个人是否拥有未使用的加密货币可用于支出。</p>
+<h1 id="（三）链式结构"><a href="#（三）链式结构" class="headerlink" title="（三）链式结构"></a><strong>（三）链式结构</strong></h1><h3 id="1、链-Chain"><a href="#1、链-Chain" class="headerlink" title="1、链/Chain"></a>1、链/Chain</h3><p>链是由区块按照发生的时间顺序，通过区块的哈希值串联而成，是区块交易记录及状态变化的日志记录。</p>
+<h3 id="2、链上-On-chain"><a href="#2、链上-On-chain" class="headerlink" title="2、链上/On-chain"></a>2、链上/On-chain</h3><p>on-chain是区块链网络上最基本的交易方式。</p>
+<p>以比特币为例，链上交易的流程是甲方给乙方一个比特币地址(公钥)，乙方用客户端创建交易发送比特币给甲方，这笔交易在全网广播，并且被确认，随后打包进区块。显然，这个交易是直接发生在比特币网络上的，相对来说比较安全。需要注意的是，由于比特币网络区块确认时间较长，所以交易过程会比较耗时。</p>
+<h3 id="3、链下-Off-chain"><a href="#3、链下-Off-chain" class="headerlink" title="3、链下/Off-chain"></a>3、链下/Off-chain</h3><p>从功能角度讲，区块链系统是一个价值交换网络，链下是指不存储于区块链上的数据交互方式，例如我们在交易所里进行的交易就是off-chain交易。</p>
+<p>在交易所中进行的链下交易是如何运作的呢？</p>
+<p>A用户和B用户分别在某交易所开户，交易所会分别为A用户和B用户生成一对公钥私钥，但是A和B都不知道平台给他们生成的私钥，只知道自己的公钥。</p>
+<p>然后，A和B用自己的钱包往平台给他们开的公钥地址里冲值比特币，注意这个操作依然是on chain的。</p>
+<p>再然后，A通过交易所转了0.5BTC给B，但由于A没有私钥，所以需要交易所拿A的私钥去签名并广播这个交易，然而交易所真的需要去广播这个交易吗？不需要的，交易所只需要在自己的数据库里，将A的账户余额-0.5BTC，将B的账户余额+0.5BTC。这一步，只是交易所自己维护的信息在更新，没有上链，所以这个操作是off chain的。</p>
+<p>最后，当A、B从交易所取现时，交易所将他们线上账户的比特币转给他们自己的比特币地址时(A、B自己拥有私钥的地址)，这个操作才会重新on chain。</p>
+<p>与on-chain相比off-chain交易可以很快，但是由于交易数据放到交易所的数据库里了，所以安全隐私又打了点折扣。不过本文只探讨原理，对利弊就不做过多评论了。</p>
+<h3 id="4、分叉-Fork"><a href="#4、分叉-Fork" class="headerlink" title="4、分叉/Fork"></a>4、分叉/Fork</h3><p>在区块链中，由矿工挖出区块并将其链接到主链上，一般来讲同一时间内只产生一个区块，如果发生同一时间内有两个区块同时被生成的情况，就会在全网中出现两个长度相同、区块里的交易信息相同但矿工签名不同或者交易排序不同的区块链，这样的情况叫做分叉。</p>
+<h3 id="5、软分叉-Soft-Fork"><a href="#5、软分叉-Soft-Fork" class="headerlink" title="5、软分叉/Soft Fork"></a>5、软分叉/Soft Fork</h3><p>指在区块链或去中心化网络中向前兼容的分叉。</p>
+<p>向前兼容意味着，当新共识规则发布后，在去中心化架构中的节点不一定要升级到新的共识规则，因为软分叉的新规则仍旧符合老的规则，所以未升级的节点仍旧能接受新的规则。当新共识规则发布后，没有升级的节点会因为不知道新共识规则下，而生产不合法的区块，进而产生临时性分叉。</p>
+<p>对于软分叉，运行旧版本软件就好比出门坐地铁，而运行新版本就像是坐飞机。在地铁站安检的时候(旧版本)，拿着打火机，可以进站，可以上车，按照日常规程，基本没人拦你。而在机场安检时(新版本)，你的打火机只能丢弃了。换句话说，有些在地铁上能做的事情，在飞机上就不能做(旧版本支持的事情，新版本不支持)。反过来看，因为坐飞机的安检更为严格，所以如果你满足了坐飞机的要求，坐地铁自然没有任何问题(新版本支持的事情，旧版本也支持)。</p>
+<h3 id="6、硬分叉-Hard-Fork"><a href="#6、硬分叉-Hard-Fork" class="headerlink" title="6、硬分叉/Hard Fork"></a>6、硬分叉/Hard Fork</h3><p>指在区块链或去中心化网络中不向前兼容的分叉。</p>
+<p>区块链发生永久性分歧，在新共识规则发布后，部分没有升级的节点无法验证已经升级的节点生产的区块，通常硬分叉就会发生。</p>
+<p>硬分叉对数字货币使用的技术进行永久更改，这种变化使得所有的新数据块与原来的块不同，旧版本不会接受新版本创建的区块，要实现硬分叉所有用户都需要切换到新版本协议上。如果新的硬分叉失败，所有的用户将回到原始数据块。</p>
+<p>对于硬分叉，我们也可以用“地铁和飞机”形象化。硬分叉中的旧版本软件就好比开地铁，而新版本则是开飞机。显然，能开地铁，不代表你能开飞机(旧版本支持，新版本则不支持)；反过来，即使你有飞机驾驶证，也不能拿着它直接坐进地铁驾驶室里把车开走(新版本没问题，旧版本却不支持)。</p>
+<h1 id="（四）非对称加密"><a href="#（四）非对称加密" class="headerlink" title="（四）非对称加密"></a><strong>（四）非对称加密</strong></h1><h3 id="1、密码学-Cryptography"><a href="#1、密码学-Cryptography" class="headerlink" title="1、密码学/Cryptography"></a>1、密码学/Cryptography</h3><p>密码学是数学和计算机科学的分支，同时其原理大量涉及信息论。密码学不只关注信息保密问题，还同时涉及信息完整性验证（消息验证码）、信息发布的不可抵赖性（数字签名）、以及在分布式计算中产生的来源于内部和外部的攻击的所有信息安全问题。</p>
+<h3 id="2、加密-Cipher"><a href="#2、加密-Cipher" class="headerlink" title="2、加密/Cipher"></a>2、加密/Cipher</h3><p>加密是一系列使信息不可读的过程，它能使信息加密也能使信息加密后能够再次可读，在加密货币中使用的密码也使用由字母和数字组成的密钥，该密钥必须用于解密密码。</p>
+<h3 id="3、加密算法-Encryption-Algorithm"><a href="#3、加密算法-Encryption-Algorithm" class="headerlink" title="3、加密算法/Encryption Algorithm"></a>3、加密算法/Encryption Algorithm</h3><p>加密算法是一个函数，也可以视为是一把钥匙，通过使用一个加密钥匙，将原来的明文文件或数据转化成一串不可读的密文代码。加密流程是不可逆的，只有持有对应的解密钥匙才能将该加密信息解密成可阅读的明文。加密使得私密数据可以在低风险的情况下，通过公共网络进行传输，并保护数据不被第三方窃取、阅读。</p>
+<h3 id="4、非对称加密-Asymmetric-Cryptography"><a href="#4、非对称加密-Asymmetric-Cryptography" class="headerlink" title="4、非对称加密/Asymmetric Cryptography"></a>4、非对称加密/Asymmetric Cryptography</h3><p>非对称加密是一种保证区块链安全的基础技术。</p>
+<p>该技术含有两个密钥：公钥和私钥，首先，系统按照某种密钥生成算法，将输入经过计算得出私钥，然后，采用另一个算法根 据私钥生成公钥，公钥的生成过程不可逆。由于在现有的计算能力条件下难以通过公钥 来穷举出私钥（即计算上不可行），因此可以认为是数据是安全的，从而能够保证区块链的数据安全。</p>
+<h3 id="5、同态加密-Homomorphic-Encryption"><a href="#5、同态加密-Homomorphic-Encryption" class="headerlink" title="5、同态加密/Homomorphic Encryption"></a>5、同态加密/Homomorphic Encryption</h3><p>同态加密是一种特殊的加密方法，允许对密文根据特定的代数运算方式进行处理后得到 的仍然是加密的结果，将其解密所得到的结果与对明文进行同样的运算结果是一样的。即“对密文直接进行处理”与“对明文进行处理后并加密”其结果是一样的，这项技术可以在加密的数据中进行诸如检索、比较等操作而无需对数据先进行解密，从根本上解决将数据委托给第三方时的保密问题。</p>
+<h3 id="6、公钥加密-Asymmetric-Cryptography-Public-Key-Cryptography"><a href="#6、公钥加密-Asymmetric-Cryptography-Public-Key-Cryptography" class="headerlink" title="6、公钥加密/Asymmetric Cryptography/Public Key Cryptography"></a>6、公钥加密/Asymmetric Cryptography/Public Key Cryptography</h3><p>公钥加密是一种特殊的加密手段，具有在同一时间生成两个密钥的处理（私钥和公钥），每一个私钥都有一个相对应的公钥，从公钥不能推算出私钥，并且被用其中一个密钥加密了的数据，可以被另外一个相对应的密钥解密。这套系统使得节点可以先在网络中广播一个公钥给所有节点，然后所有节点就可以发送加密后的信息给该节点，而不需要预先交换密钥。</p>
+<h3 id="7、密钥-Secret-Key"><a href="#7、密钥-Secret-Key" class="headerlink" title="7、密钥/Secret Key"></a>7、密钥/Secret Key</h3><p>密钥是用于加密或解密信息的一段参数，在非对称加密系统中，是通过利用公钥（账户）与私钥（密码）的配合而实现的。</p>
+<h3 id="8、公钥-Public-Key"><a href="#8、公钥-Public-Key" class="headerlink" title="8、公钥/Public Key"></a>8、公钥/Public Key</h3><p>公钥与私钥是通过一种算法得到的一个密钥对，公钥是密钥对中公开的部分，私钥则是非公开的部分，公钥通常用于加密会话密钥、验证数字签名，或加密可以用相应的私钥解密的数据。</p>
+<h3 id="9、私钥-Private-Key"><a href="#9、私钥-Private-Key" class="headerlink" title="9、私钥/Private Key"></a>9、私钥/Private Key</h3><p>公钥与私钥是通过一种算法得到的一个密钥对，公钥是密钥对中公开的部分，私钥则是 非公开的部分，私钥是指与一个地址（地址是与私钥相对应的公钥的哈希值）相关联的一把密钥，是只有你自己才知道的一串字符，可用来操作账户里的加密货币。</p>
+<h3 id="10、明文-Plaintext"><a href="#10、明文-Plaintext" class="headerlink" title="10、明文/Plaintext"></a>10、明文/Plaintext</h3><p>在密码学中，明文是指传送方想要接收方获得的可读信息。明文经过加密所产生的信息 被称为密文，而密文经过解密而还原得来的信息被称为明文。</p>
+<h3 id="11、密文-Ciphertext"><a href="#11、密文-Ciphertext" class="headerlink" title="11、密文/Ciphertext"></a>11、密文/Ciphertext</h3><p>在密码学中，密文是明文经过加密算法所产生的。因为密文是一种除非使用恰当的算法进行解密，否则人类或计算机是不可以直接阅读理解的加密形态，可以理解为被加密的信息。</p>
+<h3 id="12、环签名-Ring-Signatures"><a href="#12、环签名-Ring-Signatures" class="headerlink" title="12、环签名/Ring Signatures"></a>12、环签名/Ring Signatures</h3><p>因签名中参数Ci（i=1，2， …，n）根据一定的规则首尾相接组成环状而得名。其实就是实际的签名者用其他可能签字者的公钥产生一个带有断口的环，然后用私钥将断口连成一个完整的环。任何验证人利用环成员的公钥都可以验证一个环签名是否由某个可能的签名人生成。</p>
+<h3 id="13、数字签名-Digital-Signatures"><a href="#13、数字签名-Digital-Signatures" class="headerlink" title="13、数字签名/Digital Signatures"></a>13、数字签名/Digital Signatures</h3><p>数字签名（又称公钥数字签名、电子签名）是一种类似写在纸上的签名，但是使用了公钥加密领域的技术实现，用于鉴别数字信息的方法，在网络上可以使用数字签名来进行身份确认。数字签名是一个独一无二的数值，若公钥能通过验证，那我们就能确定对应的公钥的正确性，数字签名兼具可确认性和不可否认性。</p>
+<h3 id="14、多重签名-Multi-Signatures"><a href="#14、多重签名-Multi-Signatures" class="headerlink" title="14、多重签名/Multi-Signatures"></a>14、多重签名/Multi-Signatures</h3><p>多重签名意味着在交易发生之前需要多个签名或批准。多重签名会增加加密货币的安全性，这样一个人就不能在未经他人同意的情况下把所有的数字货币都拿走。</p>
+<h3 id="15、数字证书-Digital-Certificate"><a href="#15、数字证书-Digital-Certificate" class="headerlink" title="15、数字证书/Digital Certificate"></a>15、数字证书/Digital Certificate</h3><h3 id="16、哈希-散列-Hash"><a href="#16、哈希-散列-Hash" class="headerlink" title="16、哈希/散列/Hash"></a>16、哈希/散列/Hash</h3><p>哈希又称作“散列”，是一种数学计算机程序，它接收任何一组任意长度的输入信息，通过哈希算法变换成固定长度的数据指纹输出形式，如字母和数字的组合，该输出就是 “哈希值”。哈希使存储和查找信息速度更快，因为哈希值通常更短所以更容易被找到。同时哈希能够对信息进行加密，一个好的哈希函数在输入域中很少出现哈希冲突，哈希一个特定文档的结果总是一样的，但找到具有相同哈希值的两个文件在计算上是计算上不可行的。</p>
+<h3 id="17、安全哈希算法-Secure-Hash-Algorithm-256-SHA256"><a href="#17、安全哈希算法-Secure-Hash-Algorithm-256-SHA256" class="headerlink" title="17、安全哈希算法/Secure Hash Algorithm 256/SHA256"></a>17、安全哈希算法/Secure Hash Algorithm 256/SHA256</h3><p>SHA256是SHA系列算法之一，是由美国国安局设计、美国国家标准与技术研究院发布的一套哈希算法，由于其摘要长度为256bits，故称SHA 256。SHA256是保护数字信 息的最安全的方法之一。</p>
+<h3 id="18、零知识证明-Zero-Knowledge-Proof"><a href="#18、零知识证明-Zero-Knowledge-Proof" class="headerlink" title="18、零知识证明/Zero-Knowledge Proof"></a>18、零知识证明/Zero-Knowledge Proof</h3><p>证明者和验证者之间进行交互，证明者能够在不向验证者提供任何有用的信息的情况 下，使验证者相信某个论断是正确的。</p>
+<h3 id="19、计算上不可行-Computationally-Feasible"><a href="#19、计算上不可行-Computationally-Feasible" class="headerlink" title="19、计算上不可行/Computationally Feasible"></a>19、计算上不可行/Computationally Feasible</h3><p>密码算法依赖的原理是当前计算不可行的数学问题，而“计算不可行”是一个在时间及空间上相对而言的概念，计算上不可行即表示一个程序是可处理的但是需要一个长得不切实际的时间（如几十亿年）来处理的步骤。通常认为2的80次方个计算步骤是计算上不可行的下限。</p>
+<h3 id="20、暴力破解法-Brute-Force-Attack-BFA"><a href="#20、暴力破解法-Brute-Force-Attack-BFA" class="headerlink" title="20、暴力破解法/Brute Force Attack/BFA"></a>20、暴力破解法/Brute Force Attack/BFA</h3><p>暴力破解法又名穷举法，是一种密码分析的方法，通过逐个推算猜测每一个可能解锁安全系统的密钥来获取信息的方法。</p>
+<h1 id="（五）分布式存储"><a href="#（五）分布式存储" class="headerlink" title="（五）分布式存储"></a><strong>（五）分布式存储</strong></h1><h3 id="1、分布式存储-Distributed-Data-Store-DDS"><a href="#1、分布式存储-Distributed-Data-Store-DDS" class="headerlink" title="1、分布式存储/Distributed Data Store/DDS"></a>1、分布式存储/Distributed Data Store/DDS</h3><p>传统上的分布式存储本质上是一个中心化的系统，是将数据分散存储在多台独立的设备上，采用可扩展的系统结构、利用多台存储服务器分担存储负荷、利用位置服务器定位存储信息。而基于P2P网络的分布式存储是区块链的核心技术，是将数据存储于区块上并通过开放节点的存储空间建立的一种分布式数据库，解决传统分布式存储的问题。</p>
+<h3 id="2、P2P存储-Peer-to-Peer-Storage-P2P-Storage-P2P"><a href="#2、P2P存储-Peer-to-Peer-Storage-P2P-Storage-P2P" class="headerlink" title="2、P2P存储/Peer-to-Peer Storage/P2P Storage P2P"></a>2、P2P存储/Peer-to-Peer Storage/P2P Storage P2P</h3><p>存储是一种不存在中心化控制机制的存储技术。P2P 存储通过开放节点的存储空间，以提高网络的运作效率，解决传统分布式存储的服务器瓶颈、带宽而带来的访问不便等问题。</p>
+<h3 id="3、账本-Ledger"><a href="#3、账本-Ledger" class="headerlink" title="3、账本/Ledger"></a>3、账本/Ledger</h3><p>账本是指包括区块链的数据结构、所有的交易信息和当前状态的数字记录。</p>
+<p>分布式账本/Distributed ledger Technology/DLT</p>
+<p>分布式账本是指一种在网络成员之间共享、复制和同步的数据库，分布式账本在区块链中是一个通过共识机制建立的数字记录，区块链网络中的参与者可以获得一个唯一、真实账本的副本，因此难以对分布式账本进行篡改。更改记录的方式非常困难，技术非常安全。</p>
+<h3 id="4、节点-Node"><a href="#4、节点-Node" class="headerlink" title="4、节点/Node"></a>4、节点/Node</h3><p>节点是区块链分布式系统中的网络节点，是通过网络连接的服务器、计算机、电话等，针对不同性质的区块链，成为节点的方式也会有所不同。以比特币为例，参与交易或挖矿即构成一个节点。在全网记账的过程中，每个节点在里面起到的作用都至关重要。节点与节点间除了可以进行交易广播以外，节点还可以进行记账。</p>
+<p>简单来说，节点分为以下几种：</p>
+<p>a.全节点：这种节点会将历史上所有的区块数据（包含所有交易）都下载下来，因此，这种节点可以独立的进行比特币地址的余额验证、交易有效性验证、历史交易验证等工作。由于全节点需要保留比特币网络上所有的交易数据，因此它会根据网络上广播的新区块信息，不断的新增最新的数据，保证区块链数据处于最新的状态。由于上述原因，全节点对比特币交易的验证是最安全的。我自己安装的就是这种节点类型的客户端。但是这种节点的缺点也很明显，由于需要下载历史上所有交易数据，这种节点显得特别笨重。根据我自己的经验，2013年时全节点大小在几十个G，最近（2017.8）全节点大小已经达到130G左右。</p>
+<p>b.SPV节点：由于移动设备的飞速发展，在手机、Pad等便携设备上进行比特币交易的需求越来越旺盛。显然在存储空间有限的便携设备上，无法安装“全节点”。因此比特币系统支持一种轻量级的节点客户端。这种客户端只会下载区块的关键数据，比如区块的Hash值，Nonce数值等数据～通过这些数据就可以知道区块链概况。这些关键数据只有区块全量数据的1/1000，因此客户端会显得很轻便。但SPV节点的问题是，在进行交易验证时，必须通过网络从全节点处获取验证所需的信息，才可以进行验证。如果你身边有黑客建立的伪节点（如受到Sybil攻击），可能会干扰你的验证过程。因此，要保证万无一失的安全性，最可靠的方法还是建立一个“全节点”。</p>
+<p>c.矿工节点：前面讲到，部分节点要通过大量、不停歇的计算，去争取组装区块及发起全网记账的权利（上面提到过，这个过程叫工作量证明PoW）。这样的工作不是每个节点都要做的，而只有矿工节点才会去做。为什么叫做“矿工”节点呢？因为每次这类节点算出谜题并争取到组包记账的权利时，比特币系统会给这个节点奖励一定数量的比特币。这个过程非常像是一个矿工在很费力的挖矿，奖励的比特币就是这个矿工挖到的矿。这也是为什么，有的文章说“挖到1个block，就可以得到XXX个比特币”，其实它的实际意思是：矿工节点通过不停运算，争取到组装1个新block并发起全网记账的权利后，可以得到XXX个比特币的奖励。讲到这里，你也该明白：其实只要控制了51%的矿工节点就可能发起51%攻击。</p>
+<p>注：可能你会好奇，奖励的比特币怎么打入矿工的账户的呢？其实简单来讲，奖励的比特币也是一笔交易，但这笔特殊的交易没有输入（inputs），只有输出（outputs）。outputs里记录的就是矿工节点上登记的公钥地址，所以挖出的比特币只有矿工节点所有者用自己的私钥才可以解锁，这样就实现了对矿工的奖励。</p>
+<p>上面介绍的是最典型的几类节点，在比特币网络上还有矿池节点等其它一些节点，就不做过多介绍了。当然上面几类节点的功能完全可以搭建在同一个节点上，这取决于节点搭建者具体想用节点来做什么。</p>
+<h1 id="（六）共识机制"><a href="#（六）共识机制" class="headerlink" title="（六）共识机制"></a><strong>（六）共识机制</strong></h1><h3 id="1、共识机制-Consensus"><a href="#1、共识机制-Consensus" class="headerlink" title="1、共识机制/Consensus"></a>1、共识机制/Consensus</h3><p>由于点对点网络下存在较高的网络延迟，各个节点所观察到的事务先后顺序不可能完全一致。因此区块链系统需要设计一种机制对在差不多时间内发生的事务的先后顺序进行共识，这种对一个时间窗口内的事务的先后顺序达成共识的算法被称为“共识机制”。</p>
+<h3 id="2、工作量证明-Proof-of-Work-PoW"><a href="#2、工作量证明-Proof-of-Work-PoW" class="headerlink" title="2、工作量证明/Proof of Work/PoW"></a>2、工作量证明/Proof of Work/PoW</h3><p>工作量证明简单理解就是一份证明，用来确认节点做过一定量的工作。监测工作的整个过程通常是极为低效的，而通过对工作的结果进行认证来证明完成了相应的工作量，则是一种非常高效的方式。比特币在区块的生成过程中使用了PoW机制，要得到合理的 随机数求解数学难题需要经过大量尝试计算，通过查看记录和验证区块链信息的证明，就能知道是否完成了指定难度系数的工作量。</p>
+<h3 id="3、权益证明-Proof-of-Stake-PoS"><a href="#3、权益证明-Proof-of-Stake-PoS" class="headerlink" title="3、权益证明/Proof of Stake/PoS"></a>3、权益证明/Proof of Stake/PoS</h3><p>PoS也称权益证明机制，类似于把资产存在银行里，银行会通过你持有数字资产的数量 和时间给你分配相应的收益。采用PoS机制的加密货币资产，系统会根据节点的持币数量和时间的乘积（币天数）给节点分配相应的权益。</p>
+<h3 id="4、权益授权证明-Delegated-Proof-of-Stake-DPoS"><a href="#4、权益授权证明-Delegated-Proof-of-Stake-DPoS" class="headerlink" title="4、权益授权证明/Delegated Proof of Stake/DPoS"></a>4、权益授权证明/Delegated Proof of Stake/DPoS</h3><p>DPoS是一种类似董事会的授权共识机制，该机制让每一个持币人对整个系统的节点进 行投票，决定哪些节点可以被信任并代理他们进行验证和记账，同时生成少量的对应奖励。DPoS大幅提高区块链的处理能力，并降低区块链的维护成本，从而使交易速度接 近于中心化的结算系统。</p>
+<h3 id="5、燃烧证明-Proof-of-Burn-PoB"><a href="#5、燃烧证明-Proof-of-Burn-PoB" class="headerlink" title="5、燃烧证明/Proof of Burn/PoB"></a>5、燃烧证明/Proof of Burn/PoB</h3><p>燃烧证明是一种投资于全新的加密货币的方法：为了获得一种新的货币，你必须“烧掉”（摧毁）另一种货币，比如比特币。从理论上讲，这将使每一种新的加密货币价值相当于被摧毁的币的价值，但实际上你不能真的摧毁加密货币，系统需要你把它送到一个会减少它的总供应量的地方。</p>
+<h3 id="6、开发者证明-Proof-of-Developer-PoD"><a href="#6、开发者证明-Proof-of-Developer-PoD" class="headerlink" title="6、开发者证明/Proof of Developer/PoD"></a>6、开发者证明/Proof of Developer/PoD</h3><p>开发者证明是一个真实的、活的软件开发人员创建了一种加密货币的证据。它用于启动新的加密货币，以防止匿名开发人员在不提供可行的加密货币的情况下收集和窃取资金。</p>
+<h3 id="7、重要性证明-Proof-of-Important-PoI"><a href="#7、重要性证明-Proof-of-Important-PoI" class="headerlink" title="7、重要性证明/Proof of Important/PoI"></a>7、重要性证明/Proof of Important/PoI</h3><p>重要性证明是根据交易量、活跃度等维度而不仅仅是根据工作量和币的数量来决定区块链的记账权力。</p>
+<h3 id="8、基于交易的权益证明机制-Transaction-as-Proof-of-Stake-TaPOS"><a href="#8、基于交易的权益证明机制-Transaction-as-Proof-of-Stake-TaPOS" class="headerlink" title="8、基于交易的权益证明机制/Transaction as Proof of Stake/TaPOS"></a>8、基于交易的权益证明机制/Transaction as Proof of Stake/TaPOS</h3><p>TaPOS为股东们提供了一个长效机制来直接批准他们的代表的行为，平均而言，51%的股东在6个月内会直接确认每个区块，取决于活跃流通的股份所占的比例，差不多10%的股东可以在几天内确认区块链。这种方式直接确认保障了网络的长期安全，并使 所有的攻击尝试变得极度清晰易见。</p>
+<h3 id="9、瑞波共识机制-Ripple-Consensus"><a href="#9、瑞波共识机制-Ripple-Consensus" class="headerlink" title="9、瑞波共识机制/Ripple Consensus"></a>9、瑞波共识机制/Ripple Consensus</h3><p>瑞波共识算法使一组节点能够基于特殊节点列表达成共识，初始特殊节点列表就像一个俱乐部，要接纳一个新成员，必须由51%的该俱乐部会员投票通过。共识遵循核心成员51%权力规则，外部人员则没有影响力。</p>
+<h3 id="10、分布式共识-Distributed-Consensus"><a href="#10、分布式共识-Distributed-Consensus" class="headerlink" title="10、分布式共识/Distributed Consensus"></a>10、分布式共识/Distributed Consensus</h3><h3 id="11、验证池机制-POOL"><a href="#11、验证池机制-POOL" class="headerlink" title="11、验证池机制/POOL"></a>11、验证池机制/POOL</h3><p>验证池机制是基于传统的分布式一致性技术和数据验证机制的结合，它使得在成熟的分布式一致性算法（Pasox、Raft）基础上，不需要代币也能实现秒级共识验证。</p>
+<h3 id="12、51-攻击-51-attack"><a href="#12、51-攻击-51-attack" class="headerlink" title="12、51%攻击/51% attack"></a>12、51%攻击/51% attack</h3><p>51%攻击，是指利用比特币以算力作为竞争条件的特点，凭借算力优势篡改或者撤销自己的付款交易。如果有人掌握了50%以上的算力，他能够比其他人更快地找到开采区块需要的那个随机数，因此他能够比其他人更快地创建区块。</p>
+<h3 id="13、双重支付-双重花费-双花-Double-Spending"><a href="#13、双重支付-双重花费-双花-Double-Spending" class="headerlink" title="13、双重支付/双重花费/双花/Double Spending"></a>13、双重支付/双重花费/双花/Double Spending</h3><p>双重支付是一个故意的分叉，是指具有大量计算能力的节点发送一个交易请求并购买资 产，在收到资产后又做出另外一个交易将相同量的币发给自己。攻击者通过创造一个分叉区块，将原始交易及伪造交易放在该区块上并基于该分叉上开始挖矿。如果攻击者 有超过50％的计算能力，双重花费最终可以在保证在任何区块深度上成功；如果低于50％则有部分可能性成功。</p>
+<h3 id="14、拜占庭将军问题-Byzantine-Generals-Problem-BGP"><a href="#14、拜占庭将军问题-Byzantine-Generals-Problem-BGP" class="headerlink" title="14、拜占庭将军问题/Byzantine Generals Problem/BGP"></a>14、拜占庭将军问题/Byzantine Generals Problem/BGP</h3><p>拜占庭将军问题是指“在存在消息丢失的不可靠信道上试图通过消息传递的方式达到一 致性是不可能的”。因此在系统中存在除了消息延迟或不可送达的故障以外的错误，包 括消息被篡改、节点不按照协议进行处理等，将会潜在地会对系统造成针对性的破坏。</p>
+<h3 id="15、改进型实用拜占庭容错-Practical-Byzantine-Fault-Tolerance-PBFT"><a href="#15、改进型实用拜占庭容错-Practical-Byzantine-Fault-Tolerance-PBFT" class="headerlink" title="15、改进型实用拜占庭容错/Practical Byzantine Fault Tolerance/PBFT"></a>15、改进型实用拜占庭容错/Practical Byzantine Fault Tolerance/PBFT</h3><p>PBET共识机制是少数服从多数，根据信息在分布式网络中节点间互相交换后各节点列出所有得到的信息，一个节点代表一票，选择大多数的结果作为解决办法。PBET将容错量控制在全部节点数的1/3，即如只要有超过 2/3的正常节点，整个系统便可正常运作。</p>
+<h3 id="16、授权拜占庭容错算法-Delegated-Byzantine-Fault-Tolerance-dBFT"><a href="#16、授权拜占庭容错算法-Delegated-Byzantine-Fault-Tolerance-dBFT" class="headerlink" title="16、授权拜占庭容错算法/Delegated Byzantine Fault Tolerance/dBFT"></a>16、授权拜占庭容错算法/Delegated Byzantine Fault Tolerance/dBFT</h3><p>dBFT，是基于持有权益比例来选出专门的记账人（记账节点），然后记账人之间通过拜 占庭容错算法（即少数服从多数的投票机制）来达成共识，决定动态参与节点。dBFT可以容忍任何类型的错误，且专门的多个记账人使得每一个区块都有最终性、不会分叉。</p>
+<h3 id="17、联邦拜占庭协议-Federated-Byzantine-Agreement-FBA"><a href="#17、联邦拜占庭协议-Federated-Byzantine-Agreement-FBA" class="headerlink" title="17、联邦拜占庭协议/Federated Byzantine Agreement/FBA"></a>17、联邦拜占庭协议/Federated Byzantine Agreement/FBA</h3><p>联邦拜占庭协议的主要特性是去中心化和任意行为容错，通过分布式的方法，达到法定人数或者节点足够的群体能达成共识，每一个节点不需要依赖相同的参与者就能决定信 任的对象来完成共识。</p>
+<h1 id="（七）主链扩容"><a href="#（七）主链扩容" class="headerlink" title="（七）主链扩容"></a><strong>（七）主链扩容</strong></h1><h3 id="1、分片-Sharding"><a href="#1、分片-Sharding" class="headerlink" title="1、分片/Sharding"></a>1、分片/Sharding</h3><p>分片是区块容量的一种解决方案。通常情况下，每个节点和区块链网络都包含区块链的完整副本，分片是一种允许节点具有完整的区块链的部分副本的技术，以提高整体性能和稳定速度。</p>
+<h3 id="2、闪电网络-Lightning-Network"><a href="#2、闪电网络-Lightning-Network" class="headerlink" title="2、闪电网络/Lightning Network"></a>2、闪电网络/Lightning Network</h3><p>闪电网络是一种允许加密货币的交易即时发生和成本降低的技术，它使一般在比特币网 络中需要等待区块确认的交易瞬间完成。闪电网络基于一个可扩展的微支付通道网络，通过序列到期可撤销合约 RSMC，使交易双方在区块链上的预先设置的支付通道进行的多次高频的双向交易瞬间完成。同时，它通过哈希时间锁定合约HTLC在没有直接点对点支付信道的交易双方之间连接一条由多个支付通道构成的支付路径，实现资金的 转移。</p>
+<h3 id="3、雷电网络-Raiden-Network"><a href="#3、雷电网络-Raiden-Network" class="headerlink" title="3、雷电网络/Raiden Network"></a>3、雷电网络/Raiden Network</h3><p>雷电网络是一种以太坊链下扩容解决方案，它使得使用以太坊技术的加密货币能够即时和低成本交易。交易双方只要在链上存在交易信道，就能在链下根据被锁定的余额进行高频、双向的即时确认交易，将这样多个通道形成的支付路径构成“雷电网络”。</p>
+<h3 id="4、隔离见证-Segregated-Witness-SW"><a href="#4、隔离见证-Segregated-Witness-SW" class="headerlink" title="4、隔离见证/Segregated Witness/SW"></a>4、隔离见证/Segregated Witness/SW</h3><p>隔离见证是一种技术，通过把占用大量存储空间的区块的数字签名重新放置到不同的记录（也称为隔离），使每个区块能进行更多的交易，以达到扩容的目的。区块链上不仅记载了每笔转账的具体信息，还包括了每笔交易的数字签名以核实交易的合法性矿工在打包区块的时候需要用数字签名来验证每笔交易，确认无误之后才会将该笔交易记录在区块里。但对于用户不需要验证信息，且每个比特币记录大小被限制在1兆字节（MB），每10分钟记录一次新的记录，所以通过隔离见证转移签名以扩大区块空间。</p>
+<h1 id="（八）跨链协议"><a href="#（八）跨链协议" class="headerlink" title="（八）跨链协议"></a><strong>（八）跨链协议</strong></h1><h3 id="1、跨链技术-Cross-Chain"><a href="#1、跨链技术-Cross-Chain" class="headerlink" title="1、跨链技术/Cross-Chain"></a>1、跨链技术/Cross-Chain</h3><p>跨链技术是实现区块链之间互联互通的技术，若对标互联网则可理解为“去中心化网络的结合”，区块链技术的特性使得跨链技术的落地，以及对于链外信息的获取都非常困难，早期跨链技术包括以Interledger Protocal和BTC Relay为代表，更多是关注资产的转移；现有跨链技术以Aion、Kyber Network、Bletchley、Polkadot、Cosmos主要着重的是跨链基础设施。</p>
+<p>“如果说共识机制是区块链的灵魂核心，那么对于区块链特别是联盟链及私链来看，跨链技术就是实现价值网络的关键，它是把联盟链从分散单独的 孤岛中拯救出来的良药，是区块链向外拓展和连接的桥梁。”——《连接不同区块链的跨链技术介绍》。</p>
+<h3 id="2、原子互换-Atomic-Swap"><a href="#2、原子互换-Atomic-Swap" class="headerlink" title="2、原子互换/Atomic Swap"></a>2、原子互换/Atomic Swap</h3><p>原子互换是一种正在开发中的去中心化、无需第三方的新技术，允许在不同类型的数字资产之间实现无需信任的点对点交易，任何一方在瞬间完成的点对点交易中都遵守协议，且之后若有一方退出，资金会在规定的时间返回各方账户。</p>
+<h3 id="3、见证人机制-Notary-Schemes"><a href="#3、见证人机制-Notary-Schemes" class="headerlink" title="3、见证人机制/Notary Schemes"></a>3、见证人机制/Notary Schemes</h3><p>见证人模式是一种中心化的结构，通过选定一批见证人并在见证人之间采用拜占庭容错结构，监听目标链上的事件和状态并签名进行资产的转移，如Ripple的Interledger Protocal的早期版本。</p>
+<h3 id="4、侧链协议-Side-chain-Protocol"><a href="#4、侧链协议-Side-chain-Protocol" class="headerlink" title="4、侧链协议/Side chain Protocol"></a>4、侧链协议/Side chain Protocol</h3><p>侧链协议是一种实现双向锚定（Two-way Peg）的协议，通过侧链协议实现资产在主链和其它链之间互相转换，或是以独立的、隔离系统的形式，降低核心区块链上发生交易的次数。</p>
+<h3 id="5、楔入式侧链技术-Pegged-Side-chain"><a href="#5、楔入式侧链技术-Pegged-Side-chain" class="headerlink" title="5、楔入式侧链技术/Pegged Side chain"></a>5、楔入式侧链技术/Pegged Side chain</h3><p>它将实现比特币和其他数字资产在多个区块链间的转移，这就意味着用户们在使用他们已有资产的情况下，可以访问新的加密货币系统。</p>
+<h3 id="6、中继技术-Relays"><a href="#6、中继技术-Relays" class="headerlink" title="6、中继技术/Relays"></a>6、中继技术/Relays</h3><p>中继技术是通过在两个链中加入一个数据结构，使得两个链可以通过该数据结构进行数据交互，并通过在一个链上调用数据结构的 API，实现监听并验证另一个链上的交易，而若该数据结构是一个链式结构，则具备侧链的形式并称作中继链。</p>
+<h3 id="7、哈希时间锁定合约-Hashed-Time-Lock-Contract-HTLC"><a href="#7、哈希时间锁定合约-Hashed-Time-Lock-Contract-HTLC" class="headerlink" title="7、哈希时间锁定合约/Hashed Time Lock Contract /HTLC"></a>7、哈希时间锁定合约/Hashed Time Lock Contract /HTLC</h3><p>哈希时间锁定合约包含哈希锁定（Hashlock）以及时间锁定（Timelock）两个部分，哈希时间锁定合约最典型的代表就是比特币的闪电网络，闪电网络提供一个可扩展的微支付通道，用以提升链外的交易处理能力，使用哈希锁定将发起方的交易代币进行锁定，并 通过时间锁定让接收方在某个约定的时刻前生成支付的密码学证明，并与先前约定的哈 希值一致，则可完成交易。</p>
+<h1 id="（九）其他技术"><a href="#（九）其他技术" class="headerlink" title="（九）其他技术"></a><strong>（九）其他技术</strong></h1><h3 id="1、图灵完备-Turing-Complete"><a href="#1、图灵完备-Turing-Complete" class="headerlink" title="1、图灵完备/Turing Complete"></a>1、图灵完备/Turing Complete</h3><p>在可计算理论中，当一组数据操作的规则（一组指令集、编程语言或元胞自动机）满足任意数据按照一定的顺序可以计算出结果，则称为图灵完备。 混币服务/Mixing Service混币服务，就是用一种加密货币从其他人那里得到同样金额的加密货币。原理是分离交易中的输入和输出地址，目的是提高加密货币的隐私性和匿名性，使其更难追踪加密货币的用途以及它属于谁。</p>
+<h3 id="2、零币协议-Zerocash-Protocol"><a href="#2、零币协议-Zerocash-Protocol" class="headerlink" title="2、零币协议/Zerocash Protocol"></a>2、零币协议/Zerocash Protocol</h3><p>零币协议是一个发布于 2013 年的独立协议，原先目的是为了在混币技术、环签技术外 增强加密货币的匿名性，零币协议使用零知识证明实现完全匿名，通过一个集合的托管池（Escrow Pool）删除交易的历史记录。零币协议有两个主要部分：“铸币”使有交易记录的币匿名化并置于托管池；通过零知识证明创建一个没有交易记录的新币，并销毁托管池中的币。</p>
+<h3 id="3、CryptoNote协议-CryptoNote"><a href="#3、CryptoNote协议-CryptoNote" class="headerlink" title="3、CryptoNote协议/CryptoNote"></a>3、CryptoNote协议/CryptoNote</h3><p>CryptoNote是一种应用协议，旨在实现加密货币的匿名性，于2013年10月发布，并可被用于多种加密货币中，如门罗币、Aeon、Fantomcoin 等。CryptoNote通过使用分布式公共分类账，记录区块链上加密货币的交易和余额，但将发送方、接收方 匿名化，并将交易金额模糊化。</p>
+<h3 id="4、缠结-Tangle"><a href="#4、缠结-Tangle" class="headerlink" title="4、缠结/Tangle"></a>4、缠结/Tangle</h3><p>Tangle是IOTA项目创造的一种改革性的去区块化分布式账本，它是可扩展的、轻量级的，还能在无需任何费用的前提下进行价值转移。Tangle（缠结）是基于有向无环图（DAG）的机构，而不是像区块链的连链式架构，它能定期添加区块，从而实现更高的 交替吞吐量和零交易手续费。</p>
+<h3 id="5、有向无环图-Database-Availability-Group-DAG"><a href="#5、有向无环图-Database-Availability-Group-DAG" class="headerlink" title="5、有向无环图/Database Availability Group /DAG"></a>5、有向无环图/Database Availability Group /DAG</h3><p>DAG指有向无环图，是常用于计算机领域的数据结构。DAG具备独特的拓扑结构，经常被用于处理动态规划，导航中获得最短路径等场景中。在区块链领域，DAG 用来解 决扩容性的问题，通过增加区块大小或者区块频率在网络中产生大量分叉，但是攻击者 还是需要 51% 的算力才能进行攻击。</p>
+<h3 id="6、去中心化应用-Decentralized-Application-DApp"><a href="#6、去中心化应用-Decentralized-Application-DApp" class="headerlink" title="6、去中心化应用/Decentralized Application/DApp"></a>6、去中心化应用/Decentralized Application/DApp</h3><p>DApp是一种在网络上公开运行的软件应用程序，这项技术是由许多人维护的，而不是由一个组织维护的，黑客不能改变应用程序的数据，除非他们能够访问几乎所有的网络 计算机并在那里调整它。</p>
+<h3 id="7、去中心组织-Decentralized-Organization"><a href="#7、去中心组织-Decentralized-Organization" class="headerlink" title="7、去中心组织/Decentralized Organization"></a>7、去中心组织/Decentralized Organization</h3><p>去中心组织是一个没有中央领导，而是使用正式民主投票进程和共识主动性自我组织的结合来作为其基本操作原则的组织。</p>
+<h3 id="8、去中心化自治组织-Decentralized-Autonomous-Organization-DAO"><a href="#8、去中心化自治组织-Decentralized-Autonomous-Organization-DAO" class="headerlink" title="8、去中心化自治组织/Decentralized Autonomous Organization/DAO"></a>8、去中心化自治组织/Decentralized Autonomous Organization/DAO</h3><p>去中心化自治组织是一个通过编码为称为智能合约的计算机程序的规则运行的组织，由 计算机网络支持的无中心组织并且没有单一的领导者，是一种自主的或者是自治的组织结构。</p>
+<h1 id="（十）智能合约"><a href="#（十）智能合约" class="headerlink" title="（十）智能合约"></a><strong>（十）智能合约</strong></h1><h3 id="1、智能合约-Smart-Contract"><a href="#1、智能合约-Smart-Contract" class="headerlink" title="1、智能合约/Smart Contract"></a>1、智能合约/Smart Contract</h3><p>智能合约最早在上世纪末就被提出，但直到近年随着区块链技术的发展逐步被社会大众所熟悉，智能合约的概念具备承诺、协议、数字形式三大要素，因此能够将区块链的应用 范围扩展至金融行业交易、支付、结算和清算的各个环节。智能合约是指当一个预先编 好的条件被触发时，智能合约会立即执行相应的合同条款，其工作原理类似于计算机程 序的if-then语句。</p>
+<h3 id="2、以太坊-Ethereum"><a href="#2、以太坊-Ethereum" class="headerlink" title="2、以太坊/Ethereum"></a>2、以太坊/Ethereum</h3><p>Ethereum（以太坊）是一个平台和一种编程语言，使开发人员能够建立和发布下一代分布式应用。Ethereum可以用来编程，分散、担保和交易任何事物，投票，域名，金 融交易所，众筹，公司管理，合同和大部分的协议、知识产权，还有得益于硬件集成的智能资产。</p>
+<h3 id="3、EVM代码"><a href="#3、EVM代码" class="headerlink" title="3、EVM代码"></a>3、EVM代码</h3><p>以太坊虚拟机代码，以太坊的区块链可以包含的编程语言的代码。与帐户相关联的EVM代码在每次消息被发到这个账户的时候被执行，并且具有读/写存储和自身发送消息的能力。</p>
+<h3 id="4、合约-Contract"><a href="#4、合约-Contract" class="headerlink" title="4、合约/Contract"></a>4、合约/Contract</h3><p>一个包含并且受 EVM 的代码控制的账户。合约不能通过私钥直接进行控制，除非被编 译成 EVM 代码，一旦合约被发行就没有所有者。</p>
+<h3 id="5、令牌-通证-Token"><a href="#5、令牌-通证-Token" class="headerlink" title="5、令牌/通证/Token"></a>5、令牌/通证/Token</h3><p>根据瑞士金融市场监督管理局（FINMA）在2018年2 提出的定义，令牌主要分为支付令牌、功能令牌、资产令牌 三种，并且可能存在混合形式：1）支付令牌/Payment Tokens“支付令牌与加密货币是同义词，并没有其他功能或链接其他开发项目的功能，令牌在某些情况下可能只会开发必要的功能，并在一段时间内成为支付手段。”如比特币、狗狗币、莱特币等第一代加密货币以及达世币、门罗币等以支付、结算为主要功能的令牌。2）功能令牌/Utility Tokens是指“功能令牌是旨在为应用程序或服务提供数字访问的令牌。”如瑞波币、艾达币、恒星币、小蚁股等内嵌代码，并具备使用场景或潜在使用场景的令牌。3）资产令牌/Asset Tokens “资产令牌代表资产，例如参与真实实体收益，公司股份或收益权益，或者获得股 息或利息支付的权利。就其经济功能而言，令牌类似于股票，债券或衍生品”，如BitShares上的PDA令牌或是DigixDAO上的DGX令牌，在现实世界中具备对应的资产。</p>
+<h3 id="6、令牌化-Tokenize"><a href="#6、令牌化-Tokenize" class="headerlink" title="6、令牌化/Tokenize"></a>6、令牌化/Tokenize</h3><p>令牌化是将现实世界中的有价物转化为数字价值的过程。在未来有可能通过区块链技术 实现将线下资产标记出来，并将单一资产进行分割、令牌化（如将一间房子分成 1000 份在市场上流通）。没有区块链技术的协助就无法建立标记，对于单一资产的部分进行 交易时不可能的是不可能的。由于这些代币是在区块链上交换的，所以数据是公开的、几乎不可能作弊。</p>
+<h1 id="（十一）加密货币"><a href="#（十一）加密货币" class="headerlink" title="（十一）加密货币"></a><strong>（十一）加密货币</strong></h1><h3 id="1、数字货币-Digital-Currency"><a href="#1、数字货币-Digital-Currency" class="headerlink" title="1、数字货币/Digital Currency"></a>1、数字货币/Digital Currency</h3><p>数字货币是一种不具备实体形式的、仅以数字形式存在的货币，在英语语境中与电子货币同义，而在中文语境下一般将电子货币解释为“电子化的法定货币”，即“电子化的人民币”并与数字货币区别开来。数字货币具备与实体货币相似的性质，但允许在互联网上即时地、无地理限制地转让。数字货币包含虚拟货币、加密货币、电子货币等概念。</p>
+<h3 id="2、加密货币-Cryptocurrency"><a href="#2、加密货币-Cryptocurrency" class="headerlink" title="2、加密货币/Cryptocurrency"></a>2、加密货币/Cryptocurrency</h3><p>加密货币是基于密码学的、不具备物理形式的货币，是数字货币的表现形式之一，在区块链中是指一种基于P2P网络、没有发行机构、总量基本确定、依据确定的发行制度和分配制度创建及交易、基于密码学及共识机制保证流通环节安全性的、具备一定编程性的数字货币。</p>
+<p>各国对于加密货币的定义不一而足，我国央行将加密货币定义为一种“虚拟商品”而不具备货币属性；在美国则根据不同部门有不同的定义，如：财产、大宗商品、货币、虚拟货币等。</p>
+<h3 id="3、代币-Token-Token-Coin"><a href="#3、代币-Token-Token-Coin" class="headerlink" title="3、代币/Token/Token Coin"></a>3、代币/Token/Token Coin</h3><p>代币与令牌的对应英文单字皆为Token，在区块链领域中一般不加以区分，但两者在意思上具有些许区别；英文Token实际上既包含代币、令牌也包含代金券、证券、通证、 纪念物等概念，准确来说代币的对应英文为Token Coin，在区块链领域中与“支付令牌”具备相同的意义。代币可以定义为某种账户的余额，并且不仅仅局限于加密货币的范畴，广义而言包含Q币在内的虚拟货币皆属于代币的范畴。</p>
+<h3 id="4、非货币-Noncurrency"><a href="#4、非货币-Noncurrency" class="headerlink" title="4、非货币/Noncurrency"></a>4、非货币/Noncurrency</h3><p>非货币是指不具有货币的流通性质、价格衡量功能，因此并不能作为市场的支付工具，并且需要依据其法律定义征收相应的税款，如增值税、资本利得税。</p>
+<h3 id="5、竞争币-AltCoin"><a href="#5、竞争币-AltCoin" class="headerlink" title="5、竞争币/AltCoin"></a>5、竞争币/AltCoin</h3><p>Altcoin是Bitcoin alternative的缩写，竞争币一般指除了比特币外的所有加密货币的总称。</p>
+<h3 id="6、山寨币-AltCoin"><a href="#6、山寨币-AltCoin" class="headerlink" title="6、山寨币/AltCoin"></a>6、山寨币/AltCoin</h3><p>山寨币是竞争币、替代币的一种业内戏称，是指在比特币源码基础上进行修改创造出的加密货币。</p>
+<h3 id="7、比特币改进提议-Bitcoin-Improvement-Proposals-BIPs"><a href="#7、比特币改进提议-Bitcoin-Improvement-Proposals-BIPs" class="headerlink" title="7、比特币改进提议/Bitcoin Improvement Proposals/BIPs"></a>7、比特币改进提议/Bitcoin Improvement Proposals/BIPs</h3><p>由于比特币是一个去中心化的公有链，因此全世界的开发者都有权对网络的开发做出贡献，比特币改进协议是一种向比特币社区提供信息的设计文档，是开发者用于描述为比特币网络带来的新功能、信息、流程或环境。根据BIP目的和指南（BIP Purpose and Guidelines）分为三种比特币改进协议形式：标准类BIP、信息类BIP、过程类BIP。</p>
+<h3 id="8、以太币-Ether-ETH"><a href="#8、以太币-Ether-ETH" class="headerlink" title="8、以太币/Ether/ETH"></a>8、以太币/Ether/ETH</h3><p>Ethereum（以太坊）是一种开源的、图灵完备的、智能合约公有区块链，基于区块链 账本用于合约的处理和执行，使得任何人都能够创建合约和去中心化应用，并在其中 自有定义所有权规则、交易方式和状态转换函数。Ethereum由Vitalik Buterin（绰号“V 神”）所创立并于 2014 年 7 月进行ICO，以太坊内置名为 Ether（以太币）的加密货币。</p>
+<h3 id="9、瓦斯-Gas"><a href="#9、瓦斯-Gas" class="headerlink" title="9、瓦斯/Gas"></a>9、瓦斯/Gas</h3><p>瓦斯是用于支付给在电脑上记录交易和其他行为的以太币，可以理解成比特币中的交易费用。瓦斯的计算方法是用瓦斯价格（一小部分的以太币）乘以瓦斯限值，如果瓦斯的量不够，任务就会失败，这也意味着更多瓦斯也就意味着电脑完成得速度越快。</p>
+<h3 id="10、反洗钱-Anti-Money-Laundering-AML"><a href="#10、反洗钱-Anti-Money-Laundering-AML" class="headerlink" title="10、反洗钱/Anti Money Laundering/AML"></a>10、反洗钱/Anti Money Laundering/AML</h3><p>反洗钱，是指为了预防通过各种方式掩饰、隐瞒毒品犯罪、黑社会性质的组织犯罪、恐怖活动犯罪、走私犯罪、贪污贿赂犯罪、破坏金融管理秩序犯罪等犯罪所得及其收益的来源和性质的洗钱活动，是一系列旨在防止将非法收入转化为合法收入、维护市场经济 秩序的政策及法律体系。</p>
+<h3 id="11、KYC规则-Know-Your-Customer-KYC"><a href="#11、KYC规则-Know-Your-Customer-KYC" class="headerlink" title="11、KYC规则/Know Your Customer/KYC"></a>11、KYC规则/Know Your Customer/KYC</h3><p>KYC法则要求金融机构实行账户实名制，了解账户的实际控制人和交易的实际收益人，同时要求对客户的身份、常住地址或企业所从事的业务进行充分的了解，并采取相应的措施。</p>
+<h1 id="（十二）账户"><a href="#（十二）账户" class="headerlink" title="（十二）账户"></a><strong>（十二）账户</strong></h1><h3 id="1、地址-Address-Addy"><a href="#1、地址-Address-Addy" class="headerlink" title="1、地址/Address/Addy"></a>1、地址/Address/Addy</h3><p>地址通过一系列密码算法推算形成，本质上是属于特定用户的公钥的哈希值，地址用于在网络上交易时接收和发送数据，由一连串字母和数字的字符串组成，但也可以表示为可扫描的二维码。</p>
+<h3 id="2、虚拟地址-Virtual-Address"><a href="#2、虚拟地址-Virtual-Address" class="headerlink" title="2、虚拟地址/Virtual Address"></a>2、虚拟地址/Virtual Address</h3><p>虚拟地址是一串公开可用的字母和数字，并且以一组定制的字母和数字开始。虚拟地址允许接收，保存和发送加密货币。</p>
+<h3 id="3、虚拟地址-Vanity-Address"><a href="#3、虚拟地址-Vanity-Address" class="headerlink" title="3、虚拟地址/Vanity Address"></a>3、虚拟地址/Vanity Address</h3><p>虚拟地址是指通过哈希函数计算随机产生特定的字符串，由于无法通过逆向计算哈希函数，因此只能不停地重复生成密钥，直到密钥中包含希望出现的字符串，而这样的密钥地址称为虚拟地址。</p>
+<h3 id="4、虚拟地址挖矿-Vanity-Mining"><a href="#4、虚拟地址挖矿-Vanity-Mining" class="headerlink" title="4、虚拟地址挖矿/Vanity-Mining"></a>4、虚拟地址挖矿/Vanity-Mining</h3><p>虚拟地址挖矿即通过计算机重复产生基于哈希函数的秘钥地址，直到通过大量的计算得到密钥中出现所期待的字符串的过程，其通过大量并行计算寻找特定字符串与加密货币挖矿寻找特定数学解在某种程度上相似。</p>
+<h3 id="5、虚拟池-Vanity-Pool"><a href="#5、虚拟池-Vanity-Pool" class="headerlink" title="5、虚拟池/Vanity Pool"></a>5、虚拟池/Vanity Pool</h3><p>虚拟池是一个虚拟地址生成池，这种服务允许用户将他们的虚拟地址生成需求外包给第三方矿工，而不用担心会危及他们的安全。</p>
+<h1 id="（十三）交易"><a href="#（十三）交易" class="headerlink" title="（十三）交易"></a><strong>（十三）交易</strong></h1><h3 id="1、交易-Transaction-TX"><a href="#1、交易-Transaction-TX" class="headerlink" title="1、交易/Transaction/TX"></a>1、交易/Transaction/TX</h3><p>在区块链中一笔交易是一个数字记录，通过区块链网络将交易数据在全网范围中广播，通告加密货币的所有权发生转移，并通过共识机制在全网中进行确认及验证，使得该笔交易变得不可逆并防止篡改。在普通货币里主要的交易类型是发送的货币单位或代币给别人；而在如域名注册等其他系统中，作出并完成报价、订立合约的行为也是有效的交易类型。</p>
+<h3 id="2、验证-Verification"><a href="#2、验证-Verification" class="headerlink" title="2、验证/Verification"></a>2、验证/Verification</h3><p>验证是对于交易的一种确认，通过区块链网络中节点的共识机制，将交易数据在区块链网络广播并由其他节点确认，即验证该笔交易的合法性。</p>
+<h3 id="3、可互换性-Fungible"><a href="#3、可互换性-Fungible" class="headerlink" title="3、可互换性/Fungible"></a>3、可互换性/Fungible</h3><p>可互换是指两种以上商品或是资产可以互换交易，可互换性是指两种以上商品或是资产拥有相互替代的性质。也就是说，在普通交易不影响市场价值的前提下，两种商品具备相互流通的功能，如币币交易中的BTC、ETH、USDT等主流加密货币通常用于其他加密货币的计价，因此与其他货币在具备可互换性。法币交易即通过法定货币购买，出售或交易数字资产；币币交易即通过加密货币购买，出售或交易数字资产。</p>
+<h3 id="4、污点-Taint"><a href="#4、污点-Taint" class="headerlink" title="4、污点/Taint"></a>4、污点/Taint</h3><p>污点指一个账户中被标注为来自于不被信任的渠道的加密货币的百分比。污点常用来测量使用者的数字钱包中有多少加密货币与失窃货币、假币或者与负面、非法活动相关，由此产生的新数据也会继承源数据“是否被污染”的属性。</p>
+<h3 id="5、重放攻击-重播攻击-回放攻击-Replay-Attacks"><a href="#5、重放攻击-重播攻击-回放攻击-Replay-Attacks" class="headerlink" title="5、重放攻击/重播攻击/回放攻击/Replay Attacks"></a>5、重放攻击/重播攻击/回放攻击/Replay Attacks</h3><p>重放攻击在区块链中不同于传统意义，是指“一条链上的交易在另一条链上也往往是合法的”，即在链分叉时，地址和私钥生产的算法相同，交易格式也完全相同，因此在一条链上的交易在另一条链上很可能是完全合法的，也即你在分叉区块中进行的一笔交易很可能在分叉链中皆为合法，即为“重放”。</p>
+<h3 id="6、交易费用-矿工费-Transaction-Fee"><a href="#6、交易费用-矿工费-Transaction-Fee" class="headerlink" title="6、交易费用/矿工费/Transaction Fee"></a>6、交易费用/矿工费/Transaction Fee</h3><p>交易费用，亦称为“区块链费用”、“矿工费”，是在用户进行加密货币交易时收取的交易费用，用以奖励矿工对比特币网络的维护。由于矿工通过向网络提供算力以验证发送和接收的数据是否正确，并将这些信息存储在被称为区块链的记录中，由于这些交易每分钟发生很多次，因此较高的费用会激励这些人先验证并记录交易。</p>
+<h3 id="7、小额交易-Microtransaction"><a href="#7、小额交易-Microtransaction" class="headerlink" title="7、小额交易/Microtransaction"></a>7、小额交易/Microtransaction</h3><p>小额交易是指价值量很少的购买或交易。</p>
+<h3 id="8、尘埃交易-Dust-Transactions"><a href="#8、尘埃交易-Dust-Transactions" class="headerlink" title="8、尘埃交易/Dust Transactions"></a>8、尘埃交易/Dust Transactions</h3><p>用少量的加密货币在区块链网络中进行购买、出售等交易行为，一般认为当交易费用高于1/3交易价值时，即可称作“Dust”或尘埃交易，目前而言，尘埃交易是指交易价值低于546satoshis比特币（即 0.000000546 BTC）的交易。</p>
+<h3 id="9、保证金交易-Margin-Trading"><a href="#9、保证金交易-Margin-Trading" class="headerlink" title="9、保证金交易/Margin Trading"></a>9、保证金交易/Margin Trading</h3><p>保证金交易是通过使用保证金采取杠杆交易的交易方式，保证金交易允许投资者在支付 杠杆资金利息费用的同时控制并使用比自己实际拥有更多的资产，是一种高风险的市场操作行为，因此在金融领域中已将其纳入监管范围进行穿透监管。</p>
+<h3 id="10、交易广播-Transaction-Broadcast"><a href="#10、交易广播-Transaction-Broadcast" class="headerlink" title="10、交易广播/Transaction Broadcast"></a>10、交易广播/Transaction Broadcast</h3><p>将交易信息在区块链网络中“广播”，并由节点验证即确认的过程。</p>
+<h3 id="11、交易确认-Confirmation"><a href="#11、交易确认-Confirmation" class="headerlink" title="11、交易确认/Confirmation"></a>11、交易确认/Confirmation</h3><p>交易确认表示该笔交易被区块链网络所记录并确认，当交易发生时，记录该笔交易的区块将进行第一次确认，并在该区块之后的链上的每一个区块进行再次确认；当确认数达到六个及以上时，通常认为这笔交易比较安全并难以篡改。</p>
+<h3 id="12、交易零确认-0确认-Zero-Confirmation"><a href="#12、交易零确认-0确认-Zero-Confirmation" class="headerlink" title="12、交易零确认/0确认/Zero Confirmation"></a>12、交易零确认/0确认/Zero Confirmation</h3><p>比特币交易的拥堵情况随着并发交易数量的增加而增加，许多矿池会对内存池中的交易按照手续费高低排列，优先处理高手续交易，其理想情况是高手续费交易先解决，低手续费交易后解决。然而在实际的市场应用中，由于新的交易不断出现，低手续费交易可能永远得不到处理，长时间甚至永久处于0确认状态。</p>
+<h3 id="13、未确认交易-Unconfirmed-Transactions"><a href="#13、未确认交易-Unconfirmed-Transactions" class="headerlink" title="13、未确认交易/Unconfirmed Transactions"></a>13、未确认交易/Unconfirmed Transactions</h3><p>交易数据处于未确认的状态，即交易数据在全网广播后，节点会不断从交易池中选择交易数据进行记录（一般根据交易手续费进行排序），并试图将数据记录在区块上，而未确认交易是指该笔交易尚未被记录在区块链上。</p>
+<h3 id="14、零确认交易-Zero-Confirmation-Transaction"><a href="#14、零确认交易-Zero-Confirmation-Transaction" class="headerlink" title="14、零确认交易/Zero Confirmation Transaction"></a>14、零确认交易/Zero Confirmation Transaction</h3><p>零确认交易是指，交易卖家不等待该笔交易被区块链网络节点确认，即交付出售的东西。零确认交易是一种信任的标志，卖方必须相信买方在该笔交易被区块链中的其他节点记录前不会再尝试将其持有的加密货币再花在其他地方。</p>
+<h1 id="（十四）市场"><a href="#（十四）市场" class="headerlink" title="（十四）市场"></a><strong>（十四）市场</strong></h1><h3 id="1、投资回报率-Return-on-Investment-ROI"><a href="#1、投资回报率-Return-on-Investment-ROI" class="headerlink" title="1、投资回报率/Return on Investment/ROI"></a>1、投资回报率/Return on Investment/ROI</h3><p>投资回报率（ROI ）=（税前年利润 /投资总额）*100%。是指企业从一项投资性商业活 动的投资中得到的经济回报，是衡量一个企业盈利状况所使用的比率，也是衡量一个企业经营效果和效率的一项综合性的指标。</p>
+<h3 id="2、套利-Arbitrage"><a href="#2、套利-Arbitrage" class="headerlink" title="2、套利/Arbitrage"></a>2、套利/Arbitrage</h3><p>套利是指在两个不同的市场中，以有利的价格同时买进并卖出或者同时卖出并买进，同种或本质相同的证券、商品或是资产以赚取价差的行为。通常发生于某种实物资产或金融资产拥有两个价格的情况，通过套利获取低风险的收益。</p>
+<h3 id="3、做空-Shorting"><a href="#3、做空-Shorting" class="headerlink" title="3、做空/Shorting"></a>3、做空/Shorting</h3><p>做空是指预期未来行情将会下跌，将手中借入的股票或是资产按当前价格卖出，待行情 下跌后买进再归还并将差额保留为利润。</p>
+<h3 id="4、杠杆-Leverage"><a href="#4、杠杆-Leverage" class="headerlink" title="4、杠杆/Leverage"></a>4、杠杆/Leverage</h3><p>杠杆是一种常见的金融交易制度，通过保证金制度借入资产进行投资，在可交易金额被放大的同时增加投资者的投资能力、放大投资的结果；但也使投资者获得的收益和承担的风险加大，无论最终的结果是收益还是损失，都会以一个固定的比例增加。</p>
+<h3 id="5、梭哈-All-In-Show-Hand"><a href="#5、梭哈-All-In-Show-Hand" class="headerlink" title="5、梭哈/All-In/Show Hand"></a>5、梭哈/All-In/Show Hand</h3><p>原本是赌博牌局游戏中的名词，指将手中的全部可用筹码一次性押出；引申为将资金全 用来购买加密货币的行为，具有“赌一把”的含义。 腰斩 指加密货币的价格下跌后相对于先前最高价位只有一半的水平。 割肉 指在加密货币价格下跌时减持的止损行为。提前设立好止损价位，防止更大的损失，是短线投资者应灵活运用的方法，新股民使用可防止深度套牢。</p>
+<h3 id="6、亿元披萨"><a href="#6、亿元披萨" class="headerlink" title="6、亿元披萨"></a>6、亿元披萨</h3><p>2010年，佛州程序员Laszlo Hanyecz用10000个比特币成功支付2个披萨，这是比特币历史上的第一次商业交易。以比特币后来最高超过10万人民币的价格来计算，当时1个披萨价值约为5亿元人民币。</p>
+<h3 id="7、泡菜溢价-Kimchi-Premium"><a href="#7、泡菜溢价-Kimchi-Premium" class="headerlink" title="7、泡菜溢价/Kimchi Premium"></a>7、泡菜溢价/Kimchi Premium</h3><p>韩国民众热衷于投资加密货币，当地的加密货币价格相对于其他国家和地区的高溢价被 称为“泡菜溢价”。</p>
+<h1 id="（十五）发行"><a href="#（十五）发行" class="headerlink" title="（十五）发行"></a><strong>（十五）发行</strong></h1><h3 id="1、发行-Emission"><a href="#1、发行-Emission" class="headerlink" title="1、发行/Emission"></a>1、发行/Emission</h3><p>“发行”也被称为发行曲线、发行率和发行时间，是创建和发布新的加密货币的速度。许多加密货币都设置了定期创建定额加密货币的机制，可以通过发行率来衡量；有些加 密货币会限制货币被创建的总量，即最大供应量。</p>
+<h3 id="2、空投-Airdrop"><a href="#2、空投-Airdrop" class="headerlink" title="2、空投/Airdrop"></a>2、空投/Airdrop</h3><p>空投实际上是一个有特定市场或是既有的项目将其本身的代币按照某一规则进行派发的行为过程，当一个新的加密货币被创建出来，获取用户群的一个方法就是空投。</p>
+<h3 id="3、水龙头-Faucet"><a href="#3、水龙头-Faucet" class="headerlink" title="3、水龙头/Faucet"></a>3、水龙头/Faucet</h3><p>水龙头是提供少量、免费的新型加密货币的网站或应用程序，以帮助提高人们持有加密货币的意识。比特币水龙头是一种全新的免费获取比特币的体验站点，此类网站在国外十分流行，只需要输入简单的验证码，就可以在固定的时间段免费获得一定比例比特币。</p>
+<h3 id="4、首次赏金发行-Initial-Bounty-Offering-IBO"><a href="#4、首次赏金发行-Initial-Bounty-Offering-IBO" class="headerlink" title="4、首次赏金发行/Initial Bounty Offering/IBO"></a>4、首次赏金发行/Initial Bounty Offering/IBO</h3><p>首次赏金发行是在一段时间内公开并发行一个新的加密货币，通过这个过程，加密货币将被公开分发给花费时间及能力协助加密货币社区创建的人群，是一种在项目早期的激励方式，与ICO不同的是，IBO不是一个买与卖的过程，而是一种精神投入。</p>
+<h3 id="5、软顶-Soft-Cap"><a href="#5、软顶-Soft-Cap" class="headerlink" title="5、软顶/Soft Cap"></a>5、软顶/Soft Cap</h3><p>软顶是加密货币从初次币发行（ICO）投资者处获得的最低金额。ICO是在有限时间内，将新的加密货币公开、直接销售给人们。如果ICO没有达到软顶金额，资金将按照原路径被退还给投资者。</p>
+<h3 id="6、硬顶-Hard-Cap"><a href="#6、硬顶-Hard-Cap" class="headerlink" title="6、硬顶/Hard Cap"></a>6、硬顶/Hard Cap</h3><p>硬顶是投资者从首次币发行中获得的最大金额。</p>
+<h3 id="7、隐顶-Hidden-Cap-Hidden-cap"><a href="#7、隐顶-Hidden-Cap-Hidden-cap" class="headerlink" title="7、隐顶/Hidden Cap Hidden cap"></a>7、隐顶/Hidden Cap Hidden cap</h3><p>是加密货币在其初始发行（ICO）中可以从投资者那里获得的金额的未知限制。Hidden cap的情况和限值是由开发团队创建的，目的是防止富有的投资者投入大量资金，使小额投资者有机会把他们的钱投资到一种新的加密货币中。</p>
+<h3 id="8、众筹-Crowdfunding"><a href="#8、众筹-Crowdfunding" class="headerlink" title="8、众筹/Crowdfunding"></a>8、众筹/Crowdfunding</h3><p>众筹是由发起人、跟投人以及平台构成。具有低门槛、多样性、依靠大众力量、注重创意的特征，是指一种向不特定公众募资，以支持发起人或组织的特定目的行为。</p>
+<h3 id="9、基石轮-种子轮-Seed-Round"><a href="#9、基石轮-种子轮-Seed-Round" class="headerlink" title="9、基石轮/种子轮/Seed Round"></a>9、基石轮/种子轮/Seed Round</h3><p>基石轮是区块链项目的早期投资，团队提出了产品的想法但没有实际的产品，需要启动资金使产品落地，是项目启动后的第一轮融资，相当于风险投资领域的种子轮概念。</p>
+<h3 id="10、天使轮-Angel-Round"><a href="#10、天使轮-Angel-Round" class="headerlink" title="10、天使轮/Angel Round"></a>10、天使轮/Angel Round</h3><p>天使轮即通过天使投资人获得融资，项目启动后的第一轮融资，融资额度高于种子轮，约在数百万元人民币左右。</p>
+<h3 id="11、私募轮-PE-Round"><a href="#11、私募轮-PE-Round" class="headerlink" title="11、私募轮/PE Round"></a>11、私募轮/PE Round</h3><p>私募轮广义上包含种子轮、天使轮以及ICO发行前的各个轮次融资，私募轮只对特定机构或投资人发行，并且无需对外公开。</p>
+<h3 id="12、公募轮-Public-Offering"><a href="#12、公募轮-Public-Offering" class="headerlink" title="12、公募轮/Public Offering"></a>12、公募轮/Public Offering</h3><p>公募轮在区块链中一般是指ICO阶段，ICO阶段一般持续数十天，并且分为数个融资轮次给予不同折扣，并根据融资规模设置硬顶及软顶。</p>
+<h3 id="13、首次公开发行-Initial-Public-Offering-IPO"><a href="#13、首次公开发行-Initial-Public-Offering-IPO" class="headerlink" title="13、首次公开发行/Initial Public Offering/IPO"></a>13、首次公开发行/Initial Public Offering/IPO</h3><p>首次公开发行是指一家企业或股份有限公司将股份通过证券交易所，首次向公众出售并筹集资金的行为。</p>
+<h3 id="14、首次币发行-Initial-Coin-Offering-ICO"><a href="#14、首次币发行-Initial-Coin-Offering-ICO" class="headerlink" title="14、首次币发行/Initial Coin Offering/ICO"></a>14、首次币发行/Initial Coin Offering/ICO</h3><p>首次币发行是区块链项目首次发行代币以募集比特币、以太币等通用加密货币的行为。ICO可类比股票市场的IPO概念，是为加密货币或者数字货币募集资金的一种广泛形式，参与者看重的是项目发展的潜在投资价值，其本质是一种产品众筹。</p>
+<h3 id="15、首次矿机发行-Initial-Miner-Offering-IMO"><a href="#15、首次矿机发行-Initial-Miner-Offering-IMO" class="headerlink" title="15、首次矿机发行/Initial Miner Offering/IMO"></a>15、首次矿机发行/Initial Miner Offering/IMO</h3><p>首次矿机发行与 ICO 和 IFO 具有明显的不同，ICO 和 IFO 是在已有加密货币的前提下使用矿机挖矿，而 IMO 则是使用区块链中的共识机制发行，通过发行一种专用矿机，通过该种矿机挖矿来产生新的加密货币以规避监管。</p>
+<h3 id="16、首次分叉发行-Initial-Fork-Offering-IFO"><a href="#16、首次分叉发行-Initial-Fork-Offering-IFO" class="headerlink" title="16、首次分叉发行/Initial Fork Offering/IFO"></a>16、首次分叉发行/Initial Fork Offering/IFO</h3><p>首次分叉发行与首次币发行不同，首次分叉发行通常是建立在主流加密货币的基础上进 行分叉，通过分叉前持有主流加密货币即可获得数量相等的对应分叉的分叉币，即另一 种虚拟货币。IFO 技术人员采用技术手段对比特币等主流加密货币分叉，开发的分叉币 会按比例相应分配给比特币持有人，并且在交易流通中获得价值，部分也会通过数字资 产交易所进行交易流通。</p>
+<h3 id="17、天使投资-Angel-Investment"><a href="#17、天使投资-Angel-Investment" class="headerlink" title="17、天使投资/Angel Investment"></a>17、天使投资/Angel Investment</h3><p>天使投资属于权益资本投资，是指个人将资金投入在具有技术或独特想法的原创项目或小型初创企业或团队，进行一次性的前期投资。</p>
+<h3 id="18、风险投资-Venture-Capital"><a href="#18、风险投资-Venture-Capital" class="headerlink" title="18、风险投资/Venture Capital"></a>18、风险投资/Venture Capital</h3><p>风险投资也是权益资本投资的一种，指金融机构对新兴发展的、有巨大潜力的创业团队 或者企业的高风险投资行为。风险投资的产品关注的是产品和技术的市场潜力和社会价值，看重其长期价值，公司在步入正轨以及项目有一定的成熟度后，风险投资会提高公 司的估值。</p>
+<h3 id="19、私募机构-Private-Equity"><a href="#19、私募机构-Private-Equity" class="headerlink" title="19、私募机构/Private Equity"></a>19、私募机构/Private Equity</h3><p>私募机构是面对少数机构投资者以非公开的形式发行证券、募集资金的机构。私募机构的销售和赎回业务都是通过基金管理人与特定的投资者协商的形式进行。</p>
+<h3 id="20、代投-Delegated-Investment"><a href="#20、代投-Delegated-Investment" class="headerlink" title="20、代投/Delegated Investment"></a>20、代投/Delegated Investment</h3><p>随着央行七部委在 2017 年 9 月 4 日颁行《关于防范代币发行融资风险的公告》，将ICO定义为非法集资行为后，部分国内人士将自己的数字资产交由“代投”人员进行加密货币投资，由于代投属于非法集资范畴并且交易相对隐秘，因此成为虚假项目、诈骗项目滋生的温床。</p>
+<h3 id="21、传销组织-MLM-Organizations"><a href="#21、传销组织-MLM-Organizations" class="headerlink" title="21、传销组织/MLM Organizations"></a>21、传销组织/MLM Organizations</h3><p>传销组织是以一个虚假的项目或公司作为噱头，煽动人们参加的非法组织。在传销组织中，管理者根据每个人发展的新成员的数量支付报酬，新成员加入组织时需缴纳一定的费用才能获取入会资格。传销组织的日常活动就是洗脑和煽动新成员加入。</p>
+<h3 id="22、爱西欧"><a href="#22、爱西欧" class="headerlink" title="22、爱西欧"></a>22、爱西欧</h3><p>ICO的拟声词，指首次币发行，是用区块链把使用权和加密货币合二为一，来为开发、维护、交换相关产品或者服务的项目进行融资的方式。</p>
+<h3 id="23、PPT融资"><a href="#23、PPT融资" class="headerlink" title="23、PPT融资"></a>23、PPT融资</h3><p>当一个项目进行首次币发行时，需要发布ICO白皮书来披露项目情况、发行的代币数量、筹集资金的用途等信息。白皮书通常以PDF、PPT等文件格式发布在项目官网或相关专业网站上，“白皮书”在ICO中的作用就和招股说明书在IPO中的作用类似，但由于ICO项目极大程度地依赖于白皮书是否制作精良，因此被称之为“PPT 融资”。韭菜指不了解市场情况的散户。因为散户不了解市场情况且容易受到投资情绪左右，容易高位买入、低价卖出，而当一部分人亏损离场后又会有新生力量进入，就像韭菜一样割一 茬很快又长一茬。</p>
+<h3 id="24、割韭菜"><a href="#24、割韭菜" class="headerlink" title="24、割韭菜"></a>24、割韭菜</h3><p>指庄家低位买入，炒高币价等散户进来后高价卖出获利，再砸盘砸到低位重复以上套路。而散户就像韭菜一样，割完又有新的一批入场。</p>
+<h3 id="25、空气币"><a href="#25、空气币" class="headerlink" title="25、空气币"></a>25、空气币</h3><p>空气币指没有任何技术依托的ICO代币，通过传销机构吹捧而号称有广大远景，但实际上不可行或是无法兑现。与国外相比，国内的ICO项目伴随着诸多“空气币”骗局。</p>
+<h3 id="26、传销币"><a href="#26、传销币" class="headerlink" title="26、传销币"></a>26、传销币</h3><p>传销币采用拉人头的方式获利，和开启项目后投资者获币不同，传销币成本不清，而且 可能长期超发以满足新的受害者持币的心理。传销币完全抄袭别人的开源代码来搭建程 序，且项目方长期不更新代码也不公布项目进度。</p>
+<h3 id="27、糖果-Candy"><a href="#27、糖果-Candy" class="headerlink" title="27、糖果/Candy"></a>27、糖果/Candy</h3><p>加密货币在项目起步时都需要推广，常见的推广方式之一就是“发糖果”，即免费向用户发放一定数量虚拟币，这些免费的虚拟币被用户们称之为“糖果”。</p>
+<h3 id="28、白皮书-White-Paper"><a href="#28、白皮书-White-Paper" class="headerlink" title="28、白皮书/White Paper"></a>28、白皮书/White Paper</h3><p>白皮书是解释加密货币中使用的目的和技术的文档，通常一个加密货币通过使用白皮书帮助人们了解它所提供的内容，同时也是投资人了解一个项目的重要信息渠道，因此一个清晰而简单的白皮书是一个新的加密货币的好兆头。</p>
+<h3 id="29、路线图-Roadmap"><a href="#29、路线图-Roadmap" class="headerlink" title="29、路线图/Roadmap"></a>29、路线图/Roadmap</h3><p>路线图是一个有预计完成日期的计划，显示了一个组织想要达到的长期目标，查看路线图有助于解组织希望向客户提供什么以及想要成为什么。</p>
+<h3 id="30、概念证明-Proof-of-Concept-POC"><a href="#30、概念证明-Proof-of-Concept-POC" class="headerlink" title="30、概念证明/Proof of Concept/POC"></a>30、概念证明/Proof of Concept/POC</h3><p>概念证明是对某些想法的一个较短而不完整的实现，以证明其可行性。概念证明通常被认为是一个有里程碑意义的实作的原型，在区块链中是预发布版的另一个称呼。</p>
+<h1 id="（十六）挖矿"><a href="#（十六）挖矿" class="headerlink" title="（十六）挖矿"></a><strong>（十六）挖矿</strong></h1><h3 id="1、挖矿-Mining"><a href="#1、挖矿-Mining" class="headerlink" title="1、挖矿/Mining"></a>1、挖矿/Mining</h3><p>挖矿是指利用电脑硬件计算、记录和验证被称为区块链的数字记录信息的过程。矿工通过挖矿求解数学难题从而获得创建新区块的记账权以及区块的比特币奖励，由于其工作原理与矿物开采十分相似，故称之为挖矿。目前最常见的方式是通过PoW工作量证明共识机制，第一个解决复杂数学问题的计算机将得到一个新的可记录区块链上信息的块，同时得到新的比特币。</p>
+<h3 id="2、矿工-Miner"><a href="#2、矿工-Miner" class="headerlink" title="2、矿工/Miner"></a>2、矿工/Miner</h3><p>在区块链网络中，矿工是指通过不断进行哈希运算来求解数学难题并产生工作量证明的 各网络节点，通过算力来验证、确认交易并防止双重支付。</p>
+<h3 id="3、矿池-Mining-Pool"><a href="#3、矿池-Mining-Pool" class="headerlink" title="3、矿池/Mining Pool"></a>3、矿池/Mining Pool</h3><p>矿池是一个完全节点，矿池是通过一种将少量算力合并联合运作的方法，整合区块链网络中的零散算力，并在所有成员中共享奖励。在全网算力提升到了一定程度后，单个设备难以在比特币网络上获取比特币网络提供的区块奖励，变成了纯粹0和1的概率事件，而通过加入矿池集合网络中较大比例的算力，远比单独获取区块奖励的几率更大。</p>
+<h3 id="4、矿场-挖矿基地-Mining-Farm"><a href="#4、矿场-挖矿基地-Mining-Farm" class="headerlink" title="4、矿场/挖矿基地/Mining Farm"></a>4、矿场/挖矿基地/Mining Farm</h3><p>矿场与矿池是两个区分概念，矿场是指地理上集中的矿机分布形式。基于比特币全网的算力水平不断上升，单个设备难以获得比特币的区块奖励，因此通过大规模挖矿、商业 化运作的模式，将大量的矿机集中到挖矿成本较低的地方进行的规模化挖矿。矿场的主要成本来自于硬件成本以及电力成本。</p>
+<h3 id="5、目标值-The-Target"><a href="#5、目标值-The-Target" class="headerlink" title="5、目标值/The Target"></a>5、目标值/The Target</h3><p>目标值是指挖矿时，数学难题的哈希值的阈值。矿工只能通过在该目标值范围内求得正确的随机数以得到该区块的记账权及区块奖励。当全网算力提升时，该目标值就会根据 难度调整而降低并增加求数学解的难度。</p>
+<h3 id="6、瞬时挖矿-Instamine"><a href="#6、瞬时挖矿-Instamine" class="headerlink" title="6、瞬时挖矿/Instamine"></a>6、瞬时挖矿/Instamine</h3><p>瞬时挖矿指一种新的加密货币在发行后很短的时间内，能很容易被获得的过程。瞬时挖矿的目的是在早期积累大量可用的货币供应，以在后期出售获取高利润。</p>
+<h3 id="7、挖矿难度-Mining-Difficulty"><a href="#7、挖矿难度-Mining-Difficulty" class="headerlink" title="7、挖矿难度/Mining Difficulty"></a>7、挖矿难度/Mining Difficulty</h3><p>挖矿难度是衡量将信息记录到被称为区块链的数字记录上的难度。在工作量证明中，为了使得区块产生的速度（也即数学难题的解答速度）维持在大约每十分钟一个，产生的新区块的挖矿难度会定期调整，每隔2016个区块（即两周），挖矿难度就会被重新计算，整个网络会通过调整“难度”这个变量来控制生成工作量证明所需要的计算力。</p>
+<h3 id="8、算力-哈希率-Hashrate"><a href="#8、算力-哈希率-Hashrate" class="headerlink" title="8、算力/哈希率/Hashrate"></a>8、算力/哈希率/Hashrate</h3><p>算力是计算机能够完成一个数学程序的速度，譬如接收任何一组信息，并将其转换成字母和一定长度的数字的速度就称为算力。在比特币“挖矿”中，对于数学难题的求解 需要找到相应的数学解，而对于任意一个给定范围内的Hash值，其求解只能通过自动生成的随机数，因此一个挖矿机每秒能做多少次求解过程就是算力的代表，其单位为Hash/s。</p>
+<h3 id="9、矿难-Mine-Disaster"><a href="#9、矿难-Mine-Disaster" class="headerlink" title="9、矿难/Mine Disaster"></a>9、矿难/Mine Disaster</h3><p>虚拟货币矿难指的是当挖掘成本（主要是矿机和电费）高于市场价时，继续挖矿也无法赚取虚拟货币收益。“矿难”时，大量挖矿玩家停止挖矿，而前期购买的显卡等硬件可能会以较低的价格出售，因此虚拟货币的矿难会极大地缓解显卡缺货的局面。</p>
+<h3 id="10、矿机-Mining-Rig"><a href="#10、矿机-Mining-Rig" class="headerlink" title="10、矿机/Mining Rig"></a>10、矿机/Mining Rig</h3><p>矿机是一种用于加密货币挖矿的计算机，一般配备专业的挖矿芯片，因而耗电量较大。矿机是用来记录被称为区块链的数字记录信息的计算机，通过在区块链网络上的共识机制（一般指PoW）争夺区块链的记账权，得到求解区块的加密货币奖励以及交易费用，因为挖矿通常需要大量的计算机能力，所以这种专用的计算机是为了挖矿而设计的。矿机一般可分为：ASIC矿机、GPU矿机、CDN矿机、云矿机。</p>
+<h3 id="11、中央处理器-Central-Processing-Unit-CPU"><a href="#11、中央处理器-Central-Processing-Unit-CPU" class="headerlink" title="11、中央处理器/Central Processing Unit/CPU"></a>11、中央处理器/Central Processing Unit/CPU</h3><p>中央处理器是计算机的主要设备之一，其功能是解释计算机指令以及处理计算机软件中的数据，与内部存储器、输入及输出设备成为现代电脑的三大部件；CPU作为通用 性计算单元，结构中包含分支预测单元、寄存单元等对于挖矿并无帮助的模块，同时CPU并不擅长并行运算（即重复性的工作），因此并不适合用作挖矿。</p>
+<h3 id="12、图形处理单元-Graphical-Processing-Unit-GPU"><a href="#12、图形处理单元-Graphical-Processing-Unit-GPU" class="headerlink" title="12、图形处理单元/Graphical Processing Unit/GPU"></a>12、图形处理单元/Graphical Processing Unit/GPU</h3><p>图形处理单元，通常称为显卡，是一种专门在个人电脑、工作站、游戏机和一些移动设 备（如平板电脑、智能手机等）上图像运算工作的微处理器。因显卡含有较多的移位寄存器及支持更大量的并行运算，相比 CPU 会更适用于某些数字货币的挖矿。</p>
+<h3 id="13、专用集成电路-Application-Specific-Integrated-Circuit-ASIC"><a href="#13、专用集成电路-Application-Specific-Integrated-Circuit-ASIC" class="headerlink" title="13、专用集成电路/Application-Specific Integrated Circuit/ASIC"></a>13、专用集成电路/Application-Specific Integrated Circuit/ASIC</h3><p>专用集成电路（ASIC）是一种为专门目的而设计的集成电路，是指应特定用户要求和特定电子系统的需要而设计、制造的集成电路。在加密货币的应用上，通过牺牲通用计 算的能力换取执行特定任务的高效率，ASIC 被使用来帮助记录区块链上的交易，在挖矿能力方面远优于GPU。</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">Sma11_Tim3</a>
+            </p><p>原文链接：<a href="http://yoursite.com/2021/03/04/区块链常用术语汇总/">http://yoursite.com/2021/03/04/区块链常用术语汇总/</a>
+            </p><p>发表日期：<a href="http://yoursite.com/2021/03/04/区块链常用术语汇总/">March 4th 2021, 7:56:07 pm</a>
+            </p><p>更新日期：<a href="http://yoursite.com/2021/03/04/区块链常用术语汇总/">March 4th 2021, 8:03:05 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2021/03/04/M-M-1-K单服务台混合制模型/" title="M/M/1/K单服务台混合制模型">
+                    <div class="prevTitle">M/M/1/K单服务台混合制模型</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:825703058@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//https://github.com/Sma11Tim3" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#（一）基础概念"><span class="toc-number">1.</span> <span class="toc-text">（一）基础概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、区块链-Blockchain"><span class="toc-number">1.0.1.</span> <span class="toc-text">1、区块链/Blockchain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、去信任-Trustless"><span class="toc-number">1.0.2.</span> <span class="toc-text">2、去信任/Trustless</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、点对点-Peer-to-Peer-P2P"><span class="toc-number">1.0.3.</span> <span class="toc-text">3、点对点/Peer-to-Peer/P2P</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、去中心化-Decentralized"><span class="toc-number">1.0.4.</span> <span class="toc-text">4、去中心化/Decentralized</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、中本聪-Satoshis-Nakamoto"><span class="toc-number">1.0.5.</span> <span class="toc-text">5、中本聪/Satoshis Nakamoto</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（二）区块数据"><span class="toc-number">2.</span> <span class="toc-text">（二）区块数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、区块-Block"><span class="toc-number">2.0.1.</span> <span class="toc-text">1、区块/Block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、父块-Parent-Block"><span class="toc-number">2.0.2.</span> <span class="toc-text">2、父块/Parent Block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、区块头-Block-Header"><span class="toc-number">2.0.3.</span> <span class="toc-text">3、区块头/Block Header</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、区块体-Block-Body"><span class="toc-number">2.0.4.</span> <span class="toc-text">4、区块体/Block Body</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、哈希值-散列值-Hash-Values-Hash-Codes-Hash-Sums-Hashes"><span class="toc-number">2.0.5.</span> <span class="toc-text">5、哈希值/散列值/Hash Values /Hash Codes /Hash Sums /Hashes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、哈希函数-哈希算法-Hash-Function"><span class="toc-number">2.0.6.</span> <span class="toc-text">6、哈希函数/哈希算法/ Hash Function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、时间戳-Timestamp"><span class="toc-number">2.0.7.</span> <span class="toc-text">7、时间戳/Timestamp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、随机数-一次性的随机数-Nonce-Nonce"><span class="toc-number">2.0.8.</span> <span class="toc-text">8、随机数/一次性的随机数/Nonce Nonce</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、梅克尔树-Merkle-Tree"><span class="toc-number">2.0.9.</span> <span class="toc-text">9、梅克尔树/Merkle Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、区块容量-Block-Size"><span class="toc-number">2.0.10.</span> <span class="toc-text">10、区块容量/Block Size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、未花费的交易输出-Unspent-Transaction-Output-UTXO"><span class="toc-number">2.0.11.</span> <span class="toc-text">11、未花费的交易输出/Unspent Transaction Output/UTXO</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（三）链式结构"><span class="toc-number">3.</span> <span class="toc-text">（三）链式结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、链-Chain"><span class="toc-number">3.0.1.</span> <span class="toc-text">1、链/Chain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、链上-On-chain"><span class="toc-number">3.0.2.</span> <span class="toc-text">2、链上/On-chain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、链下-Off-chain"><span class="toc-number">3.0.3.</span> <span class="toc-text">3、链下/Off-chain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、分叉-Fork"><span class="toc-number">3.0.4.</span> <span class="toc-text">4、分叉/Fork</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、软分叉-Soft-Fork"><span class="toc-number">3.0.5.</span> <span class="toc-text">5、软分叉/Soft Fork</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、硬分叉-Hard-Fork"><span class="toc-number">3.0.6.</span> <span class="toc-text">6、硬分叉/Hard Fork</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（四）非对称加密"><span class="toc-number">4.</span> <span class="toc-text">（四）非对称加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、密码学-Cryptography"><span class="toc-number">4.0.1.</span> <span class="toc-text">1、密码学/Cryptography</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、加密-Cipher"><span class="toc-number">4.0.2.</span> <span class="toc-text">2、加密/Cipher</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、加密算法-Encryption-Algorithm"><span class="toc-number">4.0.3.</span> <span class="toc-text">3、加密算法/Encryption Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、非对称加密-Asymmetric-Cryptography"><span class="toc-number">4.0.4.</span> <span class="toc-text">4、非对称加密/Asymmetric Cryptography</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、同态加密-Homomorphic-Encryption"><span class="toc-number">4.0.5.</span> <span class="toc-text">5、同态加密/Homomorphic Encryption</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、公钥加密-Asymmetric-Cryptography-Public-Key-Cryptography"><span class="toc-number">4.0.6.</span> <span class="toc-text">6、公钥加密/Asymmetric Cryptography/Public Key Cryptography</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、密钥-Secret-Key"><span class="toc-number">4.0.7.</span> <span class="toc-text">7、密钥/Secret Key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、公钥-Public-Key"><span class="toc-number">4.0.8.</span> <span class="toc-text">8、公钥/Public Key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、私钥-Private-Key"><span class="toc-number">4.0.9.</span> <span class="toc-text">9、私钥/Private Key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、明文-Plaintext"><span class="toc-number">4.0.10.</span> <span class="toc-text">10、明文/Plaintext</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、密文-Ciphertext"><span class="toc-number">4.0.11.</span> <span class="toc-text">11、密文/Ciphertext</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、环签名-Ring-Signatures"><span class="toc-number">4.0.12.</span> <span class="toc-text">12、环签名/Ring Signatures</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、数字签名-Digital-Signatures"><span class="toc-number">4.0.13.</span> <span class="toc-text">13、数字签名/Digital Signatures</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、多重签名-Multi-Signatures"><span class="toc-number">4.0.14.</span> <span class="toc-text">14、多重签名/Multi-Signatures</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15、数字证书-Digital-Certificate"><span class="toc-number">4.0.15.</span> <span class="toc-text">15、数字证书/Digital Certificate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16、哈希-散列-Hash"><span class="toc-number">4.0.16.</span> <span class="toc-text">16、哈希/散列/Hash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17、安全哈希算法-Secure-Hash-Algorithm-256-SHA256"><span class="toc-number">4.0.17.</span> <span class="toc-text">17、安全哈希算法/Secure Hash Algorithm 256/SHA256</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18、零知识证明-Zero-Knowledge-Proof"><span class="toc-number">4.0.18.</span> <span class="toc-text">18、零知识证明/Zero-Knowledge Proof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19、计算上不可行-Computationally-Feasible"><span class="toc-number">4.0.19.</span> <span class="toc-text">19、计算上不可行/Computationally Feasible</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20、暴力破解法-Brute-Force-Attack-BFA"><span class="toc-number">4.0.20.</span> <span class="toc-text">20、暴力破解法/Brute Force Attack/BFA</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（五）分布式存储"><span class="toc-number">5.</span> <span class="toc-text">（五）分布式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、分布式存储-Distributed-Data-Store-DDS"><span class="toc-number">5.0.1.</span> <span class="toc-text">1、分布式存储/Distributed Data Store/DDS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、P2P存储-Peer-to-Peer-Storage-P2P-Storage-P2P"><span class="toc-number">5.0.2.</span> <span class="toc-text">2、P2P存储/Peer-to-Peer Storage/P2P Storage P2P</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、账本-Ledger"><span class="toc-number">5.0.3.</span> <span class="toc-text">3、账本/Ledger</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、节点-Node"><span class="toc-number">5.0.4.</span> <span class="toc-text">4、节点/Node</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（六）共识机制"><span class="toc-number">6.</span> <span class="toc-text">（六）共识机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、共识机制-Consensus"><span class="toc-number">6.0.1.</span> <span class="toc-text">1、共识机制/Consensus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、工作量证明-Proof-of-Work-PoW"><span class="toc-number">6.0.2.</span> <span class="toc-text">2、工作量证明/Proof of Work/PoW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、权益证明-Proof-of-Stake-PoS"><span class="toc-number">6.0.3.</span> <span class="toc-text">3、权益证明/Proof of Stake/PoS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、权益授权证明-Delegated-Proof-of-Stake-DPoS"><span class="toc-number">6.0.4.</span> <span class="toc-text">4、权益授权证明/Delegated Proof of Stake/DPoS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、燃烧证明-Proof-of-Burn-PoB"><span class="toc-number">6.0.5.</span> <span class="toc-text">5、燃烧证明/Proof of Burn/PoB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、开发者证明-Proof-of-Developer-PoD"><span class="toc-number">6.0.6.</span> <span class="toc-text">6、开发者证明/Proof of Developer/PoD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、重要性证明-Proof-of-Important-PoI"><span class="toc-number">6.0.7.</span> <span class="toc-text">7、重要性证明/Proof of Important/PoI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、基于交易的权益证明机制-Transaction-as-Proof-of-Stake-TaPOS"><span class="toc-number">6.0.8.</span> <span class="toc-text">8、基于交易的权益证明机制/Transaction as Proof of Stake/TaPOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、瑞波共识机制-Ripple-Consensus"><span class="toc-number">6.0.9.</span> <span class="toc-text">9、瑞波共识机制/Ripple Consensus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、分布式共识-Distributed-Consensus"><span class="toc-number">6.0.10.</span> <span class="toc-text">10、分布式共识/Distributed Consensus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、验证池机制-POOL"><span class="toc-number">6.0.11.</span> <span class="toc-text">11、验证池机制/POOL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、51-攻击-51-attack"><span class="toc-number">6.0.12.</span> <span class="toc-text">12、51%攻击/51% attack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、双重支付-双重花费-双花-Double-Spending"><span class="toc-number">6.0.13.</span> <span class="toc-text">13、双重支付/双重花费/双花/Double Spending</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、拜占庭将军问题-Byzantine-Generals-Problem-BGP"><span class="toc-number">6.0.14.</span> <span class="toc-text">14、拜占庭将军问题/Byzantine Generals Problem/BGP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15、改进型实用拜占庭容错-Practical-Byzantine-Fault-Tolerance-PBFT"><span class="toc-number">6.0.15.</span> <span class="toc-text">15、改进型实用拜占庭容错/Practical Byzantine Fault Tolerance/PBFT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16、授权拜占庭容错算法-Delegated-Byzantine-Fault-Tolerance-dBFT"><span class="toc-number">6.0.16.</span> <span class="toc-text">16、授权拜占庭容错算法/Delegated Byzantine Fault Tolerance/dBFT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17、联邦拜占庭协议-Federated-Byzantine-Agreement-FBA"><span class="toc-number">6.0.17.</span> <span class="toc-text">17、联邦拜占庭协议/Federated Byzantine Agreement/FBA</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（七）主链扩容"><span class="toc-number">7.</span> <span class="toc-text">（七）主链扩容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、分片-Sharding"><span class="toc-number">7.0.1.</span> <span class="toc-text">1、分片/Sharding</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、闪电网络-Lightning-Network"><span class="toc-number">7.0.2.</span> <span class="toc-text">2、闪电网络/Lightning Network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、雷电网络-Raiden-Network"><span class="toc-number">7.0.3.</span> <span class="toc-text">3、雷电网络/Raiden Network</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、隔离见证-Segregated-Witness-SW"><span class="toc-number">7.0.4.</span> <span class="toc-text">4、隔离见证/Segregated Witness/SW</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（八）跨链协议"><span class="toc-number">8.</span> <span class="toc-text">（八）跨链协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、跨链技术-Cross-Chain"><span class="toc-number">8.0.1.</span> <span class="toc-text">1、跨链技术/Cross-Chain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、原子互换-Atomic-Swap"><span class="toc-number">8.0.2.</span> <span class="toc-text">2、原子互换/Atomic Swap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、见证人机制-Notary-Schemes"><span class="toc-number">8.0.3.</span> <span class="toc-text">3、见证人机制/Notary Schemes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、侧链协议-Side-chain-Protocol"><span class="toc-number">8.0.4.</span> <span class="toc-text">4、侧链协议/Side chain Protocol</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、楔入式侧链技术-Pegged-Side-chain"><span class="toc-number">8.0.5.</span> <span class="toc-text">5、楔入式侧链技术/Pegged Side chain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、中继技术-Relays"><span class="toc-number">8.0.6.</span> <span class="toc-text">6、中继技术/Relays</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、哈希时间锁定合约-Hashed-Time-Lock-Contract-HTLC"><span class="toc-number">8.0.7.</span> <span class="toc-text">7、哈希时间锁定合约/Hashed Time Lock Contract /HTLC</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（九）其他技术"><span class="toc-number">9.</span> <span class="toc-text">（九）其他技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、图灵完备-Turing-Complete"><span class="toc-number">9.0.1.</span> <span class="toc-text">1、图灵完备/Turing Complete</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、零币协议-Zerocash-Protocol"><span class="toc-number">9.0.2.</span> <span class="toc-text">2、零币协议/Zerocash Protocol</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、CryptoNote协议-CryptoNote"><span class="toc-number">9.0.3.</span> <span class="toc-text">3、CryptoNote协议/CryptoNote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、缠结-Tangle"><span class="toc-number">9.0.4.</span> <span class="toc-text">4、缠结/Tangle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、有向无环图-Database-Availability-Group-DAG"><span class="toc-number">9.0.5.</span> <span class="toc-text">5、有向无环图/Database Availability Group /DAG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、去中心化应用-Decentralized-Application-DApp"><span class="toc-number">9.0.6.</span> <span class="toc-text">6、去中心化应用/Decentralized Application/DApp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、去中心组织-Decentralized-Organization"><span class="toc-number">9.0.7.</span> <span class="toc-text">7、去中心组织/Decentralized Organization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、去中心化自治组织-Decentralized-Autonomous-Organization-DAO"><span class="toc-number">9.0.8.</span> <span class="toc-text">8、去中心化自治组织/Decentralized Autonomous Organization/DAO</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（十）智能合约"><span class="toc-number">10.</span> <span class="toc-text">（十）智能合约</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、智能合约-Smart-Contract"><span class="toc-number">10.0.1.</span> <span class="toc-text">1、智能合约/Smart Contract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、以太坊-Ethereum"><span class="toc-number">10.0.2.</span> <span class="toc-text">2、以太坊/Ethereum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、EVM代码"><span class="toc-number">10.0.3.</span> <span class="toc-text">3、EVM代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、合约-Contract"><span class="toc-number">10.0.4.</span> <span class="toc-text">4、合约/Contract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、令牌-通证-Token"><span class="toc-number">10.0.5.</span> <span class="toc-text">5、令牌/通证/Token</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、令牌化-Tokenize"><span class="toc-number">10.0.6.</span> <span class="toc-text">6、令牌化/Tokenize</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（十一）加密货币"><span class="toc-number">11.</span> <span class="toc-text">（十一）加密货币</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、数字货币-Digital-Currency"><span class="toc-number">11.0.1.</span> <span class="toc-text">1、数字货币/Digital Currency</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、加密货币-Cryptocurrency"><span class="toc-number">11.0.2.</span> <span class="toc-text">2、加密货币/Cryptocurrency</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、代币-Token-Token-Coin"><span class="toc-number">11.0.3.</span> <span class="toc-text">3、代币/Token/Token Coin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、非货币-Noncurrency"><span class="toc-number">11.0.4.</span> <span class="toc-text">4、非货币/Noncurrency</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、竞争币-AltCoin"><span class="toc-number">11.0.5.</span> <span class="toc-text">5、竞争币/AltCoin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、山寨币-AltCoin"><span class="toc-number">11.0.6.</span> <span class="toc-text">6、山寨币/AltCoin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、比特币改进提议-Bitcoin-Improvement-Proposals-BIPs"><span class="toc-number">11.0.7.</span> <span class="toc-text">7、比特币改进提议/Bitcoin Improvement Proposals/BIPs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、以太币-Ether-ETH"><span class="toc-number">11.0.8.</span> <span class="toc-text">8、以太币/Ether/ETH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、瓦斯-Gas"><span class="toc-number">11.0.9.</span> <span class="toc-text">9、瓦斯/Gas</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、反洗钱-Anti-Money-Laundering-AML"><span class="toc-number">11.0.10.</span> <span class="toc-text">10、反洗钱/Anti Money Laundering/AML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、KYC规则-Know-Your-Customer-KYC"><span class="toc-number">11.0.11.</span> <span class="toc-text">11、KYC规则/Know Your Customer/KYC</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（十二）账户"><span class="toc-number">12.</span> <span class="toc-text">（十二）账户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、地址-Address-Addy"><span class="toc-number">12.0.1.</span> <span class="toc-text">1、地址/Address/Addy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、虚拟地址-Virtual-Address"><span class="toc-number">12.0.2.</span> <span class="toc-text">2、虚拟地址/Virtual Address</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、虚拟地址-Vanity-Address"><span class="toc-number">12.0.3.</span> <span class="toc-text">3、虚拟地址/Vanity Address</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、虚拟地址挖矿-Vanity-Mining"><span class="toc-number">12.0.4.</span> <span class="toc-text">4、虚拟地址挖矿/Vanity-Mining</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、虚拟池-Vanity-Pool"><span class="toc-number">12.0.5.</span> <span class="toc-text">5、虚拟池/Vanity Pool</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（十三）交易"><span class="toc-number">13.</span> <span class="toc-text">（十三）交易</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、交易-Transaction-TX"><span class="toc-number">13.0.1.</span> <span class="toc-text">1、交易/Transaction/TX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、验证-Verification"><span class="toc-number">13.0.2.</span> <span class="toc-text">2、验证/Verification</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、可互换性-Fungible"><span class="toc-number">13.0.3.</span> <span class="toc-text">3、可互换性/Fungible</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、污点-Taint"><span class="toc-number">13.0.4.</span> <span class="toc-text">4、污点/Taint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、重放攻击-重播攻击-回放攻击-Replay-Attacks"><span class="toc-number">13.0.5.</span> <span class="toc-text">5、重放攻击/重播攻击/回放攻击/Replay Attacks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、交易费用-矿工费-Transaction-Fee"><span class="toc-number">13.0.6.</span> <span class="toc-text">6、交易费用/矿工费/Transaction Fee</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、小额交易-Microtransaction"><span class="toc-number">13.0.7.</span> <span class="toc-text">7、小额交易/Microtransaction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、尘埃交易-Dust-Transactions"><span class="toc-number">13.0.8.</span> <span class="toc-text">8、尘埃交易/Dust Transactions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、保证金交易-Margin-Trading"><span class="toc-number">13.0.9.</span> <span class="toc-text">9、保证金交易/Margin Trading</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、交易广播-Transaction-Broadcast"><span class="toc-number">13.0.10.</span> <span class="toc-text">10、交易广播/Transaction Broadcast</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、交易确认-Confirmation"><span class="toc-number">13.0.11.</span> <span class="toc-text">11、交易确认/Confirmation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、交易零确认-0确认-Zero-Confirmation"><span class="toc-number">13.0.12.</span> <span class="toc-text">12、交易零确认/0确认/Zero Confirmation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、未确认交易-Unconfirmed-Transactions"><span class="toc-number">13.0.13.</span> <span class="toc-text">13、未确认交易/Unconfirmed Transactions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、零确认交易-Zero-Confirmation-Transaction"><span class="toc-number">13.0.14.</span> <span class="toc-text">14、零确认交易/Zero Confirmation Transaction</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（十四）市场"><span class="toc-number">14.</span> <span class="toc-text">（十四）市场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、投资回报率-Return-on-Investment-ROI"><span class="toc-number">14.0.1.</span> <span class="toc-text">1、投资回报率/Return on Investment/ROI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、套利-Arbitrage"><span class="toc-number">14.0.2.</span> <span class="toc-text">2、套利/Arbitrage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、做空-Shorting"><span class="toc-number">14.0.3.</span> <span class="toc-text">3、做空/Shorting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、杠杆-Leverage"><span class="toc-number">14.0.4.</span> <span class="toc-text">4、杠杆/Leverage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、梭哈-All-In-Show-Hand"><span class="toc-number">14.0.5.</span> <span class="toc-text">5、梭哈/All-In/Show Hand</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、亿元披萨"><span class="toc-number">14.0.6.</span> <span class="toc-text">6、亿元披萨</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、泡菜溢价-Kimchi-Premium"><span class="toc-number">14.0.7.</span> <span class="toc-text">7、泡菜溢价/Kimchi Premium</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（十五）发行"><span class="toc-number">15.</span> <span class="toc-text">（十五）发行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、发行-Emission"><span class="toc-number">15.0.1.</span> <span class="toc-text">1、发行/Emission</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、空投-Airdrop"><span class="toc-number">15.0.2.</span> <span class="toc-text">2、空投/Airdrop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、水龙头-Faucet"><span class="toc-number">15.0.3.</span> <span class="toc-text">3、水龙头/Faucet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、首次赏金发行-Initial-Bounty-Offering-IBO"><span class="toc-number">15.0.4.</span> <span class="toc-text">4、首次赏金发行/Initial Bounty Offering/IBO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、软顶-Soft-Cap"><span class="toc-number">15.0.5.</span> <span class="toc-text">5、软顶/Soft Cap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、硬顶-Hard-Cap"><span class="toc-number">15.0.6.</span> <span class="toc-text">6、硬顶/Hard Cap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、隐顶-Hidden-Cap-Hidden-cap"><span class="toc-number">15.0.7.</span> <span class="toc-text">7、隐顶/Hidden Cap Hidden cap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、众筹-Crowdfunding"><span class="toc-number">15.0.8.</span> <span class="toc-text">8、众筹/Crowdfunding</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、基石轮-种子轮-Seed-Round"><span class="toc-number">15.0.9.</span> <span class="toc-text">9、基石轮/种子轮/Seed Round</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、天使轮-Angel-Round"><span class="toc-number">15.0.10.</span> <span class="toc-text">10、天使轮/Angel Round</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、私募轮-PE-Round"><span class="toc-number">15.0.11.</span> <span class="toc-text">11、私募轮/PE Round</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、公募轮-Public-Offering"><span class="toc-number">15.0.12.</span> <span class="toc-text">12、公募轮/Public Offering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、首次公开发行-Initial-Public-Offering-IPO"><span class="toc-number">15.0.13.</span> <span class="toc-text">13、首次公开发行/Initial Public Offering/IPO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、首次币发行-Initial-Coin-Offering-ICO"><span class="toc-number">15.0.14.</span> <span class="toc-text">14、首次币发行/Initial Coin Offering/ICO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15、首次矿机发行-Initial-Miner-Offering-IMO"><span class="toc-number">15.0.15.</span> <span class="toc-text">15、首次矿机发行/Initial Miner Offering/IMO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16、首次分叉发行-Initial-Fork-Offering-IFO"><span class="toc-number">15.0.16.</span> <span class="toc-text">16、首次分叉发行/Initial Fork Offering/IFO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17、天使投资-Angel-Investment"><span class="toc-number">15.0.17.</span> <span class="toc-text">17、天使投资/Angel Investment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18、风险投资-Venture-Capital"><span class="toc-number">15.0.18.</span> <span class="toc-text">18、风险投资/Venture Capital</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19、私募机构-Private-Equity"><span class="toc-number">15.0.19.</span> <span class="toc-text">19、私募机构/Private Equity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20、代投-Delegated-Investment"><span class="toc-number">15.0.20.</span> <span class="toc-text">20、代投/Delegated Investment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21、传销组织-MLM-Organizations"><span class="toc-number">15.0.21.</span> <span class="toc-text">21、传销组织/MLM Organizations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22、爱西欧"><span class="toc-number">15.0.22.</span> <span class="toc-text">22、爱西欧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23、PPT融资"><span class="toc-number">15.0.23.</span> <span class="toc-text">23、PPT融资</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#24、割韭菜"><span class="toc-number">15.0.24.</span> <span class="toc-text">24、割韭菜</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#25、空气币"><span class="toc-number">15.0.25.</span> <span class="toc-text">25、空气币</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#26、传销币"><span class="toc-number">15.0.26.</span> <span class="toc-text">26、传销币</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#27、糖果-Candy"><span class="toc-number">15.0.27.</span> <span class="toc-text">27、糖果/Candy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#28、白皮书-White-Paper"><span class="toc-number">15.0.28.</span> <span class="toc-text">28、白皮书/White Paper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#29、路线图-Roadmap"><span class="toc-number">15.0.29.</span> <span class="toc-text">29、路线图/Roadmap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#30、概念证明-Proof-of-Concept-POC"><span class="toc-number">15.0.30.</span> <span class="toc-text">30、概念证明/Proof of Concept/POC</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#（十六）挖矿"><span class="toc-number">16.</span> <span class="toc-text">（十六）挖矿</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、挖矿-Mining"><span class="toc-number">16.0.1.</span> <span class="toc-text">1、挖矿/Mining</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、矿工-Miner"><span class="toc-number">16.0.2.</span> <span class="toc-text">2、矿工/Miner</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、矿池-Mining-Pool"><span class="toc-number">16.0.3.</span> <span class="toc-text">3、矿池/Mining Pool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、矿场-挖矿基地-Mining-Farm"><span class="toc-number">16.0.4.</span> <span class="toc-text">4、矿场/挖矿基地/Mining Farm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、目标值-The-Target"><span class="toc-number">16.0.5.</span> <span class="toc-text">5、目标值/The Target</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、瞬时挖矿-Instamine"><span class="toc-number">16.0.6.</span> <span class="toc-text">6、瞬时挖矿/Instamine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、挖矿难度-Mining-Difficulty"><span class="toc-number">16.0.7.</span> <span class="toc-text">7、挖矿难度/Mining Difficulty</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、算力-哈希率-Hashrate"><span class="toc-number">16.0.8.</span> <span class="toc-text">8、算力/哈希率/Hashrate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、矿难-Mine-Disaster"><span class="toc-number">16.0.9.</span> <span class="toc-text">9、矿难/Mine Disaster</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、矿机-Mining-Rig"><span class="toc-number">16.0.10.</span> <span class="toc-text">10、矿机/Mining Rig</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、中央处理器-Central-Processing-Unit-CPU"><span class="toc-number">16.0.11.</span> <span class="toc-text">11、中央处理器/Central Processing Unit/CPU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、图形处理单元-Graphical-Processing-Unit-GPU"><span class="toc-number">16.0.12.</span> <span class="toc-text">12、图形处理单元/Graphical Processing Unit/GPU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、专用集成电路-Application-Specific-Integrated-Circuit-ASIC"><span class="toc-number">16.0.13.</span> <span class="toc-text">13、专用集成电路/Application-Specific Integrated Circuit/ASIC</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 34
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2021 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/04</span><a class="archive-post-title" href="/2021/03/04/区块链常用术语汇总/">区块链常用术语汇总</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/04</span><a class="archive-post-title" href="/2021/03/04/M-M-1-K单服务台混合制模型/">M/M/1/K单服务台混合制模型</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/01</span><a class="archive-post-title" href="/2021/03/01/分布式账本之IOTA/">分布式账本之IOTA</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/28</span><a class="archive-post-title" href="/2020/12/28/共识算法之Tangle(缠结)/">共识算法之Tangle(缠结)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/13</span><a class="archive-post-title" href="/2020/12/13/攻防世界Reverse-Challenge-area/">攻防世界Reverse-Challenge-area</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/03</span><a class="archive-post-title" href="/2020/12/03/ida动态调试elf-无坑详细/">ida动态调试elf(无坑详细)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href="/2020/12/02/MATLAB仿真模拟分布/">MATLAB仿真模拟分布</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href="/2020/12/02/Markov-chain-And-Queuing-theory/">Markov chain And Queuing theory</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(三)/">MATLAB使用教程(三)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(二)/">MATLAB使用教程(二)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(五)/">MATLAB使用教程(五)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(九)/">MATLAB使用教程(九)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(四)/">MATLAB使用教程(四)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(八)/">MATLAB使用教程(八)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(七)/">MATLAB使用教程(七)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(六)/">MATLAB使用教程(六)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(一)/">MATLAB使用教程(一)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2020/10/28/计算机网络数学基础/">计算机网络数学基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/2020/10/14/红黑树-Red-Black-Tree/">红黑树(Red Black Tree)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href="/2020/10/14/最大网络流量-Maximum-Network-Flow/">最大网络流(Maximum Network Flow)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/11</span><a class="archive-post-title" href="/2020/10/11/Ipad搭建Vscode编程环境/">Ipad搭建Vscode编程环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/25</span><a class="archive-post-title" href="/2020/09/25/Blockchain笔记/">Blockchain笔记</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/29</span><a class="archive-post-title" href="/2019/06/29/hello-Covteam/">Hello-Covteam</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/17</span><a class="archive-post-title" href="/2019/03/17/2018蓝桥杯总结/">2018蓝桥杯总结</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/27</span><a class="archive-post-title" href="/2018/12/27/拜托教务系统强制评价/">拜托教务系统强制评价</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/2018Covteam招新赛/">2018Covteam招新赛</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/80x86汇编知识基础/">80x86汇编知识基础</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwntools使用简介/">Pwntools使用简介</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/Pwn入门笔记/">Pwn入门笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/RSA/">RSA</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/网鼎杯第一场/">网鼎杯第一场</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/binwalk-for-windows/">binwalk for windows</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/hello-world/">Hello World</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Blockchain"><span class="iconfont-archer">&#xe606;</span>Blockchain</span>
+    
+        <span class="sidebar-tag-name" data-tags="Daily gadgets"><span class="iconfont-archer">&#xe606;</span>Daily gadgets</span>
+    
+        <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
+    
+        <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
+    
+        <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
+    
+        <span class="sidebar-tag-name" data-tags="MATLAB"><span class="iconfont-archer">&#xe606;</span>MATLAB</span>
+    
+        <span class="sidebar-tag-name" data-tags="Pwn"><span class="iconfont-archer">&#xe606;</span>Pwn</span>
+    
+        <span class="sidebar-tag-name" data-tags="Crypto"><span class="iconfont-archer">&#xe606;</span>Crypto</span>
+    
+        <span class="sidebar-tag-name" data-tags="CTF"><span class="iconfont-archer">&#xe606;</span>CTF</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Sma11_Tim3"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
