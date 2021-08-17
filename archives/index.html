@@ -357,6 +357,173 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2021/08/17/图解介绍Tangle第5部分/">
+            
+                <span>图解介绍Tangle第5部分</span>
+        </a>
+        <div class="abstract-content">
+            本文转载至：https://www.iotachina.com/tujiechanjie5.html
+
+上个星期，我们提到了“双花”问题，当Alice试图重复花掉她的钱时就会出现这个问题。这篇文章将是本系列文章的最后一篇，我们将展示这个问题是如何在Tangle中解决的，以及我们如何决定哪笔历史记录是有效的。
+为了说明这个问题，我们先来了解一下下面的双花情景：
+
+正如你所看到的，Alice只有5i，她却同时给了Charlie和Bob。这显然是一个问题：我们不能同时将这两笔交易都视为有效。使用Tangle的术语来说，我们不能让未来的交易同时确认这两笔交易，因为它最终会导致Alice的账户出现...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Blockchain">Blockchain</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2021/08/17/图解介绍Tangle第4部分/">
+            
+                <span>图解介绍Tangle第4部分</span>
+        </a>
+        <div class="abstract-content">
+            本文转载至：https://www.iotachina.com/tujiejieshaochanjiedi4bufenpizhunzhe-yueheshuanghua.html
+
+到目前为止，我们讨论了DAGs, 随机行走和各种tip选择机制；本周我们将谈论金钱。是时候解释我们所说的交易A验证交易B的意义了。
+正如在本系列的第一篇文章中提到的，假设一笔交易事务包含“Alice给bob 10 IOTAs”的表单信息。批准人的工作是首先确保Alice有10IOTAs。
+你可能会想到，这些IOTAs从何而来？答案是：所有的IOTAs都是在第一次交易中被创造出来的，叫做“创世纪”交易。在此之后，...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Blockchain">Blockchain</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2021/08/17/图解介绍Tangle第3部分/">
+            
+                <span>图解介绍Tangle第3部分</span>
+        </a>
+        <div class="abstract-content">
+            本文转载至：https://www.iotachina.com/tujiejieshaochanjiedi3bufenleijiquanzhonghejiaquandesuijixingzou.html
+
+上周我们学习了不加权随机行走，今天我们将学习它更高级的用法：加权随机行走。
+让我们先从它的功能目标开始学习。我们希望我们的tip选择算法功能之一是避免懒惰的tip。懒惰tip的特征是批准了以往的老旧交易，而不是最近发生的交易。因为它不需要与最新的缠结状态保持同步，所以它是懒惰tip，并且只在老旧数据的基础上广播自己的交易。这对网络没有帮助，因为没有新的交易事务被确认。
+
+在上面的示例中...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Blockchain">Blockchain</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2021/08/17/图解介绍Tangle第2部分/">
+            
+                <span>图解介绍Tangle第2部分</span>
+        </a>
+        <div class="abstract-content">
+            本文转载至：https://www.iotachina.com/tujiejieshaochanjiedierbufenjiaoyishuaiyanchiyusuijixingzou.html
+
+在本系列的前一篇文章中，我们介绍了缠结的数据结构。我们还了解tips，以及一个良好tip选择算法的重要性。今天，我们将学习交易速率和网络延迟，以及它们在确定缠结形态方面的作用。我们还将学习无权重的随机行走，此内容还将在下周进一步深入。
+在上周的模拟中，你可能已经注意到，交易并不是随着时间均匀分布的，而是有些时段比其他时段“繁忙”。这种使得模型更加贴近现实的随机性，是通过使用泊松点流程来建模交易的...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Blockchain">Blockchain</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2021/08/17/图解介绍Tangle第1部分/">
+            
+                <span>图解介绍Tangle第1部分</span>
+        </a>
+        <div class="abstract-content">
+            本文转载至：https://www.iotachina.com/tujiejieshaochanjie.html
+
+本文是一系列初学者介绍文档中的第一篇，主要针对那些想要更多的了解IOTA如何是工作的人。 我们将按照白皮书零散的展开内容，但是介绍内容的过程会慢一点，并添加一些图片来澄清基本概念。在这篇文章中，我们介绍缠结，并解释它是什么，以及在IOTA研究团队中如何以数学方式对他进行研究与开发。
+为了理解缠结，我们需要了解一些被计算机科学家称之为有向图的概念。有向图是顶点（方块）的集合，它们通过边缘（箭头）相互连接。 下图是一个有向图的例子：
+
+缠结是IOTA背后的数据结构，它是一种包含...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/08/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Blockchain">Blockchain</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2021/03/04/区块链常用术语汇总/">
             
                 <span>区块链常用术语汇总</span>
@@ -490,151 +657,6 @@
             <div class="abstract-tags">
     
         <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/12/03/ida动态调试elf-无坑详细/">
-            
-                <span>ida动态调试elf(无坑详细)</span>
-        </a>
-        <div class="abstract-content">
-            <p>在做逆向题的时候，经常会用到动态调试，虽然win下有OD，Linux下有GDB，但是难免有时候还是会用到ida动态调试Linux下的文件，因此写一个教程。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Reverse">Reverse</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/12/02/MATLAB仿真模拟分布/">
-            
-                <span>MATLAB仿真模拟分布</span>
-        </a>
-        <div class="abstract-content">
-            <p>使用MATLAB来模拟具体的模型，依次介绍：泊松过程，指数分布，生灭过程。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MATLAB">MATLAB</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/12/02/Markov-chain-And-Queuing-theory/">
-            
-                <span>Markov chain And Queuing theory</span>
-        </a>
-        <div class="abstract-content">
-            <p>马尔可夫链是随机过程中一种非常重要的统计模型，在研究中的应用十分的广泛，以下记录一些相关的知识点。</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Blockchain">Blockchain</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/11/29/MATLAB使用教程(九)/">
-            
-                <span>MATLAB使用教程(九)</span>
-        </a>
-        <div class="abstract-content">
-            <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572</a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MATLAB">MATLAB</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/11/29/MATLAB使用教程(八)/">
-            
-                <span>MATLAB使用教程(八)</span>
-        </a>
-        <div class="abstract-content">
-            <p>做区块链的实验分析的时候，需要使用MATLAB做仿真实验。记录一下相关的教程。本文章转载至<a href="https://blog.csdn.net/qq_38431572" target="_blank" rel="noopener">https://blog.csdn.net/qq_38431572</a></p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="MATLAB">MATLAB</a>
     
 </div>
             
@@ -1178,9 +1200,84 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 34
+        Total : 39
         </div>
         <!-- search  -->
         
@@ -1193,6 +1290,31 @@
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/2021/08/17/图解介绍Tangle第1部分/">图解介绍Tangle第1部分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/2021/08/17/图解介绍Tangle第2部分/">图解介绍Tangle第2部分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/2021/08/17/图解介绍Tangle第3部分/">图解介绍Tangle第3部分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/2021/08/17/图解介绍Tangle第4部分/">图解介绍Tangle第4部分</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/17</span><a class="archive-post-title" href="/2021/08/17/图解介绍Tangle第5部分/">图解介绍Tangle第5部分</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1245,12 +1367,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(三)/">MATLAB使用教程(三)</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(二)/">MATLAB使用教程(二)</a>
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(七)/">MATLAB使用教程(七)</a>
         </li>
     
     
@@ -1260,12 +1377,17 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(九)/">MATLAB使用教程(九)</a>
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(三)/">MATLAB使用教程(三)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(四)/">MATLAB使用教程(四)</a>
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(六)/">MATLAB使用教程(六)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(九)/">MATLAB使用教程(九)</a>
         </li>
     
     
@@ -1275,12 +1397,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(七)/">MATLAB使用教程(七)</a>
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(二)/">MATLAB使用教程(二)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(六)/">MATLAB使用教程(六)</a>
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href="/2020/11/29/MATLAB使用教程(四)/">MATLAB使用教程(四)</a>
         </li>
     
     
@@ -1373,12 +1495,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/网鼎杯第一场/">网鼎杯第一场</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/逆向入门基础汇编语言/">逆向入门基础汇编语言</a>
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href="/2018/10/28/网鼎杯第一场/">网鼎杯第一场</a>
         </li>
     
     
@@ -1398,13 +1520,13 @@
     
         <span class="sidebar-tag-name" data-tags="Blockchain"><span class="iconfont-archer">&#xe606;</span>Blockchain</span>
     
-        <span class="sidebar-tag-name" data-tags="Daily gadgets"><span class="iconfont-archer">&#xe606;</span>Daily gadgets</span>
-    
         <span class="sidebar-tag-name" data-tags="Algorithm"><span class="iconfont-archer">&#xe606;</span>Algorithm</span>
     
         <span class="sidebar-tag-name" data-tags="Reverse"><span class="iconfont-archer">&#xe606;</span>Reverse</span>
     
         <span class="sidebar-tag-name" data-tags="Covteam"><span class="iconfont-archer">&#xe606;</span>Covteam</span>
+    
+        <span class="sidebar-tag-name" data-tags="Daily gadgets"><span class="iconfont-archer">&#xe606;</span>Daily gadgets</span>
     
         <span class="sidebar-tag-name" data-tags="MATLAB"><span class="iconfont-archer">&#xe606;</span>MATLAB</span>
     
